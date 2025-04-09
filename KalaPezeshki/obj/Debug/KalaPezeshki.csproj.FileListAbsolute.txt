@@ -1,0 +1,16 @@
+E:\KalaPezeshki\KalaPezeshki\bin\Debug\KalaPezeshki.exe.config
+E:\KalaPezeshki\KalaPezeshki\bin\Debug\KalaPezeshki.exe
+E:\KalaPezeshki\KalaPezeshki\bin\Debug\KalaPezeshki.pdb
+E:\KalaPezeshki\KalaPezeshki\bin\Debug\DevComponents.DotNetBar2.dll
+E:\KalaPezeshki\KalaPezeshki\bin\Debug\DevComponents.DotNetBar2.xml
+E:\KalaPezeshki\KalaPezeshki\obj\Debug\KalaPezeshki.csproj.AssemblyReference.cache
+E:\KalaPezeshki\KalaPezeshki\obj\Debug\KalaPezeshki.Form1.resources
+E:\KalaPezeshki\KalaPezeshki\obj\Debug\KalaPezeshki.Properties.Resources.resources
+E:\KalaPezeshki\KalaPezeshki\obj\Debug\KalaPezeshki.csproj.GenerateResource.cache
+E:\KalaPezeshki\KalaPezeshki\obj\Debug\KalaPezeshki.csproj.CoreCompileInputs.cache
+E:\KalaPezeshki\KalaPezeshki\obj\Debug\KalaPeze.C2BD6894.Up2Date
+E:\KalaPezeshki\KalaPezeshki\obj\Debug\KalaPezeshki.exe
+E:\KalaPezeshki\KalaPezeshki\obj\Debug\KalaPezeshki.pdb
+E:\KalaPezeshki\KalaPezeshki\obj\Debug\KalaPezeshki.frmInfo.resources
+E:\KalaPezeshki\KalaPezeshki\obj\Debug\KalaPezeshki.frmUser.resources
+E:\KalaPezeshki\KalaPezeshki\obj\Debug\KalaPezeshki.frmLogin.resources
