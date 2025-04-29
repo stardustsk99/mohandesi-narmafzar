@@ -42,12 +42,16 @@ namespace KalaPezeshki
         private void btnSave_Click(object sender, EventArgs e)
         {
             int i = 0;
-            cmd = new SqlCommand("select count(*) from karbar where UName=@N AND Password=@F", con);
+            string hashedPassword = HashHelper.ComputeSha256Hash(txtPass.Text); // هش رمز
+
+            cmd = new SqlCommand("SELECT COUNT(*) FROM Karbar WHERE UName = @N AND Password = @F", con);
             cmd.Parameters.AddWithValue("@N", txtUName.Text);
-            cmd.Parameters.AddWithValue("@F", txtPass.Text);
+            cmd.Parameters.AddWithValue("@F", hashedPassword); // استفاده از رمز هش‌شده
+
             con.Open();
             i = (int)cmd.ExecuteScalar();
             con.Close();
+
             if (i > 0)
             {
                 new Form1().ShowDialog();
