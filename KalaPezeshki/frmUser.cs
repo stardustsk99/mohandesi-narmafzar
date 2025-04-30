@@ -37,6 +37,8 @@ namespace KalaPezeshki
             dgvUser.Columns[0].HeaderText = "کد";
             dgvUser.Columns[1].HeaderText = "نام کاربری";
             dgvUser.Columns[2].HeaderText = "کلمه عبور";
+            dgvUser.Columns[3].HeaderText = "شماره تماس";
+
         }
         private void groupPanel3_Click(object sender, EventArgs e)
         {
@@ -60,56 +62,77 @@ namespace KalaPezeshki
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+        try
             {
-                try
-                {
-                    cmd.Parameters.Clear();
-                    cmd.Connection = con;
-                    string password = txtPass.Text;
-                    if (password.Length < 8)
-                    {
-                        MessageBox.Show("پسورد باید حداقل ۸ کاراکتر داشته باشد.");
-                        return;
-                    }
-                    if (password.Length > 50)
-                    {
-                        MessageBox.Show("پسورد نمی‌تواند بیشتر از ۵۰ کاراکتر باشد.");
-                        return;
-                    }
-                    if (!password.Any(char.IsUpper))
-                    {
-                        MessageBox.Show("پسورد باید حداقل یک حرف بزرگ داشته باشد.");
-                        return;
-                    }
-                    if (!password.Any(char.IsLower))
-                    {
-                        MessageBox.Show("پسورد باید حداقل یک حرف کوچک داشته باشد.");
-                        return;
-                    }
-                    if (!password.Any(char.IsDigit))
-                    {
-                        MessageBox.Show("پسورد باید حداقل یک عدد داشته باشد.");
-                        return;
-                    }
+                cmd.Parameters.Clear();
+                cmd.Connection = con;
 
-                    string hashedPassword = HashHelper.ComputeSha256Hash(password);
-                    // ادامه‌ی ثبت در دیتابیس...
-                    cmd.CommandText = "Insert into Karbar(UName,Password)Values(@a,@b)";
-                    cmd.Parameters.AddWithValue("@a", txtUName.Text);
-                    cmd.Parameters.AddWithValue("@b", hashedPassword);//پسورد هش شده رو ذخیره کن
-                    con.Open();
-                    cmd.ExecuteNonQuery();
-                    con.Close();
-                    Display();
-                    MessageBox.Show("ثبت انجام شد");
-                }
-                catch (Exception)
+                // اعتبارسنجی پسورد
+                string password = txtPass.Text;
+                if (password.Length < 8)
                 {
-                    MessageBox.Show("مشکلی پیش آمده است");
+                    MessageBox.Show("پسورد باید حداقل ۸ کاراکتر داشته باشد.");
+                    return;
+                }
+                if (password.Length > 50)
+                {
+                    MessageBox.Show("پسورد نمی‌تواند بیشتر از ۵۰ کاراکتر باشد.");
+                    return;
+                }
+                if (!password.Any(char.IsUpper))
+                {
+                    MessageBox.Show("پسورد باید حداقل یک حرف بزرگ داشته باشد.");
+                    return;
+                }
+                if (!password.Any(char.IsLower))
+                {
+                    MessageBox.Show("پسورد باید حداقل یک حرف کوچک داشته باشد.");
+                    return;
+                }
+                if (!password.Any(char.IsDigit))
+                {
+                    MessageBox.Show("پسورد باید حداقل یک عدد داشته باشد.");
+                    return;
                 }
 
+                // اعتبارسنجی شماره تماس
+                string phone = txtPhoneNumber.Text;
+                if (string.IsNullOrWhiteSpace(phone))
+                {
+                    MessageBox.Show("شماره تماس نمی‌تواند خالی باشد.");
+                    return;
+                }
+                if (!phone.All(char.IsDigit))
+                {
+                    MessageBox.Show("شماره تماس باید فقط شامل ارقام باشد.");
+                    return;
+                }
+                if (phone.Length != 11)
+                {
+                    MessageBox.Show("شماره تماس باید دقیقاً ۱۱ رقم باشد.");
+                    return;
+                }
+
+                string hashedPassword = HashHelper.ComputeSha256Hash(password);
+
+                // ثبت در دیتابیس
+                cmd.CommandText = "INSERT INTO Karbar(UName, Password, PhoneNumber) VALUES(@a, @b, @c)";
+                cmd.Parameters.AddWithValue("@a", txtUName.Text);
+                cmd.Parameters.AddWithValue("@b", hashedPassword);
+                cmd.Parameters.AddWithValue("@c", phone);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                con.Close();
+
+                Display();
+                MessageBox.Show("ثبت انجام شد");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("مشکلی پیش آمده است");
             }
         }
+    
         private void btnDelete_Click(object sender, EventArgs e)
         {
                 try
@@ -158,6 +181,16 @@ namespace KalaPezeshki
         }
 
         private void txtUName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPhoneNumber_TextChanged(object sender, EventArgs e)
         {
 
         }

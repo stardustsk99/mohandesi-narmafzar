@@ -41,6 +41,8 @@
             this.txtUName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtPhoneNumber = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupPanel1.SuspendLayout();
             this.groupPanel4.SuspendLayout();
             this.groupPanel3.SuspendLayout();
@@ -235,6 +237,8 @@
             this.groupPanel2.BackColor = System.Drawing.Color.Transparent;
             this.groupPanel2.CanvasColor = System.Drawing.SystemColors.Control;
             this.groupPanel2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.groupPanel2.Controls.Add(this.label3);
+            this.groupPanel2.Controls.Add(this.txtPhoneNumber);
             this.groupPanel2.Controls.Add(this.txtPass);
             this.groupPanel2.Controls.Add(this.txtUName);
             this.groupPanel2.Controls.Add(this.label2);
@@ -275,27 +279,27 @@
             // 
             // txtPass
             // 
-            this.txtPass.Location = new System.Drawing.Point(139, 51);
+            this.txtPass.Location = new System.Drawing.Point(411, 58);
             this.txtPass.MaxLength = 20;
             this.txtPass.Name = "txtPass";
             this.txtPass.PasswordChar = '*';
-            this.txtPass.Size = new System.Drawing.Size(441, 26);
+            this.txtPass.Size = new System.Drawing.Size(270, 26);
             this.txtPass.TabIndex = 1;
             this.txtPass.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // txtUName
             // 
-            this.txtUName.Location = new System.Drawing.Point(139, 18);
+            this.txtUName.Location = new System.Drawing.Point(411, 18);
             this.txtUName.MaxLength = 100;
             this.txtUName.Name = "txtUName";
-            this.txtUName.Size = new System.Drawing.Size(441, 26);
+            this.txtUName.Size = new System.Drawing.Size(270, 26);
             this.txtUName.TabIndex = 0;
             this.txtUName.TextChanged += new System.EventHandler(this.txtUName_TextChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(598, 51);
+            this.label2.Location = new System.Drawing.Point(687, 51);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(69, 18);
             this.label2.TabIndex = 0;
@@ -304,12 +308,31 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(598, 26);
+            this.label1.Location = new System.Drawing.Point(687, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(69, 18);
             this.label1.TabIndex = 0;
             this.label1.Text = "نام کاربری";
             this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // txtPhoneNumber
+            // 
+            this.txtPhoneNumber.Location = new System.Drawing.Point(38, 21);
+            this.txtPhoneNumber.MaxLength = 100;
+            this.txtPhoneNumber.Name = "txtPhoneNumber";
+            this.txtPhoneNumber.Size = new System.Drawing.Size(242, 26);
+            this.txtPhoneNumber.TabIndex = 2;
+            this.txtPhoneNumber.TextChanged += new System.EventHandler(this.txtPhoneNumber_TextChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(286, 21);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(88, 18);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "شماره تماس";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // frmUser
             // 
@@ -345,5 +368,7 @@
         private System.Windows.Forms.TextBox txtPass;
         private System.Windows.Forms.TextBox txtUName;
         private System.Windows.Forms.DataGridView dgvUser;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtPhoneNumber;
     }
 }
