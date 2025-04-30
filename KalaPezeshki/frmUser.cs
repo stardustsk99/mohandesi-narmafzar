@@ -38,7 +38,7 @@ namespace KalaPezeshki
             dgvUser.Columns[1].HeaderText = "نام کاربری";
             dgvUser.Columns[2].HeaderText = "کلمه عبور";
             dgvUser.Columns[3].HeaderText = "شماره تماس";
-
+            dgvUser.Columns[2].Visible = false;
         }
         private void groupPanel3_Click(object sender, EventArgs e)
         {
@@ -57,7 +57,7 @@ namespace KalaPezeshki
 
         private void dgvUser_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+           
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -194,5 +194,21 @@ namespace KalaPezeshki
         {
 
         }
+
+        private void ChkPassword_CheckedChanged(object sender, EventArgs e)
+
+        {
+            if (ChkPassword.Checked)
+            {
+                txtPass.PasswordChar = '\0';   // نمایش پسورد
+                ChkPassword.Text = "مخفی کردن پسورد";  // زمانی که پسورد نمایش داده میشه
+            }
+            else
+            {
+                txtPass.PasswordChar = '*';    // مخفی‌سازی پسورد
+                ChkPassword.Text = "نمایش پسورد";  // زمانی که پسورد مخفی میشه
+            }
+        }
+
     }
 }
