@@ -314,6 +314,7 @@
             this.txtPass.Location = new System.Drawing.Point(411, 58);
             this.txtPass.MaxLength = 20;
             this.txtPass.Name = "txtPass";
+            this.txtPass.PasswordChar = '*';
             this.txtPass.Size = new System.Drawing.Size(270, 26);
             this.txtPass.TabIndex = 1;
             this.txtPass.TextChanged += new System.EventHandler(this.textBox2_TextChanged);

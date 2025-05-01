@@ -30,13 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnOut = new DevComponents.DotNetBar.ButtonX();
+            this.btnIn = new DevComponents.DotNetBar.ButtonX();
             this.txtPass = new System.Windows.Forms.TextBox();
             this.txtUName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnOut = new DevComponents.DotNetBar.ButtonX();
-            this.btnIn = new DevComponents.DotNetBar.ButtonX();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ChkPassword = new System.Windows.Forms.CheckBox();
             this.groupPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -46,6 +47,7 @@
             this.groupPanel1.BackColor = System.Drawing.Color.Transparent;
             this.groupPanel1.CanvasColor = System.Drawing.SystemColors.Control;
             this.groupPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.groupPanel1.Controls.Add(this.ChkPassword);
             this.groupPanel1.Controls.Add(this.btnOut);
             this.groupPanel1.Controls.Add(this.btnIn);
             this.groupPanel1.Controls.Add(this.txtPass);
@@ -89,23 +91,40 @@
             this.groupPanel1.TabIndex = 0;
             this.groupPanel1.Click += new System.EventHandler(this.groupPanel1_Click);
             // 
-            // pictureBox1
+            // btnOut
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(-3, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(253, 141);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.btnOut.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnOut.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnOut.Image = ((System.Drawing.Image)(resources.GetObject("btnOut.Image")));
+            this.btnOut.Location = new System.Drawing.Point(258, 82);
+            this.btnOut.Name = "btnOut";
+            this.btnOut.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 8, 8, 2);
+            this.btnOut.Size = new System.Drawing.Size(124, 66);
+            this.btnOut.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnOut.TabIndex = 3;
+            this.btnOut.Text = "خروج";
+            this.btnOut.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnIn
+            // 
+            this.btnIn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnIn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnIn.Image = ((System.Drawing.Image)(resources.GetObject("btnIn.Image")));
+            this.btnIn.Location = new System.Drawing.Point(388, 82);
+            this.btnIn.Name = "btnIn";
+            this.btnIn.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 8, 8, 2);
+            this.btnIn.Size = new System.Drawing.Size(124, 66);
+            this.btnIn.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnIn.TabIndex = 2;
+            this.btnIn.Text = "ورود";
+            this.btnIn.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // txtPass
             // 
-            this.txtPass.Location = new System.Drawing.Point(256, 50);
+            this.txtPass.Location = new System.Drawing.Point(379, 48);
             this.txtPass.Name = "txtPass";
             this.txtPass.PasswordChar = '*';
-            this.txtPass.Size = new System.Drawing.Size(282, 26);
+            this.txtPass.Size = new System.Drawing.Size(159, 26);
             this.txtPass.TabIndex = 1;
             this.txtPass.TextChanged += new System.EventHandler(this.txtPass_TextChanged);
             // 
@@ -137,33 +156,27 @@
             this.label1.Text = "نام کاربری";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // btnOut
+            // pictureBox1
             // 
-            this.btnOut.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnOut.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnOut.Image = ((System.Drawing.Image)(resources.GetObject("btnOut.Image")));
-            this.btnOut.Location = new System.Drawing.Point(258, 82);
-            this.btnOut.Name = "btnOut";
-            this.btnOut.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 8, 8, 2);
-            this.btnOut.Size = new System.Drawing.Size(124, 66);
-            this.btnOut.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnOut.TabIndex = 3;
-            this.btnOut.Text = "خروج";
-            this.btnOut.Click += new System.EventHandler(this.btnDelete_Click);
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(-3, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(253, 141);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // btnIn
+            // ChkPassword
             // 
-            this.btnIn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnIn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnIn.Image = ((System.Drawing.Image)(resources.GetObject("btnIn.Image")));
-            this.btnIn.Location = new System.Drawing.Point(388, 82);
-            this.btnIn.Name = "btnIn";
-            this.btnIn.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 8, 8, 2);
-            this.btnIn.Size = new System.Drawing.Size(124, 66);
-            this.btnIn.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnIn.TabIndex = 2;
-            this.btnIn.Text = "ورود";
-            this.btnIn.Click += new System.EventHandler(this.btnSave_Click);
+            this.ChkPassword.AutoSize = true;
+            this.ChkPassword.Location = new System.Drawing.Point(256, 50);
+            this.ChkPassword.Name = "ChkPassword";
+            this.ChkPassword.Size = new System.Drawing.Size(154, 22);
+            this.ChkPassword.TabIndex = 5;
+            this.ChkPassword.Text = "نمایش کلمه ی عبور";
+            this.ChkPassword.UseVisualStyleBackColor = true;
+            this.ChkPassword.CheckedChanged += new System.EventHandler(this.ChkPassword_CheckedChanged);
             // 
             // frmLogin
             // 
@@ -194,5 +207,6 @@
         private System.Windows.Forms.Label label1;
         private DevComponents.DotNetBar.ButtonX btnOut;
         private DevComponents.DotNetBar.ButtonX btnIn;
+        private System.Windows.Forms.CheckBox ChkPassword;
     }
 }

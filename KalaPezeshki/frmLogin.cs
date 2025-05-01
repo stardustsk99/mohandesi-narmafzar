@@ -76,5 +76,22 @@ namespace KalaPezeshki
         {
 
         }
+
+        private void ChkPassword_CheckedChanged(object sender, EventArgs e)
+        {
+
+
+            if (ChkPassword.Checked)
+            {
+                txtPass.PasswordChar = '\0';   // نمایش پسورد
+                ChkPassword.Text = "مخفی کردن پسورد";  // زمانی که پسورد نمایش داده میشه
+            }
+            else
+            {
+                txtPass.PasswordChar = '*';    // مخفی‌سازی پسورد
+                ChkPassword.Text = "نمایش پسورد";  // زمانی که پسورد مخفی میشه
+            }
+        }
     }
 }
+
