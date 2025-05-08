@@ -337,6 +337,7 @@
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "تعریف اطلاعات اولیه داروخانه";
+            this.Load += new System.EventHandler(this.frmInfo_Load);
             this.groupPanel1.ResumeLayout(false);
             this.groupPanel3.ResumeLayout(false);
             this.groupPanel2.ResumeLayout(false);

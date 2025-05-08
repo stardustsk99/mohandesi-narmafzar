@@ -30,3 +30,19 @@ E:\KalaPezeshki\mohandesi-narmafzar\KalaPezeshki\bin\Debug\KalaPezeshki.pdb
 E:\KalaPezeshki\mohandesi-narmafzar\KalaPezeshki\bin\Debug\DevComponents.DotNetBar2.dll
 E:\KalaPezeshki\mohandesi-narmafzar\KalaPezeshki\bin\Debug\DevComponents.DotNetBar2.xml
 E:\KalaPezeshki\mohandesi-narmafzar\KalaPezeshki\obj\Debug\KalaPeze.C2BD6894.Up2Date
+E:\C# Code\kalapezashki\mohandesi-narmafzar\mohandesi-narmafzar\KalaPezeshki\bin\Debug\KalaPezeshki.exe.config
+E:\C# Code\kalapezashki\mohandesi-narmafzar\mohandesi-narmafzar\KalaPezeshki\bin\Debug\KalaPezeshki.exe
+E:\C# Code\kalapezashki\mohandesi-narmafzar\mohandesi-narmafzar\KalaPezeshki\bin\Debug\KalaPezeshki.pdb
+E:\C# Code\kalapezashki\mohandesi-narmafzar\mohandesi-narmafzar\KalaPezeshki\bin\Debug\DevComponents.DotNetBar2.dll
+E:\C# Code\kalapezashki\mohandesi-narmafzar\mohandesi-narmafzar\KalaPezeshki\bin\Debug\DevComponents.DotNetBar2.xml
+E:\C# Code\kalapezashki\mohandesi-narmafzar\mohandesi-narmafzar\KalaPezeshki\obj\Debug\KalaPezeshki.csproj.AssemblyReference.cache
+E:\C# Code\kalapezashki\mohandesi-narmafzar\mohandesi-narmafzar\KalaPezeshki\obj\Debug\KalaPezeshki.Form1.resources
+E:\C# Code\kalapezashki\mohandesi-narmafzar\mohandesi-narmafzar\KalaPezeshki\obj\Debug\KalaPezeshki.frmInfo.resources
+E:\C# Code\kalapezashki\mohandesi-narmafzar\mohandesi-narmafzar\KalaPezeshki\obj\Debug\KalaPezeshki.frmLogin.resources
+E:\C# Code\kalapezashki\mohandesi-narmafzar\mohandesi-narmafzar\KalaPezeshki\obj\Debug\KalaPezeshki.frmUser.resources
+E:\C# Code\kalapezashki\mohandesi-narmafzar\mohandesi-narmafzar\KalaPezeshki\obj\Debug\KalaPezeshki.Properties.Resources.resources
+E:\C# Code\kalapezashki\mohandesi-narmafzar\mohandesi-narmafzar\KalaPezeshki\obj\Debug\KalaPezeshki.csproj.GenerateResource.cache
+E:\C# Code\kalapezashki\mohandesi-narmafzar\mohandesi-narmafzar\KalaPezeshki\obj\Debug\KalaPezeshki.csproj.CoreCompileInputs.cache
+E:\C# Code\kalapezashki\mohandesi-narmafzar\mohandesi-narmafzar\KalaPezeshki\obj\Debug\KalaPeze.C2BD6894.Up2Date
+E:\C# Code\kalapezashki\mohandesi-narmafzar\mohandesi-narmafzar\KalaPezeshki\obj\Debug\KalaPezeshki.exe
+E:\C# Code\kalapezashki\mohandesi-narmafzar\mohandesi-narmafzar\KalaPezeshki\obj\Debug\KalaPezeshki.pdb

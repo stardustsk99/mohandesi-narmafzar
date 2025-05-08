@@ -357,6 +357,7 @@
             this.Name = "frmUser";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "تعریف کاربران سیستم";
+            this.Load += new System.EventHandler(this.frmUser_Load);
             this.groupPanel1.ResumeLayout(false);
             this.groupPanel4.ResumeLayout(false);
             this.groupPanel3.ResumeLayout(false);
