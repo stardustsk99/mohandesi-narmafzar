@@ -303,7 +303,7 @@
             // txtPhoneNumber
             // 
             this.txtPhoneNumber.Location = new System.Drawing.Point(38, 21);
-            this.txtPhoneNumber.MaxLength = 100;
+            this.txtPhoneNumber.MaxLength = 11;
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.Size = new System.Drawing.Size(242, 26);
             this.txtPhoneNumber.TabIndex = 2;
@@ -312,7 +312,7 @@
             // txtPass
             // 
             this.txtPass.Location = new System.Drawing.Point(411, 58);
-            this.txtPass.MaxLength = 20;
+            this.txtPass.MaxLength = 30;
             this.txtPass.Name = "txtPass";
             this.txtPass.PasswordChar = '*';
             this.txtPass.Size = new System.Drawing.Size(270, 26);
@@ -322,7 +322,7 @@
             // txtUName
             // 
             this.txtUName.Location = new System.Drawing.Point(411, 18);
-            this.txtUName.MaxLength = 100;
+            this.txtUName.MaxLength = 30;
             this.txtUName.Name = "txtUName";
             this.txtUName.Size = new System.Drawing.Size(270, 26);
             this.txtUName.TabIndex = 0;

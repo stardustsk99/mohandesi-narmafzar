@@ -43,6 +43,15 @@ namespace KalaPezeshki
         {
             new frmUser().ShowDialog(); // نمایش فرم کاربران به‌صورت مودال
         }
+
+        private void btnGroup_Click(object sender, EventArgs e)
+        {
+            new frmGroup().ShowDialog();
+        }
+
+        private void btnListGroup_Click(object sender, EventArgs e)
+        {
+            new frmListGroup().ShowDialog();
+        }
     }
 }
-

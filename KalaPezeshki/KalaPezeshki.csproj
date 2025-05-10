@@ -34,6 +34,51 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevComponents.DotNetBar2, Version=14.1.0.37, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL" />
+    <Reference Include="Stimulsoft.Accounts.Wpf, Version=2023.1.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL" />
+    <Reference Include="Stimulsoft.Base, Version=2023.1.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL" />
+    <Reference Include="Stimulsoft.Blockly, Version=2023.1.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL" />
+    <Reference Include="Stimulsoft.BlocklyEditor.Wpf, Version=2023.1.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL" />
+    <Reference Include="Stimulsoft.Client, Version=2023.1.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL" />
+    <Reference Include="Stimulsoft.Client.Designer, Version=2023.1.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL" />
+    <Reference Include="Stimulsoft.Client.Designer.Design, Version=2023.1.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL" />
+    <Reference Include="Stimulsoft.Controls, Version=2023.1.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL" />
+    <Reference Include="Stimulsoft.Controls.Win, Version=2023.1.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL" />
+    <Reference Include="Stimulsoft.Controls.Wpf, Version=2023.1.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL" />
+    <Reference Include="Stimulsoft.Dashboard, Version=2023.1.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL" />
+    <Reference Include="Stimulsoft.Dashboard.Design, Version=2023.1.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL" />
+    <Reference Include="Stimulsoft.Dashboard.Drawing, Version=2023.1.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL" />
+    <Reference Include="Stimulsoft.Dashboard.Drawing.Wpf, Version=2023.1.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL" />
+    <Reference Include="Stimulsoft.Dashboard.Export, Version=2023.1.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL" />
+    <Reference Include="Stimulsoft.Dashboard.Viewer, Version=2023.1.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL" />
+    <Reference Include="Stimulsoft.Dashboard.Viewer.Wpf, Version=2023.1.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL" />
+    <Reference Include="Stimulsoft.Dashboard.Viewer.Wpf.Design, Version=2023.1.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL" />
+    <Reference Include="Stimulsoft.Data, Version=2023.1.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL" />
+    <Reference Include="Stimulsoft.Database, Version=2023.1.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL" />
+    <Reference Include="Stimulsoft.Database.Wpf, Version=2023.1.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL" />
+    <Reference Include="Stimulsoft.Design, Version=2023.1.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL" />
+    <Reference Include="Stimulsoft.Editor, Version=2023.1.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL" />
+    <Reference Include="Stimulsoft.Editor.Wpf, Version=2023.1.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL" />
+    <Reference Include="Stimulsoft.Map, Version=2023.1.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL" />
+    <Reference Include="Stimulsoft.MathFX, Version=2023.1.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL" />
+    <Reference Include="Stimulsoft.Report, Version=2023.1.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL" />
+    <Reference Include="Stimulsoft.Report.Angular, Version=2023.1.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL" />
+    <Reference Include="Stimulsoft.Report.Check, Version=2023.1.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL" />
+    <Reference Include="Stimulsoft.Report.Design, Version=2023.1.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL" />
+    <Reference Include="Stimulsoft.Report.Helper, Version=2023.1.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL" />
+    <Reference Include="Stimulsoft.Report.Import, Version=2023.1.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL" />
+    <Reference Include="Stimulsoft.Report.Mvc, Version=2023.1.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL" />
+    <Reference Include="Stimulsoft.Report.Publish, Version=2023.1.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL" />
+    <Reference Include="Stimulsoft.Report.Web, Version=2023.1.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL" />
+    <Reference Include="Stimulsoft.Report.WebDesign, Version=2023.1.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL" />
+    <Reference Include="Stimulsoft.Report.Win, Version=2023.1.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL" />
+    <Reference Include="Stimulsoft.Report.Wpf, Version=2023.1.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL" />
+    <Reference Include="Stimulsoft.Report.WpfDesign, Version=2023.1.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL" />
+    <Reference Include="Stimulsoft.Report.WpfDesign.Design, Version=2023.1.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL" />
+    <Reference Include="Stimulsoft.Server.Connect, Version=2023.1.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL" />
+    <Reference Include="Stimulsoft.Server.Objects, Version=2023.1.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL" />
+    <Reference Include="Stimulsoft.Svg, Version=2023.1.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL" />
+    <Reference Include="Stimulsoft.TaskScheduler, Version=2023.1.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL" />
+    <Reference Include="Stimulsoft.Wizard.Wpf, Version=2023.1.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -47,6 +92,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGroup.Designer.cs">
+      <DependentUpon>frmGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmListGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListGroup.Designer.cs">
+      <DependentUpon>frmListGroup.cs</DependentUpon>
+    </Compile>
     <Compile Include="HashHelper.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -77,6 +134,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmGroup.resx">
+      <DependentUpon>frmGroup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmInfo.resx">
       <DependentUpon>frmInfo.cs</DependentUpon>
     </EmbeddedResource>
@@ -85,6 +145,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmUser.resx">
       <DependentUpon>frmUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListGroup.resx">
+      <DependentUpon>frmListGroup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -47,7 +47,7 @@ namespace KalaPezeshki
             // مخفی‌سازی ستون رمز عبور
             dgvUser.Columns[2].Visible = false;
         }
-
+       
         private void groupPanel3_Click(object sender, EventArgs e) { }
         private void label1_Click(object sender, EventArgs e) { }
         private void textBox2_TextChanged(object sender, EventArgs e) { }
@@ -198,6 +198,9 @@ namespace KalaPezeshki
             }
         }
 
-        private void frmUser_Load(object sender, EventArgs e) { }
+        private void frmUser_Load(object sender, EventArgs e) 
+        {
+            Display();
+        }
     }
 }
