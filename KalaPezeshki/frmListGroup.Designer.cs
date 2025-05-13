@@ -52,7 +52,7 @@
             this.groupPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupPanel1.Location = new System.Drawing.Point(0, 0);
             this.groupPanel1.Name = "groupPanel1";
-            this.groupPanel1.Size = new System.Drawing.Size(862, 418);
+            this.groupPanel1.Size = new System.Drawing.Size(862, 389);
             // 
             // 
             // 
@@ -91,7 +91,7 @@
             this.groupPanel4.Controls.Add(this.btnDelete);
             this.groupPanel4.Controls.Add(this.btnPrint);
             this.groupPanel4.DisabledBackColor = System.Drawing.Color.Empty;
-            this.groupPanel4.Location = new System.Drawing.Point(9, 323);
+            this.groupPanel4.Location = new System.Drawing.Point(9, 301);
             this.groupPanel4.Name = "groupPanel4";
             this.groupPanel4.Size = new System.Drawing.Size(838, 80);
             // 
@@ -203,12 +203,13 @@
             this.dgvGroup.RowTemplate.Height = 24;
             this.dgvGroup.Size = new System.Drawing.Size(832, 280);
             this.dgvGroup.TabIndex = 0;
+            this.dgvGroup.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGroup_CellContentClick);
             // 
             // frmListGroup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(862, 418);
+            this.ClientSize = new System.Drawing.Size(862, 389);
             this.Controls.Add(this.groupPanel1);
             this.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.MaximizeBox = false;

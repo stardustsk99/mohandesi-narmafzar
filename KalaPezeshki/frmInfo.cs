@@ -41,17 +41,25 @@ namespace KalaPezeshki
         // رویداد کلیک دکمه ذخیره - ثبت اطلاعات جدید در جدول Info
         private void btnSave_Click(object sender, EventArgs e)
         {
-            cmd.Parameters.Clear(); // پاکسازی پارامترها
-            cmd.Connection = con; // تعیین اتصال
-            cmd.CommandText = "insert into Info(NameK,Tel,Saheb,Address)values(@a,@b,@c,@d)";
-            cmd.Parameters.AddWithValue("@a", txtName.Text);
-            cmd.Parameters.AddWithValue("@b", txtTel.Text);
-            cmd.Parameters.AddWithValue("@c", txtSaheb.Text);
-            cmd.Parameters.AddWithValue("@d", txtAddress.Text);
-            con.Open();
-            cmd.ExecuteNonQuery(); // اجرای دستور
-            con.Close();
-            MessageBox.Show("ثبت اطلاعات با موفقیت انجام شد");
+            try
+            {
+                cmd.Parameters.Clear(); // پاکسازی پارامترها
+                cmd.Connection = con; // تعیین اتصال
+                cmd.CommandText = "insert into Info(NameK,Tel,Saheb,Address)values(@a,@b,@c,@d)";
+                cmd.Parameters.AddWithValue("@a", txtName.Text);
+                cmd.Parameters.AddWithValue("@b", txtTel.Text);
+                cmd.Parameters.AddWithValue("@c", txtSaheb.Text);
+                cmd.Parameters.AddWithValue("@d", txtAddress.Text);
+                con.Open();
+                cmd.ExecuteNonQuery(); // اجرای دستور
+                con.Close();
+                MessageBox.Show("ثبت اطلاعات با موفقیت انجام شد");
+            }
+            catch(Exception)
+            {
+                MessageBox.Show("مشکلی پیش آمده است");
+            }
+
         }
 
         // رویداد کلیک دکمه حذف - حذف رکورد بر اساس کد وارد شده

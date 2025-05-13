@@ -23,7 +23,9 @@ namespace KalaPezeshki
         // رویداد بارگذاری فرم هنگام اجرا
         private void Form1_Load(object sender, EventArgs e)
         {
-            // می‌توانید تنظیمات اولیه فرم را اینجا انجام دهید
+            System.Globalization.PersianCalendar persianCalendar = new System.Globalization.PersianCalendar();
+            label1.Text = persianCalendar.GetYear(DateTime.Now).ToString() + "/" + persianCalendar.GetMonth(DateTime.Now).ToString("0#") + "/" + persianCalendar.GetDayOfMonth(DateTime.Now).ToString("0#"); 
+        
         }
 
         // رویداد کلیک بر روی groupPanel1 (در صورت نیاز به پردازش خاص)
@@ -52,6 +54,26 @@ namespace KalaPezeshki
         private void btnListGroup_Click(object sender, EventArgs e)
         {
             new frmListGroup().ShowDialog();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCompany_Click(object sender, EventArgs e)
+        {
+            new frmCompany().ShowDialog();
+        }
+
+        private void btnGoods_Click(object sender, EventArgs e)
+        {
+            new frmGoods().ShowDialog();
+        }
+
+        private void btnListGoods_Click(object sender, EventArgs e)
+        {
+            new frmListGoods().ShowDialog();
         }
     }
 }

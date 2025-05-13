@@ -8,7 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 using Stimulsoft.Report;
 namespace KalaPezeshki
 {
@@ -72,6 +71,11 @@ namespace KalaPezeshki
             Report.Load("Report/rptGroup.mrt");
             Report.Compile();
             Report.ShowWithRibbonGUI(); 
+        }
+
+        private void dgvGroup_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
