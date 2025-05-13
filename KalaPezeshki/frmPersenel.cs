@@ -99,7 +99,7 @@ namespace KalaPezeshki
             {
                 cmd.Parameters.Clear();
                 cmd.Connection = con;
-                cmd.CommandText = "UPDATE Persenel SET Name=@a, Tel=@b, Rool=@c, Salary=@d, Date=@e, Tozih=@f WHERE Code=@id";
+                cmd.CommandText = "UPDATE Persenel SET Name=@a, Tel=@b, Rool=@c, Salary=@d, Date=@e, Tozih=@f where id="+txtCode.Text;
                 cmd.Parameters.AddWithValue("@a", txtName.Text);
                 cmd.Parameters.AddWithValue("@b", txtTel.Text);
                 cmd.Parameters.AddWithValue("@c", txtRool.Text);
