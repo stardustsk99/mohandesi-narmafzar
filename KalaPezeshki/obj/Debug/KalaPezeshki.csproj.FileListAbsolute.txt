@@ -146,3 +146,5 @@ E:\C# Code\kalapezashki\mohandesi-narmafzar\mohandesi-narmafzar\KalaPezeshki\obj
 E:\C# Code\kalapezashki\mohandesi-narmafzar\mohandesi-narmafzar\KalaPezeshki\obj\Debug\KalaPezeshki.frmShortage.resources
 E:\C# Code\kalapezashki\mohandesi-narmafzar\mohandesi-narmafzar\KalaPezeshki\obj\Debug\KalaPezeshki.frmListPersenel.resources
 E:\C# Code\kalapezashki\mohandesi-narmafzar\mohandesi-narmafzar\KalaPezeshki\obj\Debug\KalaPezeshki.frmPersenel.resources
+E:\C# Code\kalapezashki\mohandesi-narmafzar\mohandesi-narmafzar\KalaPezeshki\obj\Debug\KalaPezeshki.frmBank.resources
+E:\C# Code\kalapezashki\mohandesi-narmafzar\mohandesi-narmafzar\KalaPezeshki\obj\Debug\KalaPezeshki.frmListBank.resources

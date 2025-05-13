@@ -90,5 +90,21 @@ namespace KalaPezeshki
         {
             new frmPersenel().ShowDialog();
         }
+
+        private void ribbonBar12_ItemClick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonItem1_Click(object sender, EventArgs e)
+        {
+            new frmBank().ShowDialog();
+        }
+
+        private void buttonItem4_Click(object sender, EventArgs e)
+        {
+            new frmListBank().ShowDialog();
+
+        }
     }
 }

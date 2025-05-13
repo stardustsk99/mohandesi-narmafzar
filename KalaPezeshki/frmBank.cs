@@ -8,12 +8,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace KalaPezeshki
 {
-    public partial class frmPersenel: Form
+    public partial class frmBank: Form
     {
-        public frmPersenel()
+        public frmBank()
         {
             InitializeComponent();
         }
@@ -21,35 +22,29 @@ namespace KalaPezeshki
 
         // تعریف شیء فرمان SQL برای اجرای دستورات
         SqlCommand cmd = new SqlCommand();
-        private void groupPanel2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnSave_Click(object sender, EventArgs e)
         {
             try
             {
                 cmd.Parameters.Clear();
                 cmd.Connection = con;
-                cmd.CommandText = "insert into Persenel(Name,Tel,Rool,Salary,Date,Tozih)values (@a,@b,@c,@d,@e,@f)";
-                cmd.Parameters.AddWithValue("@a", txtName.Text);
-                cmd.Parameters.AddWithValue("@b", txtTel.Text);
-                cmd.Parameters.AddWithValue("@c", txtRool.Text);
-                cmd.Parameters.AddWithValue("@d", txtSalary.Text);
-                cmd.Parameters.AddWithValue("@e", mskDate.Text);
-                cmd.Parameters.AddWithValue("@f", txtTozih.Text);
+                cmd.CommandText = "insert into Bank(NameAcct,Bank,AcctNum,Balance,Tozih)values (@a,@b,@c,@d,@e)";
+                cmd.Parameters.AddWithValue("@a", txtNameAcct.Text);
+                cmd.Parameters.AddWithValue("@b", txtBankName.Text);
+                cmd.Parameters.AddWithValue("@c", txtAcctNum.Text);
+                cmd.Parameters.AddWithValue("@d", txtBalance.Text);
+                cmd.Parameters.AddWithValue("@e", txtTozih.Text);
                 con.Open();
                 cmd.ExecuteNonQuery();
                 con.Close();
-                MessageBox.Show("پرسنل اضافه شد");
+                MessageBox.Show("حساب اضافه شد");
                 //-------------------------------
                 txtCode.Clear();
-                txtName.Clear();
-                txtTel.Clear();
-                txtRool.Clear();
-                txtSalary.Text = "";
-                txtTozih.Text = "";
+                txtNameAcct.Clear();
+                txtBankName.Clear();
+                txtAcctNum.Clear();
+                txtBalance.Clear();
+                txtTozih.Clear();
 
             }
             catch (Exception)
@@ -58,33 +53,25 @@ namespace KalaPezeshki
             }
         }
 
-        private void frmPersenel_Load(object sender, EventArgs e)
-        {
-
-            System.Globalization.PersianCalendar persianCalendar = new System.Globalization.PersianCalendar();
-            mskDate.Text = persianCalendar.GetYear(DateTime.Now).ToString() + persianCalendar.GetMonth(DateTime.Now).ToString("0#") + persianCalendar.GetDayOfMonth(DateTime.Now).ToString("0#");
-
-        }
-
         private void btnDelete_Click(object sender, EventArgs e)
         {
             try
             {
                 cmd.Parameters.Clear();
                 cmd.Connection = con;
-                cmd.CommandText = "Delete from Persenel where id=@N";
+                cmd.CommandText = "Delete from Bank where id=@N";
                 cmd.Parameters.AddWithValue("@N", txtCode.Text);
                 con.Open();
                 cmd.ExecuteNonQuery();
                 con.Close();
-                MessageBox.Show("پرسنل حذف شد");
+                MessageBox.Show("حساب حذف شد");
                 //-------------------------------
                 txtCode.Clear();
-                txtName.Clear();
-                txtTel.Clear();
-                txtRool.Clear();
-                txtSalary.Text = "";
-                txtTozih.Text = "";
+                txtNameAcct.Clear();
+                txtBankName.Clear();
+                txtAcctNum.Clear();
+                txtBalance.Clear();
+                txtTozih.Clear();
 
             }
             catch (Exception)
@@ -99,27 +86,25 @@ namespace KalaPezeshki
             {
                 cmd.Parameters.Clear();
                 cmd.Connection = con;
-                cmd.CommandText = "UPDATE Persenel SET Name=@a, Tel=@b, Rool=@c, Salary=@d, Date=@e, Tozih=@f WHERE Code=@id";
-                cmd.Parameters.AddWithValue("@a", txtName.Text);
-                cmd.Parameters.AddWithValue("@b", txtTel.Text);
-                cmd.Parameters.AddWithValue("@c", txtRool.Text);
-                cmd.Parameters.AddWithValue("@d", txtSalary.Text);
-                cmd.Parameters.AddWithValue("@e", mskDate.Text);
-                cmd.Parameters.AddWithValue("@f", txtTozih.Text);
-                cmd.Parameters.AddWithValue("@id", txtCode.Text);  
+                cmd.CommandText = "UPDATE Bank SET NameAcct=@a, Bank=@b, AcctNum=@c, Balance=@d,Tozih=@e WHERE id=" +txtCode.Text;
+                cmd.Parameters.AddWithValue("@a", txtNameAcct.Text);
+                cmd.Parameters.AddWithValue("@b", txtBankName.Text);
+                cmd.Parameters.AddWithValue("@c", txtAcctNum.Text);
+                cmd.Parameters.AddWithValue("@d", txtBalance.Text);
+                cmd.Parameters.AddWithValue("@e", txtTozih.Text); // کلید برای شناسایی رکورد
 
                 con.Open();
                 cmd.ExecuteNonQuery();
                 con.Close();
 
-                MessageBox.Show("پرسنل ویرایش شد");
+                MessageBox.Show("حساب ویرایش شد");
 
                 //-------------------------------
                 txtCode.Clear();
-                txtName.Clear();
-                txtTel.Clear();
-                txtRool.Clear();
-                txtSalary.Clear();
+                txtNameAcct.Clear();
+                txtBankName.Clear();
+                txtAcctNum.Clear();
+                txtBalance.Clear();
                 txtTozih.Clear();
             }
             catch (Exception)
@@ -134,18 +119,17 @@ namespace KalaPezeshki
             SqlDataReader dr;
             cmd.Parameters.Clear();
             cmd.Connection = con;
-            cmd.CommandText = "select * from Persenel where id=@N";
+            cmd.CommandText = "select * from Bank where id=@N";
             cmd.Parameters.AddWithValue("@N", txtCode.Text);
             con.Open();
             dr = cmd.ExecuteReader();
             if (dr.Read())
             {
                 txtCode.Text = dr["id"].ToString();
-                txtName.Text = dr["Name"].ToString();
-                txtTel.Text = dr["Tel"].ToString();
-                txtRool.Text = dr["Rool"].ToString();
-                txtSalary.Text = dr["Salary"].ToString();
-                mskDate.Text = dr["Date"].ToString();
+                txtNameAcct.Text = dr["NameAcct"].ToString();
+                txtBankName.Text = dr["Bank"].ToString();
+                txtAcctNum.Text = dr["AcctNum"].ToString();
+                txtBalance.Text = dr["Balance"].ToString();
                 txtTozih.Text = dr["Tozih"].ToString();
             }
             else
@@ -159,7 +143,7 @@ namespace KalaPezeshki
 
         private void btnList_Click(object sender, EventArgs e)
         {
-            new frmListPersenel().ShowDialog();
+            new frmListBank().ShowDialog();
         }
     }
 }
