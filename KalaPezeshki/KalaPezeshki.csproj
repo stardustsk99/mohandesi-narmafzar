@@ -169,11 +169,23 @@
     <Compile Include="frmListPersenel.Designer.cs">
       <DependentUpon>frmListPersenel.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmListSandoogh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListSandoogh.Designer.cs">
+      <DependentUpon>frmListSandoogh.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPersenel.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmPersenel.Designer.cs">
       <DependentUpon>frmPersenel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSandoogh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSandoogh.Designer.cs">
+      <DependentUpon>frmSandoogh.cs</DependentUpon>
     </Compile>
     <Compile Include="frmShortage.cs">
       <SubType>Form</SubType>
@@ -238,11 +250,17 @@
     <EmbeddedResource Include="frmListPersenel.resx">
       <DependentUpon>frmListPersenel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmListSandoogh.resx">
+      <DependentUpon>frmListSandoogh.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPersenel.resx">
       <DependentUpon>frmPersenel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSandoogh.resx">
+      <DependentUpon>frmSandoogh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmShortage.resx">
       <DependentUpon>frmShortage.cs</DependentUpon>

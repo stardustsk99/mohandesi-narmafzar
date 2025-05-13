@@ -18,9 +18,7 @@ namespace KalaPezeshki
         {
             InitializeComponent();
         }
-        SqlConnection con = new SqlConnection("Data source=HAMY\\SQLEXPRESS;initial catalog=medical goods;integrated security=true");
-
-        // تعریف شیء فرمان SQL برای اجرای دستورات
+        SqlConnection con = new SqlConnection("Data source=(local);initial catalog=KalaPezeshki;integrated security=true");
         SqlCommand cmd = new SqlCommand();
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -144,6 +142,11 @@ namespace KalaPezeshki
         private void btnList_Click(object sender, EventArgs e)
         {
             new frmListBank().ShowDialog();
+        }
+
+        private void frmBank_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

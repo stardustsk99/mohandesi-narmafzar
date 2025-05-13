@@ -106,5 +106,20 @@ namespace KalaPezeshki
             new frmListBank().ShowDialog();
 
         }
+
+        private void ribbonBar10_ItemClick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonItem5_Click(object sender, EventArgs e)
+        {
+            new frmSandoogh().ShowDialog();
+        }
+
+        private void buttonItem6_Click(object sender, EventArgs e)
+        {
+            new frmListSandoogh().ShowDialog();
+        }
     }
 }

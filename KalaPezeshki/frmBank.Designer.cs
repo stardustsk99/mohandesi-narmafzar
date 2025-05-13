@@ -369,6 +369,7 @@
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "تعریف حساب های بانکی";
+            this.Load += new System.EventHandler(this.frmBank_Load);
             this.groupPanel4.ResumeLayout(false);
             this.groupPanel2.ResumeLayout(false);
             this.groupPanel2.PerformLayout();
