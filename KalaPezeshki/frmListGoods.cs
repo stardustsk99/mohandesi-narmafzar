@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Stimulsoft.Report;
 
 namespace KalaPezeshki
 {
@@ -77,11 +78,10 @@ namespace KalaPezeshki
         }
         private void frmListGoods_Load(object sender, EventArgs e)
         {
-            Display();
             System.Globalization.PersianCalendar persianCalendar = new System.Globalization.PersianCalendar();
             mskEXP1.Text = persianCalendar.GetYear(DateTime.Now).ToString() + persianCalendar.GetMonth(DateTime.Now).ToString("0#") + persianCalendar.GetDayOfMonth(DateTime.Now).ToString("0#");
             mskEXP2.Text = persianCalendar.GetYear(DateTime.Now).ToString() + persianCalendar.GetMonth(DateTime.Now).ToString("0#") + persianCalendar.GetDayOfMonth(DateTime.Now).ToString("0#");
-
+            Display();
         }
 
         private void mskEXP1_TextChanged(object sender, EventArgs e)
@@ -149,6 +149,31 @@ namespace KalaPezeshki
             {
                 MessageBox.Show("مشکلی پیش آمده است");
             }
+        }
+
+        private void dgvGoods_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void mskEXP1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void mskEXP1_MaskChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            StiReport Report = new StiReport();
+            Report.Load("Report/rptEXP.mrt");
+            Report.Compile();
+            Report["EXP1"] = mskEXP1.Text;
+            Report["EXP2"] = mskEXP2.Text;
+            Report.ShowWithRibbonGUI();
         }
     }
 }

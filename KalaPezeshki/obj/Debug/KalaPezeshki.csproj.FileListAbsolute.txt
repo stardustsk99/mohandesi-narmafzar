@@ -143,3 +143,4 @@ E:\C# Code\kalapezashki\mohandesi-narmafzar\mohandesi-narmafzar\KalaPezeshki\bin
 E:\C# Code\kalapezashki\mohandesi-narmafzar\mohandesi-narmafzar\KalaPezeshki\bin\Debug\zh-Hant\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
 E:\C# Code\kalapezashki\mohandesi-narmafzar\mohandesi-narmafzar\KalaPezeshki\obj\Debug\KalaPezeshki.frmGoods.resources
 E:\C# Code\kalapezashki\mohandesi-narmafzar\mohandesi-narmafzar\KalaPezeshki\obj\Debug\KalaPezeshki.frmListGoods.resources
+E:\C# Code\kalapezashki\mohandesi-narmafzar\mohandesi-narmafzar\KalaPezeshki\obj\Debug\KalaPezeshki.frmShortage.resources

@@ -75,5 +75,10 @@ namespace KalaPezeshki
         {
             new frmListGoods().ShowDialog();
         }
+
+        private void btnshortage_Click(object sender, EventArgs e)
+        {
+            new frmShortage().ShowDialog();
+        }
     }
 }
