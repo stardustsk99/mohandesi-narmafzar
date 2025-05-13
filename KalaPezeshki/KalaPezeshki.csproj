@@ -151,6 +151,18 @@
     <Compile Include="frmListGroup.Designer.cs">
       <DependentUpon>frmListGroup.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmListPersenel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListPersenel.Designer.cs">
+      <DependentUpon>frmListPersenel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPersenel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPersenel.Designer.cs">
+      <DependentUpon>frmPersenel.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmShortage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -205,8 +217,14 @@
     <EmbeddedResource Include="frmListGoods.resx">
       <DependentUpon>frmListGoods.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmListPersenel.resx">
+      <DependentUpon>frmListPersenel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPersenel.resx">
+      <DependentUpon>frmPersenel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmShortage.resx">
       <DependentUpon>frmShortage.cs</DependentUpon>

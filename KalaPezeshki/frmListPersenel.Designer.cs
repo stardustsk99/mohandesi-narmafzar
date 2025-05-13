@@ -1,6 +1,6 @@
 ﻿namespace KalaPezeshki
 {
-    partial class frmListCompany
+    partial class frmListPersenel
     {
         /// <summary>
         /// Required designer variable.
@@ -28,20 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmListCompany));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmListPersenel));
+            this.dgvCompany = new System.Windows.Forms.DataGridView();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.groupPanel4 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.btnDelete = new DevComponents.DotNetBar.ButtonX();
             this.groupPanel3 = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.dgvCompany = new System.Windows.Forms.DataGridView();
             this.groupPanel2 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.txtName = new System.Windows.Forms.TextBox();
+            this.txtRool = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCompany)).BeginInit();
             this.groupPanel1.SuspendLayout();
             this.groupPanel4.SuspendLayout();
             this.groupPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCompany)).BeginInit();
             this.groupPanel2.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // dgvCompany
+            // 
+            this.dgvCompany.BackgroundColor = System.Drawing.Color.White;
+            this.dgvCompany.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCompany.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvCompany.Location = new System.Drawing.Point(0, 0);
+            this.dgvCompany.Name = "dgvCompany";
+            this.dgvCompany.RowHeadersWidth = 51;
+            this.dgvCompany.RowTemplate.Height = 24;
+            this.dgvCompany.Size = new System.Drawing.Size(1105, 387);
+            this.dgvCompany.TabIndex = 0;
             // 
             // groupPanel1
             // 
@@ -55,7 +68,7 @@
             this.groupPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupPanel1.Location = new System.Drawing.Point(0, 0);
             this.groupPanel1.Name = "groupPanel1";
-            this.groupPanel1.Size = new System.Drawing.Size(1135, 571);
+            this.groupPanel1.Size = new System.Drawing.Size(1132, 573);
             // 
             // 
             // 
@@ -84,8 +97,7 @@
             // 
             // 
             this.groupPanel1.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.groupPanel1.TabIndex = 0;
-            this.groupPanel1.Click += new System.EventHandler(this.groupPanel1_Click);
+            this.groupPanel1.TabIndex = 1;
             // 
             // groupPanel4
             // 
@@ -126,7 +138,6 @@
             // 
             this.groupPanel4.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.groupPanel4.TabIndex = 2;
-            this.groupPanel4.Click += new System.EventHandler(this.groupPanel4_Click);
             // 
             // btnDelete
             // 
@@ -138,7 +149,7 @@
             this.btnDelete.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 8, 8, 2);
             this.btnDelete.Size = new System.Drawing.Size(163, 74);
             this.btnDelete.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnDelete.TabIndex = 2;
+            this.btnDelete.TabIndex = 0;
             this.btnDelete.Text = "حذف";
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
@@ -181,26 +192,13 @@
             // 
             this.groupPanel3.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.groupPanel3.TabIndex = 1;
-            this.groupPanel3.Click += new System.EventHandler(this.groupPanel3_Click);
-            // 
-            // dgvCompany
-            // 
-            this.dgvCompany.BackgroundColor = System.Drawing.Color.White;
-            this.dgvCompany.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCompany.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvCompany.Location = new System.Drawing.Point(0, 0);
-            this.dgvCompany.Name = "dgvCompany";
-            this.dgvCompany.RowHeadersWidth = 51;
-            this.dgvCompany.RowTemplate.Height = 24;
-            this.dgvCompany.Size = new System.Drawing.Size(1105, 387);
-            this.dgvCompany.TabIndex = 0;
-            this.dgvCompany.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCompany_CellContentClick);
             // 
             // groupPanel2
             // 
             this.groupPanel2.BackColor = System.Drawing.Color.Transparent;
             this.groupPanel2.CanvasColor = System.Drawing.SystemColors.Control;
             this.groupPanel2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.groupPanel2.Controls.Add(this.txtRool);
             this.groupPanel2.Controls.Add(this.txtName);
             this.groupPanel2.DisabledBackColor = System.Drawing.Color.Empty;
             this.groupPanel2.Location = new System.Drawing.Point(9, 10);
@@ -234,8 +232,7 @@
             // 
             // 
             this.groupPanel2.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.groupPanel2.TabIndex = 1;
-            this.groupPanel2.Click += new System.EventHandler(this.groupPanel2_Click);
+            this.groupPanel2.TabIndex = 0;
             // 
             // txtName
             // 
@@ -243,26 +240,34 @@
             this.txtName.Location = new System.Drawing.Point(754, 12);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(336, 26);
-            this.txtName.TabIndex = 2;
+            this.txtName.TabIndex = 0;
             this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
-            // frmListCompany
+            // txtRool
+            // 
+            this.txtRool.Location = new System.Drawing.Point(17, 12);
+            this.txtRool.Name = "txtRool";
+            this.txtRool.Size = new System.Drawing.Size(299, 26);
+            this.txtRool.TabIndex = 1;
+            this.txtRool.TextChanged += new System.EventHandler(this.txtRool_TextChanged);
+            // 
+            // frmListPersenel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1135, 571);
+            this.ClientSize = new System.Drawing.Size(1132, 573);
             this.Controls.Add(this.groupPanel1);
             this.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.MaximizeBox = false;
-            this.Name = "frmListCompany";
+            this.Name = "frmListPersenel";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "لیست شرکت های فروشنده کالا";
-            this.Load += new System.EventHandler(this.frmListCompany_Load);
+            this.Text = "لیست پرسنل";
+            this.Load += new System.EventHandler(this.frmListPersenel_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCompany)).EndInit();
             this.groupPanel1.ResumeLayout(false);
             this.groupPanel4.ResumeLayout(false);
             this.groupPanel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCompany)).EndInit();
             this.groupPanel2.ResumeLayout(false);
             this.groupPanel2.PerformLayout();
             this.ResumeLayout(false);
@@ -271,12 +276,13 @@
 
         #endregion
 
+        private System.Windows.Forms.DataGridView dgvCompany;
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel1;
-        private DevComponents.DotNetBar.Controls.GroupPanel groupPanel3;
-        private DevComponents.DotNetBar.Controls.GroupPanel groupPanel2;
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel4;
         private DevComponents.DotNetBar.ButtonX btnDelete;
-        private System.Windows.Forms.DataGridView dgvCompany;
+        private DevComponents.DotNetBar.Controls.GroupPanel groupPanel3;
+        private DevComponents.DotNetBar.Controls.GroupPanel groupPanel2;
         private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.TextBox txtRool;
     }
 }

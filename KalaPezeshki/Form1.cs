@@ -80,5 +80,15 @@ namespace KalaPezeshki
         {
             new frmShortage().ShowDialog();
         }
+
+        private void ribbonBar4_ItemClick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPersenel_Click(object sender, EventArgs e)
+        {
+            new frmPersenel().ShowDialog();
+        }
     }
 }
