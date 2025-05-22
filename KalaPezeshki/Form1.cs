@@ -121,5 +121,25 @@ namespace KalaPezeshki
         {
             new frmListSandoogh().ShowDialog();
         }
+
+        private void buttonItem7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ribbonTabItem5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ribbonPanel4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ribbonBar20_ItemClick(object sender, EventArgs e)
+        {
+            new frmKharid().ShowDialog();
+        }
     }
 }

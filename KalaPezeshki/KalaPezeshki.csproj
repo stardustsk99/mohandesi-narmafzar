@@ -121,6 +121,12 @@
     <Compile Include="frmBank.Designer.cs">
       <DependentUpon>frmBank.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmChecKD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChecKD.Designer.cs">
+      <DependentUpon>frmChecKD.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCompany.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,6 +144,12 @@
     </Compile>
     <Compile Include="frmGroup.Designer.cs">
       <DependentUpon>frmGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmKharid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmKharid.Designer.cs">
+      <DependentUpon>frmKharid.cs</DependentUpon>
     </Compile>
     <Compile Include="frmListBank.cs">
       <SubType>Form</SubType>
@@ -226,6 +238,9 @@
     <EmbeddedResource Include="frmBank.resx">
       <DependentUpon>frmBank.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmChecKD.resx">
+      <DependentUpon>frmChecKD.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCompany.resx">
       <DependentUpon>frmCompany.cs</DependentUpon>
     </EmbeddedResource>
@@ -237,6 +252,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmInfo.resx">
       <DependentUpon>frmInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmKharid.resx">
+      <DependentUpon>frmKharid.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmListBank.resx">
       <DependentUpon>frmListBank.cs</DependentUpon>

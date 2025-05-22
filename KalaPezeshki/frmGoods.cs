@@ -18,7 +18,7 @@ namespace KalaPezeshki
             InitializeComponent();
         }
         // تعریف اتصال به پایگاه داده SQL Server
-        SqlConnection con = new SqlConnection("Data source=HAMY\\SQLEXPRESS;initial catalog=medical goods;integrated security=true");
+        SqlConnection con = new SqlConnection("Data source=(local);initial catalog=KalaPezeshki;integrated security=true");
 
         // تعریف شیء فرمان SQL برای اجرای دستورات
         SqlCommand cmd = new SqlCommand();
