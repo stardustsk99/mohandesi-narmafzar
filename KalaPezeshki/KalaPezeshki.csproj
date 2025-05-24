@@ -175,6 +175,12 @@
     <Compile Include="frmListGroup.Designer.cs">
       <DependentUpon>frmListGroup.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmListKharid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListKharid.Designer.cs">
+      <DependentUpon>frmListKharid.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmListPersenel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -264,6 +270,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmListGoods.resx">
       <DependentUpon>frmListGoods.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListKharid.resx">
+      <DependentUpon>frmListKharid.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmListPersenel.resx">
       <DependentUpon>frmListPersenel.cs</DependentUpon>

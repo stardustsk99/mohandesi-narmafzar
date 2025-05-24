@@ -209,3 +209,4 @@ E:\KalaPezeshki\mohandesi-narmafzar\KalaPezeshki\obj\Debug\KalaPezeshki.frmListS
 E:\KalaPezeshki\mohandesi-narmafzar\KalaPezeshki\obj\Debug\KalaPezeshki.frmSandoogh.resources
 E:\KalaPezeshki\mohandesi-narmafzar\KalaPezeshki\obj\Debug\KalaPezeshki.frmChecKD.resources
 E:\KalaPezeshki\mohandesi-narmafzar\KalaPezeshki\obj\Debug\KalaPezeshki.frmKharid.resources
+E:\KalaPezeshki\mohandesi-narmafzar\KalaPezeshki\obj\Debug\KalaPezeshki.frmListKharid.resources

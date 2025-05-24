@@ -141,5 +141,10 @@ namespace KalaPezeshki
         {
             new frmKharid().ShowDialog();
         }
+
+        private void btnListKharid_Click(object sender, EventArgs e)
+        {
+            new frmListKharid().ShowDialog();
+        }
     }
 }
