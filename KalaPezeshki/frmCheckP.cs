@@ -5,22 +5,24 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
 namespace KalaPezeshki
-{  
-    public partial class frmCheckD : Form
+{
+    public partial class frmCheckP : Form
     {
-        public frmCheckD()
+        public frmCheckP()
         {
             InitializeComponent();
         }
+
         SqlConnection con = new SqlConnection("Data source=(local);initial catalog=KalaPezeshki;integrated security=true");
         SqlCommand cmd = new SqlCommand();
-        private void frmChckD_Load(object sender, EventArgs e)
-        {
 
+        private void frmCheckP_Load(object sender, EventArgs e)
+        {
             System.Globalization.PersianCalendar p = new System.Globalization.PersianCalendar();
             mskSarResid.Text = p.GetYear(DateTime.Now).ToString() + p.GetMonth(DateTime.Now).ToString("0#") + p.GetDayOfMonth(DateTime.Now).ToString("0#");
             mskTarikh.Text = p.GetYear(DateTime.Now).ToString() + p.GetMonth(DateTime.Now).ToString("0#") + p.GetDayOfMonth(DateTime.Now).ToString("0#");
@@ -32,7 +34,7 @@ namespace KalaPezeshki
             {
                 cmd.Parameters.Clear();
                 cmd.Connection = con;
-                cmd.CommandText = "insert into CheckD(ids,AcctNum,NameAcct,NameM,Balance,Tarikh,SarResid,Vaziyat,Tozih)values(@a,@b,@c,@d,@e,@f,@g,@h,@i)";
+                cmd.CommandText = "insert into CheckP(ids,AcctNum,NameAcct,NameM,Balance,Tarikh,SarResid,Vaziyat,Tozih)values(@a,@b,@c,@d,@e,@f,@g,@h,@i)";
                 cmd.Parameters.AddWithValue("@a", txtCode.Text);
                 cmd.Parameters.AddWithValue("@b", txtShH.Text);
                 cmd.Parameters.AddWithValue("@c", txtNameH.Text);
@@ -45,7 +47,7 @@ namespace KalaPezeshki
                 con.Open();
                 cmd.ExecuteNonQuery();
                 con.Close();
-                MessageBox.Show("چک دریافتی ثبت شد");
+                MessageBox.Show("چک پرداختی ثبت شد");
                 //*****************
                 txtCode.Text = "";
                 txtShH.Text = "";
@@ -66,11 +68,11 @@ namespace KalaPezeshki
             {
                 cmd.Parameters.Clear();
                 cmd.Connection = con;
-                cmd.CommandText = "Delete from CheckD where ids=" + txtCode.Text;
+                cmd.CommandText = "Delete from CheckP where ids=" + txtCode.Text;
                 con.Open();
                 cmd.ExecuteNonQuery();
                 con.Close();
-                MessageBox.Show("چک دریافتی حذف شد");
+                MessageBox.Show("چک پرداختی حذف شد");
             }
             catch (Exception)
             {
@@ -85,11 +87,11 @@ namespace KalaPezeshki
             {
                 cmd.Parameters.Clear();
                 cmd.Connection = con;
-                cmd.CommandText = "Update CheckD set ids='" + txtCode.Text + "',AcctNum='" + txtShH.Text + "',NameAcct='" + txtNameH.Text + "',NameM='" + txtNameM.Text + "',Balance='" + txtMablagh.Text + "',Tarikh='" + mskTarikh.Text + "',SarResid='" + mskSarResid.Text + "',Vaziyat='" + cmbVaziyat.Text + "',Tozih='" + txtTozih.Text + "' where ids=" + txtCode.Text;
+                cmd.CommandText = "Update CheckP set ids='" + txtCode.Text + "',AcctNum='" + txtShH.Text + "',NameAcct='" + txtNameH.Text + "',NameM='" + txtNameM.Text + "',Balance='" + txtMablagh.Text + "',Tarikh='" + mskTarikh.Text + "',SarResid='" + mskSarResid.Text + "',Vaziyat='" + cmbVaziyat.Text + "',Tozih='" + txtTozih.Text + "' where ids=" + txtCode.Text;
                 con.Open();
                 cmd.ExecuteNonQuery();
                 con.Close();
-                MessageBox.Show("چک دریافتی ویرایش شد");
+                MessageBox.Show("چک پرداختی ویرایش شد");
                 //*****************
                 txtCode.Text = "";
                 txtShH.Text = "";
@@ -103,12 +105,14 @@ namespace KalaPezeshki
                 MessageBox.Show("مشکلی پیش آمده است");
             }
         }
-private void btnS_Click(object sender, EventArgs e)
+
+        private void btnS_Click(object sender, EventArgs e)
         {
+
             SqlDataReader dr;
             cmd.Parameters.Clear();
             cmd.Connection = con;
-            cmd.CommandText = "select * from CheckD where IdS=@N";
+            cmd.CommandText = "select * from CheckP where IdS=@N";
             cmd.Parameters.AddWithValue("@N", txtCode.Text);
             con.Open();
             dr = cmd.ExecuteReader();
@@ -135,6 +139,7 @@ private void btnS_Click(object sender, EventArgs e)
 
         private void buttonX1_Click(object sender, EventArgs e)
         {
+
             SqlDataReader dr;
             cmd.Parameters.Clear();
             cmd.Connection = con;
@@ -158,12 +163,7 @@ private void btnS_Click(object sender, EventArgs e)
 
         private void btnList_Click(object sender, EventArgs e)
         {
-            new frmListCheckD().ShowDialog();
-        }
-
-        private void mskTarikh_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-
+            new frmCheckP().ShowDialog();
         }
     }
-    }
+}

@@ -1,6 +1,6 @@
 ﻿namespace KalaPezeshki
 {
-    partial class frmListCheckD
+    partial class frmListCheckP
     {
         /// <summary>
         /// Required designer variable.
@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmListCheckD));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmListCheckP));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.groupPanel4 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.btnVosol = new DevComponents.DotNetBar.ButtonX();
             this.btnPrint = new DevComponents.DotNetBar.ButtonX();
             this.btnDelete = new DevComponents.DotNetBar.ButtonX();
             this.groupPanel3 = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.dgvCheckD = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.dgvCheckP = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.groupPanel2 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.mskSarResid2 = new DevComponents.DotNetBar.Controls.MaskedTextBoxAdv();
             this.label1 = new System.Windows.Forms.Label();
@@ -45,7 +45,7 @@
             this.groupPanel1.SuspendLayout();
             this.groupPanel4.SuspendLayout();
             this.groupPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCheckD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCheckP)).BeginInit();
             this.groupPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,7 +61,7 @@
             this.groupPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupPanel1.Location = new System.Drawing.Point(0, 0);
             this.groupPanel1.Name = "groupPanel1";
-            this.groupPanel1.Size = new System.Drawing.Size(901, 382);
+            this.groupPanel1.Size = new System.Drawing.Size(902, 370);
             // 
             // 
             // 
@@ -90,7 +90,7 @@
             // 
             // 
             this.groupPanel1.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.groupPanel1.TabIndex = 1;
+            this.groupPanel1.TabIndex = 2;
             // 
             // groupPanel4
             // 
@@ -181,7 +181,7 @@
             this.groupPanel3.BackColor = System.Drawing.Color.Transparent;
             this.groupPanel3.CanvasColor = System.Drawing.SystemColors.Control;
             this.groupPanel3.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            this.groupPanel3.Controls.Add(this.dgvCheckD);
+            this.groupPanel3.Controls.Add(this.dgvCheckP);
             this.groupPanel3.DisabledBackColor = System.Drawing.Color.Empty;
             this.groupPanel3.Location = new System.Drawing.Point(3, 41);
             this.groupPanel3.Name = "groupPanel3";
@@ -216,26 +216,25 @@
             this.groupPanel3.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.groupPanel3.TabIndex = 2;
             // 
-            // dgvCheckD
+            // dgvCheckP
             // 
-            this.dgvCheckD.BackgroundColor = System.Drawing.Color.White;
-            this.dgvCheckD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvCheckD.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvCheckD.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvCheckD.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
-            this.dgvCheckD.Location = new System.Drawing.Point(0, 0);
-            this.dgvCheckD.Name = "dgvCheckD";
-            this.dgvCheckD.RowHeadersWidth = 51;
-            this.dgvCheckD.Size = new System.Drawing.Size(864, 276);
-            this.dgvCheckD.TabIndex = 1;
-            this.dgvCheckD.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCheckD_CellContentClick);
+            this.dgvCheckP.BackgroundColor = System.Drawing.Color.White;
+            this.dgvCheckP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCheckP.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvCheckP.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvCheckP.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
+            this.dgvCheckP.Location = new System.Drawing.Point(0, 0);
+            this.dgvCheckP.Name = "dgvCheckP";
+            this.dgvCheckP.RowHeadersWidth = 51;
+            this.dgvCheckP.Size = new System.Drawing.Size(864, 276);
+            this.dgvCheckP.TabIndex = 1;
             // 
             // groupPanel2
             // 
@@ -295,7 +294,6 @@
             this.mskSarResid2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.mskSarResid2.TabIndex = 10;
             this.mskSarResid2.Text = "";
-            this.mskSarResid2.TextChanged += new System.EventHandler(this.mskSarResid2_TextChanged);
             // 
             // label1
             // 
@@ -322,7 +320,6 @@
             this.mskSarResid1.TabIndex = 10;
             this.mskSarResid1.Text = "";
             this.mskSarResid1.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mskSarResid1_MaskInputRejected);
-            this.mskSarResid1.TextChanged += new System.EventHandler(this.mskSarResid1_TextChanged);
             // 
             // label7
             // 
@@ -333,23 +330,23 @@
             this.label7.TabIndex = 9;
             this.label7.Text = "سررسید از";
             // 
-            // frmListCheckD
+            // frmListCheckP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(901, 382);
+            this.ClientSize = new System.Drawing.Size(902, 370);
             this.Controls.Add(this.groupPanel1);
             this.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.MaximizeBox = false;
-            this.Name = "frmListCheckD";
+            this.Name = "frmListCheckP";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "گزارش لیست چک های دریافتی";
-            this.Load += new System.EventHandler(this.frmListCheckD_Load);
+            this.Text = "گزارش لیست چک های پرداختی";
+            this.Load += new System.EventHandler(this.frmListCheckP_Load);
             this.groupPanel1.ResumeLayout(false);
             this.groupPanel4.ResumeLayout(false);
             this.groupPanel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCheckD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCheckP)).EndInit();
             this.groupPanel2.ResumeLayout(false);
             this.groupPanel2.PerformLayout();
             this.ResumeLayout(false);
@@ -364,7 +361,7 @@
         private DevComponents.DotNetBar.ButtonX btnPrint;
         private DevComponents.DotNetBar.ButtonX btnDelete;
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel3;
-        private DevComponents.DotNetBar.Controls.DataGridViewX dgvCheckD;
+        private DevComponents.DotNetBar.Controls.DataGridViewX dgvCheckP;
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel2;
         private DevComponents.DotNetBar.Controls.MaskedTextBoxAdv mskSarResid2;
         private System.Windows.Forms.Label label1;

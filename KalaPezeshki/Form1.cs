@@ -124,7 +124,7 @@ namespace KalaPezeshki
 
         private void buttonItem7_Click(object sender, EventArgs e)
         {
-
+            new frmCheckD().ShowDialog();
         }
 
         private void ribbonTabItem5_Click(object sender, EventArgs e)
@@ -145,6 +145,21 @@ namespace KalaPezeshki
         private void btnListKharid_Click(object sender, EventArgs e)
         {
             new frmListKharid().ShowDialog();
+        }
+
+        private void btnListCheckD_Click(object sender, EventArgs e)
+        {
+            new frmListCheckD().ShowDialog();
+        }
+
+        private void buttonItem12_Click(object sender, EventArgs e)
+        {
+            new frmCheckP().ShowDialog();
+        }
+
+        private void btnCheckP_Click(object sender, EventArgs e)
+        {
+            new frmCheckP().ShowDialog();
         }
     }
 }

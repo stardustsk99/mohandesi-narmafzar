@@ -18,10 +18,9 @@ namespace KalaPezeshki
         {
             InitializeComponent();
         }
-        SqlConnection con = new SqlConnection("Data source=HAMY\\SQLEXPRESS;initial catalog=medical goods;integrated security=true");
-
-        // تعریف شیء فرمان SQL برای اجرای دستورات
+        SqlConnection con = new SqlConnection("Data source=(local);initial catalog=KalaPezeshki;integrated security=true");
         SqlCommand cmd = new SqlCommand();
+
         void Display()
         {
             DataSet ds = new DataSet(); // مجموعه داده‌ها برای ذخیره نتیجه

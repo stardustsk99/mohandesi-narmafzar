@@ -1,14 +1,14 @@
-﻿using Stimulsoft.Report;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Stimulsoft.Report;
+using System.Data.SqlClient;
 
 namespace KalaPezeshki
 {
@@ -44,6 +44,7 @@ namespace KalaPezeshki
             dgvCheckD.Columns[3].Width = 150;
             dgvCheckD.Columns[4].Width = 150;
         }
+
         private void frmListCheckD_Load(object sender, EventArgs e)
         {
             System.Globalization.PersianCalendar p = new System.Globalization.PersianCalendar();
@@ -52,24 +53,23 @@ namespace KalaPezeshki
             Display();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void mskSarResid1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void mskSarResid1_TextChanged(object sender, EventArgs e)
+        {
+            Display();
+        }
+
+        private void mskSarResid2_TextChanged(object sender, EventArgs e)
         {
             Display();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-
             try
             {
                 int x = Convert.ToInt32(dgvCheckD.SelectedCells[0].Value);
@@ -102,17 +102,16 @@ namespace KalaPezeshki
 
         private void btnVosol_Click(object sender, EventArgs e)
         {
-
             string str;
             int str1;
             con.Open();
-            SqlCommand sqlcmd = new SqlCommand("select Mablagh from hesab where ShH='" + Convert.ToInt32(dgvCheckD.SelectedCells[1].Value) + "'", con);
+            SqlCommand sqlcmd = new SqlCommand("select Balance from Bank where AcctNum='" + Convert.ToInt32(dgvCheckD.SelectedCells[1].Value) + "'", con);
             str = Convert.ToString((int)sqlcmd.ExecuteScalar());//مبلغ حساب
             str1 = Convert.ToInt32(dgvCheckD.SelectedCells[4].Value);//مبلغ چک
             int sum = Int32.Parse(str) + str1;//مبلغ نهایی حساب
             //**********************************ویرایش موجودی حساب
-            string UpdateMablagh = "Update Hesab set Mablagh='" + sum + "' where ShH='" + Convert.ToInt32(dgvCheckD.SelectedCells[1].Value) + "'";
-            SqlCommand com = new SqlCommand(UpdateMablagh, con);
+            string UpdateBalance = "Update Bank set Balance='" + sum + "' where AcctNum='" + Convert.ToInt32(dgvCheckD.SelectedCells[1].Value) + "'";
+            SqlCommand com = new SqlCommand(UpdateBalance, con);
             com.ExecuteNonQuery();
             //**********************************ویرایش وضعیت چک
             string UpdateVaziyat = "Update CheckD set Vaziyat='" + "وصول شده" + "' where ids='" + Convert.ToInt32(dgvCheckD.SelectedCells[0].Value) + "'";
@@ -122,11 +121,12 @@ namespace KalaPezeshki
             MessageBox.Show("وصول چک انجام شد و مبلغ به حساب واریز شد");
             con.Close();
             Display();
+
         }
 
-        private void mskSarResid2_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        private void dgvCheckD_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            Display();
+
         }
     }
 }

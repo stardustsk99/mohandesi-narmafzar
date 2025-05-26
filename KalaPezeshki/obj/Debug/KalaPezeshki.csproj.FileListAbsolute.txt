@@ -210,3 +210,7 @@ E:\KalaPezeshki\mohandesi-narmafzar\KalaPezeshki\obj\Debug\KalaPezeshki.frmSando
 E:\KalaPezeshki\mohandesi-narmafzar\KalaPezeshki\obj\Debug\KalaPezeshki.frmChecKD.resources
 E:\KalaPezeshki\mohandesi-narmafzar\KalaPezeshki\obj\Debug\KalaPezeshki.frmKharid.resources
 E:\KalaPezeshki\mohandesi-narmafzar\KalaPezeshki\obj\Debug\KalaPezeshki.frmListKharid.resources
+E:\KalaPezeshki\mohandesi-narmafzar\KalaPezeshki\obj\Debug\KalaPezeshki.frmFroosh.resources
+E:\KalaPezeshki\mohandesi-narmafzar\KalaPezeshki\obj\Debug\KalaPezeshki.frmListCheckD.resources
+E:\KalaPezeshki\mohandesi-narmafzar\KalaPezeshki\obj\Debug\KalaPezeshki.frmCheckP.resources
+E:\KalaPezeshki\mohandesi-narmafzar\KalaPezeshki\obj\Debug\KalaPezeshki.frmListCheckP.resources

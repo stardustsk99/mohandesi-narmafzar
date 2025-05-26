@@ -121,17 +121,29 @@
     <Compile Include="frmBank.Designer.cs">
       <DependentUpon>frmBank.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmChecKD.cs">
+    <Compile Include="frmCheckD.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmChecKD.Designer.cs">
-      <DependentUpon>frmChecKD.cs</DependentUpon>
+    <Compile Include="frmCheckD.Designer.cs">
+      <DependentUpon>frmCheckD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCheckP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCheckP.Designer.cs">
+      <DependentUpon>frmCheckP.cs</DependentUpon>
     </Compile>
     <Compile Include="frmCompany.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmCompany.Designer.cs">
       <DependentUpon>frmCompany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFroosh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFroosh.Designer.cs">
+      <DependentUpon>frmFroosh.cs</DependentUpon>
     </Compile>
     <Compile Include="frmGoods.cs">
       <SubType>Form</SubType>
@@ -156,6 +168,18 @@
     </Compile>
     <Compile Include="frmListBank.Designer.cs">
       <DependentUpon>frmListBank.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmListCheckD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListCheckD.Designer.cs">
+      <DependentUpon>frmListCheckD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmListCheckP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListCheckP.Designer.cs">
+      <DependentUpon>frmListCheckP.cs</DependentUpon>
     </Compile>
     <Compile Include="frmListCompany.cs">
       <SubType>Form</SubType>
@@ -244,11 +268,17 @@
     <EmbeddedResource Include="frmBank.resx">
       <DependentUpon>frmBank.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmChecKD.resx">
-      <DependentUpon>frmChecKD.cs</DependentUpon>
+    <EmbeddedResource Include="frmCheckD.resx">
+      <DependentUpon>frmCheckD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCheckP.resx">
+      <DependentUpon>frmCheckP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCompany.resx">
       <DependentUpon>frmCompany.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFroosh.resx">
+      <DependentUpon>frmFroosh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmGoods.resx">
       <DependentUpon>frmGoods.cs</DependentUpon>
@@ -264,6 +294,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmListBank.resx">
       <DependentUpon>frmListBank.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListCheckD.resx">
+      <DependentUpon>frmListCheckD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListCheckP.resx">
+      <DependentUpon>frmListCheckP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmListCompany.resx">
       <DependentUpon>frmListCompany.cs</DependentUpon>

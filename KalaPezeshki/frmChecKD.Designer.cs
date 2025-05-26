@@ -1,6 +1,6 @@
 ﻿namespace KalaPezeshki
 {
-    partial class frmChecKD
+    partial class frmCheckD
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChecKD));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCheckD));
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.groupPanel4 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.btnEdit = new DevComponents.DotNetBar.ButtonX();
@@ -75,7 +75,7 @@
             this.groupPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupPanel1.Location = new System.Drawing.Point(0, 0);
             this.groupPanel1.Name = "groupPanel1";
-            this.groupPanel1.Size = new System.Drawing.Size(406, 316);
+            this.groupPanel1.Size = new System.Drawing.Size(723, 564);
             // 
             // 
             // 
@@ -116,9 +116,9 @@
             this.groupPanel4.Controls.Add(this.btnDelete);
             this.groupPanel4.Controls.Add(this.btnSave);
             this.groupPanel4.DisabledBackColor = System.Drawing.Color.Empty;
-            this.groupPanel4.Location = new System.Drawing.Point(1, 263);
+            this.groupPanel4.Location = new System.Drawing.Point(7, 290);
             this.groupPanel4.Name = "groupPanel4";
-            this.groupPanel4.Size = new System.Drawing.Size(394, 43);
+            this.groupPanel4.Size = new System.Drawing.Size(416, 63);
             // 
             // 
             // 
@@ -147,7 +147,7 @@
             // 
             // 
             this.groupPanel4.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.groupPanel4.TabIndex = 1;
+            this.groupPanel4.TabIndex = 3;
             // 
             // btnEdit
             // 
@@ -161,6 +161,7 @@
             this.btnEdit.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnEdit.TabIndex = 2;
             this.btnEdit.Text = "ویرایش";
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnList
             // 
@@ -174,6 +175,7 @@
             this.btnList.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnList.TabIndex = 3;
             this.btnList.Text = "لیست";
+            this.btnList.Click += new System.EventHandler(this.btnList_Click);
             // 
             // btnDelete
             // 
@@ -187,6 +189,7 @@
             this.btnDelete.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnDelete.TabIndex = 1;
             this.btnDelete.Text = "حذف";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnSave
             // 
@@ -200,6 +203,7 @@
             this.btnSave.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnSave.TabIndex = 0;
             this.btnSave.Text = "ثبت";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // groupPanel2
             // 
@@ -227,9 +231,9 @@
             this.groupPanel2.Controls.Add(this.txtShH);
             this.groupPanel2.Controls.Add(this.txtCode);
             this.groupPanel2.DisabledBackColor = System.Drawing.Color.Empty;
-            this.groupPanel2.Location = new System.Drawing.Point(3, 1);
+            this.groupPanel2.Location = new System.Drawing.Point(9, 3);
             this.groupPanel2.Name = "groupPanel2";
-            this.groupPanel2.Size = new System.Drawing.Size(393, 260);
+            this.groupPanel2.Size = new System.Drawing.Size(408, 285);
             // 
             // 
             // 
@@ -258,7 +262,7 @@
             // 
             // 
             this.groupPanel2.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.groupPanel2.TabIndex = 0;
+            this.groupPanel2.TabIndex = 2;
             // 
             // cmbVaziyat
             // 
@@ -298,6 +302,7 @@
             this.buttonX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.buttonX1.TabIndex = 3;
             this.buttonX1.Text = "+";
+            this.buttonX1.Click += new System.EventHandler(this.buttonX1_Click);
             // 
             // btnS
             // 
@@ -309,6 +314,7 @@
             this.btnS.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnS.TabIndex = 1;
             this.btnS.Text = "+";
+            this.btnS.Click += new System.EventHandler(this.btnS_Click);
             // 
             // mskSarResid
             // 
@@ -341,6 +347,7 @@
             this.mskTarikh.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.mskTarikh.TabIndex = 7;
             this.mskTarikh.Text = "";
+            this.mskTarikh.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mskTarikh_MaskInputRejected);
             // 
             // label8
             // 
@@ -503,18 +510,19 @@
             this.txtCode.Size = new System.Drawing.Size(166, 26);
             this.txtCode.TabIndex = 0;
             // 
-            // frmChecKD
+            // frmCheckD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(406, 316);
+            this.ClientSize = new System.Drawing.Size(723, 564);
             this.Controls.Add(this.groupPanel1);
             this.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "frmChecKD";
+            this.Name = "frmCheckD";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = " ";
+            this.Text = "تعریف چک های دریافتی";
+            this.Load += new System.EventHandler(this.frmChckD_Load);
             this.groupPanel1.ResumeLayout(false);
             this.groupPanel4.ResumeLayout(false);
             this.groupPanel2.ResumeLayout(false);
@@ -549,9 +557,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private DevComponents.DotNetBar.Controls.TextBoxX txtTozih;
-        private DevComponents.DotNetBar.Controls.TextBoxX txtMablagh;
-        private DevComponents.DotNetBar.Controls.TextBoxX txtNameM;
+        public DevComponents.DotNetBar.Controls.TextBoxX txtTozih;
+        public DevComponents.DotNetBar.Controls.TextBoxX txtMablagh;
+        public DevComponents.DotNetBar.Controls.TextBoxX txtNameM;
         private DevComponents.DotNetBar.Controls.TextBoxX txtNameH;
         private DevComponents.DotNetBar.Controls.TextBoxX txtShH;
         private DevComponents.DotNetBar.Controls.TextBoxX txtCode;
