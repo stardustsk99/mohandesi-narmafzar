@@ -20,10 +20,37 @@ namespace KalaPezeshki
         }
         SqlConnection con = new SqlConnection("Data source=(local);initial catalog=KalaPezeshki;integrated security=true");
         SqlCommand cmd = new SqlCommand();
+        String NameKP;
+        String Tel;
+        String Address;
+
         private void frmFroosh_Load(object sender, EventArgs e)
         {
-            System.Globalization.PersianCalendar p = new System.Globalization.PersianCalendar();
-            mskTarikh.Text = p.GetYear(DateTime.Now).ToString() + p.GetMonth(DateTime.Now).ToString("0#") + p.GetDayOfMonth(DateTime.Now).ToString("0#");
+            System.Globalization.PersianCalendar p = new System.Globalization.PersianCalendar();     
+             mskTarikh.Text = p.GetYear(DateTime.Now).ToString() + p.GetMonth(DateTime.Now).ToString("0#") + p.GetDayOfMonth(DateTime.Now).ToString("0#");
+
+            SqlDataReader dr;
+            cmd.Parameters.Clear();
+            cmd.Connection = con;
+            cmd.CommandText = "select * from Info";
+            con.Open();
+            dr = cmd.ExecuteReader();
+            if (dr.Read())
+            {
+             
+                NameKP = dr["NameK"].ToString();
+                Tel = dr["Tel"].ToString();
+                Address = dr["Address"].ToString();
+
+
+            }
+            else
+            {
+               
+                MessageBox.Show("برای کد وارد شده اطلاعاتی وجود ندارد");
+            }
+            con.Close();
+
         }
 
         private void mskTarikh_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
@@ -65,12 +92,16 @@ namespace KalaPezeshki
 
                     JameKol = (JameGood + Convert.ToInt32(txtKhadamat.Text)) - Convert.ToInt32(txtTakhfif.Text);
                     txtJameKol.Text = JameKol.ToString();
-                }
-            }
+                
+            
         }
+
+
+    }
+}
         private void btnS_Click(object sender, EventArgs e)
         {
-            
+            con.Close();
             SqlDataReader dr;
             cmd.Parameters.Clear();
             cmd.Connection = con;
@@ -233,6 +264,31 @@ namespace KalaPezeshki
         private void btnList_Click(object sender, EventArgs e)
         {
             new frmListFroosh().ShowDialog();
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                if (txtIdFactor.Text == "")
+                {
+                    MessageBox.Show(" لطفا شماره فاکتور را وارد کنید");
+                    return;
+                }
+                StiReport Report = new StiReport();
+                Report.Load("Report/rptFroosh.mrt");
+                Report.Compile();
+                Report["CodeFactor"] = Convert.ToInt32(txtIdFactor.Text);
+                Report["strNameKP"] = NameKP;
+                Report["strTel"] = Tel;
+                Report["strAddress"] = Address; 
+                Report.ShowWithRibbonGUI();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(" مشکلی پیش آمده است");
+            } 
         }
     }
 }

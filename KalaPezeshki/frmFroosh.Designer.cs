@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmFroosh));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.groupPanel4 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.txtShH = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -40,9 +40,9 @@
             this.btnList = new DevComponents.DotNetBar.ButtonX();
             this.btnSave = new DevComponents.DotNetBar.ButtonX();
             this.groupPanel2 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.lbelNumber = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtAddress = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.btnPrint = new DevComponents.DotNetBar.ButtonX();
             this.groupPanel5 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.txtJameGood = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.btnSum = new DevComponents.DotNetBar.ButtonX();
@@ -53,6 +53,8 @@
             this.txtKhadamat = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtTakhfif = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtJameKol = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtAddress = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.btnPrint = new DevComponents.DotNetBar.ButtonX();
             this.btnDelete = new DevComponents.DotNetBar.ButtonX();
             this.btnAdd = new DevComponents.DotNetBar.ButtonX();
             this.groupPanel3 = new DevComponents.DotNetBar.Controls.GroupPanel();
@@ -84,8 +86,6 @@
             this.line3 = new DevComponents.DotNetBar.Controls.Line();
             this.line2 = new DevComponents.DotNetBar.Controls.Line();
             this.line1 = new DevComponents.DotNetBar.Controls.Line();
-            this.label16 = new System.Windows.Forms.Label();
-            this.lbelNumber = new System.Windows.Forms.Label();
             this.groupPanel1.SuspendLayout();
             this.groupPanel4.SuspendLayout();
             this.groupPanel2.SuspendLayout();
@@ -321,6 +321,26 @@
             this.groupPanel2.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.groupPanel2.TabIndex = 1;
             // 
+            // lbelNumber
+            // 
+            this.lbelNumber.AutoSize = true;
+            this.lbelNumber.ForeColor = System.Drawing.Color.Red;
+            this.lbelNumber.Location = new System.Drawing.Point(167, 167);
+            this.lbelNumber.Name = "lbelNumber";
+            this.lbelNumber.Size = new System.Drawing.Size(16, 18);
+            this.lbelNumber.TabIndex = 35;
+            this.lbelNumber.Text = "0";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.ForeColor = System.Drawing.Color.Red;
+            this.label16.Location = new System.Drawing.Point(30, 167);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(131, 18);
+            this.label16.TabIndex = 34;
+            this.label16.Text = ":تعداد موجود در انبار";
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -329,32 +349,6 @@
             this.label2.Size = new System.Drawing.Size(42, 18);
             this.label2.TabIndex = 32;
             this.label2.Text = "آدرس";
-            // 
-            // txtAddress
-            // 
-            // 
-            // 
-            // 
-            this.txtAddress.Border.Class = "TextBoxBorder";
-            this.txtAddress.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtAddress.Location = new System.Drawing.Point(19, 38);
-            this.txtAddress.Name = "txtAddress";
-            this.txtAddress.PreventEnterBeep = true;
-            this.txtAddress.Size = new System.Drawing.Size(309, 26);
-            this.txtAddress.TabIndex = 4;
-            // 
-            // btnPrint
-            // 
-            this.btnPrint.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnPrint.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnPrint.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.Image")));
-            this.btnPrint.Location = new System.Drawing.Point(394, 185);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 8, 8, 2);
-            this.btnPrint.Size = new System.Drawing.Size(143, 35);
-            this.btnPrint.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnPrint.TabIndex = 13;
-            this.btnPrint.Text = "چاپ فاکتور خرید";
             // 
             // groupPanel5
             // 
@@ -506,6 +500,33 @@
             this.txtJameKol.Size = new System.Drawing.Size(139, 26);
             this.txtJameKol.TabIndex = 3;
             // 
+            // txtAddress
+            // 
+            // 
+            // 
+            // 
+            this.txtAddress.Border.Class = "TextBoxBorder";
+            this.txtAddress.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtAddress.Location = new System.Drawing.Point(19, 38);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.PreventEnterBeep = true;
+            this.txtAddress.Size = new System.Drawing.Size(309, 26);
+            this.txtAddress.TabIndex = 4;
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnPrint.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnPrint.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.Image")));
+            this.btnPrint.Location = new System.Drawing.Point(394, 185);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 8, 8, 2);
+            this.btnPrint.Size = new System.Drawing.Size(143, 35);
+            this.btnPrint.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnPrint.TabIndex = 13;
+            this.btnPrint.Text = "چاپ فاکتور خرید";
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
             // btnDelete
             // 
             this.btnDelete.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -576,14 +597,14 @@
             // dgvFactor
             // 
             this.dgvFactor.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvFactor.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvFactor.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvFactor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFactor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
@@ -591,27 +612,27 @@
             this.Number,
             this.SP,
             this.TotalCP});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvFactor.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvFactor.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvFactor.EnableHeadersVisualStyles = false;
             this.dgvFactor.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dgvFactor.Location = new System.Drawing.Point(-3, 3);
             this.dgvFactor.Name = "dgvFactor";
             this.dgvFactor.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvFactor.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvFactor.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvFactor.RowHeadersWidth = 51;
             this.dgvFactor.Size = new System.Drawing.Size(588, 155);
             this.dgvFactor.TabIndex = 0;
@@ -891,26 +912,6 @@
             this.line1.Size = new System.Drawing.Size(830, 8);
             this.line1.TabIndex = 0;
             this.line1.Text = "line1";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.ForeColor = System.Drawing.Color.Red;
-            this.label16.Location = new System.Drawing.Point(30, 167);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(131, 18);
-            this.label16.TabIndex = 34;
-            this.label16.Text = ":تعداد موجود در انبار";
-            // 
-            // lbelNumber
-            // 
-            this.lbelNumber.AutoSize = true;
-            this.lbelNumber.ForeColor = System.Drawing.Color.Red;
-            this.lbelNumber.Location = new System.Drawing.Point(167, 167);
-            this.lbelNumber.Name = "lbelNumber";
-            this.lbelNumber.Size = new System.Drawing.Size(16, 18);
-            this.lbelNumber.TabIndex = 35;
-            this.lbelNumber.Text = "0";
             // 
             // frmFroosh
             // 
