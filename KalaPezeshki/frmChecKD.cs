@@ -165,5 +165,10 @@ private void btnS_Click(object sender, EventArgs e)
         {
 
         }
+
+        private void txtNameH_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
     }

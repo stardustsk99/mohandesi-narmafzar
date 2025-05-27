@@ -214,3 +214,4 @@ E:\KalaPezeshki\mohandesi-narmafzar\KalaPezeshki\obj\Debug\KalaPezeshki.frmFroos
 E:\KalaPezeshki\mohandesi-narmafzar\KalaPezeshki\obj\Debug\KalaPezeshki.frmListCheckD.resources
 E:\KalaPezeshki\mohandesi-narmafzar\KalaPezeshki\obj\Debug\KalaPezeshki.frmCheckP.resources
 E:\KalaPezeshki\mohandesi-narmafzar\KalaPezeshki\obj\Debug\KalaPezeshki.frmListCheckP.resources
+E:\KalaPezeshki\mohandesi-narmafzar\KalaPezeshki\obj\Debug\KalaPezeshki.frmListFroosh.resources

@@ -483,6 +483,7 @@
             this.txtNameH.PreventEnterBeep = true;
             this.txtNameH.Size = new System.Drawing.Size(198, 26);
             this.txtNameH.TabIndex = 4;
+            this.txtNameH.TextChanged += new System.EventHandler(this.txtNameH_TextChanged);
             // 
             // txtShH
             // 

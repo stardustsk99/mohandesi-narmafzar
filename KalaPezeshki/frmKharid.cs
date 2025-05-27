@@ -116,11 +116,11 @@ namespace KalaPezeshki
 
         private void btnCheckP_Click(object sender, EventArgs e)
         {
-            // frmCheckP frm = new frmCheckP();
-            //frm.txtTozih.Text = "پرداخت مبلغ فاکتور خرید به صورت چک به شماره فاکتور" + txtIdFactor.Text;
-            //frm.txtNameM.Text = txtNameM.Text;
-            //frm.txt.Balance.Text = txtJameKol.Text;
-            //frm.ShowDialog();
+            frmCheckP frm = new frmCheckP();
+            frm.txtTozih.Text = "پرداخت مبلغ فاکتور خرید به صورت چک به شماره فاکتور" + txtIdFactor.Text;
+            frm.txtNameM.Text = txtNameM.Text;
+            frm.txtMablagh.Text = txtJameKol.Text;
+            frm.ShowDialog();
 
         }
 
@@ -158,7 +158,7 @@ namespace KalaPezeshki
                     con.Close();
                     cmd.Parameters.Clear();
                     cmd.Connection = con;
-                    cmd.CommandText = "insert into Kharid (CodeFactor,Tarikh,NameM,Tel,Address,id,NameD,Number,CP,TotalCP,TotalPGood,Khadamat,Takhfif,JameKol,Tozih)values(@a,@b,@c,@d,@e,@f,@g,@h,@i,@j,@k,@l,@m,@n,@o)";
+                    cmd.CommandText = "insert into Kharid (CodeFactor,Tarikh,NameM,Tel,Address,id,NameGood,Number,CP,TotalCP,TotalPGood,Khadamat,Takhfif,JameKol,Tozih)values(@a,@b,@c,@d,@e,@f,@g,@h,@i,@j,@k,@l,@m,@n,@o)";
                     cmd.Parameters.AddWithValue("@a", txtIdFactor.Text);
                     cmd.Parameters.AddWithValue("@b", mskTarikh.Text);
                     cmd.Parameters.AddWithValue("@c", txtNameM.Text);
@@ -223,7 +223,7 @@ namespace KalaPezeshki
 
         private void btnNagd_Click(object sender, EventArgs e)
         {
-            ; con.Close();
+             con.Close();
             if (txtShH.Text == "")
             {
                 MessageBox.Show("لطفا شماره حساب را وارد کنید");
@@ -248,6 +248,11 @@ namespace KalaPezeshki
         private void btnList_Click(object sender, EventArgs e)
         {
             new frmListKharid().ShowDialog();
+        }
+
+        private void txtShH_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
     }

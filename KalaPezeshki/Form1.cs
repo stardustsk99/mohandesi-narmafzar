@@ -161,5 +161,15 @@ namespace KalaPezeshki
         {
             new frmCheckP().ShowDialog();
         }
+
+        private void btnListFrosh_Click(object sender, EventArgs e)
+        {
+            new frmListFroosh().ShowDialog();
+        }
+
+        private void btnFrosh_Click(object sender, EventArgs e)
+        {
+            new frmFroosh().ShowDialog();
+        }
     }
 }

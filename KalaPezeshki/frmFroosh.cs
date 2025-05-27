@@ -34,36 +34,43 @@ namespace KalaPezeshki
         private void btnAdd_Click(object sender, EventArgs e)
         {
 
-            if (txtKhadamat.Text == "" || txtTakhfif.Text == "")
+            if (txtNumber.Value > Convert.ToInt32(lbelNumber.Text))
             {
-                MessageBox.Show("لطفا هزینه خدمات یا تخفیف را وارد کنید");
+                MessageBox.Show("تعداد موجودی انبار کم تر از تعداد مورد نظر برای فروش است");
                 return;
             }
-            dgvFactor.Rows.Add(txtCode.Text, txtName.Text, txtNumber.Text, txtSP.Text);
-            txtCode.Text = "";
-            txtName.Text = "";
-            txtNumber.Text = "";
-            txtSP.Text = "";
-            //***********************
-            int JameGood = 0;
-            int JameKol = 0;
-            int TotalCP = 0;
-            for (int i = 0; i < dgvFactor.Rows.Count; i++)
             {
-                JameGood = JameGood + (Convert.ToInt32(dgvFactor.Rows[i].Cells[2].Value) * Convert.ToInt32(dgvFactor.Rows[i].Cells[3].Value));
-                txtJameGood.Text = JameGood.ToString();
 
-                TotalCP = Convert.ToInt32(dgvFactor.Rows[i].Cells[2].Value) * Convert.ToInt32(dgvFactor.Rows[i].Cells[3].Value);
-                dgvFactor.Rows[i].Cells[4].Value = TotalCP;
+                if (txtKhadamat.Text == "" || txtTakhfif.Text == "")
+                {
+                    MessageBox.Show("لطفا هزینه خدمات یا تخفیف را وارد کنید");
+                    return;
+                }
+                dgvFactor.Rows.Add(txtCode.Text, txtName.Text, txtNumber.Text, txtSP.Text);
+                txtCode.Text = "";
+                txtName.Text = "";
+                txtNumber.Text = "";
+                txtSP.Text = "";
+                //***********************
+                int JameGood = 0;
+                int JameKol = 0;
+                int TotalCP = 0;
+                for (int i = 0; i < dgvFactor.Rows.Count; i++)
+                {
+                    JameGood = JameGood + (Convert.ToInt32(dgvFactor.Rows[i].Cells[2].Value) * Convert.ToInt32(dgvFactor.Rows[i].Cells[3].Value));
+                    txtJameGood.Text = JameGood.ToString();
 
-                JameKol = (JameGood + Convert.ToInt32(txtKhadamat.Text)) - Convert.ToInt32(txtTakhfif.Text);
-                txtJameKol.Text = JameKol.ToString();
+                    TotalCP = Convert.ToInt32(dgvFactor.Rows[i].Cells[2].Value) * Convert.ToInt32(dgvFactor.Rows[i].Cells[3].Value);
+                    dgvFactor.Rows[i].Cells[4].Value = TotalCP;
+
+                    JameKol = (JameGood + Convert.ToInt32(txtKhadamat.Text)) - Convert.ToInt32(txtTakhfif.Text);
+                    txtJameKol.Text = JameKol.ToString();
+                }
             }
         }
-
         private void btnS_Click(object sender, EventArgs e)
         {
-
+            
             SqlDataReader dr;
             cmd.Parameters.Clear();
             cmd.Connection = con;
@@ -76,6 +83,7 @@ namespace KalaPezeshki
                 txtCode.Text = dr["id"].ToString();
                 txtName.Text = dr["NameGoods"].ToString();
                 txtNumber.Text = dr["Number"].ToString();
+                lbelNumber.Text = dr["Number"].ToString();
                 txtSP.Text = dr["SP"].ToString();
 
 
@@ -111,11 +119,120 @@ namespace KalaPezeshki
 
         private void btnCheckP_Click(object sender, EventArgs e)
         {
-            // frmCheckD frm = new frmCheckD();
-            //frm.txtTozih.Text = "  دریافت مبلغ فاکتور فروش به صورت چک به شماره فاکتور" + txtIdFactor.Text;
-            //frm.txtNameM.Text = txtNameM.Text;
-            //frm.txt.Balance.Text = txtJameKol.Text;
-            //frm.ShowDialog();
+             frmCheckD frm = new frmCheckD();
+            frm.txtTozih.Text = "  دریافت مبلغ فاکتور فروش به صورت چک به شماره فاکتور" + txtIdFactor.Text;
+            frm.txtNameM.Text = txtNameM.Text;
+            frm.txtMablagh.Text = txtJameKol.Text;
+            frm.ShowDialog();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                if (txtIdFactor.Text == "")
+                {
+                    MessageBox.Show("کد فاکتور وارد نشده است");
+                    txtIdFactor.Focus();
+                    return;
+                }
+                //******************
+                con.Close();
+                SqlDataReader dr;
+                cmd.Parameters.Clear();
+                cmd.Connection = con;
+                cmd.CommandText = "select CodeFactor from Froosh where CodeFactor=@N";
+                cmd.Parameters.AddWithValue("@N", txtIdFactor.Text);
+                con.Open();
+                dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    txtIdFactor.Text = "";
+                    txtIdFactor.Focus();
+                    MessageBox.Show("این کد فاکتور قبلا ثبت شده است");
+                    con.Close();
+                    return;
+                    
+                }
+                con.Close();//*****
+                //*********************
+                for (int i = 0; i < dgvFactor.Rows.Count; i++)
+                {
+                    con.Close();
+                    cmd.Parameters.Clear();
+                    cmd.Connection = con;
+                    cmd.CommandText = "insert into Froosh (CodeFactor,Tarikh,NameM,Tel,Address,id,NameGOOD,Number,SP,TotalSP,TotalSGood,Khadamat,Takhfif,JameKol,Tozih)values(@a,@b,@c,@d,@e,@f,@g,@h,@i,@j,@k,@l,@m,@n,@o)";
+                    cmd.Parameters.AddWithValue("@a", txtIdFactor.Text);
+                    cmd.Parameters.AddWithValue("@b", mskTarikh.Text);
+                    cmd.Parameters.AddWithValue("@c", txtNameM.Text);
+                    cmd.Parameters.AddWithValue("@d", txtTel.Text);
+                    cmd.Parameters.AddWithValue("@e", txtAddress.Text);
+
+                    cmd.Parameters.AddWithValue("@f", Convert.ToInt32(dgvFactor.Rows[i].Cells[0].Value));
+                    cmd.Parameters.AddWithValue("@g", dgvFactor.Rows[i].Cells[1].Value);
+                    cmd.Parameters.AddWithValue("@h", Convert.ToInt32(dgvFactor.Rows[i].Cells[2].Value));
+                    cmd.Parameters.AddWithValue("@i", Convert.ToInt32(dgvFactor.Rows[i].Cells[3].Value));
+                    cmd.Parameters.AddWithValue("@j", Convert.ToInt32(dgvFactor.Rows[i].Cells[4].Value));
+
+                    cmd.Parameters.AddWithValue("@k", txtJameGood.Text);
+                    cmd.Parameters.AddWithValue("@l", txtKhadamat.Text);
+                    cmd.Parameters.AddWithValue("@m", txtTakhfif.Text);
+                    cmd.Parameters.AddWithValue("@n", txtJameKol.Text);
+                    cmd.Parameters.AddWithValue("@o", txtTozih.Text);
+
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                    //************************کاهش موجودی کالاها
+                    string str;
+                    int str1;
+                    SqlCommand sqlcmd = new SqlCommand("select Nunber from Good where id='" + Convert.ToInt32(dgvFactor.SelectedCells[0].Value) + "'", con);
+                    str = Convert.ToString((int)sqlcmd.ExecuteScalar());//موجودی کالا
+                    str1 = Convert.ToInt32(dgvFactor.Rows[i].Cells[2].Value);//تعداد فروش
+                    int sum = Int32.Parse(str) - str1;//تعداد نهایی کالا
+                    //******************************ویرایش موجودی کالا
+                    string UpdateNumber = "Update Good set Number='" + sum + "' where id='" + Convert.ToInt32(dgvFactor.SelectedCells[0].Value) + "'";
+                    SqlCommand com = new SqlCommand(UpdateNumber, con);
+                    com.ExecuteNonQuery();
+                    con.Close();
+                }
+                con.Close();
+            }
+            catch (Exception)
+            {
+                {
+                    MessageBox.Show("ثبت با موفقیت انجام شد");
+                }
+            }
+        }
+        private void btnNagd_Click(object sender, EventArgs e)
+        {
+
+            con.Close();
+            if (txtShH.Text == "")
+            {
+                MessageBox.Show("لطفا شماره حساب را وارد کنید");
+                return;
+            }
+            string str;
+            int str1;
+            con.Open();
+            SqlCommand sqlcmd = new SqlCommand("select Balance from Bank where AcctNum='" + txtShH.Text + "'", con);
+            str = Convert.ToString((int)sqlcmd.ExecuteScalar());//مبلغ حساب
+            str1 = Convert.ToInt32(txtJameKol.Text);//مبلغ فاکتور
+            int sum = Int32.Parse(str) + str1;//مبلغ نهایی حساب
+            //**********************************ویرایش موجودی حساب
+            string UpdateBalance = "Update bank set Balance='" + sum + "' where AcctNum='" + txtShH.Text + "'";
+            SqlCommand com = new SqlCommand(UpdateBalance, con);
+            com.ExecuteNonQuery();
+
+            MessageBox.Show("مبلغ به حساب واریز شد");
+            con.Close();
+        }
+
+        private void btnList_Click(object sender, EventArgs e)
+        {
+            new frmListFroosh().ShowDialog();
         }
     }
 }

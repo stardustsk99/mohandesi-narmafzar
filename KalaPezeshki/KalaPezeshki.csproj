@@ -187,6 +187,12 @@
     <Compile Include="frmListCompany.Designer.cs">
       <DependentUpon>frmListCompany.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmListFroosh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListFroosh.Designer.cs">
+      <DependentUpon>frmListFroosh.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmListGoods.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -303,6 +309,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmListCompany.resx">
       <DependentUpon>frmListCompany.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListFroosh.resx">
+      <DependentUpon>frmListFroosh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmListGoods.resx">
       <DependentUpon>frmListGoods.cs</DependentUpon>

@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmFroosh));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.groupPanel4 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.txtShH = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -57,6 +57,11 @@
             this.btnAdd = new DevComponents.DotNetBar.ButtonX();
             this.groupPanel3 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.dgvFactor = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NameGood = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalCP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mskTarikh = new DevComponents.DotNetBar.Controls.MaskedTextBoxAdv();
             this.btnS = new DevComponents.DotNetBar.ButtonX();
             this.txtNumber = new DevComponents.Editors.IntegerInput();
@@ -79,11 +84,8 @@
             this.line3 = new DevComponents.DotNetBar.Controls.Line();
             this.line2 = new DevComponents.DotNetBar.Controls.Line();
             this.line1 = new DevComponents.DotNetBar.Controls.Line();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NameGood = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TotalCP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label16 = new System.Windows.Forms.Label();
+            this.lbelNumber = new System.Windows.Forms.Label();
             this.groupPanel1.SuspendLayout();
             this.groupPanel4.SuspendLayout();
             this.groupPanel2.SuspendLayout();
@@ -104,7 +106,7 @@
             this.groupPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupPanel1.Location = new System.Drawing.Point(0, 0);
             this.groupPanel1.Name = "groupPanel1";
-            this.groupPanel1.Size = new System.Drawing.Size(918, 409);
+            this.groupPanel1.Size = new System.Drawing.Size(918, 439);
             // 
             // 
             // 
@@ -146,9 +148,9 @@
             this.groupPanel4.Controls.Add(this.btnList);
             this.groupPanel4.Controls.Add(this.btnSave);
             this.groupPanel4.DisabledBackColor = System.Drawing.Color.Empty;
-            this.groupPanel4.Location = new System.Drawing.Point(3, 360);
+            this.groupPanel4.Location = new System.Drawing.Point(3, 387);
             this.groupPanel4.Name = "groupPanel4";
-            this.groupPanel4.Size = new System.Drawing.Size(869, 43);
+            this.groupPanel4.Size = new System.Drawing.Size(900, 43);
             // 
             // 
             // 
@@ -205,6 +207,7 @@
             this.btnNagd.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnNagd.TabIndex = 3;
             this.btnNagd.Text = "دریافت به صورت نقد";
+            this.btnNagd.Click += new System.EventHandler(this.btnNagd_Click);
             // 
             // btnCheckD
             // 
@@ -232,6 +235,7 @@
             this.btnList.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnList.TabIndex = 1;
             this.btnList.Text = "لیست فروش";
+            this.btnList.Click += new System.EventHandler(this.btnList_Click);
             // 
             // btnSave
             // 
@@ -245,16 +249,19 @@
             this.btnSave.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnSave.TabIndex = 0;
             this.btnSave.Text = "ثبت";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // groupPanel2
             // 
             this.groupPanel2.BackColor = System.Drawing.Color.Transparent;
             this.groupPanel2.CanvasColor = System.Drawing.SystemColors.Control;
             this.groupPanel2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.groupPanel2.Controls.Add(this.lbelNumber);
+            this.groupPanel2.Controls.Add(this.label16);
             this.groupPanel2.Controls.Add(this.label2);
+            this.groupPanel2.Controls.Add(this.groupPanel5);
             this.groupPanel2.Controls.Add(this.txtAddress);
             this.groupPanel2.Controls.Add(this.btnPrint);
-            this.groupPanel2.Controls.Add(this.groupPanel5);
             this.groupPanel2.Controls.Add(this.btnDelete);
             this.groupPanel2.Controls.Add(this.btnAdd);
             this.groupPanel2.Controls.Add(this.groupPanel3);
@@ -283,7 +290,7 @@
             this.groupPanel2.DisabledBackColor = System.Drawing.Color.Empty;
             this.groupPanel2.Location = new System.Drawing.Point(3, 1);
             this.groupPanel2.Name = "groupPanel2";
-            this.groupPanel2.Size = new System.Drawing.Size(900, 354);
+            this.groupPanel2.Size = new System.Drawing.Size(900, 384);
             // 
             // 
             // 
@@ -341,10 +348,10 @@
             this.btnPrint.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnPrint.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnPrint.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.Image")));
-            this.btnPrint.Location = new System.Drawing.Point(370, 150);
+            this.btnPrint.Location = new System.Drawing.Point(394, 185);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 8, 8, 2);
-            this.btnPrint.Size = new System.Drawing.Size(152, 35);
+            this.btnPrint.Size = new System.Drawing.Size(143, 35);
             this.btnPrint.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnPrint.TabIndex = 13;
             this.btnPrint.Text = "چاپ فاکتور خرید";
@@ -363,9 +370,9 @@
             this.groupPanel5.Controls.Add(this.txtTakhfif);
             this.groupPanel5.Controls.Add(this.txtJameKol);
             this.groupPanel5.DisabledBackColor = System.Drawing.Color.Empty;
-            this.groupPanel5.Location = new System.Drawing.Point(5, 160);
+            this.groupPanel5.Location = new System.Drawing.Point(3, 206);
             this.groupPanel5.Name = "groupPanel5";
-            this.groupPanel5.Size = new System.Drawing.Size(255, 188);
+            this.groupPanel5.Size = new System.Drawing.Size(255, 175);
             // 
             // 
             // 
@@ -504,7 +511,7 @@
             this.btnDelete.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnDelete.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
-            this.btnDelete.Location = new System.Drawing.Point(528, 150);
+            this.btnDelete.Location = new System.Drawing.Point(543, 185);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 8, 8, 2);
             this.btnDelete.Size = new System.Drawing.Size(154, 35);
@@ -518,10 +525,10 @@
             this.btnAdd.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnAdd.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
-            this.btnAdd.Location = new System.Drawing.Point(685, 150);
+            this.btnAdd.Location = new System.Drawing.Point(719, 185);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 8, 8, 2);
-            this.btnAdd.Size = new System.Drawing.Size(169, 35);
+            this.btnAdd.Size = new System.Drawing.Size(135, 35);
             this.btnAdd.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnAdd.TabIndex = 11;
             this.btnAdd.Text = "افزودن محصول به فاکتور";
@@ -533,7 +540,7 @@
             this.groupPanel3.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.groupPanel3.Controls.Add(this.dgvFactor);
             this.groupPanel3.DisabledBackColor = System.Drawing.Color.Empty;
-            this.groupPanel3.Location = new System.Drawing.Point(266, 187);
+            this.groupPanel3.Location = new System.Drawing.Point(266, 220);
             this.groupPanel3.Name = "groupPanel3";
             this.groupPanel3.Size = new System.Drawing.Size(594, 161);
             // 
@@ -569,14 +576,14 @@
             // dgvFactor
             // 
             this.dgvFactor.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvFactor.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvFactor.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvFactor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFactor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
@@ -584,31 +591,65 @@
             this.Number,
             this.SP,
             this.TotalCP});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvFactor.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvFactor.Dock = System.Windows.Forms.DockStyle.Fill;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvFactor.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgvFactor.EnableHeadersVisualStyles = false;
             this.dgvFactor.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
-            this.dgvFactor.Location = new System.Drawing.Point(0, 0);
+            this.dgvFactor.Location = new System.Drawing.Point(-3, 3);
             this.dgvFactor.Name = "dgvFactor";
             this.dgvFactor.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvFactor.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvFactor.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvFactor.RowHeadersWidth = 51;
             this.dgvFactor.Size = new System.Drawing.Size(588, 155);
             this.dgvFactor.TabIndex = 0;
+            // 
+            // id
+            // 
+            this.id.HeaderText = "کد کالا";
+            this.id.MinimumWidth = 6;
+            this.id.Name = "id";
+            this.id.Width = 80;
+            // 
+            // NameGood
+            // 
+            this.NameGood.HeaderText = "نام کالا";
+            this.NameGood.MinimumWidth = 6;
+            this.NameGood.Name = "NameGood";
+            this.NameGood.Width = 120;
+            // 
+            // Number
+            // 
+            this.Number.HeaderText = "تعداد";
+            this.Number.MinimumWidth = 6;
+            this.Number.Name = "Number";
+            this.Number.Width = 120;
+            // 
+            // SP
+            // 
+            this.SP.HeaderText = "قیمت فروش";
+            this.SP.MinimumWidth = 6;
+            this.SP.Name = "SP";
+            this.SP.Width = 125;
+            // 
+            // TotalCP
+            // 
+            this.TotalCP.HeaderText = "قیمت کل";
+            this.TotalCP.MinimumWidth = 6;
+            this.TotalCP.Name = "TotalCP";
+            this.TotalCP.Width = 120;
             // 
             // mskTarikh
             // 
@@ -851,46 +892,31 @@
             this.line1.TabIndex = 0;
             this.line1.Text = "line1";
             // 
-            // id
+            // label16
             // 
-            this.id.HeaderText = "کد کالا";
-            this.id.MinimumWidth = 6;
-            this.id.Name = "id";
-            this.id.Width = 80;
+            this.label16.AutoSize = true;
+            this.label16.ForeColor = System.Drawing.Color.Red;
+            this.label16.Location = new System.Drawing.Point(30, 167);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(131, 18);
+            this.label16.TabIndex = 34;
+            this.label16.Text = ":تعداد موجود در انبار";
             // 
-            // NameGood
+            // lbelNumber
             // 
-            this.NameGood.HeaderText = "نام کالا";
-            this.NameGood.MinimumWidth = 6;
-            this.NameGood.Name = "NameGood";
-            this.NameGood.Width = 120;
-            // 
-            // Number
-            // 
-            this.Number.HeaderText = "تعداد";
-            this.Number.MinimumWidth = 6;
-            this.Number.Name = "Number";
-            this.Number.Width = 120;
-            // 
-            // SP
-            // 
-            this.SP.HeaderText = "قیمت فروش";
-            this.SP.MinimumWidth = 6;
-            this.SP.Name = "SP";
-            this.SP.Width = 125;
-            // 
-            // TotalCP
-            // 
-            this.TotalCP.HeaderText = "قیمت کل";
-            this.TotalCP.MinimumWidth = 6;
-            this.TotalCP.Name = "TotalCP";
-            this.TotalCP.Width = 120;
+            this.lbelNumber.AutoSize = true;
+            this.lbelNumber.ForeColor = System.Drawing.Color.Red;
+            this.lbelNumber.Location = new System.Drawing.Point(167, 167);
+            this.lbelNumber.Name = "lbelNumber";
+            this.lbelNumber.Size = new System.Drawing.Size(16, 18);
+            this.lbelNumber.TabIndex = 35;
+            this.lbelNumber.Text = "0";
             // 
             // frmFroosh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(918, 409);
+            this.ClientSize = new System.Drawing.Size(918, 439);
             this.Controls.Add(this.groupPanel1);
             this.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.MaximizeBox = false;
@@ -965,5 +991,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Number;
         private System.Windows.Forms.DataGridViewTextBoxColumn SP;
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalCP;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label lbelNumber;
     }
 }
