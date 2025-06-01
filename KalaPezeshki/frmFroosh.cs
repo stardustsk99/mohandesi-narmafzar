@@ -290,5 +290,10 @@ namespace KalaPezeshki
                 MessageBox.Show(" مشکلی پیش آمده است");
             } 
         }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

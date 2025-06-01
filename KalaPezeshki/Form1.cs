@@ -171,5 +171,10 @@ namespace KalaPezeshki
         {
             new frmFroosh().ShowDialog();
         }
+
+        private void ribbonTabItem1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

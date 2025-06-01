@@ -104,7 +104,7 @@
             this.groupPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupPanel1.Location = new System.Drawing.Point(0, 0);
             this.groupPanel1.Name = "groupPanel1";
-            this.groupPanel1.Size = new System.Drawing.Size(1056, 567);
+            this.groupPanel1.Size = new System.Drawing.Size(913, 413);
             // 
             // 
             // 
@@ -595,7 +595,7 @@
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(110)))));
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvFactor.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvFactor.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -896,7 +896,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1056, 567);
+            this.ClientSize = new System.Drawing.Size(913, 413);
             this.Controls.Add(this.groupPanel1);
             this.Name = "frmKharid";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
