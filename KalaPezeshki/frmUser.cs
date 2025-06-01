@@ -23,7 +23,7 @@ namespace KalaPezeshki
         }
 
         // تعریف اتصال به دیتابیس SQL Server
-        SqlConnection con = new SqlConnection("Data source=(local);initial catalog=KalaPezeshki;integrated security=true");
+        SqlConnection con = new SqlConnection("Data source=HAMY\\SQLEXPRESS;initial catalog=KalaPezeshki;integrated security=true");
         SqlCommand cmd = new SqlCommand();
 
         // متدی برای نمایش اطلاعات کاربران در DataGridView

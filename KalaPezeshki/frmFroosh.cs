@@ -18,7 +18,7 @@ namespace KalaPezeshki
         {
             InitializeComponent();
         }
-        SqlConnection con = new SqlConnection("Data source=(local);initial catalog=KalaPezeshki;integrated security=true");
+        SqlConnection con = new SqlConnection("Data source=HAMY\\SQLEXPRESS;initial catalog=KalaPezeshki;integrated security=true");
         SqlCommand cmd = new SqlCommand();
         String NameKP;
         String Tel;

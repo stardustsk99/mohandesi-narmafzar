@@ -18,7 +18,7 @@ namespace KalaPezeshki
             InitializeComponent();
         }
 
-        SqlConnection con = new SqlConnection("Data source=(local);initial catalog=KalaPezeshki;integrated security=true");
+        SqlConnection con = new SqlConnection("Data source=HAMY\\SQLEXPRESS;initial catalog=KalaPezeshki;integrated security=true");
         SqlCommand cmd = new SqlCommand();
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -108,6 +108,11 @@ namespace KalaPezeshki
                 MessageBox.Show("برای کد وارد شده اطلاعاتی یافت نشد");
             }
             con.Close();
+        }
+
+        private void frmSandoogh_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

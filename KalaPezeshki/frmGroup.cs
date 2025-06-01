@@ -90,5 +90,10 @@ namespace KalaPezeshki
         {
             new frmListGroup().ShowDialog();
         }
+
+        private void frmGroup_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
