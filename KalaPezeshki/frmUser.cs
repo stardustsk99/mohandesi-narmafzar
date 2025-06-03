@@ -202,5 +202,10 @@ namespace KalaPezeshki
         {
             Display();
         }
+
+        private void groupPanel2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

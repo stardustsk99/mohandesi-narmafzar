@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmListCheckD));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.groupPanel4 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.btnVosol = new DevComponents.DotNetBar.ButtonX();
@@ -61,7 +61,7 @@
             this.groupPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupPanel1.Location = new System.Drawing.Point(0, 0);
             this.groupPanel1.Name = "groupPanel1";
-            this.groupPanel1.Size = new System.Drawing.Size(901, 382);
+            this.groupPanel1.Size = new System.Drawing.Size(902, 401);
             // 
             // 
             // 
@@ -101,9 +101,9 @@
             this.groupPanel4.Controls.Add(this.btnPrint);
             this.groupPanel4.Controls.Add(this.btnDelete);
             this.groupPanel4.DisabledBackColor = System.Drawing.Color.Empty;
-            this.groupPanel4.Location = new System.Drawing.Point(3, 325);
+            this.groupPanel4.Location = new System.Drawing.Point(3, 329);
             this.groupPanel4.Name = "groupPanel4";
-            this.groupPanel4.Size = new System.Drawing.Size(888, 43);
+            this.groupPanel4.Size = new System.Drawing.Size(888, 60);
             // 
             // 
             // 
@@ -139,10 +139,10 @@
             this.btnVosol.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnVosol.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnVosol.Image = ((System.Drawing.Image)(resources.GetObject("btnVosol.Image")));
-            this.btnVosol.Location = new System.Drawing.Point(566, 1);
+            this.btnVosol.Location = new System.Drawing.Point(474, 4);
             this.btnVosol.Name = "btnVosol";
             this.btnVosol.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 8, 8, 2);
-            this.btnVosol.Size = new System.Drawing.Size(95, 35);
+            this.btnVosol.Size = new System.Drawing.Size(109, 47);
             this.btnVosol.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnVosol.TabIndex = 3;
             this.btnVosol.Text = "وصول";
@@ -153,10 +153,10 @@
             this.btnPrint.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnPrint.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnPrint.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.Image")));
-            this.btnPrint.Location = new System.Drawing.Point(667, 1);
+            this.btnPrint.Location = new System.Drawing.Point(614, 4);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 8, 8, 2);
-            this.btnPrint.Size = new System.Drawing.Size(95, 35);
+            this.btnPrint.Size = new System.Drawing.Size(109, 47);
             this.btnPrint.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnPrint.TabIndex = 2;
             this.btnPrint.Text = "چاپ";
@@ -167,10 +167,10 @@
             this.btnDelete.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnDelete.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
-            this.btnDelete.Location = new System.Drawing.Point(768, 1);
+            this.btnDelete.Location = new System.Drawing.Point(755, 4);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 8, 8, 2);
-            this.btnDelete.Size = new System.Drawing.Size(95, 35);
+            this.btnDelete.Size = new System.Drawing.Size(109, 47);
             this.btnDelete.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnDelete.TabIndex = 1;
             this.btnDelete.Text = "حذف";
@@ -183,9 +183,9 @@
             this.groupPanel3.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.groupPanel3.Controls.Add(this.dgvCheckD);
             this.groupPanel3.DisabledBackColor = System.Drawing.Color.Empty;
-            this.groupPanel3.Location = new System.Drawing.Point(3, 41);
+            this.groupPanel3.Location = new System.Drawing.Point(3, 57);
             this.groupPanel3.Name = "groupPanel3";
-            this.groupPanel3.Size = new System.Drawing.Size(870, 282);
+            this.groupPanel3.Size = new System.Drawing.Size(888, 266);
             // 
             // 
             // 
@@ -220,20 +220,20 @@
             // 
             this.dgvCheckD.BackgroundColor = System.Drawing.Color.White;
             this.dgvCheckD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvCheckD.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCheckD.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvCheckD.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvCheckD.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dgvCheckD.Location = new System.Drawing.Point(0, 0);
             this.dgvCheckD.Name = "dgvCheckD";
             this.dgvCheckD.RowHeadersWidth = 51;
-            this.dgvCheckD.Size = new System.Drawing.Size(864, 276);
+            this.dgvCheckD.Size = new System.Drawing.Size(882, 260);
             this.dgvCheckD.TabIndex = 1;
             this.dgvCheckD.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCheckD_CellContentClick);
             // 
@@ -249,7 +249,7 @@
             this.groupPanel2.DisabledBackColor = System.Drawing.Color.Empty;
             this.groupPanel2.Location = new System.Drawing.Point(3, 0);
             this.groupPanel2.Name = "groupPanel2";
-            this.groupPanel2.Size = new System.Drawing.Size(888, 39);
+            this.groupPanel2.Size = new System.Drawing.Size(888, 51);
             // 
             // 
             // 
@@ -288,7 +288,7 @@
             this.mskSarResid2.BackgroundStyle.Class = "TextBoxBorder";
             this.mskSarResid2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.mskSarResid2.ButtonClear.Visible = true;
-            this.mskSarResid2.Location = new System.Drawing.Point(3, 6);
+            this.mskSarResid2.Location = new System.Drawing.Point(9, 10);
             this.mskSarResid2.Mask = "####/##/##";
             this.mskSarResid2.Name = "mskSarResid2";
             this.mskSarResid2.Size = new System.Drawing.Size(139, 21);
@@ -300,7 +300,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(148, 10);
+            this.label1.Location = new System.Drawing.Point(154, 14);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(75, 18);
             this.label1.TabIndex = 9;
@@ -314,7 +314,7 @@
             this.mskSarResid1.BackgroundStyle.Class = "TextBoxBorder";
             this.mskSarResid1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.mskSarResid1.ButtonClear.Visible = true;
-            this.mskSarResid1.Location = new System.Drawing.Point(658, 9);
+            this.mskSarResid1.Location = new System.Drawing.Point(655, 11);
             this.mskSarResid1.Mask = "####/##/##";
             this.mskSarResid1.Name = "mskSarResid1";
             this.mskSarResid1.Size = new System.Drawing.Size(139, 21);
@@ -327,7 +327,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(801, 12);
+            this.label7.Location = new System.Drawing.Point(798, 14);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(76, 18);
             this.label7.TabIndex = 9;
@@ -337,7 +337,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(901, 382);
+            this.ClientSize = new System.Drawing.Size(902, 401);
             this.Controls.Add(this.groupPanel1);
             this.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.MaximizeBox = false;

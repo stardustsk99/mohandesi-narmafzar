@@ -45,18 +45,7 @@ namespace KalaPezeshki
             dgvCompany.Columns[1].Width = 150;
         }
 
-        private void txtName_TextChanged(object sender, EventArgs e)
-        {
-            DataSet ds = new DataSet(); // مجموعه داده‌ها برای ذخیره نتیجه
-            SqlDataAdapter adp = new SqlDataAdapter(); // آداپتور برای پر کردن DataSet
-            adp.SelectCommand = new SqlCommand();
-            adp.SelectCommand.Connection = con;
-            adp.SelectCommand.CommandText = "Select * from Company where NameC like '%'+ @S +'%'";// بازیابی همه کاربران
-            adp.SelectCommand.Parameters.AddWithValue("@S",txtName.Text + "%" );
-            adp.Fill(ds, "Company"); // پر کردن دیتاست با داده‌ها
-            dgvCompany.DataSource = ds;
-            dgvCompany.DataMember = "Company";
-        }
+
 
         private void dgvCompany_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -107,6 +96,19 @@ namespace KalaPezeshki
         private void groupPanel2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtName_TextChanged(object sender, EventArgs e)
+        {
+            DataSet ds = new DataSet(); // مجموعه داده‌ها برای ذخیره نتیجه
+            SqlDataAdapter adp = new SqlDataAdapter(); // آداپتور برای پر کردن DataSet
+            adp.SelectCommand = new SqlCommand();
+            adp.SelectCommand.Connection = con;
+            adp.SelectCommand.CommandText = "Select * from Company where NameC like '%'+ @S +'%'";// بازیابی همه کاربران
+            adp.SelectCommand.Parameters.AddWithValue("@S", txtName.Text + "%");
+            adp.Fill(ds, "Company"); // پر کردن دیتاست با داده‌ها
+            dgvCompany.DataSource = ds;
+            dgvCompany.DataMember = "Company";
         }
     }
 }

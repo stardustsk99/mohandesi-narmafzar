@@ -14,6 +14,19 @@ namespace KalaPezeshki
 {
     public partial class frmBank: Form
     {
+        private void ClearFormFields(Control parent)
+        {
+            foreach (Control c in parent.Controls)
+            {
+                if (c is TextBox)
+                    ((TextBox)c).Clear();
+
+                // اگر کنترل داخل کنترل دیگری باشد (مثلاً پنل یا گروه‌باکس)
+                if (c.HasChildren)
+                    ClearFormFields(c);
+            }
+        }
+
         public frmBank()
         {
             InitializeComponent();
@@ -147,6 +160,11 @@ namespace KalaPezeshki
         private void frmBank_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            ClearFormFields(this);
         }
     }
 }

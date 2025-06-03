@@ -2,19 +2,17 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 
 namespace KalaPezeshki
 {
-    // فرم ورود کاربران به برنامه
-    public partial class frmLogin : Form
+    public partial class frmLogin: Form
     {
-        // سازنده فرم ورود
         public frmLogin()
         {
             InitializeComponent();
@@ -24,7 +22,6 @@ namespace KalaPezeshki
         SqlConnection con = new SqlConnection("Data source=HAMY\\SQLEXPRESS;initial catalog=KalaPezeshki;integrated security=true");
 
         // تعریف شی‌ء اتصال و فرمان SQL
-        SqlConnection con = new SqlConnection(ConnectionString);
         SqlCommand cmd = new SqlCommand();
 
         // رویداد تغییر متن رمز عبور (در حال حاضر بدون استفاده)
@@ -41,6 +38,26 @@ namespace KalaPezeshki
 
         // رویداد کلیک دکمه ورود به سیستم
         private void btnSave_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        // رویداد کلیک روی دکمه خروج
+ 
+        // رویداد کلیک روی گروه پنل (در حال حاضر بدون استفاده)
+        private void groupPanel1_Click(object sender, EventArgs e) { }
+
+        // رویداد کلیک روی تصویر (در حال حاضر بدون استفاده)
+        private void pictureBox1_Click(object sender, EventArgs e) { }
+
+        // رویداد تغییر وضعیت چک‌باکس نمایش پسورد
+
+        private void frmLogin1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnIn_Click(object sender, EventArgs e)
         {
             int i = 0;
 
@@ -70,20 +87,12 @@ namespace KalaPezeshki
             }
         }
 
-        // رویداد کلیک روی دکمه خروج
-        private void btnDelete_Click(object sender, EventArgs e)
+        private void btnOut_Click(object sender, EventArgs e)
         {
-            Application.Exit(); // خروج از برنامه
+            Application.Exit();
         }
 
-        // رویداد کلیک روی گروه پنل (در حال حاضر بدون استفاده)
-        private void groupPanel1_Click(object sender, EventArgs e) { }
-
-        // رویداد کلیک روی تصویر (در حال حاضر بدون استفاده)
-        private void pictureBox1_Click(object sender, EventArgs e) { }
-
-        // رویداد تغییر وضعیت چک‌باکس نمایش پسورد
-        private void ChkPassword_CheckedChanged(object sender, EventArgs e)
+        private void ChkPassword_CheckedChanged_1(object sender, EventArgs e)
         {
             if (ChkPassword.Checked)
             {

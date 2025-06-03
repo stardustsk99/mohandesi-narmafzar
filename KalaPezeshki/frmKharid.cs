@@ -254,6 +254,26 @@ namespace KalaPezeshki
         {
 
         }
+
+        private void groupPanel4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void line3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            frmHelper.ClearFormFields(this);
+        }
     }
     }
  

@@ -44,18 +44,6 @@ namespace KalaPezeshki
             dgvCompany.Columns[2].Width = 150;
             dgvCompany.Columns[1].Width = 150;
         }
-        private void txtName_TextChanged(object sender, EventArgs e)
-        {
-            DataSet ds = new DataSet(); // مجموعه داده‌ها برای ذخیره نتیجه
-            SqlDataAdapter adp = new SqlDataAdapter(); // آداپتور برای پر کردن DataSet
-            adp.SelectCommand = new SqlCommand();
-            adp.SelectCommand.Connection = con;
-            adp.SelectCommand.CommandText = "Select * from Persenel where Name like '%'+ @S +'%'";// بازیابی همه کاربران
-            adp.SelectCommand.Parameters.AddWithValue("@S", txtName.Text + "%");
-            adp.Fill(ds, "Persenel"); // پر کردن دیتاست با داده‌ها
-            dgvCompany.DataSource = ds;
-            dgvCompany.DataMember = "Persenel";
-        }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
@@ -81,6 +69,21 @@ namespace KalaPezeshki
         private void frmListPersenel_Load(object sender, EventArgs e)
         {
             Display();
+        }
+
+
+
+        private void txtName_TextChanged_1(object sender, EventArgs e)
+        {
+            DataSet ds = new DataSet(); // مجموعه داده‌ها برای ذخیره نتیجه
+            SqlDataAdapter adp = new SqlDataAdapter(); // آداپتور برای پر کردن DataSet
+            adp.SelectCommand = new SqlCommand();
+            adp.SelectCommand.Connection = con;
+            adp.SelectCommand.CommandText = "Select * from Persenel where Name like '%'+ @S +'%'";// بازیابی همه کاربران
+            adp.SelectCommand.Parameters.AddWithValue("@S", txtName.Text + "%");
+            adp.Fill(ds, "Persenel"); // پر کردن دیتاست با داده‌ها
+            dgvCompany.DataSource = ds;
+            dgvCompany.DataMember = "Persenel";
         }
 
         private void txtRool_TextChanged(object sender, EventArgs e)

@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmFroosh));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.groupPanel4 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.txtShH = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -40,6 +40,9 @@
             this.btnList = new DevComponents.DotNetBar.ButtonX();
             this.btnSave = new DevComponents.DotNetBar.ButtonX();
             this.groupPanel2 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.btnClear = new DevComponents.DotNetBar.ButtonX();
+            this.line2 = new DevComponents.DotNetBar.Controls.Line();
+            this.line1 = new DevComponents.DotNetBar.Controls.Line();
             this.lbelNumber = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -84,8 +87,6 @@
             this.txtNameM = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtIdFactor = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.line3 = new DevComponents.DotNetBar.Controls.Line();
-            this.line2 = new DevComponents.DotNetBar.Controls.Line();
-            this.line1 = new DevComponents.DotNetBar.Controls.Line();
             this.groupPanel1.SuspendLayout();
             this.groupPanel4.SuspendLayout();
             this.groupPanel2.SuspendLayout();
@@ -106,7 +107,7 @@
             this.groupPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupPanel1.Location = new System.Drawing.Point(0, 0);
             this.groupPanel1.Name = "groupPanel1";
-            this.groupPanel1.Size = new System.Drawing.Size(918, 439);
+            this.groupPanel1.Size = new System.Drawing.Size(943, 521);
             // 
             // 
             // 
@@ -148,9 +149,9 @@
             this.groupPanel4.Controls.Add(this.btnList);
             this.groupPanel4.Controls.Add(this.btnSave);
             this.groupPanel4.DisabledBackColor = System.Drawing.Color.Empty;
-            this.groupPanel4.Location = new System.Drawing.Point(3, 387);
+            this.groupPanel4.Location = new System.Drawing.Point(3, 452);
             this.groupPanel4.Name = "groupPanel4";
-            this.groupPanel4.Size = new System.Drawing.Size(900, 43);
+            this.groupPanel4.Size = new System.Drawing.Size(931, 60);
             // 
             // 
             // 
@@ -188,25 +189,26 @@
             // 
             this.txtShH.Border.Class = "TextBoxBorder";
             this.txtShH.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtShH.Location = new System.Drawing.Point(69, 8);
+            this.txtShH.Location = new System.Drawing.Point(15, 16);
             this.txtShH.Name = "txtShH";
             this.txtShH.PreventEnterBeep = true;
             this.txtShH.Size = new System.Drawing.Size(189, 26);
             this.txtShH.TabIndex = 4;
             this.txtShH.WatermarkText = "شماره حساب بانکی را وارد کنید";
+            this.txtShH.TextChanged += new System.EventHandler(this.txtShH_TextChanged);
             // 
             // btnNagd
             // 
             this.btnNagd.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnNagd.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnNagd.Image = ((System.Drawing.Image)(resources.GetObject("btnNagd.Image")));
-            this.btnNagd.Location = new System.Drawing.Point(264, 1);
+            this.btnNagd.Location = new System.Drawing.Point(223, 4);
             this.btnNagd.Name = "btnNagd";
             this.btnNagd.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 8, 8, 2);
-            this.btnNagd.Size = new System.Drawing.Size(170, 35);
+            this.btnNagd.Size = new System.Drawing.Size(170, 47);
             this.btnNagd.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnNagd.TabIndex = 3;
-            this.btnNagd.Text = "دریافت به صورت نقد";
+            this.btnNagd.Text = "دریافت نقدی";
             this.btnNagd.Click += new System.EventHandler(this.btnNagd_Click);
             // 
             // btnCheckD
@@ -214,10 +216,10 @@
             this.btnCheckD.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnCheckD.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnCheckD.Image = ((System.Drawing.Image)(resources.GetObject("btnCheckD.Image")));
-            this.btnCheckD.Location = new System.Drawing.Point(440, 1);
+            this.btnCheckD.Location = new System.Drawing.Point(418, 4);
             this.btnCheckD.Name = "btnCheckD";
             this.btnCheckD.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 8, 8, 2);
-            this.btnCheckD.Size = new System.Drawing.Size(185, 35);
+            this.btnCheckD.Size = new System.Drawing.Size(197, 47);
             this.btnCheckD.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnCheckD.TabIndex = 2;
             this.btnCheckD.Text = "دریافت به صورت چک";
@@ -228,10 +230,10 @@
             this.btnList.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnList.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnList.Image = ((System.Drawing.Image)(resources.GetObject("btnList.Image")));
-            this.btnList.Location = new System.Drawing.Point(630, 1);
+            this.btnList.Location = new System.Drawing.Point(642, 4);
             this.btnList.Name = "btnList";
             this.btnList.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 8, 8, 2);
-            this.btnList.Size = new System.Drawing.Size(129, 35);
+            this.btnList.Size = new System.Drawing.Size(152, 47);
             this.btnList.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnList.TabIndex = 1;
             this.btnList.Text = "لیست فروش";
@@ -242,10 +244,10 @@
             this.btnSave.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnSave.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
-            this.btnSave.Location = new System.Drawing.Point(765, 1);
+            this.btnSave.Location = new System.Drawing.Point(815, 4);
             this.btnSave.Name = "btnSave";
             this.btnSave.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 8, 8, 2);
-            this.btnSave.Size = new System.Drawing.Size(95, 35);
+            this.btnSave.Size = new System.Drawing.Size(95, 47);
             this.btnSave.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnSave.TabIndex = 0;
             this.btnSave.Text = "ثبت";
@@ -256,6 +258,9 @@
             this.groupPanel2.BackColor = System.Drawing.Color.Transparent;
             this.groupPanel2.CanvasColor = System.Drawing.SystemColors.Control;
             this.groupPanel2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.groupPanel2.Controls.Add(this.btnClear);
+            this.groupPanel2.Controls.Add(this.line2);
+            this.groupPanel2.Controls.Add(this.line1);
             this.groupPanel2.Controls.Add(this.lbelNumber);
             this.groupPanel2.Controls.Add(this.label16);
             this.groupPanel2.Controls.Add(this.label2);
@@ -285,12 +290,10 @@
             this.groupPanel2.Controls.Add(this.txtNameM);
             this.groupPanel2.Controls.Add(this.txtIdFactor);
             this.groupPanel2.Controls.Add(this.line3);
-            this.groupPanel2.Controls.Add(this.line2);
-            this.groupPanel2.Controls.Add(this.line1);
             this.groupPanel2.DisabledBackColor = System.Drawing.Color.Empty;
             this.groupPanel2.Location = new System.Drawing.Point(3, 1);
             this.groupPanel2.Name = "groupPanel2";
-            this.groupPanel2.Size = new System.Drawing.Size(900, 384);
+            this.groupPanel2.Size = new System.Drawing.Size(931, 445);
             // 
             // 
             // 
@@ -320,12 +323,44 @@
             // 
             this.groupPanel2.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.groupPanel2.TabIndex = 1;
+            this.groupPanel2.Click += new System.EventHandler(this.groupPanel2_Click);
+            // 
+            // btnClear
+            // 
+            this.btnClear.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnClear.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnClear.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.btnClear.Image = ((System.Drawing.Image)(resources.GetObject("btnClear.Image")));
+            this.btnClear.Location = new System.Drawing.Point(20, 3);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 8, 8, 2);
+            this.btnClear.Size = new System.Drawing.Size(109, 33);
+            this.btnClear.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnClear.TabIndex = 38;
+            this.btnClear.Text = "پاک کردن\t";
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // line2
+            // 
+            this.line2.Location = new System.Drawing.Point(20, 35);
+            this.line2.Name = "line2";
+            this.line2.Size = new System.Drawing.Size(894, 12);
+            this.line2.TabIndex = 37;
+            this.line2.Text = "line1";
+            // 
+            // line1
+            // 
+            this.line1.Location = new System.Drawing.Point(20, 82);
+            this.line1.Name = "line1";
+            this.line1.Size = new System.Drawing.Size(894, 12);
+            this.line1.TabIndex = 36;
+            this.line1.Text = "line1";
             // 
             // lbelNumber
             // 
             this.lbelNumber.AutoSize = true;
             this.lbelNumber.ForeColor = System.Drawing.Color.Red;
-            this.lbelNumber.Location = new System.Drawing.Point(167, 167);
+            this.lbelNumber.Location = new System.Drawing.Point(156, 197);
             this.lbelNumber.Name = "lbelNumber";
             this.lbelNumber.Size = new System.Drawing.Size(16, 18);
             this.lbelNumber.TabIndex = 35;
@@ -335,7 +370,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.ForeColor = System.Drawing.Color.Red;
-            this.label16.Location = new System.Drawing.Point(30, 167);
+            this.label16.Location = new System.Drawing.Point(19, 197);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(131, 18);
             this.label16.TabIndex = 34;
@@ -344,7 +379,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(331, 42);
+            this.label2.Location = new System.Drawing.Point(334, 57);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(42, 18);
             this.label2.TabIndex = 32;
@@ -364,9 +399,9 @@
             this.groupPanel5.Controls.Add(this.txtTakhfif);
             this.groupPanel5.Controls.Add(this.txtJameKol);
             this.groupPanel5.DisabledBackColor = System.Drawing.Color.Empty;
-            this.groupPanel5.Location = new System.Drawing.Point(3, 206);
+            this.groupPanel5.Location = new System.Drawing.Point(19, 228);
             this.groupPanel5.Name = "groupPanel5";
-            this.groupPanel5.Size = new System.Drawing.Size(255, 175);
+            this.groupPanel5.Size = new System.Drawing.Size(272, 200);
             // 
             // 
             // 
@@ -397,6 +432,7 @@
             this.groupPanel5.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.groupPanel5.TabIndex = 14;
             this.groupPanel5.Text = "مبالغ فاکتور";
+            this.groupPanel5.Click += new System.EventHandler(this.groupPanel5_Click);
             // 
             // txtJameGood
             // 
@@ -405,7 +441,7 @@
             // 
             this.txtJameGood.Border.Class = "TextBoxBorder";
             this.txtJameGood.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtJameGood.Location = new System.Drawing.Point(3, 13);
+            this.txtJameGood.Location = new System.Drawing.Point(13, 3);
             this.txtJameGood.Name = "txtJameGood";
             this.txtJameGood.PreventEnterBeep = true;
             this.txtJameGood.Size = new System.Drawing.Size(139, 26);
@@ -416,10 +452,10 @@
             this.btnSum.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnSum.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnSum.Image = ((System.Drawing.Image)(resources.GetObject("btnSum.Image")));
-            this.btnSum.Location = new System.Drawing.Point(3, 113);
+            this.btnSum.Location = new System.Drawing.Point(13, 130);
             this.btnSum.Name = "btnSum";
             this.btnSum.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 8, 8, 2);
-            this.btnSum.Size = new System.Drawing.Size(139, 35);
+            this.btnSum.Size = new System.Drawing.Size(169, 43);
             this.btnSum.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnSum.TabIndex = 4;
             this.btnSum.Text = "محاسبه نهایی";
@@ -428,7 +464,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(145, 17);
+            this.label10.Location = new System.Drawing.Point(155, 7);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(68, 18);
             this.label10.TabIndex = 13;
@@ -438,7 +474,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(145, 41);
+            this.label12.Location = new System.Drawing.Point(155, 39);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(89, 18);
             this.label12.TabIndex = 13;
@@ -447,7 +483,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(145, 65);
+            this.label13.Location = new System.Drawing.Point(155, 71);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(49, 18);
             this.label13.TabIndex = 13;
@@ -456,7 +492,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(145, 89);
+            this.label14.Location = new System.Drawing.Point(155, 103);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(97, 18);
             this.label14.TabIndex = 13;
@@ -469,7 +505,7 @@
             // 
             this.txtKhadamat.Border.Class = "TextBoxBorder";
             this.txtKhadamat.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtKhadamat.Location = new System.Drawing.Point(3, 37);
+            this.txtKhadamat.Location = new System.Drawing.Point(13, 35);
             this.txtKhadamat.Name = "txtKhadamat";
             this.txtKhadamat.PreventEnterBeep = true;
             this.txtKhadamat.Size = new System.Drawing.Size(139, 26);
@@ -482,7 +518,7 @@
             // 
             this.txtTakhfif.Border.Class = "TextBoxBorder";
             this.txtTakhfif.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtTakhfif.Location = new System.Drawing.Point(3, 61);
+            this.txtTakhfif.Location = new System.Drawing.Point(13, 67);
             this.txtTakhfif.Name = "txtTakhfif";
             this.txtTakhfif.PreventEnterBeep = true;
             this.txtTakhfif.Size = new System.Drawing.Size(139, 26);
@@ -495,7 +531,7 @@
             // 
             this.txtJameKol.Border.Class = "TextBoxBorder";
             this.txtJameKol.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtJameKol.Location = new System.Drawing.Point(3, 85);
+            this.txtJameKol.Location = new System.Drawing.Point(13, 99);
             this.txtJameKol.Name = "txtJameKol";
             this.txtJameKol.PreventEnterBeep = true;
             this.txtJameKol.Size = new System.Drawing.Size(139, 26);
@@ -508,7 +544,7 @@
             // 
             this.txtAddress.Border.Class = "TextBoxBorder";
             this.txtAddress.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtAddress.Location = new System.Drawing.Point(19, 38);
+            this.txtAddress.Location = new System.Drawing.Point(19, 50);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.PreventEnterBeep = true;
             this.txtAddress.Size = new System.Drawing.Size(309, 26);
@@ -519,10 +555,10 @@
             this.btnPrint.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnPrint.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnPrint.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.Image")));
-            this.btnPrint.Location = new System.Drawing.Point(266, 185);
+            this.btnPrint.Location = new System.Drawing.Point(309, 184);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 8, 8, 2);
-            this.btnPrint.Size = new System.Drawing.Size(161, 35);
+            this.btnPrint.Size = new System.Drawing.Size(161, 47);
             this.btnPrint.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnPrint.TabIndex = 13;
             this.btnPrint.Text = "چاپ فاکتور خرید";
@@ -533,10 +569,10 @@
             this.btnDelete.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnDelete.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
-            this.btnDelete.Location = new System.Drawing.Point(440, 185);
+            this.btnDelete.Location = new System.Drawing.Point(476, 184);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 8, 8, 2);
-            this.btnDelete.Size = new System.Drawing.Size(210, 35);
+            this.btnDelete.Size = new System.Drawing.Size(224, 47);
             this.btnDelete.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnDelete.TabIndex = 12;
             this.btnDelete.Text = "حذف محصول از فاکتور";
@@ -547,10 +583,10 @@
             this.btnAdd.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnAdd.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
-            this.btnAdd.Location = new System.Drawing.Point(655, 185);
+            this.btnAdd.Location = new System.Drawing.Point(706, 184);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 8, 8, 2);
-            this.btnAdd.Size = new System.Drawing.Size(199, 35);
+            this.btnAdd.Size = new System.Drawing.Size(207, 47);
             this.btnAdd.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnAdd.TabIndex = 11;
             this.btnAdd.Text = "افزودن محصول به فاکتور";
@@ -562,9 +598,9 @@
             this.groupPanel3.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.groupPanel3.Controls.Add(this.dgvFactor);
             this.groupPanel3.DisabledBackColor = System.Drawing.Color.Empty;
-            this.groupPanel3.Location = new System.Drawing.Point(266, 220);
+            this.groupPanel3.Location = new System.Drawing.Point(309, 237);
             this.groupPanel3.Name = "groupPanel3";
-            this.groupPanel3.Size = new System.Drawing.Size(594, 161);
+            this.groupPanel3.Size = new System.Drawing.Size(604, 191);
             // 
             // 
             // 
@@ -598,14 +634,14 @@
             // dgvFactor
             // 
             this.dgvFactor.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvFactor.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvFactor.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvFactor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFactor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
@@ -613,30 +649,32 @@
             this.Number,
             this.SP,
             this.TotalCP});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvFactor.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvFactor.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvFactor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvFactor.EnableHeadersVisualStyles = false;
             this.dgvFactor.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
-            this.dgvFactor.Location = new System.Drawing.Point(-3, 3);
+            this.dgvFactor.Location = new System.Drawing.Point(0, 0);
             this.dgvFactor.Name = "dgvFactor";
             this.dgvFactor.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvFactor.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvFactor.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvFactor.RowHeadersWidth = 51;
-            this.dgvFactor.Size = new System.Drawing.Size(588, 155);
+            this.dgvFactor.Size = new System.Drawing.Size(598, 185);
             this.dgvFactor.TabIndex = 0;
+            this.dgvFactor.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFactor_CellContentClick);
             // 
             // id
             // 
@@ -681,7 +719,7 @@
             this.mskTarikh.BackgroundStyle.Class = "TextBoxBorder";
             this.mskTarikh.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.mskTarikh.ButtonClear.Visible = true;
-            this.mskTarikh.Location = new System.Drawing.Point(19, 5);
+            this.mskTarikh.Location = new System.Drawing.Point(254, 11);
             this.mskTarikh.Mask = "####/##/##";
             this.mskTarikh.Name = "mskTarikh";
             this.mskTarikh.Size = new System.Drawing.Size(139, 21);
@@ -694,7 +732,7 @@
             // 
             this.btnS.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnS.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnS.Location = new System.Drawing.Point(655, 71);
+            this.btnS.Location = new System.Drawing.Point(719, 98);
             this.btnS.Name = "btnS";
             this.btnS.Size = new System.Drawing.Size(27, 23);
             this.btnS.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -710,7 +748,7 @@
             this.txtNumber.BackgroundStyle.Class = "DateTimeInputBackground";
             this.txtNumber.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtNumber.ButtonFreeText.Shortcut = DevComponents.DotNetBar.eShortcut.F2;
-            this.txtNumber.Location = new System.Drawing.Point(248, 71);
+            this.txtNumber.Location = new System.Drawing.Point(272, 98);
             this.txtNumber.Name = "txtNumber";
             this.txtNumber.ShowUpDown = true;
             this.txtNumber.Size = new System.Drawing.Size(80, 26);
@@ -723,12 +761,12 @@
             // 
             this.txtTozih.Border.Class = "TextBoxBorder";
             this.txtTozih.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtTozih.Location = new System.Drawing.Point(19, 99);
+            this.txtTozih.Location = new System.Drawing.Point(20, 130);
             this.txtTozih.Multiline = true;
             this.txtTozih.Name = "txtTozih";
             this.txtTozih.PreventEnterBeep = true;
             this.txtTozih.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtTozih.Size = new System.Drawing.Size(766, 41);
+            this.txtTozih.Size = new System.Drawing.Size(829, 41);
             this.txtTozih.TabIndex = 10;
             // 
             // txtSP
@@ -738,7 +776,7 @@
             // 
             this.txtSP.Border.Class = "TextBoxBorder";
             this.txtSP.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtSP.Location = new System.Drawing.Point(19, 71);
+            this.txtSP.Location = new System.Drawing.Point(19, 97);
             this.txtSP.Name = "txtSP";
             this.txtSP.PreventEnterBeep = true;
             this.txtSP.Size = new System.Drawing.Size(139, 26);
@@ -751,7 +789,7 @@
             // 
             this.txtName.Border.Class = "TextBoxBorder";
             this.txtName.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtName.Location = new System.Drawing.Point(379, 71);
+            this.txtName.Location = new System.Drawing.Point(418, 98);
             this.txtName.Name = "txtName";
             this.txtName.PreventEnterBeep = true;
             this.txtName.Size = new System.Drawing.Size(218, 26);
@@ -764,7 +802,7 @@
             // 
             this.txtCode.Border.Class = "TextBoxBorder";
             this.txtCode.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtCode.Location = new System.Drawing.Point(685, 71);
+            this.txtCode.Location = new System.Drawing.Point(749, 98);
             this.txtCode.Name = "txtCode";
             this.txtCode.PreventEnterBeep = true;
             this.txtCode.Size = new System.Drawing.Size(100, 26);
@@ -773,7 +811,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(791, 99);
+            this.label11.Location = new System.Drawing.Point(855, 130);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(62, 18);
             this.label11.TabIndex = 12;
@@ -782,7 +820,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(168, 75);
+            this.label9.Location = new System.Drawing.Point(168, 101);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(83, 18);
             this.label9.TabIndex = 13;
@@ -791,7 +829,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(340, 74);
+            this.label8.Location = new System.Drawing.Point(358, 101);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(38, 18);
             this.label8.TabIndex = 14;
@@ -800,7 +838,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(603, 73);
+            this.label6.Location = new System.Drawing.Point(642, 100);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(50, 18);
             this.label6.TabIndex = 15;
@@ -809,7 +847,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(791, 73);
+            this.label7.Location = new System.Drawing.Point(855, 100);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(43, 18);
             this.label7.TabIndex = 16;
@@ -818,7 +856,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(160, 8);
+            this.label3.Location = new System.Drawing.Point(395, 14);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(75, 18);
             this.label3.TabIndex = 2;
@@ -827,7 +865,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(528, 41);
+            this.label5.Location = new System.Drawing.Point(531, 57);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(76, 18);
             this.label5.TabIndex = 2;
@@ -836,7 +874,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(791, 40);
+            this.label4.Location = new System.Drawing.Point(835, 57);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(78, 18);
             this.label4.TabIndex = 2;
@@ -845,7 +883,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(788, 6);
+            this.label1.Location = new System.Drawing.Point(822, 11);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(87, 18);
             this.label1.TabIndex = 2;
@@ -858,7 +896,7 @@
             // 
             this.txtTel.Border.Class = "TextBoxBorder";
             this.txtTel.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtTel.Location = new System.Drawing.Point(379, 37);
+            this.txtTel.Location = new System.Drawing.Point(382, 53);
             this.txtTel.Name = "txtTel";
             this.txtTel.PreventEnterBeep = true;
             this.txtTel.Size = new System.Drawing.Size(143, 26);
@@ -871,7 +909,7 @@
             // 
             this.txtNameM.Border.Class = "TextBoxBorder";
             this.txtNameM.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtNameM.Location = new System.Drawing.Point(596, 36);
+            this.txtNameM.Location = new System.Drawing.Point(640, 53);
             this.txtNameM.Name = "txtNameM";
             this.txtNameM.PreventEnterBeep = true;
             this.txtNameM.Size = new System.Drawing.Size(189, 26);
@@ -884,7 +922,7 @@
             // 
             this.txtIdFactor.Border.Class = "TextBoxBorder";
             this.txtIdFactor.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtIdFactor.Location = new System.Drawing.Point(685, 3);
+            this.txtIdFactor.Location = new System.Drawing.Point(719, 8);
             this.txtIdFactor.Name = "txtIdFactor";
             this.txtIdFactor.PreventEnterBeep = true;
             this.txtIdFactor.Size = new System.Drawing.Size(100, 26);
@@ -892,33 +930,18 @@
             // 
             // line3
             // 
-            this.line3.Location = new System.Drawing.Point(19, 143);
+            this.line3.Location = new System.Drawing.Point(19, 170);
             this.line3.Name = "line3";
-            this.line3.Size = new System.Drawing.Size(830, 8);
+            this.line3.Size = new System.Drawing.Size(894, 12);
             this.line3.TabIndex = 0;
             this.line3.Text = "line1";
-            // 
-            // line2
-            // 
-            this.line2.Location = new System.Drawing.Point(19, 62);
-            this.line2.Name = "line2";
-            this.line2.Size = new System.Drawing.Size(830, 8);
-            this.line2.TabIndex = 0;
-            this.line2.Text = "line1";
-            // 
-            // line1
-            // 
-            this.line1.Location = new System.Drawing.Point(19, 27);
-            this.line1.Name = "line1";
-            this.line1.Size = new System.Drawing.Size(830, 8);
-            this.line1.TabIndex = 0;
-            this.line1.Text = "line1";
+            this.line3.Click += new System.EventHandler(this.line3_Click);
             // 
             // frmFroosh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(918, 439);
+            this.ClientSize = new System.Drawing.Size(943, 521);
             this.Controls.Add(this.groupPanel1);
             this.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.MaximizeBox = false;
@@ -986,8 +1009,6 @@
         private DevComponents.DotNetBar.Controls.TextBoxX txtNameM;
         private DevComponents.DotNetBar.Controls.TextBoxX txtIdFactor;
         private DevComponents.DotNetBar.Controls.Line line3;
-        private DevComponents.DotNetBar.Controls.Line line2;
-        private DevComponents.DotNetBar.Controls.Line line1;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn NameGood;
         private System.Windows.Forms.DataGridViewTextBoxColumn Number;
@@ -995,5 +1016,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalCP;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label lbelNumber;
+        private DevComponents.DotNetBar.Controls.Line line2;
+        private DevComponents.DotNetBar.Controls.Line line1;
+        private DevComponents.DotNetBar.ButtonX btnClear;
     }
 }

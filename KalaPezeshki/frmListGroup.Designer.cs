@@ -52,7 +52,7 @@
             this.groupPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupPanel1.Location = new System.Drawing.Point(0, 0);
             this.groupPanel1.Name = "groupPanel1";
-            this.groupPanel1.Size = new System.Drawing.Size(862, 389);
+            this.groupPanel1.Size = new System.Drawing.Size(515, 373);
             // 
             // 
             // 
@@ -93,7 +93,7 @@
             this.groupPanel4.DisabledBackColor = System.Drawing.Color.Empty;
             this.groupPanel4.Location = new System.Drawing.Point(9, 301);
             this.groupPanel4.Name = "groupPanel4";
-            this.groupPanel4.Size = new System.Drawing.Size(838, 80);
+            this.groupPanel4.Size = new System.Drawing.Size(489, 60);
             // 
             // 
             // 
@@ -123,16 +123,17 @@
             // 
             this.groupPanel4.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.groupPanel4.TabIndex = 1;
+            this.groupPanel4.Click += new System.EventHandler(this.groupPanel4_Click);
             // 
             // btnDelete
             // 
             this.btnDelete.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnDelete.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
-            this.btnDelete.Location = new System.Drawing.Point(456, 3);
+            this.btnDelete.Location = new System.Drawing.Point(224, 4);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 8, 8, 2);
-            this.btnDelete.Size = new System.Drawing.Size(163, 66);
+            this.btnDelete.Size = new System.Drawing.Size(109, 47);
             this.btnDelete.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnDelete.TabIndex = 1;
             this.btnDelete.Text = "حذف";
@@ -143,10 +144,10 @@
             this.btnPrint.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnPrint.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnPrint.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.Image")));
-            this.btnPrint.Location = new System.Drawing.Point(653, 3);
+            this.btnPrint.Location = new System.Drawing.Point(355, 4);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 8, 8, 2);
-            this.btnPrint.Size = new System.Drawing.Size(163, 66);
+            this.btnPrint.Size = new System.Drawing.Size(109, 47);
             this.btnPrint.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnPrint.TabIndex = 0;
             this.btnPrint.Text = "چاپ";
@@ -161,7 +162,7 @@
             this.groupPanel2.DisabledBackColor = System.Drawing.Color.Empty;
             this.groupPanel2.Location = new System.Drawing.Point(9, 9);
             this.groupPanel2.Name = "groupPanel2";
-            this.groupPanel2.Size = new System.Drawing.Size(838, 286);
+            this.groupPanel2.Size = new System.Drawing.Size(489, 286);
             // 
             // 
             // 
@@ -201,7 +202,7 @@
             this.dgvGroup.Name = "dgvGroup";
             this.dgvGroup.RowHeadersWidth = 51;
             this.dgvGroup.RowTemplate.Height = 24;
-            this.dgvGroup.Size = new System.Drawing.Size(832, 280);
+            this.dgvGroup.Size = new System.Drawing.Size(483, 280);
             this.dgvGroup.TabIndex = 0;
             this.dgvGroup.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGroup_CellContentClick);
             // 
@@ -209,7 +210,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(862, 389);
+            this.ClientSize = new System.Drawing.Size(515, 373);
             this.Controls.Add(this.groupPanel1);
             this.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.MaximizeBox = false;

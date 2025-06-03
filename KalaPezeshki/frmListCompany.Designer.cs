@@ -35,7 +35,7 @@
             this.groupPanel3 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.dgvCompany = new System.Windows.Forms.DataGridView();
             this.groupPanel2 = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.txtName = new System.Windows.Forms.TextBox();
+            this.txtName = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.groupPanel1.SuspendLayout();
             this.groupPanel4.SuspendLayout();
             this.groupPanel3.SuspendLayout();
@@ -55,7 +55,7 @@
             this.groupPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupPanel1.Location = new System.Drawing.Point(0, 0);
             this.groupPanel1.Name = "groupPanel1";
-            this.groupPanel1.Size = new System.Drawing.Size(1135, 571);
+            this.groupPanel1.Size = new System.Drawing.Size(934, 451);
             // 
             // 
             // 
@@ -94,9 +94,9 @@
             this.groupPanel4.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.groupPanel4.Controls.Add(this.btnDelete);
             this.groupPanel4.DisabledBackColor = System.Drawing.Color.Empty;
-            this.groupPanel4.Location = new System.Drawing.Point(9, 473);
+            this.groupPanel4.Location = new System.Drawing.Point(9, 380);
             this.groupPanel4.Name = "groupPanel4";
-            this.groupPanel4.Size = new System.Drawing.Size(1111, 89);
+            this.groupPanel4.Size = new System.Drawing.Size(914, 60);
             // 
             // 
             // 
@@ -133,10 +133,10 @@
             this.btnDelete.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnDelete.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
-            this.btnDelete.Location = new System.Drawing.Point(927, 3);
+            this.btnDelete.Location = new System.Drawing.Point(783, 3);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 8, 8, 2);
-            this.btnDelete.Size = new System.Drawing.Size(163, 74);
+            this.btnDelete.Size = new System.Drawing.Size(109, 47);
             this.btnDelete.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnDelete.TabIndex = 2;
             this.btnDelete.Text = "حذف";
@@ -151,7 +151,7 @@
             this.groupPanel3.DisabledBackColor = System.Drawing.Color.Empty;
             this.groupPanel3.Location = new System.Drawing.Point(9, 74);
             this.groupPanel3.Name = "groupPanel3";
-            this.groupPanel3.Size = new System.Drawing.Size(1111, 393);
+            this.groupPanel3.Size = new System.Drawing.Size(914, 290);
             // 
             // 
             // 
@@ -192,7 +192,7 @@
             this.dgvCompany.Name = "dgvCompany";
             this.dgvCompany.RowHeadersWidth = 51;
             this.dgvCompany.RowTemplate.Height = 24;
-            this.dgvCompany.Size = new System.Drawing.Size(1105, 387);
+            this.dgvCompany.Size = new System.Drawing.Size(908, 284);
             this.dgvCompany.TabIndex = 0;
             this.dgvCompany.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCompany_CellContentClick);
             // 
@@ -205,7 +205,7 @@
             this.groupPanel2.DisabledBackColor = System.Drawing.Color.Empty;
             this.groupPanel2.Location = new System.Drawing.Point(9, 10);
             this.groupPanel2.Name = "groupPanel2";
-            this.groupPanel2.Size = new System.Drawing.Size(1111, 57);
+            this.groupPanel2.Size = new System.Drawing.Size(914, 57);
             // 
             // 
             // 
@@ -239,18 +239,24 @@
             // 
             // txtName
             // 
-            this.txtName.AccessibleDescription = "";
-            this.txtName.Location = new System.Drawing.Point(754, 12);
+            // 
+            // 
+            // 
+            this.txtName.Border.Class = "TextBoxBorder";
+            this.txtName.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtName.Location = new System.Drawing.Point(599, 13);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(336, 26);
-            this.txtName.TabIndex = 2;
+            this.txtName.PreventEnterBeep = true;
+            this.txtName.Size = new System.Drawing.Size(293, 26);
+            this.txtName.TabIndex = 5;
+            this.txtName.WatermarkText = "نام شرکت";
             this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
             // frmListCompany
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1135, 571);
+            this.ClientSize = new System.Drawing.Size(934, 451);
             this.Controls.Add(this.groupPanel1);
             this.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.MaximizeBox = false;
@@ -264,7 +270,6 @@
             this.groupPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompany)).EndInit();
             this.groupPanel2.ResumeLayout(false);
-            this.groupPanel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -277,6 +282,6 @@
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel4;
         private DevComponents.DotNetBar.ButtonX btnDelete;
         private System.Windows.Forms.DataGridView dgvCompany;
-        private System.Windows.Forms.TextBox txtName;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtName;
     }
 }

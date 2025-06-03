@@ -78,5 +78,10 @@ namespace KalaPezeshki
         {
 
         }
+
+        private void groupPanel4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

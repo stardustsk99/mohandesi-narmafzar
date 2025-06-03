@@ -9,9 +9,24 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 
 namespace KalaPezeshki
-{  
+{
+
+
     public partial class frmCheckD : Form
     {
+        // متد پاک‌سازی فیلدها
+        private void ClearFormFields(Control parent)
+        {
+            foreach (Control c in parent.Controls)
+            {
+                if (c is TextBox)
+                    ((TextBox)c).Clear();
+
+                // اگر کنترل داخل کنترل دیگری باشه (مثلاً GroupBox یا Panel)
+                if (c.HasChildren)
+                    ClearFormFields(c);
+            }
+        }
         public frmCheckD()
         {
             InitializeComponent();
@@ -103,7 +118,7 @@ namespace KalaPezeshki
                 MessageBox.Show("مشکلی پیش آمده است");
             }
         }
-private void btnS_Click(object sender, EventArgs e)
+        private void btnS_Click(object sender, EventArgs e)
         {
             SqlDataReader dr;
             cmd.Parameters.Clear();
@@ -169,6 +184,11 @@ private void btnS_Click(object sender, EventArgs e)
         private void txtNameH_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            ClearFormFields(this);
         }
     }
     }

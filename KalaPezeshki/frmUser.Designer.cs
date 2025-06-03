@@ -44,6 +44,9 @@
             this.txtUName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cmb = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.groupPanel1.SuspendLayout();
             this.groupPanel4.SuspendLayout();
             this.groupPanel3.SuspendLayout();
@@ -57,13 +60,13 @@
             this.groupPanel1.CanvasColor = System.Drawing.SystemColors.Control;
             this.groupPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.groupPanel1.Controls.Add(this.groupPanel4);
-            this.groupPanel1.Controls.Add(this.groupPanel3);
             this.groupPanel1.Controls.Add(this.groupPanel2);
+            this.groupPanel1.Controls.Add(this.groupPanel3);
             this.groupPanel1.DisabledBackColor = System.Drawing.Color.Empty;
             this.groupPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupPanel1.Location = new System.Drawing.Point(0, 0);
             this.groupPanel1.Name = "groupPanel1";
-            this.groupPanel1.Size = new System.Drawing.Size(800, 506);
+            this.groupPanel1.Size = new System.Drawing.Size(976, 488);
             // 
             // 
             // 
@@ -103,9 +106,9 @@
             this.groupPanel4.Controls.Add(this.btnDelete);
             this.groupPanel4.Controls.Add(this.btnSave);
             this.groupPanel4.DisabledBackColor = System.Drawing.Color.Empty;
-            this.groupPanel4.Location = new System.Drawing.Point(-3, 359);
+            this.groupPanel4.Location = new System.Drawing.Point(5, 416);
             this.groupPanel4.Name = "groupPanel4";
-            this.groupPanel4.Size = new System.Drawing.Size(794, 138);
+            this.groupPanel4.Size = new System.Drawing.Size(956, 60);
             // 
             // 
             // 
@@ -141,10 +144,10 @@
             this.btnEdite.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnEdite.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnEdite.Image = ((System.Drawing.Image)(resources.GetObject("btnEdite.Image")));
-            this.btnEdite.Location = new System.Drawing.Point(145, 38);
+            this.btnEdite.Location = new System.Drawing.Point(548, 3);
             this.btnEdite.Name = "btnEdite";
             this.btnEdite.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 8, 8, 2);
-            this.btnEdite.Size = new System.Drawing.Size(163, 66);
+            this.btnEdite.Size = new System.Drawing.Size(109, 47);
             this.btnEdite.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnEdite.TabIndex = 2;
             this.btnEdite.Text = "ویرایش";
@@ -155,10 +158,10 @@
             this.btnDelete.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnDelete.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
-            this.btnDelete.Location = new System.Drawing.Point(363, 38);
+            this.btnDelete.Location = new System.Drawing.Point(681, 3);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 8, 8, 2);
-            this.btnDelete.Size = new System.Drawing.Size(163, 66);
+            this.btnDelete.Size = new System.Drawing.Size(109, 47);
             this.btnDelete.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnDelete.TabIndex = 2;
             this.btnDelete.Text = "حذف";
@@ -169,10 +172,10 @@
             this.btnSave.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnSave.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
-            this.btnSave.Location = new System.Drawing.Point(560, 38);
+            this.btnSave.Location = new System.Drawing.Point(810, 3);
             this.btnSave.Name = "btnSave";
             this.btnSave.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 8, 8, 2);
-            this.btnSave.Size = new System.Drawing.Size(163, 66);
+            this.btnSave.Size = new System.Drawing.Size(109, 47);
             this.btnSave.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnSave.TabIndex = 2;
             this.btnSave.Text = "ثبت";
@@ -185,9 +188,9 @@
             this.groupPanel3.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.groupPanel3.Controls.Add(this.dgvUser);
             this.groupPanel3.DisabledBackColor = System.Drawing.Color.Empty;
-            this.groupPanel3.Location = new System.Drawing.Point(3, 102);
+            this.groupPanel3.Location = new System.Drawing.Point(3, 3);
             this.groupPanel3.Name = "groupPanel3";
-            this.groupPanel3.Size = new System.Drawing.Size(788, 251);
+            this.groupPanel3.Size = new System.Drawing.Size(547, 407);
             // 
             // 
             // 
@@ -228,7 +231,7 @@
             this.dgvUser.Name = "dgvUser";
             this.dgvUser.RowHeadersWidth = 51;
             this.dgvUser.RowTemplate.Height = 24;
-            this.dgvUser.Size = new System.Drawing.Size(782, 245);
+            this.dgvUser.Size = new System.Drawing.Size(541, 401);
             this.dgvUser.TabIndex = 1;
             this.dgvUser.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUser_CellContentClick);
             this.dgvUser.MouseUp += new System.Windows.Forms.MouseEventHandler(this.dgvUser_MouseUp);
@@ -238,17 +241,20 @@
             this.groupPanel2.BackColor = System.Drawing.Color.Transparent;
             this.groupPanel2.CanvasColor = System.Drawing.SystemColors.Control;
             this.groupPanel2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.groupPanel2.Controls.Add(this.cmb);
             this.groupPanel2.Controls.Add(this.ChkPassword);
             this.groupPanel2.Controls.Add(this.label3);
             this.groupPanel2.Controls.Add(this.txtPhoneNumber);
+            this.groupPanel2.Controls.Add(this.textBox1);
             this.groupPanel2.Controls.Add(this.txtPass);
             this.groupPanel2.Controls.Add(this.txtUName);
+            this.groupPanel2.Controls.Add(this.label4);
             this.groupPanel2.Controls.Add(this.label2);
             this.groupPanel2.Controls.Add(this.label1);
             this.groupPanel2.DisabledBackColor = System.Drawing.Color.Empty;
-            this.groupPanel2.Location = new System.Drawing.Point(3, 3);
+            this.groupPanel2.Location = new System.Drawing.Point(556, 6);
             this.groupPanel2.Name = "groupPanel2";
-            this.groupPanel2.Size = new System.Drawing.Size(788, 93);
+            this.groupPanel2.Size = new System.Drawing.Size(408, 401);
             // 
             // 
             // 
@@ -278,11 +284,12 @@
             // 
             this.groupPanel2.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.groupPanel2.TabIndex = 0;
+            this.groupPanel2.Click += new System.EventHandler(this.groupPanel2_Click);
             // 
             // ChkPassword
             // 
             this.ChkPassword.AutoSize = true;
-            this.ChkPassword.Location = new System.Drawing.Point(251, 62);
+            this.ChkPassword.Location = new System.Drawing.Point(130, 233);
             this.ChkPassword.Name = "ChkPassword";
             this.ChkPassword.Size = new System.Drawing.Size(154, 22);
             this.ChkPassword.TabIndex = 4;
@@ -293,7 +300,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(286, 21);
+            this.label3.Location = new System.Drawing.Point(290, 103);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(88, 18);
             this.label3.TabIndex = 3;
@@ -302,16 +309,16 @@
             // 
             // txtPhoneNumber
             // 
-            this.txtPhoneNumber.Location = new System.Drawing.Point(38, 21);
+            this.txtPhoneNumber.Location = new System.Drawing.Point(14, 103);
             this.txtPhoneNumber.MaxLength = 11;
             this.txtPhoneNumber.Name = "txtPhoneNumber";
-            this.txtPhoneNumber.Size = new System.Drawing.Size(242, 26);
+            this.txtPhoneNumber.Size = new System.Drawing.Size(270, 26);
             this.txtPhoneNumber.TabIndex = 2;
             this.txtPhoneNumber.TextChanged += new System.EventHandler(this.txtPhoneNumber_TextChanged);
             // 
             // txtPass
             // 
-            this.txtPass.Location = new System.Drawing.Point(411, 58);
+            this.txtPass.Location = new System.Drawing.Point(14, 146);
             this.txtPass.MaxLength = 30;
             this.txtPass.Name = "txtPass";
             this.txtPass.PasswordChar = '*';
@@ -321,7 +328,7 @@
             // 
             // txtUName
             // 
-            this.txtUName.Location = new System.Drawing.Point(411, 18);
+            this.txtUName.Location = new System.Drawing.Point(14, 62);
             this.txtUName.MaxLength = 30;
             this.txtUName.Name = "txtUName";
             this.txtUName.Size = new System.Drawing.Size(270, 26);
@@ -331,7 +338,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(687, 51);
+            this.label2.Location = new System.Drawing.Point(290, 146);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(69, 18);
             this.label2.TabIndex = 0;
@@ -340,18 +347,49 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(687, 21);
+            this.label1.Location = new System.Drawing.Point(290, 65);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(69, 18);
             this.label1.TabIndex = 0;
             this.label1.Text = "نام کاربری";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(14, 191);
+            this.textBox1.MaxLength = 30;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.PasswordChar = '*';
+            this.textBox1.Size = new System.Drawing.Size(270, 26);
+            this.textBox1.TabIndex = 1;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(290, 191);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(101, 18);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "تکرار کلمه عبور";
+            // 
+            // cmb
+            // 
+            this.cmb.DisplayMember = "Text";
+            this.cmb.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmb.FormattingEnabled = true;
+            this.cmb.ItemHeight = 20;
+            this.cmb.Location = new System.Drawing.Point(103, 30);
+            this.cmb.Name = "cmb";
+            this.cmb.Size = new System.Drawing.Size(181, 26);
+            this.cmb.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.cmb.TabIndex = 5;
+            // 
             // frmUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 506);
+            this.ClientSize = new System.Drawing.Size(976, 488);
             this.Controls.Add(this.groupPanel1);
             this.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.Name = "frmUser";
@@ -385,5 +423,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtPhoneNumber;
         private System.Windows.Forms.CheckBox ChkPassword;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label4;
+        private DevComponents.DotNetBar.Controls.ComboBoxEx cmb;
     }
 }

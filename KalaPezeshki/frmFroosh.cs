@@ -295,5 +295,35 @@ namespace KalaPezeshki
         {
 
         }
+
+        private void txtShH_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupPanel5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupPanel2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void line3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            frmHelper.ClearFormFields(this);
+        }
+
+        private void dgvFactor_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

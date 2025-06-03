@@ -13,6 +13,7 @@ namespace KalaPezeshki
 {
     public partial class frmCompany: Form
     {
+
         public frmCompany()
         {
             InitializeComponent();
@@ -119,7 +120,7 @@ namespace KalaPezeshki
             if (dr.Read())
             {
                 txtCode.Text = dr["id"].ToString();
-                txtName.Text = dr["NamedC"].ToString();
+                txtName.Text = dr["NameC"].ToString();
                 txtTel.Text = dr["Tel"].ToString();
                 txtAddress.Text = dr["Address"].ToString();
                 txtTozih.Text = dr["Tozih"].ToString();
@@ -140,6 +141,16 @@ namespace KalaPezeshki
         }
 
         private void frmCompany_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            frmHelper.ClearFormFields(this);
+        }
+
+        private void groupPanel3_Click(object sender, EventArgs e)
         {
 
         }

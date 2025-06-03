@@ -43,10 +43,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.groupPanel2 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
-            this.txtGroup = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtName = new System.Windows.Forms.TextBox();
+            this.txtName = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtGroup = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.groupPanel1.SuspendLayout();
             this.groupPanel5.SuspendLayout();
             this.groupPanel4.SuspendLayout();
@@ -337,11 +335,9 @@
             this.groupPanel2.BackColor = System.Drawing.Color.Transparent;
             this.groupPanel2.CanvasColor = System.Drawing.SystemColors.Control;
             this.groupPanel2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            this.groupPanel2.Controls.Add(this.buttonX1);
             this.groupPanel2.Controls.Add(this.txtGroup);
-            this.groupPanel2.Controls.Add(this.label2);
-            this.groupPanel2.Controls.Add(this.label1);
             this.groupPanel2.Controls.Add(this.txtName);
+            this.groupPanel2.Controls.Add(this.buttonX1);
             this.groupPanel2.DisabledBackColor = System.Drawing.Color.Empty;
             this.groupPanel2.Location = new System.Drawing.Point(9, 9);
             this.groupPanel2.Name = "groupPanel2";
@@ -388,39 +384,35 @@
             this.buttonX1.Text = "+";
             this.buttonX1.Click += new System.EventHandler(this.buttonX1_Click);
             // 
-            // txtGroup
-            // 
-            this.txtGroup.Location = new System.Drawing.Point(42, 8);
-            this.txtGroup.Name = "txtGroup";
-            this.txtGroup.Size = new System.Drawing.Size(288, 26);
-            this.txtGroup.TabIndex = 9;
-            this.txtGroup.TextChanged += new System.EventHandler(this.txtGroup_TextChanged);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(860, 16);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 18);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "نام کالا";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(350, 11);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 18);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "نام گروه";
-            // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(953, 8);
+            // 
+            // 
+            // 
+            this.txtName.Border.Class = "TextBoxBorder";
+            this.txtName.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtName.Location = new System.Drawing.Point(948, 8);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(288, 26);
-            this.txtName.TabIndex = 9;
-            this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
+            this.txtName.PreventEnterBeep = true;
+            this.txtName.Size = new System.Drawing.Size(293, 26);
+            this.txtName.TabIndex = 14;
+            this.txtName.WatermarkText = "نام کالا";
+            this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged_1);
+            // 
+            // txtGroup
+            // 
+            // 
+            // 
+            // 
+            this.txtGroup.Border.Class = "TextBoxBorder";
+            this.txtGroup.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtGroup.Location = new System.Drawing.Point(28, 8);
+            this.txtGroup.Name = "txtGroup";
+            this.txtGroup.PreventEnterBeep = true;
+            this.txtGroup.Size = new System.Drawing.Size(293, 26);
+            this.txtGroup.TabIndex = 15;
+            this.txtGroup.WatermarkText = "نام گروه کالا";
+            this.txtGroup.TextChanged += new System.EventHandler(this.txtGroup_TextChanged_1);
             // 
             // frmListGoods
             // 
@@ -433,7 +425,7 @@
             this.Name = "frmListGoods";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "گزارش لیست دارو ها و انقضا";
+            this.Text = "گزارش لیست کالاها و انقضا";
             this.Load += new System.EventHandler(this.frmListGoods_Load);
             this.groupPanel1.ResumeLayout(false);
             this.groupPanel5.ResumeLayout(false);
@@ -442,7 +434,6 @@
             this.groupPanel3.ResumeLayout(false);
             this.groupPanel3.PerformLayout();
             this.groupPanel2.ResumeLayout(false);
-            this.groupPanel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -460,12 +451,10 @@
         private System.Windows.Forms.Label label6;
         private DevComponents.DotNetBar.Controls.MaskedTextBoxAdv mskEXP1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.DataGridView dgvGoods;
-        private System.Windows.Forms.TextBox txtGroup;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private DevComponents.DotNetBar.ButtonX btnS;
         private DevComponents.DotNetBar.ButtonX buttonX1;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtName;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtGroup;
     }
 }

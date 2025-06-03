@@ -57,7 +57,7 @@
             this.groupPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupPanel1.Location = new System.Drawing.Point(0, 0);
             this.groupPanel1.Name = "groupPanel1";
-            this.groupPanel1.Size = new System.Drawing.Size(800, 450);
+            this.groupPanel1.Size = new System.Drawing.Size(802, 415);
             // 
             // 
             // 
@@ -95,9 +95,9 @@
             this.groupPanel4.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.groupPanel4.Controls.Add(this.btnDelete);
             this.groupPanel4.DisabledBackColor = System.Drawing.Color.Empty;
-            this.groupPanel4.Location = new System.Drawing.Point(2, 307);
+            this.groupPanel4.Location = new System.Drawing.Point(2, 345);
             this.groupPanel4.Name = "groupPanel4";
-            this.groupPanel4.Size = new System.Drawing.Size(789, 43);
+            this.groupPanel4.Size = new System.Drawing.Size(789, 60);
             // 
             // 
             // 
@@ -133,10 +133,10 @@
             this.btnDelete.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnDelete.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
-            this.btnDelete.Location = new System.Drawing.Point(684, 0);
+            this.btnDelete.Location = new System.Drawing.Point(670, 4);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 8, 8, 2);
-            this.btnDelete.Size = new System.Drawing.Size(95, 35);
+            this.btnDelete.Size = new System.Drawing.Size(109, 47);
             this.btnDelete.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnDelete.TabIndex = 1;
             this.btnDelete.Text = "حذف";
@@ -149,9 +149,9 @@
             this.groupPanel3.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.groupPanel3.Controls.Add(this.dgvSandoogh);
             this.groupPanel3.DisabledBackColor = System.Drawing.Color.Empty;
-            this.groupPanel3.Location = new System.Drawing.Point(2, 40);
+            this.groupPanel3.Location = new System.Drawing.Point(2, 45);
             this.groupPanel3.Name = "groupPanel3";
-            this.groupPanel3.Size = new System.Drawing.Size(789, 266);
+            this.groupPanel3.Size = new System.Drawing.Size(789, 299);
             // 
             // 
             // 
@@ -199,7 +199,7 @@
             this.dgvSandoogh.Location = new System.Drawing.Point(0, 0);
             this.dgvSandoogh.Name = "dgvSandoogh";
             this.dgvSandoogh.RowHeadersWidth = 51;
-            this.dgvSandoogh.Size = new System.Drawing.Size(783, 260);
+            this.dgvSandoogh.Size = new System.Drawing.Size(783, 293);
             this.dgvSandoogh.TabIndex = 0;
             // 
             // groupPanel2
@@ -212,7 +212,7 @@
             this.groupPanel2.DisabledBackColor = System.Drawing.Color.Empty;
             this.groupPanel2.Location = new System.Drawing.Point(2, 1);
             this.groupPanel2.Name = "groupPanel2";
-            this.groupPanel2.Size = new System.Drawing.Size(789, 38);
+            this.groupPanel2.Size = new System.Drawing.Size(789, 43);
             // 
             // 
             // 
@@ -250,10 +250,10 @@
             // 
             this.txtShH.Border.Class = "TextBoxBorder";
             this.txtShH.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtShH.Location = new System.Drawing.Point(4, 7);
+            this.txtShH.Location = new System.Drawing.Point(5, 8);
             this.txtShH.Name = "txtShH";
             this.txtShH.PreventEnterBeep = true;
-            this.txtShH.Size = new System.Drawing.Size(225, 22);
+            this.txtShH.Size = new System.Drawing.Size(225, 26);
             this.txtShH.TabIndex = 5;
             this.txtShH.WatermarkText = "شماره صندوق را وارد کنید";
             this.txtShH.TextChanged += new System.EventHandler(this.txtShH_TextChanged);
@@ -265,21 +265,24 @@
             // 
             this.txtName.Border.Class = "TextBoxBorder";
             this.txtName.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtName.Location = new System.Drawing.Point(554, 7);
+            this.txtName.Location = new System.Drawing.Point(554, 8);
             this.txtName.Name = "txtName";
             this.txtName.PreventEnterBeep = true;
-            this.txtName.Size = new System.Drawing.Size(225, 22);
+            this.txtName.Size = new System.Drawing.Size(225, 26);
             this.txtName.TabIndex = 4;
             this.txtName.WatermarkText = "نام صندوق را وارد کنید";
             this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
             // frmListSandoogh
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(802, 415);
             this.Controls.Add(this.groupPanel1);
+            this.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.MaximizeBox = false;
             this.Name = "frmListSandoogh";
+            this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "گزارش موجودی صندوق";
             this.Load += new System.EventHandler(this.frmListSandoogh_Load);
             this.groupPanel1.ResumeLayout(false);

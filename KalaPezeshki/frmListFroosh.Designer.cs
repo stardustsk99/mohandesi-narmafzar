@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmListFroosh));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.groupPanel4 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.btnDelete = new DevComponents.DotNetBar.ButtonX();
@@ -62,7 +62,7 @@
             this.groupPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupPanel1.Location = new System.Drawing.Point(0, 0);
             this.groupPanel1.Name = "groupPanel1";
-            this.groupPanel1.Size = new System.Drawing.Size(584, 391);
+            this.groupPanel1.Size = new System.Drawing.Size(595, 422);
             // 
             // 
             // 
@@ -101,9 +101,9 @@
             this.groupPanel4.Controls.Add(this.btnDelete);
             this.groupPanel4.Controls.Add(this.btnPrint);
             this.groupPanel4.DisabledBackColor = System.Drawing.Color.Empty;
-            this.groupPanel4.Location = new System.Drawing.Point(3, 324);
+            this.groupPanel4.Location = new System.Drawing.Point(9, 344);
             this.groupPanel4.Name = "groupPanel4";
-            this.groupPanel4.Size = new System.Drawing.Size(572, 48);
+            this.groupPanel4.Size = new System.Drawing.Size(572, 60);
             // 
             // 
             // 
@@ -139,10 +139,10 @@
             this.btnDelete.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnDelete.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
-            this.btnDelete.Location = new System.Drawing.Point(368, 1);
+            this.btnDelete.Location = new System.Drawing.Point(313, 3);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 8, 8, 2);
-            this.btnDelete.Size = new System.Drawing.Size(95, 39);
+            this.btnDelete.Size = new System.Drawing.Size(109, 47);
             this.btnDelete.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnDelete.TabIndex = 1;
             this.btnDelete.Text = " حذف";
@@ -153,10 +153,10 @@
             this.btnPrint.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnPrint.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnPrint.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.Image")));
-            this.btnPrint.Location = new System.Drawing.Point(469, 1);
+            this.btnPrint.Location = new System.Drawing.Point(444, 3);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 8, 8, 2);
-            this.btnPrint.Size = new System.Drawing.Size(95, 39);
+            this.btnPrint.Size = new System.Drawing.Size(109, 47);
             this.btnPrint.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnPrint.TabIndex = 0;
             this.btnPrint.Text = "چاپ";
@@ -169,7 +169,7 @@
             this.groupPanel3.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.groupPanel3.Controls.Add(this.dgvFactor);
             this.groupPanel3.DisabledBackColor = System.Drawing.Color.Empty;
-            this.groupPanel3.Location = new System.Drawing.Point(3, 44);
+            this.groupPanel3.Location = new System.Drawing.Point(9, 64);
             this.groupPanel3.Name = "groupPanel3";
             this.groupPanel3.Size = new System.Drawing.Size(572, 277);
             // 
@@ -205,36 +205,36 @@
             // dgvFactor
             // 
             this.dgvFactor.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvFactor.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvFactor.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvFactor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvFactor.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvFactor.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvFactor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvFactor.EnableHeadersVisualStyles = false;
             this.dgvFactor.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dgvFactor.Location = new System.Drawing.Point(0, 0);
             this.dgvFactor.Name = "dgvFactor";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvFactor.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvFactor.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvFactor.RowHeadersWidth = 51;
             this.dgvFactor.Size = new System.Drawing.Size(566, 271);
             this.dgvFactor.TabIndex = 0;
@@ -249,9 +249,9 @@
             this.groupPanel2.Controls.Add(this.mskTarikh1);
             this.groupPanel2.Controls.Add(this.label3);
             this.groupPanel2.DisabledBackColor = System.Drawing.Color.Empty;
-            this.groupPanel2.Location = new System.Drawing.Point(3, 1);
+            this.groupPanel2.Location = new System.Drawing.Point(9, 9);
             this.groupPanel2.Name = "groupPanel2";
-            this.groupPanel2.Size = new System.Drawing.Size(572, 40);
+            this.groupPanel2.Size = new System.Drawing.Size(572, 49);
             // 
             // 
             // 
@@ -290,7 +290,7 @@
             this.mskTarikh2.BackgroundStyle.Class = "TextBoxBorder";
             this.mskTarikh2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.mskTarikh2.ButtonClear.Visible = true;
-            this.mskTarikh2.Location = new System.Drawing.Point(3, 6);
+            this.mskTarikh2.Location = new System.Drawing.Point(21, 9);
             this.mskTarikh2.Mask = "####/##/##";
             this.mskTarikh2.Name = "mskTarikh2";
             this.mskTarikh2.Size = new System.Drawing.Size(139, 24);
@@ -302,7 +302,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(144, 9);
+            this.label1.Location = new System.Drawing.Point(162, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 18);
             this.label1.TabIndex = 6;
@@ -316,7 +316,7 @@
             this.mskTarikh1.BackgroundStyle.Class = "TextBoxBorder";
             this.mskTarikh1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.mskTarikh1.ButtonClear.Visible = true;
-            this.mskTarikh1.Location = new System.Drawing.Point(368, 5);
+            this.mskTarikh1.Location = new System.Drawing.Point(362, 9);
             this.mskTarikh1.Mask = "####/##/##";
             this.mskTarikh1.Name = "mskTarikh1";
             this.mskTarikh1.Size = new System.Drawing.Size(139, 24);
@@ -328,7 +328,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(513, 6);
+            this.label3.Location = new System.Drawing.Point(507, 10);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(50, 18);
             this.label3.TabIndex = 4;
@@ -338,7 +338,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(584, 391);
+            this.ClientSize = new System.Drawing.Size(595, 422);
             this.Controls.Add(this.groupPanel1);
             this.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.MaximizeBox = false;

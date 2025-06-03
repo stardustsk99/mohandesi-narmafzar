@@ -115,6 +115,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmHelper.cs" />
     <Compile Include="frmBank.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -223,6 +224,12 @@
     <Compile Include="frmListSandoogh.Designer.cs">
       <DependentUpon>frmListSandoogh.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPersenel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -253,12 +260,6 @@
     </Compile>
     <Compile Include="frmInfo.Designer.cs">
       <DependentUpon>frmInfo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmLogin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmLogin.Designer.cs">
-      <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="frmUser.cs">
       <SubType>Form</SubType>

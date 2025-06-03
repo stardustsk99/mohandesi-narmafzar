@@ -188,5 +188,15 @@ namespace KalaPezeshki
         {
             new frmListGoods().ShowDialog();
         }
+
+        private void groupPanel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            frmHelper.ClearFormFields(this);
+        }
     }
 }

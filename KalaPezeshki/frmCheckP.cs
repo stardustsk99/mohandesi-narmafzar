@@ -13,6 +13,19 @@ namespace KalaPezeshki
 {
     public partial class frmCheckP : Form
     {
+        // متد پاک‌سازی فیلدها
+        private void ClearFormFields(Control parent)
+        {
+            foreach (Control c in parent.Controls)
+            {
+                if (c is TextBox)
+                    ((TextBox)c).Clear();
+
+                // اگر کنترل داخل کنترل دیگری باشه (مثلاً GroupBox یا Panel)
+                if (c.HasChildren)
+                    ClearFormFields(c);
+            }
+        }
         public frmCheckP()
         {
             InitializeComponent();
@@ -164,6 +177,21 @@ namespace KalaPezeshki
         private void btnList_Click(object sender, EventArgs e)
         {
             new frmCheckP().ShowDialog();
+        }
+
+        private void txtNameH_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            ClearFormFields(this);
+        }
+
+        private void cmbVaziyat_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -56,7 +56,7 @@
             this.groupPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupPanel1.Location = new System.Drawing.Point(0, 0);
             this.groupPanel1.Name = "groupPanel1";
-            this.groupPanel1.Size = new System.Drawing.Size(585, 234);
+            this.groupPanel1.Size = new System.Drawing.Size(583, 212);
             // 
             // 
             // 
@@ -98,7 +98,7 @@
             this.groupPanel4.DisabledBackColor = System.Drawing.Color.Empty;
             this.groupPanel4.Location = new System.Drawing.Point(9, 137);
             this.groupPanel4.Name = "groupPanel4";
-            this.groupPanel4.Size = new System.Drawing.Size(561, 80);
+            this.groupPanel4.Size = new System.Drawing.Size(561, 60);
             // 
             // 
             // 
@@ -134,10 +134,10 @@
             this.btnList.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnList.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnList.Image = ((System.Drawing.Image)(resources.GetObject("btnList.Image")));
-            this.btnList.Location = new System.Drawing.Point(30, 3);
+            this.btnList.Location = new System.Drawing.Point(90, 4);
             this.btnList.Name = "btnList";
             this.btnList.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 8, 8, 2);
-            this.btnList.Size = new System.Drawing.Size(163, 66);
+            this.btnList.Size = new System.Drawing.Size(109, 47);
             this.btnList.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnList.TabIndex = 3;
             this.btnList.Text = "لیست";
@@ -148,10 +148,10 @@
             this.btnDelete.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnDelete.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
-            this.btnDelete.Location = new System.Drawing.Point(208, 3);
+            this.btnDelete.Location = new System.Drawing.Point(261, 4);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 8, 8, 2);
-            this.btnDelete.Size = new System.Drawing.Size(163, 66);
+            this.btnDelete.Size = new System.Drawing.Size(109, 47);
             this.btnDelete.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnDelete.TabIndex = 1;
             this.btnDelete.Text = "حذف";
@@ -162,10 +162,10 @@
             this.btnSave.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnSave.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
-            this.btnSave.Location = new System.Drawing.Point(389, 3);
+            this.btnSave.Location = new System.Drawing.Point(429, 4);
             this.btnSave.Name = "btnSave";
             this.btnSave.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 8, 8, 2);
-            this.btnSave.Size = new System.Drawing.Size(163, 66);
+            this.btnSave.Size = new System.Drawing.Size(109, 47);
             this.btnSave.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnSave.TabIndex = 0;
             this.btnSave.Text = "ثبت";
@@ -263,7 +263,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(585, 234);
+            this.ClientSize = new System.Drawing.Size(583, 212);
             this.Controls.Add(this.groupPanel1);
             this.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.MaximizeBox = false;

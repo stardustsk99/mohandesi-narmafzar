@@ -11,9 +11,23 @@ using System.Data.SqlClient;
 
 namespace KalaPezeshki
 {
+
     // فرم مربوط به اطلاعات فروشگاه یا مرکز پزشکی
     public partial class frmInfo : Form
     {
+        private void ClearFormFields(Control parent)
+        {
+            foreach (Control c in parent.Controls)
+            {
+                if (c is TextBox)
+                    ((TextBox)c).Clear();
+
+                // اگر کنترل داخل کنترل دیگری باشد (مثلاً پنل یا گروه‌باکس)
+                if (c.HasChildren)
+                    ClearFormFields(c);
+            }
+        }
+
         // سازنده فرم - مقداردهی اولیه کنترل‌ها
         public frmInfo()
         {
@@ -119,5 +133,15 @@ namespace KalaPezeshki
 
         // رویداد بارگذاری فرم (در حال حاضر خالی)
         private void frmInfo_Load(object sender, EventArgs e) { }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            ClearFormFields(this);
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

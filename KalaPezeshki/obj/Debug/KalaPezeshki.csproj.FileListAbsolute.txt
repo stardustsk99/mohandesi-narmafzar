@@ -331,7 +331,6 @@ E:\C# Code\kalapezashki\mohandesi-narmafzar\KalaPezeshki\obj\Debug\KalaPezeshki.
 E:\C# Code\kalapezashki\mohandesi-narmafzar\KalaPezeshki\obj\Debug\KalaPezeshki.frmListKharid.resources
 E:\C# Code\kalapezashki\mohandesi-narmafzar\KalaPezeshki\obj\Debug\KalaPezeshki.frmListPersenel.resources
 E:\C# Code\kalapezashki\mohandesi-narmafzar\KalaPezeshki\obj\Debug\KalaPezeshki.frmListSandoogh.resources
-E:\C# Code\kalapezashki\mohandesi-narmafzar\KalaPezeshki\obj\Debug\KalaPezeshki.frmLogin.resources
 E:\C# Code\kalapezashki\mohandesi-narmafzar\KalaPezeshki\obj\Debug\KalaPezeshki.frmPersenel.resources
 E:\C# Code\kalapezashki\mohandesi-narmafzar\KalaPezeshki\obj\Debug\KalaPezeshki.frmSandoogh.resources
 E:\C# Code\kalapezashki\mohandesi-narmafzar\KalaPezeshki\obj\Debug\KalaPezeshki.frmShortage.resources
@@ -343,3 +342,4 @@ E:\C# Code\kalapezashki\mohandesi-narmafzar\KalaPezeshki\obj\Debug\KalaPezeshki.
 E:\C# Code\kalapezashki\mohandesi-narmafzar\KalaPezeshki\obj\Debug\KalaPeze.C2BD6894.Up2Date
 E:\C# Code\kalapezashki\mohandesi-narmafzar\KalaPezeshki\obj\Debug\KalaPezeshki.exe
 E:\C# Code\kalapezashki\mohandesi-narmafzar\KalaPezeshki\obj\Debug\KalaPezeshki.pdb
+E:\C# Code\kalapezashki\mohandesi-narmafzar\KalaPezeshki\obj\Debug\KalaPezeshki.frmLogin.resources

@@ -48,30 +48,9 @@ namespace KalaPezeshki
             Display();
         }
 
-        private void txtName_TextChanged(object sender, EventArgs e)
-        {
-            DataSet ds = new DataSet(); // مجموعه داده‌ها برای ذخیره نتیجه
-            SqlDataAdapter adp = new SqlDataAdapter(); // آداپتور برای پر کردن DataSet
-            adp.SelectCommand = new SqlCommand();
-            adp.SelectCommand.Connection = con;
-            adp.SelectCommand.CommandText = "Select * from Bank where Bank like '%'+ @S +'%'";// بازیابی همه کاربران
-            adp.SelectCommand.Parameters.AddWithValue("@S", txtName.Text + "%");
-            adp.Fill(ds, "Bank"); // پر کردن دیتاست با داده‌ها
-            dgvCompany.DataSource = ds;
-            dgvCompany.DataMember = "Bank";
-        }
-
         private void txtRool_TextChanged(object sender, EventArgs e)
         {
-            DataSet ds = new DataSet(); // مجموعه داده‌ها برای ذخیره نتیجه
-            SqlDataAdapter adp = new SqlDataAdapter(); // آداپتور برای پر کردن DataSet
-            adp.SelectCommand = new SqlCommand();
-            adp.SelectCommand.Connection = con;
-            adp.SelectCommand.CommandText = "Select * from Bank where AcctNum like '%'+ @S +'%'";// بازیابی همه کاربران
-            adp.SelectCommand.Parameters.AddWithValue("@S", txtAcctNum.Text + "%");
-            adp.Fill(ds, "Bank"); // پر کردن دیتاست با داده‌ها
-            dgvCompany.DataSource = ds;
-            dgvCompany.DataMember = "Bank";
+
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -93,6 +72,33 @@ namespace KalaPezeshki
             {
                 MessageBox.Show("مشکلی پیش آمده است");
             }
+        }
+
+        private void txtName_TextChanged_1(object sender, EventArgs e)
+        {
+            DataSet ds = new DataSet(); // مجموعه داده‌ها برای ذخیره نتیجه
+            SqlDataAdapter adp = new SqlDataAdapter(); // آداپتور برای پر کردن DataSet
+            adp.SelectCommand = new SqlCommand();
+            adp.SelectCommand.Connection = con;
+            adp.SelectCommand.CommandText = "Select * from Bank where Bank like '%'+ @S +'%'";// بازیابی همه کاربران
+            adp.SelectCommand.Parameters.AddWithValue("@S", txtName.Text + "%");
+            adp.Fill(ds, "Bank"); // پر کردن دیتاست با داده‌ها
+            dgvCompany.DataSource = ds;
+            dgvCompany.DataMember = "Bank";
+        }
+
+
+        private void txtAcctNum_TextChanged(object sender, EventArgs e)
+        {
+            DataSet ds = new DataSet(); // مجموعه داده‌ها برای ذخیره نتیجه
+            SqlDataAdapter adp = new SqlDataAdapter(); // آداپتور برای پر کردن DataSet
+            adp.SelectCommand = new SqlCommand();
+            adp.SelectCommand.Connection = con;
+            adp.SelectCommand.CommandText = "Select * from Bank where AcctNum like '%'+ @S +'%'";// بازیابی همه کاربران
+            adp.SelectCommand.Parameters.AddWithValue("@S", txtAcctNum.Text + "%");
+            adp.Fill(ds, "Bank"); // پر کردن دیتاست با داده‌ها
+            dgvCompany.DataSource = ds;
+            dgvCompany.DataMember = "Bank";
         }
     }
 }

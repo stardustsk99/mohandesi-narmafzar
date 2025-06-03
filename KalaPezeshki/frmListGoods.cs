@@ -104,30 +104,11 @@ namespace KalaPezeshki
             Display();
         }
 
-        private void txtName_TextChanged(object sender, EventArgs e)
-        {
-            DataSet ds = new DataSet(); // مجموعه داده‌ها برای ذخیره نتیجه
-            SqlDataAdapter adp = new SqlDataAdapter(); // آداپتور برای پر کردن DataSet
-            adp.SelectCommand = new SqlCommand();
-            adp.SelectCommand.Connection = con;
-            adp.SelectCommand.CommandText = "Select * from Goods where NameGoods like '%'+@S+'%'"; // بازیابی همه کاربران
-            adp.SelectCommand.Parameters.AddWithValue("@S", txtName.Text + "%");
-            adp.Fill(ds, "Goods"); // پر کردن دیتاست با داده‌ها
-            dgvGoods.DataSource = ds;
-            dgvGoods.DataMember = "Goods";
-        }
+
 
         private void txtGroup_TextChanged(object sender, EventArgs e)
         {
-            DataSet ds = new DataSet(); // مجموعه داده‌ها برای ذخیره نتیجه
-            SqlDataAdapter adp = new SqlDataAdapter(); // آداپتور برای پر کردن DataSet
-            adp.SelectCommand = new SqlCommand();
-            adp.SelectCommand.Connection = con;
-            adp.SelectCommand.CommandText = "Select * from Goods where NameG like '%'+@S+'%'"; // بازیابی همه کاربران
-            adp.SelectCommand.Parameters.AddWithValue("@S", txtGroup.Text + "%");
-            adp.Fill(ds, "Goods"); // پر کردن دیتاست با داده‌ها
-            dgvGoods.DataSource = ds;
-            dgvGoods.DataMember = "Goods";
+
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -174,6 +155,37 @@ namespace KalaPezeshki
             Report["EXP1"] = mskEXP1.Text;
             Report["EXP2"] = mskEXP2.Text;
             Report.ShowWithRibbonGUI();
+        }
+
+        private void txtName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtName_TextChanged_1(object sender, EventArgs e)
+        {
+            DataSet ds = new DataSet(); // مجموعه داده‌ها برای ذخیره نتیجه
+            SqlDataAdapter adp = new SqlDataAdapter(); // آداپتور برای پر کردن DataSet
+            adp.SelectCommand = new SqlCommand();
+            adp.SelectCommand.Connection = con;
+            adp.SelectCommand.CommandText = "Select * from Goods where NameGoods like '%'+@S+'%'"; // بازیابی همه کاربران
+            adp.SelectCommand.Parameters.AddWithValue("@S", txtName.Text + "%");
+            adp.Fill(ds, "Goods"); // پر کردن دیتاست با داده‌ها
+            dgvGoods.DataSource = ds;
+            dgvGoods.DataMember = "Goods";
+        }
+
+        private void txtGroup_TextChanged_1(object sender, EventArgs e)
+        {
+            DataSet ds = new DataSet(); // مجموعه داده‌ها برای ذخیره نتیجه
+            SqlDataAdapter adp = new SqlDataAdapter(); // آداپتور برای پر کردن DataSet
+            adp.SelectCommand = new SqlCommand();
+            adp.SelectCommand.Connection = con;
+            adp.SelectCommand.CommandText = "Select * from Goods where NameG like '%'+@S+'%'"; // بازیابی همه کاربران
+            adp.SelectCommand.Parameters.AddWithValue("@S", txtGroup.Text + "%");
+            adp.Fill(ds, "Goods"); // پر کردن دیتاست با داده‌ها
+            dgvGoods.DataSource = ds;
+            dgvGoods.DataMember = "Goods";
         }
     }
 }
