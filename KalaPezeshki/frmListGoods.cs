@@ -20,7 +20,7 @@ namespace KalaPezeshki
             InitializeComponent();
         }
         // تعریف اتصال به دیتابیس SQL Server
-        SqlConnection con = new SqlConnection("Data source=HAMY\\SQLEXPRESS;initial catalog=medical goods;integrated security=true");
+        SqlConnection con = new SqlConnection("Data source=HAMY\\SQLEXPRESS;initial catalog=KalaPezeshki;integrated security=true");
         SqlCommand cmd = new SqlCommand(); // شی فرمان SQL برای اجرای دستورات
 
         // متدی برای نمایش اطلاعات کاربران در DataGridView

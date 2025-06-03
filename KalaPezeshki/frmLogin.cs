@@ -21,7 +21,7 @@ namespace KalaPezeshki
         }
 
         // رشته اتصال به پایگاه داده
-        private const string ConnectionString = "Data source=HAMY\\SQLEXPRESS;initial catalog=medical goods;integrated security=true";
+        SqlConnection con = new SqlConnection("Data source=HAMY\\SQLEXPRESS;initial catalog=KalaPezeshki;integrated security=true");
 
         // تعریف شی‌ء اتصال و فرمان SQL
         SqlConnection con = new SqlConnection(ConnectionString);

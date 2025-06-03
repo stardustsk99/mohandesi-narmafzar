@@ -62,7 +62,7 @@
             this.groupPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupPanel1.Location = new System.Drawing.Point(0, 0);
             this.groupPanel1.Name = "groupPanel1";
-            this.groupPanel1.Size = new System.Drawing.Size(762, 506);
+            this.groupPanel1.Size = new System.Drawing.Size(762, 428);
             // 
             // 
             // 
@@ -102,9 +102,9 @@
             this.groupPanel3.Controls.Add(this.btnDelete);
             this.groupPanel3.Controls.Add(this.btnSave);
             this.groupPanel3.DisabledBackColor = System.Drawing.Color.Empty;
-            this.groupPanel3.Location = new System.Drawing.Point(3, 348);
+            this.groupPanel3.Location = new System.Drawing.Point(3, 338);
             this.groupPanel3.Name = "groupPanel3";
-            this.groupPanel3.Size = new System.Drawing.Size(794, 155);
+            this.groupPanel3.Size = new System.Drawing.Size(756, 83);
             // 
             // 
             // 
@@ -140,7 +140,7 @@
             this.btnEdite.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnEdite.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnEdite.Image = ((System.Drawing.Image)(resources.GetObject("btnEdite.Image")));
-            this.btnEdite.Location = new System.Drawing.Point(145, 38);
+            this.btnEdite.Location = new System.Drawing.Point(161, 3);
             this.btnEdite.Name = "btnEdite";
             this.btnEdite.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 8, 8, 2);
             this.btnEdite.Size = new System.Drawing.Size(163, 66);
@@ -154,7 +154,7 @@
             this.btnDelete.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnDelete.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
-            this.btnDelete.Location = new System.Drawing.Point(363, 38);
+            this.btnDelete.Location = new System.Drawing.Point(379, 3);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 8, 8, 2);
             this.btnDelete.Size = new System.Drawing.Size(163, 66);
@@ -168,7 +168,7 @@
             this.btnSave.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnSave.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
-            this.btnSave.Location = new System.Drawing.Point(560, 38);
+            this.btnSave.Location = new System.Drawing.Point(576, 3);
             this.btnSave.Name = "btnSave";
             this.btnSave.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 8, 8, 2);
             this.btnSave.Size = new System.Drawing.Size(163, 66);
@@ -194,9 +194,10 @@
             this.groupPanel2.Controls.Add(this.label2);
             this.groupPanel2.Controls.Add(this.label1);
             this.groupPanel2.DisabledBackColor = System.Drawing.Color.Empty;
-            this.groupPanel2.Location = new System.Drawing.Point(3, 3);
+            this.groupPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupPanel2.Location = new System.Drawing.Point(0, 0);
             this.groupPanel2.Name = "groupPanel2";
-            this.groupPanel2.Size = new System.Drawing.Size(794, 347);
+            this.groupPanel2.Size = new System.Drawing.Size(756, 422);
             // 
             // 
             // 
@@ -291,7 +292,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(595, 121);
+            this.label4.Location = new System.Drawing.Point(600, 121);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(48, 18);
             this.label4.TabIndex = 0;
@@ -329,14 +330,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(762, 506);
+            this.ClientSize = new System.Drawing.Size(762, 428);
             this.Controls.Add(this.groupPanel1);
             this.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.MaximizeBox = false;
             this.Name = "frmInfo";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "تعریف اطلاعات اولیه داروخانه";
+            this.Text = "تعریف اطلاعات اولیه کالا پزشکی";
             this.Load += new System.EventHandler(this.frmInfo_Load);
             this.groupPanel1.ResumeLayout(false);
             this.groupPanel3.ResumeLayout(false);
