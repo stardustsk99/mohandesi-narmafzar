@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static KalaPezeshki.frmHelper;
 
 // فضای نام اصلی پروژه کالا پزشکی
 namespace KalaPezeshki
@@ -24,8 +25,10 @@ namespace KalaPezeshki
         private void Form1_Load(object sender, EventArgs e)
         {
             System.Globalization.PersianCalendar persianCalendar = new System.Globalization.PersianCalendar();
-            label1.Text = persianCalendar.GetYear(DateTime.Now).ToString() + "/" + persianCalendar.GetMonth(DateTime.Now).ToString("0#") + "/" + persianCalendar.GetDayOfMonth(DateTime.Now).ToString("0#"); 
-        
+            label1.Text = persianCalendar.GetYear(DateTime.Now).ToString() + "/" + persianCalendar.GetMonth(DateTime.Now).ToString("0#") + "/" + persianCalendar.GetDayOfMonth(DateTime.Now).ToString("0#");
+            lblUsername.Text = UserSession.Username;
+            lblRole.Text = UserSession.Role;
+
         }
 
         // رویداد کلیک بر روی groupPanel1 (در صورت نیاز به پردازش خاص)
@@ -178,6 +181,16 @@ namespace KalaPezeshki
         }
 
         private void btnUser_ItemClick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ribbonControl1_Click(object sender, EventArgs e)
         {
 
         }

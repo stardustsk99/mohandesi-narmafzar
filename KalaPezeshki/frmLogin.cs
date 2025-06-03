@@ -59,33 +59,39 @@ namespace KalaPezeshki
 
         private void btnIn_Click(object sender, EventArgs e)
         {
-            int i = 0;
-
-            // هش کردن پسورد وارد شده توسط کاربر
+            // هش کردن پسورد وارد شده
             string hashedPassword = HashHelper.ComputeSha256Hash(txtPass.Text);
 
-            // تنظیم دستور SQL برای بررسی نام کاربری و پسورد هش شده
-            cmd = new SqlCommand("SELECT COUNT(*) FROM Karbar WHERE UName = @N AND Password = @F", con);
+            // دستور SQL برای بازیابی اطلاعات کاربر
+            string query = "SELECT UName, Role FROM Karbar WHERE UName = @N AND Password = @F";
+
+            cmd = new SqlCommand(query, con);
             cmd.Parameters.AddWithValue("@N", txtUName.Text);
             cmd.Parameters.AddWithValue("@F", hashedPassword);
 
-            // اجرای دستور و بررسی نتیجه
             con.Open();
-            i = (int)cmd.ExecuteScalar();
-            con.Close();
+            SqlDataReader reader = cmd.ExecuteReader();
 
-            if (i > 0)
+            if (reader.Read()) // اگر کاربر پیدا شد
             {
-                // اگر کاربر معتبر باشد، فرم اصلی باز می‌شود
-                new Form1().ShowDialog();
-                this.Close();
+                // ذخیره اطلاعات در UserSession (کلاس کمکی شما)
+                frmHelper.UserSession.Username = reader["UName"].ToString();
+                frmHelper.UserSession.Role = reader["Role"].ToString();
+
+                reader.Close();
+                con.Close();
+
+                // باز کردن فرم اصلی
+                new Form1().Show();
+                this.Hide();
             }
             else
             {
-                // اگر کاربر وجود نداشته باشد
+                con.Close();
                 MessageBox.Show("کاربری با این مشخصات وجود ندارد");
             }
         }
+
 
         private void btnOut_Click(object sender, EventArgs e)
         {
