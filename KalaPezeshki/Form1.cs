@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static KalaPezeshki.frmHelper;
+using static System.Collections.Specialized.BitVector32;
 
 // فضای نام اصلی پروژه کالا پزشکی
 namespace KalaPezeshki
@@ -24,11 +25,21 @@ namespace KalaPezeshki
         // رویداد بارگذاری فرم هنگام اجرا
         private void Form1_Load(object sender, EventArgs e)
         {
+
             System.Globalization.PersianCalendar persianCalendar = new System.Globalization.PersianCalendar();
             label1.Text = persianCalendar.GetYear(DateTime.Now).ToString() + "/" + persianCalendar.GetMonth(DateTime.Now).ToString("0#") + "/" + persianCalendar.GetDayOfMonth(DateTime.Now).ToString("0#");
             lblUsername.Text = UserSession.Username;
             lblRole.Text = UserSession.Role;
+            timerClock.Interval = 1000; // هر ثانیه یکبار اجرا می‌شود
+            timerClock.Tick += TimerClock_Tick;
+            timerClock.Start();
+            frmHelper.ConvertNumbersToPersian(this); // this یعنی فرم فعلی
 
+
+        }
+        private void TimerClock_Tick(object sender, EventArgs e)
+        {
+            lblClock1.Text = frmHelper.GetPersianDateTime(); // تاریخ و ساعت شمسی با ارقام فارسی
         }
 
         // رویداد کلیک بر روی groupPanel1 (در صورت نیاز به پردازش خاص)
@@ -40,12 +51,22 @@ namespace KalaPezeshki
         // رویداد کلیک دکمه‌ای که فرم اطلاعات (frmInfo) را نمایش می‌دهد
         private void buttonItem2_Click(object sender, EventArgs e)
         {
+            if (UserSession.Role != "Admin")
+            {
+                MessageBox.Show("شما دسترسی لازم برای این عملیات را ندارید");
+                return;
+            }
             new frmInfo().ShowDialog(); // نمایش فرم اطلاعات به‌صورت مودال
         }
 
         // رویداد کلیک دکمه‌ای که فرم مدیریت کاربران (frmUser) را نمایش می‌دهد
         private void buttonItem3_Click(object sender, EventArgs e)
         {
+            if (UserSession.Role != "Admin")
+            {
+                MessageBox.Show("شما دسترسی لازم برای این عملیات را ندارید");
+                return;
+            }
             new frmUser().ShowDialog(); // نمایش فرم کاربران به‌صورت مودال
         }
 
@@ -89,10 +110,7 @@ namespace KalaPezeshki
 
         }
 
-        private void btnPersenel_Click(object sender, EventArgs e)
-        {
-            new frmPersenel().ShowDialog();
-        }
+
 
         private void ribbonBar12_ItemClick(object sender, EventArgs e)
         {
@@ -101,6 +119,11 @@ namespace KalaPezeshki
 
         private void buttonItem1_Click(object sender, EventArgs e)
         {
+            if (UserSession.Role != "Admin")
+            {
+                MessageBox.Show("شما دسترسی لازم برای این عملیات را ندارید");
+                return;
+            }
             new frmBank().ShowDialog();
         }
 
@@ -191,6 +214,21 @@ namespace KalaPezeshki
         }
 
         private void ribbonControl1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPersenel_Click(object sender, EventArgs e)
+        {
+            if (UserSession.Role != "Admin")
+            {
+                MessageBox.Show("شما دسترسی لازم برای این عملیات را ندارید");
+                return;
+            }
+            new frmPersenel().ShowDialog();
+        }
+
+        private void ribbonBar8_ItemClick(object sender, EventArgs e)
         {
 
         }

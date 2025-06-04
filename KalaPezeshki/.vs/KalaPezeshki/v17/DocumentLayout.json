@@ -3,28 +3,32 @@
   "WorkspaceRootPath": "E:\\C# Code\\kalapezashki\\mohandesi-narmafzar\\KalaPezeshki\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7F90764F-698D-488D-986E-C018F383DDC3}|KalaPezeshki.csproj|E:\\C# Code\\kalapezashki\\mohandesi-narmafzar\\KalaPezeshki\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{7F90764F-698D-488D-986E-C018F383DDC3}|KalaPezeshki.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7F90764F-698D-488D-986E-C018F383DDC3}|KalaPezeshki.csproj|e:\\c# code\\kalapezashki\\mohandesi-narmafzar\\kalapezeshki\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7F90764F-698D-488D-986E-C018F383DDC3}|KalaPezeshki.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7F90764F-698D-488D-986E-C018F383DDC3}|KalaPezeshki.csproj|e:\\c# code\\kalapezashki\\mohandesi-narmafzar\\kalapezeshki\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7F90764F-698D-488D-986E-C018F383DDC3}|KalaPezeshki.csproj|solutionrelative:frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7F90764F-698D-488D-986E-C018F383DDC3}|KalaPezeshki.csproj|e:\\c# code\\kalapezashki\\mohandesi-narmafzar\\kalapezeshki\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7F90764F-698D-488D-986E-C018F383DDC3}|KalaPezeshki.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7F90764F-698D-488D-986E-C018F383DDC3}|KalaPezeshki.csproj|e:\\c# code\\kalapezashki\\mohandesi-narmafzar\\kalapezeshki\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{7F90764F-698D-488D-986E-C018F383DDC3}|KalaPezeshki.csproj|E:\\C# Code\\kalapezashki\\mohandesi-narmafzar\\KalaPezeshki\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{7F90764F-698D-488D-986E-C018F383DDC3}|KalaPezeshki.csproj|solutionrelative:frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7F90764F-698D-488D-986E-C018F383DDC3}|KalaPezeshki.csproj|e:\\c# code\\kalapezashki\\mohandesi-narmafzar\\kalapezeshki\\frmhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7F90764F-698D-488D-986E-C018F383DDC3}|KalaPezeshki.csproj|e:\\c# code\\kalapezashki\\mohandesi-narmafzar\\kalapezeshki\\frmbank.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{7F90764F-698D-488D-986E-C018F383DDC3}|KalaPezeshki.csproj|solutionrelative:frmbank.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F90764F-698D-488D-986E-C018F383DDC3}|KalaPezeshki.csproj|E:\\C# Code\\kalapezashki\\mohandesi-narmafzar\\KalaPezeshki\\frmhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7F90764F-698D-488D-986E-C018F383DDC3}|KalaPezeshki.csproj|solutionrelative:frmhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F90764F-698D-488D-986E-C018F383DDC3}|KalaPezeshki.csproj|e:\\c# code\\kalapezashki\\mohandesi-narmafzar\\kalapezeshki\\frmlistsandoogh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{7F90764F-698D-488D-986E-C018F383DDC3}|KalaPezeshki.csproj|solutionrelative:frmlistsandoogh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F90764F-698D-488D-986E-C018F383DDC3}|KalaPezeshki.csproj|e:\\c# code\\kalapezashki\\mohandesi-narmafzar\\kalapezeshki\\hashhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F90764F-698D-488D-986E-C018F383DDC3}|KalaPezeshki.csproj|solutionrelative:hashhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F90764F-698D-488D-986E-C018F383DDC3}|KalaPezeshki.csproj|E:\\C# Code\\kalapezashki\\mohandesi-narmafzar\\KalaPezeshki\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F90764F-698D-488D-986E-C018F383DDC3}|KalaPezeshki.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F90764F-698D-488D-986E-C018F383DDC3}|KalaPezeshki.csproj|e:\\c# code\\kalapezashki\\mohandesi-narmafzar\\kalapezeshki\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{7F90764F-698D-488D-986E-C018F383DDC3}|KalaPezeshki.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,11 +38,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "E:\\C# Code\\kalapezashki\\mohandesi-narmafzar\\KalaPezeshki\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
@@ -51,33 +55,71 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Program.cs",
-              "DocumentMoniker": "E:\\C# Code\\kalapezashki\\mohandesi-narmafzar\\KalaPezeshki\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "E:\\C# Code\\kalapezashki\\mohandesi-narmafzar\\KalaPezeshki\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAgAAAAaAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "E:\\C# Code\\kalapezashki\\mohandesi-narmafzar\\KalaPezeshki\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "E:\\C# Code\\kalapezashki\\mohandesi-narmafzar\\KalaPezeshki\\Form1.cs",
+              "RelativeToolTip": "Form1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-03T22:17:29.139Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "frmLogin.cs",
-              "DocumentMoniker": "E:\\C# Code\\kalapezashki\\mohandesi-narmafzar\\KalaPezeshki\\frmLogin.cs",
-              "RelativeDocumentMoniker": "frmLogin.cs",
-              "ToolTip": "E:\\C# Code\\kalapezashki\\mohandesi-narmafzar\\KalaPezeshki\\frmLogin.cs",
-              "RelativeToolTip": "frmLogin.cs",
-              "ViewState": "AgIAADYAAAAAAAAAAAAUwF0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-03T22:08:21.737Z",
+              "WhenOpened": "2025-06-03T21:59:40.529Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "HashHelper.cs",
+              "DocumentMoniker": "E:\\C# Code\\kalapezashki\\mohandesi-narmafzar\\KalaPezeshki\\HashHelper.cs",
+              "RelativeDocumentMoniker": "HashHelper.cs",
+              "ToolTip": "E:\\C# Code\\kalapezashki\\mohandesi-narmafzar\\KalaPezeshki\\HashHelper.cs",
+              "RelativeToolTip": "HashHelper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-04T00:28:10.261Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "frmListSandoogh.cs [Design]",
+              "DocumentMoniker": "E:\\C# Code\\kalapezashki\\mohandesi-narmafzar\\KalaPezeshki\\frmListSandoogh.cs",
+              "RelativeDocumentMoniker": "frmListSandoogh.cs",
+              "ToolTip": "E:\\C# Code\\kalapezashki\\mohandesi-narmafzar\\KalaPezeshki\\frmListSandoogh.cs [Design]",
+              "RelativeToolTip": "frmListSandoogh.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-03T23:54:27.209Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "frmHelper.cs",
+              "DocumentMoniker": "E:\\C# Code\\kalapezashki\\mohandesi-narmafzar\\KalaPezeshki\\frmHelper.cs",
+              "RelativeDocumentMoniker": "frmHelper.cs",
+              "ToolTip": "E:\\C# Code\\kalapezashki\\mohandesi-narmafzar\\KalaPezeshki\\frmHelper.cs",
+              "RelativeToolTip": "frmHelper.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwDYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-03T22:08:00.472Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "frmBank.cs [Design]",
+              "DocumentMoniker": "E:\\C# Code\\kalapezashki\\mohandesi-narmafzar\\KalaPezeshki\\frmBank.cs",
+              "RelativeDocumentMoniker": "frmBank.cs",
+              "ToolTip": "E:\\C# Code\\kalapezashki\\mohandesi-narmafzar\\KalaPezeshki\\frmBank.cs [Design]",
+              "RelativeToolTip": "frmBank.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-03T23:47:19.233Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "frmLogin.cs [Design]",
               "DocumentMoniker": "E:\\C# Code\\kalapezashki\\mohandesi-narmafzar\\KalaPezeshki\\frmLogin.cs",
               "RelativeDocumentMoniker": "frmLogin.cs",
@@ -86,32 +128,6 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-03T22:08:20.567Z",
               "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "frmHelper.cs",
-              "DocumentMoniker": "E:\\C# Code\\kalapezashki\\mohandesi-narmafzar\\KalaPezeshki\\frmHelper.cs",
-              "RelativeDocumentMoniker": "frmHelper.cs",
-              "ToolTip": "E:\\C# Code\\kalapezashki\\mohandesi-narmafzar\\KalaPezeshki\\frmHelper.cs",
-              "RelativeToolTip": "frmHelper.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-03T22:08:00.472Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Form1.cs",
-              "DocumentMoniker": "E:\\C# Code\\kalapezashki\\mohandesi-narmafzar\\KalaPezeshki\\Form1.cs",
-              "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "E:\\C# Code\\kalapezashki\\mohandesi-narmafzar\\KalaPezeshki\\Form1.cs",
-              "RelativeToolTip": "Form1.cs",
-              "ViewState": "AgIAALIAAAAAAAAAAADgv70AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-03T21:59:40.529Z",
-              "EditorCaption": ""
             }
           ]
         }

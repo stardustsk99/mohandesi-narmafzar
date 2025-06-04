@@ -121,7 +121,7 @@
   <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAF4AAABeCAYAAACq0qNuAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EAAACxABrSO9dQAASoRJREFUeF7tvQV0XMmd/V+SvLvZJLvJzNhqEMvMKMuyZFkyMzPJJLNlZmZmGjMz
+        DwAACw8BkvkDpQAASoRJREFUeF7tvQV0XMmd/V+SvLvZJLvJzNhqEMvMKMuyZFkyMzPJJLNlZmZmGjMz
         o8BihmYUMzM2d93/ea/lyUT7z2R3s8nCL99z7qlntyy3Pu/qvqp6Va8J+Xv9vf5ef6//d+stQD7kgnzK
         QsuXfrFuVoKckIMUg7Z86e/1p+ozQB7DAvoNAz4HJCgbBHkgOiMleXWUqJpgJW+ClbiBWolqTVbKBlhl
         ailpACXQmcnDKkqOykAKAQItyC2A5DV/z79XiwqkFjAfAPKEAag1kxRQq8Q6WEfUoFV4A211qBI2Gxpg
@@ -12193,11 +12193,8 @@
         G93CiHt+fOLe/wdT2QsbFqQ/wwAAAABJRU5ErkJggg==
 </value>
   </data>
-  <metadata name="styleManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>31, 11</value>
-  </metadata>
-  <metadata name="backgroundWorker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>188, 11</value>
+  <metadata name="timerClock.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 4</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>28</value>

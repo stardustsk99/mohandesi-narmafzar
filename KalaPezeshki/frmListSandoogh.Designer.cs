@@ -283,6 +283,7 @@
             this.MaximizeBox = false;
             this.Name = "frmListSandoogh";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "گزارش موجودی صندوق";
             this.Load += new System.EventHandler(this.frmListSandoogh_Load);
             this.groupPanel1.ResumeLayout(false);

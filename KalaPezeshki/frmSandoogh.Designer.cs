@@ -36,6 +36,7 @@
             this.btnDelete = new DevComponents.DotNetBar.ButtonX();
             this.btnSave = new DevComponents.DotNetBar.ButtonX();
             this.groupPanel2 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.btnClear = new DevComponents.DotNetBar.ButtonX();
             this.btnS = new DevComponents.DotNetBar.ButtonX();
             this.txtTozih = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtMablagh = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -45,7 +46,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnClear = new DevComponents.DotNetBar.ButtonX();
             this.groupPanel1.SuspendLayout();
             this.groupPanel4.SuspendLayout();
             this.groupPanel2.SuspendLayout();
@@ -241,6 +241,21 @@
             this.groupPanel2.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.groupPanel2.TabIndex = 1;
             // 
+            // btnClear
+            // 
+            this.btnClear.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnClear.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnClear.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.btnClear.Image = ((System.Drawing.Image)(resources.GetObject("btnClear.Image")));
+            this.btnClear.Location = new System.Drawing.Point(9, 9);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 8, 8, 2);
+            this.btnClear.Size = new System.Drawing.Size(109, 33);
+            this.btnClear.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnClear.TabIndex = 41;
+            this.btnClear.Text = "پاک کردن\t";
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
             // btnS
             // 
             this.btnS.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -343,21 +358,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "کد";
             // 
-            // btnClear
-            // 
-            this.btnClear.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnClear.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnClear.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.btnClear.Image = ((System.Drawing.Image)(resources.GetObject("btnClear.Image")));
-            this.btnClear.Location = new System.Drawing.Point(9, 9);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 8, 8, 2);
-            this.btnClear.Size = new System.Drawing.Size(109, 33);
-            this.btnClear.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnClear.TabIndex = 41;
-            this.btnClear.Text = "پاک کردن\t";
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
-            // 
             // frmSandoogh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -368,6 +368,7 @@
             this.MaximizeBox = false;
             this.Name = "frmSandoogh";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "تعریف صندوق کالا پزشکی";
             this.Load += new System.EventHandler(this.frmSandoogh_Load);
             this.groupPanel1.ResumeLayout(false);
