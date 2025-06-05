@@ -232,5 +232,50 @@ namespace KalaPezeshki
         {
 
         }
+
+        private void ribbonTabItem6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBackup_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog SaveBackUp = new SaveFileDialog();
+            string filename = string.Empty;
+            SaveBackUp.OverwritePrompt = true;
+            SaveBackUp.Filter = "SQL Backup Files (*.bak)|*.bak|All Files (*.*)|*.*";
+            SaveBackUp.DefaultExt = "Bak";
+            SaveBackUp.FilterIndex = 1;
+            SaveBackUp.FileName = DateTime.Now.ToString("dd-MM-yyyy_HH-mm-ss");
+            SaveBackUp.Title = "Backup SQL File";
+            if (SaveBackUp.ShowDialog() == DialogResult.OK)
+            {
+                filename = SaveBackUp.FileName;
+                frmHelper.Backup(filename);
+            }
+        }
+
+        private void btnRestore_Click(object sender, EventArgs e)
+        {
+            string filename = string.Empty;
+            OpenFileDialog openBackup = new OpenFileDialog();
+            openBackup.Filter = "SQL Backup Files (*.bak)|*.bak|All Files (*.*)|*.*";
+            openBackup.FilterIndex = 1;
+            openBackup.Title = "Select SQL Backup File";
+
+            if (openBackup.ShowDialog() == DialogResult.OK)
+            {
+                filename = openBackup.FileName;
+                try
+                {
+                    frmHelper.Restore(filename);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("خطا در بازیابی: " + ex.Message);
+                }
+            }
+
+        }
     }
 }

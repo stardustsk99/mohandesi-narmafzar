@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,8 @@ namespace KalaPezeshki
 {
     class frmHelper
     {
+        SqlConnection con = new SqlConnection("Data source=HAMY\\SQLEXPRESS;initial catalog=KalaPezeshki;integrated security=true");
+        SqlCommand cmd = new SqlCommand();
         public static class UserSession
         {
             public static string Username { get; set; }
@@ -41,7 +44,52 @@ namespace KalaPezeshki
                 }
             }
         }
+        public static void Backup(string filename)
+        {
+            SqlConnection con = null;
+            try
+            {
+                string Backup = @"Backup DataBase [KalaPezeshki] To Disk='" + filename + "'";
+                SqlCommand cmd = null;
+                con = new SqlConnection("Data Source=HAMY\\SQLEXPRESS;Initial Catalog=KalaPezeshki;Integrated Security=True");
+                con.Open();
+                cmd = new SqlCommand(Backup, con);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("پشتيبان گيري انجام شد");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error : " + ex.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
 
+
+        public static void Restore(string filename)
+        {
+            SqlConnection con = null;
+            try
+            {
+                string Restore = @"ALTER DATABASE [KalaPezeshki] SET SINGLE_USER with ROLLBACK IMMEDIATE " + " USE master " + " RESTORE DATABASE [KalaPezeshki] FROM DISK= N'" + filename + "'WITH RECOVERY, REPLACE";
+                SqlCommand cmd = null;
+                con = new SqlConnection("Data Source=HAMY\\SQLEXPRESS;Initial Catalog=KalaPezeshki;Integrated Security=True");
+                con.Open();
+                cmd = new SqlCommand(Restore, con);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("بازيابي اطلاعات انجام شد");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error : ", ex.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
         public static string GetPersianDateTime()
         {
             DateTime now = DateTime.Now;
