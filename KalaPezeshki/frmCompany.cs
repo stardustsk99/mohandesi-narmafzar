@@ -49,13 +49,10 @@ namespace KalaPezeshki
                 cmd.ExecuteNonQuery(); // اجرای دستور
                 con.Close();
                 MessageBox.Show("ثبت اطلاعات با موفقیت انجام شد");
-                txtCode.Clear();
-                txtName.Clear();
-                txtTel.Clear();
-                txtAddress.Clear();
-                txtTozih.Clear();
+                frmHelper.ClearFormFields(this);
+
             }
-            catch(Exception)
+            catch (Exception)
             {
                 MessageBox.Show("مشکلی پیش آمده است");
             }
@@ -72,11 +69,8 @@ namespace KalaPezeshki
                 cmd.ExecuteNonQuery(); // اجرای دستور
                 con.Close();
                 MessageBox.Show("حذف اطلاعات با موفقیت انجام شد");
-                txtCode.Clear();
-                txtName.Clear();
-                txtTel.Clear();
-                txtAddress.Clear();
-                txtTozih.Clear();
+                frmHelper.ClearFormFields(this);
+
             }
             catch (Exception)
             {
@@ -96,11 +90,8 @@ namespace KalaPezeshki
                 cmd.ExecuteNonQuery(); // اجرای دستور
                 con.Close();
                 MessageBox.Show("ویرایش اطلاعات با موفقیت انجام شد");
-                txtCode.Clear();
-                txtName.Clear();
-                txtTel.Clear();
-                txtAddress.Clear();
-                txtTozih.Clear();
+                frmHelper.ClearFormFields(this);
+
             }
             catch (Exception)
             {

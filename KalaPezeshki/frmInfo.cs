@@ -79,56 +79,86 @@ namespace KalaPezeshki
         // رویداد کلیک دکمه حذف - حذف رکورد بر اساس کد وارد شده
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            cmd.Parameters.Clear();
-            cmd.Connection = con;
-            cmd.CommandText = "Delete from Info where Id=" + txtCode.Text;
-            con.Open();
-            cmd.ExecuteNonQuery();
-            con.Close();
-            MessageBox.Show("حذف اطلاعات با موفقیت انجام شد");
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.Connection = con;
+                cmd.CommandText = "Delete from Info where Id=" + txtCode.Text;
+                con.Open();
+                cmd.ExecuteNonQuery();
+                con.Close();
+                MessageBox.Show("حذف اطلاعات با موفقیت انجام شد");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("مشکلی پیش آمده است");
+            }
         }
 
         // رویداد کلیک دکمه ویرایش - به‌روزرسانی رکورد موجود
         private void btnEdite_Click(object sender, EventArgs e)
         {
-            cmd.Parameters.Clear();
-            cmd.Connection = con;
-            cmd.CommandText = "Update Info Set NameK='" + txtName.Text + "',Tel='" + txtTel.Text + "',Saheb='" + txtSaheb.Text + "',Address='" + txtAddress.Text + "' where Id=" + txtCode.Text;
-            con.Open();
-            cmd.ExecuteNonQuery();
-            con.Close();
-            MessageBox.Show("ویرایش اطلاعات با موفقیت انجام شد");
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.Connection = con;
+                cmd.CommandText = "UPDATE Info SET NameK = @NameK, Tel = @Tel, Saheb = @Saheb, Address = @Address WHERE Id = @Id";
+
+                cmd.Parameters.AddWithValue("@NameK", txtName.Text);
+                cmd.Parameters.AddWithValue("@Tel", txtTel.Text);
+                cmd.Parameters.AddWithValue("@Saheb", txtSaheb.Text);
+                cmd.Parameters.AddWithValue("@Address", txtAddress.Text);
+                cmd.Parameters.AddWithValue("@Id", Convert.ToInt32(txtCode.Text));  // فرض کردم Id عدد است
+
+                con.Open();
+                cmd.ExecuteNonQuery();
+                con.Close();
+
+                MessageBox.Show("ویرایش اطلاعات با موفقیت انجام شد");
+            }
+            catch(Exception)
+            {
+                MessageBox.Show("مشکلی پیش آمده  است");
+
+            }
         }
 
         // رویداد کلیک دکمه جستجو - بازیابی اطلاعات بر اساس کد وارد شده
         private void btnS_Click(object sender, EventArgs e)
         {
-            SqlDataReader dr;
-            cmd.Parameters.Clear();
-            cmd.Connection = con;
-            cmd.CommandText = "Select * from Info where id=@N";
-            cmd.Parameters.AddWithValue("@N", txtCode.Text);
-            con.Open();
-            dr = cmd.ExecuteReader();
-
-            if (dr.Read())
+            try
             {
-                // مقداردهی به کنترل‌ها از داده‌های بازیابی‌شده
-                txtCode.Text = dr["id"].ToString();
-                txtName.Text = dr["NameK"].ToString();
-                txtTel.Text = dr["Tel"].ToString();
-                txtSaheb.Text = dr["Saheb"].ToString();
-                txtAddress.Text = dr["Address"].ToString();
-            }
-            else
-            {
-                // اگر رکوردی یافت نشد
-                txtCode.Text = "";
-                txtCode.Focus();
-                MessageBox.Show("برای کد وارد شده اطلاعاتی پیدا نشد");
-            }
+                SqlDataReader dr;
+                cmd.Parameters.Clear();
+                cmd.Connection = con;
+                cmd.CommandText = "Select * from Info where id=@N";
+                cmd.Parameters.AddWithValue("@N", txtCode.Text);
+                con.Open();
+                dr = cmd.ExecuteReader();
 
-            con.Close();
+                if (dr.Read())
+                {
+                    // مقداردهی به کنترل‌ها از داده‌های بازیابی‌شده
+                    txtCode.Text = dr["id"].ToString();
+                    txtName.Text = dr["NameK"].ToString();
+                    txtTel.Text = dr["Tel"].ToString();
+                    txtSaheb.Text = dr["Saheb"].ToString();
+                    txtAddress.Text = dr["Address"].ToString();
+                }
+                else
+                {
+                    // اگر رکوردی یافت نشد
+                    txtCode.Text = "";
+                    txtCode.Focus();
+                    MessageBox.Show("برای کد وارد شده اطلاعاتی پیدا نشد");
+                }
+
+                con.Close();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("مشکلی پیش آمده است");
+            }
         }
 
         // رویداد بارگذاری فرم (در حال حاضر خالی)

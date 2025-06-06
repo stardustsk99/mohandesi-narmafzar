@@ -13,41 +13,36 @@ namespace KalaPezeshki
 {
     public partial class frmCheckP : Form
     {
-        // متد پاک‌سازی فیلدها
-        private void ClearFormFields(Control parent)
-        {
-            foreach (Control c in parent.Controls)
-            {
-                if (c is TextBox)
-                    ((TextBox)c).Clear();
+        // اتصال به دیتابیس
+        SqlConnection con = new SqlConnection("Data source=HAMY\\SQLEXPRESS;initial catalog=KalaPezeshki;integrated security=true");
+        SqlCommand cmd = new SqlCommand();
 
-                // اگر کنترل داخل کنترل دیگری باشه (مثلاً GroupBox یا Panel)
-                if (c.HasChildren)
-                    ClearFormFields(c);
-            }
-        }
         public frmCheckP()
         {
             InitializeComponent();
         }
 
-        SqlConnection con = new SqlConnection("Data source=HAMY\\SQLEXPRESS;initial catalog=KalaPezeshki;integrated security=true");
-        SqlCommand cmd = new SqlCommand();
-
+        // تنظیم تاریخ جاری شمسی هنگام بارگذاری فرم
         private void frmCheckP_Load(object sender, EventArgs e)
         {
             System.Globalization.PersianCalendar p = new System.Globalization.PersianCalendar();
-            mskSarResid.Text = p.GetYear(DateTime.Now).ToString() + p.GetMonth(DateTime.Now).ToString("0#") + p.GetDayOfMonth(DateTime.Now).ToString("0#");
-            mskTarikh.Text = p.GetYear(DateTime.Now).ToString() + p.GetMonth(DateTime.Now).ToString("0#") + p.GetDayOfMonth(DateTime.Now).ToString("0#");
+            string today = p.GetYear(DateTime.Now).ToString() +
+                           p.GetMonth(DateTime.Now).ToString("0#") +
+                           p.GetDayOfMonth(DateTime.Now).ToString("0#");
+
+            mskSarResid.Text = today;
+            mskTarikh.Text = today;
         }
 
+        // دکمه ذخیره‌سازی چک پرداختی
         private void btnSave_Click(object sender, EventArgs e)
         {
             try
             {
                 cmd.Parameters.Clear();
                 cmd.Connection = con;
-                cmd.CommandText = "insert into CheckP(ids,AcctNum,NameAcct,NameM,Balance,Tarikh,SarResid,Vaziyat,Tozih)values(@a,@b,@c,@d,@e,@f,@g,@h,@i)";
+                cmd.CommandText = "INSERT INTO CheckP(ids, AcctNum, NameAcct, NameM, Balance, Tarikh, SarResid, Vaziyat, Tozih) " +
+                                  "VALUES(@a, @b, @c, @d, @e, @f, @g, @h, @i)";
                 cmd.Parameters.AddWithValue("@a", txtCode.Text);
                 cmd.Parameters.AddWithValue("@b", txtShH.Text);
                 cmd.Parameters.AddWithValue("@c", txtNameH.Text);
@@ -57,17 +52,13 @@ namespace KalaPezeshki
                 cmd.Parameters.AddWithValue("@g", mskSarResid.Text);
                 cmd.Parameters.AddWithValue("@h", cmbVaziyat.Text);
                 cmd.Parameters.AddWithValue("@i", txtTozih.Text);
+
                 con.Open();
                 cmd.ExecuteNonQuery();
                 con.Close();
+
                 MessageBox.Show("چک پرداختی ثبت شد");
-                //*****************
-                txtCode.Text = "";
-                txtShH.Text = "";
-                txtNameH.Text = "";
-                txtNameM.Text = "";
-                txtMablagh.Text = "";
-                txtTozih.Text = "";
+                frmHelper.ClearFormFields(this);
             }
             catch (Exception)
             {
@@ -75,16 +66,19 @@ namespace KalaPezeshki
             }
         }
 
+        // دکمه حذف چک پرداختی بر اساس شناسه
         private void btnDelete_Click(object sender, EventArgs e)
         {
             try
             {
                 cmd.Parameters.Clear();
                 cmd.Connection = con;
-                cmd.CommandText = "Delete from CheckP where ids=" + txtCode.Text;
+                cmd.CommandText = "DELETE FROM CheckP WHERE ids=" + txtCode.Text;
+
                 con.Open();
                 cmd.ExecuteNonQuery();
                 con.Close();
+
                 MessageBox.Show("چک پرداختی حذف شد");
             }
             catch (Exception)
@@ -93,25 +87,31 @@ namespace KalaPezeshki
             }
         }
 
+        // دکمه ویرایش اطلاعات چک پرداختی
         private void btnEdit_Click(object sender, EventArgs e)
         {
-
             try
             {
                 cmd.Parameters.Clear();
                 cmd.Connection = con;
-                cmd.CommandText = "Update CheckP set ids='" + txtCode.Text + "',AcctNum='" + txtShH.Text + "',NameAcct='" + txtNameH.Text + "',NameM='" + txtNameM.Text + "',Balance='" + txtMablagh.Text + "',Tarikh='" + mskTarikh.Text + "',SarResid='" + mskSarResid.Text + "',Vaziyat='" + cmbVaziyat.Text + "',Tozih='" + txtTozih.Text + "' where ids=" + txtCode.Text;
+                cmd.CommandText = "UPDATE CheckP SET " +
+                                  "ids='" + txtCode.Text + "', " +
+                                  "AcctNum='" + txtShH.Text + "', " +
+                                  "NameAcct='" + txtNameH.Text + "', " +
+                                  "NameM='" + txtNameM.Text + "', " +
+                                  "Balance='" + txtMablagh.Text + "', " +
+                                  "Tarikh='" + mskTarikh.Text + "', " +
+                                  "SarResid='" + mskSarResid.Text + "', " +
+                                  "Vaziyat='" + cmbVaziyat.Text + "', " +
+                                  "Tozih='" + txtTozih.Text + "' " +
+                                  "WHERE ids=" + txtCode.Text;
+
                 con.Open();
                 cmd.ExecuteNonQuery();
                 con.Close();
+
                 MessageBox.Show("چک پرداختی ویرایش شد");
-                //*****************
-                txtCode.Text = "";
-                txtShH.Text = "";
-                txtNameH.Text = "";
-                txtNameM.Text = "";
-                txtMablagh.Text = "";
-                txtTozih.Text = "";
+                frmHelper.ClearFormFields(this);
             }
             catch (Exception)
             {
@@ -119,16 +119,19 @@ namespace KalaPezeshki
             }
         }
 
+        // جستجوی چک پرداختی بر اساس کد
         private void btnS_Click(object sender, EventArgs e)
         {
-
             SqlDataReader dr;
+
             cmd.Parameters.Clear();
             cmd.Connection = con;
-            cmd.CommandText = "select * from CheckP where IdS=@N";
+            cmd.CommandText = "SELECT * FROM CheckP WHERE IdS=@N";
             cmd.Parameters.AddWithValue("@N", txtCode.Text);
+
             con.Open();
             dr = cmd.ExecuteReader();
+
             if (dr.Read())
             {
                 txtCode.Text = dr["idS"].ToString();
@@ -147,19 +150,23 @@ namespace KalaPezeshki
                 txtCode.Focus();
                 MessageBox.Show("برای کد وارد شده اطلاعاتی یافت نشد");
             }
+
             con.Close();
         }
 
+        // جستجوی نام حساب بر اساس شماره حساب
         private void buttonX1_Click(object sender, EventArgs e)
         {
-
             SqlDataReader dr;
+
             cmd.Parameters.Clear();
             cmd.Connection = con;
-            cmd.CommandText = "select * from Bank where AcctNum=@N";
+            cmd.CommandText = "SELECT * FROM Bank WHERE AcctNum=@N";
             cmd.Parameters.AddWithValue("@N", txtShH.Text);
+
             con.Open();
             dr = cmd.ExecuteReader();
+
             if (dr.Read())
             {
                 txtNameH.Text = dr["NameAcct"].ToString();
@@ -171,27 +178,30 @@ namespace KalaPezeshki
                 txtShH.Focus();
                 MessageBox.Show("برای کد وارد شده اطلاعاتی یافت نشد");
             }
+
             con.Close();
         }
 
+        // نمایش لیست جدید از فرم چک پرداختی
         private void btnList_Click(object sender, EventArgs e)
         {
             new frmCheckP().ShowDialog();
         }
 
-        private void txtNameH_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        // پاکسازی فیلدها
         private void btnClear_Click(object sender, EventArgs e)
         {
-            ClearFormFields(this);
+            frmHelper.ClearFormFields(this);
         }
 
+        // تغییر متن نام حساب (فعلاً استفاده نشده)
+        private void txtNameH_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        // تغییر وضعیت (فعلاً استفاده نشده)
         private void cmbVaziyat_SelectedIndexChanged(object sender, EventArgs e)
         {
-
         }
     }
 }

@@ -1,54 +1,56 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿// using‌های استاندارد مورد نیاز برای برنامه‌های Windows Forms
+using System;
 using System.Windows.Forms;
+using System.Globalization;
 using static KalaPezeshki.frmHelper;
-using static System.Collections.Specialized.BitVector32;
 
-// فضای نام اصلی پروژه کالا پزشکی
+// فضای نام اصلی برنامه
 namespace KalaPezeshki
 {
-    // کلاس فرم اصلی برنامه
+    /// <summary>
+    /// فرم اصلی برنامه مدیریت کالاهای پزشکی
+    /// </summary>
     public partial class Form1 : Form
     {
-        // سازنده فرم - مقداردهی اولیه کنترل‌ها
+        /// <summary>
+        /// سازنده فرم - مقداردهی اولیه کنترل‌ها
+        /// </summary>
         public Form1()
         {
             InitializeComponent();
         }
 
-        // رویداد بارگذاری فرم هنگام اجرا
+        /// <summary>
+        /// رویداد بارگذاری فرم (Load) - انجام تنظیمات اولیه هنگام اجرای برنامه
+        /// </summary>
         private void Form1_Load(object sender, EventArgs e)
         {
-
-            System.Globalization.PersianCalendar persianCalendar = new System.Globalization.PersianCalendar();
-            label1.Text = persianCalendar.GetYear(DateTime.Now).ToString() + "/" + persianCalendar.GetMonth(DateTime.Now).ToString("0#") + "/" + persianCalendar.GetDayOfMonth(DateTime.Now).ToString("0#");
+            // تنظیم تاریخ شمسی و نمایش اطلاعات کاربر
+            PersianCalendar persianCalendar = new PersianCalendar();
+            label1.Text = $"{persianCalendar.GetYear(DateTime.Now)}/{persianCalendar.GetMonth(DateTime.Now):00}/{persianCalendar.GetDayOfMonth(DateTime.Now):00}";
             lblUsername.Text = UserSession.Username;
             lblRole.Text = UserSession.Role;
-            timerClock.Interval = 1000; // هر ثانیه یکبار اجرا می‌شود
+
+            // فعال‌سازی تایمر برای به‌روزرسانی ساعت
+            timerClock.Interval = 1000; // هر ۱۰۰۰ میلی‌ثانیه (۱ ثانیه)
             timerClock.Tick += TimerClock_Tick;
             timerClock.Start();
-            frmHelper.ConvertNumbersToPersian(this); // this یعنی فرم فعلی
 
-
+            // تبدیل تمامی اعداد در فرم به فارسی
+            frmHelper.ConvertNumbersToPersian(this);
         }
+
+        /// <summary>
+        /// به‌روزرسانی ساعت فرم به صورت شمسی با ارقام فارسی در هر تیک تایمر
+        /// </summary>
         private void TimerClock_Tick(object sender, EventArgs e)
         {
-            lblClock1.Text = frmHelper.GetPersianDateTime(); // تاریخ و ساعت شمسی با ارقام فارسی
+            lblClock1.Text = frmHelper.GetPersianDateTime();
         }
 
-        // رویداد کلیک بر روی groupPanel1 (در صورت نیاز به پردازش خاص)
-        private void groupPanel1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        // رویداد کلیک دکمه‌ای که فرم اطلاعات (frmInfo) را نمایش می‌دهد
+        /// <summary>
+        /// بررسی سطح دسترسی قبل از نمایش فرم اطلاعات
+        /// </summary>
         private void buttonItem2_Click(object sender, EventArgs e)
         {
             if (UserSession.Role != "Admin")
@@ -56,10 +58,13 @@ namespace KalaPezeshki
                 MessageBox.Show("شما دسترسی لازم برای این عملیات را ندارید");
                 return;
             }
-            new frmInfo().ShowDialog(); // نمایش فرم اطلاعات به‌صورت مودال
+
+            new frmInfo().ShowDialog();
         }
 
-        // رویداد کلیک دکمه‌ای که فرم مدیریت کاربران (frmUser) را نمایش می‌دهد
+        /// <summary>
+        /// بررسی سطح دسترسی قبل از نمایش فرم مدیریت کاربران
+        /// </summary>
         private void buttonItem3_Click(object sender, EventArgs e)
         {
             if (UserSession.Role != "Admin")
@@ -67,56 +72,30 @@ namespace KalaPezeshki
                 MessageBox.Show("شما دسترسی لازم برای این عملیات را ندارید");
                 return;
             }
-            new frmUser().ShowDialog(); // نمایش فرم کاربران به‌صورت مودال
+
+            new frmUser().ShowDialog();
         }
 
-        private void btnGroup_Click(object sender, EventArgs e)
-        {
-            new frmGroup().ShowDialog();
-        }
+        // سایر فرم‌ها - بدون محدودیت نقش کاربری
+        private void btnGroup_Click(object sender, EventArgs e) => new frmGroup().ShowDialog();
+        private void btnListGroup_Click(object sender, EventArgs e) => new frmListGroup().ShowDialog();
+        private void btnCompany_Click(object sender, EventArgs e) => new frmCompany().ShowDialog();
+        private void btnGoods_Click(object sender, EventArgs e) => new frmGoods().ShowDialog();
+        private void btnListGoods_Click(object sender, EventArgs e) => new frmListGoods().ShowDialog();
+        private void btnshortage_Click(object sender, EventArgs e) => new frmShortage().ShowDialog();
+        private void buttonItem5_Click(object sender, EventArgs e) => new frmSandoogh().ShowDialog();
+        private void buttonItem6_Click(object sender, EventArgs e) => new frmListSandoogh().ShowDialog();
+        private void buttonItem7_Click(object sender, EventArgs e) => new frmCheckD().ShowDialog();
+        private void btnListCheckD_Click(object sender, EventArgs e) => new frmListCheckD().ShowDialog();
+        private void buttonItem12_Click(object sender, EventArgs e) => new frmCheckP().ShowDialog();
+        private void btnCheckP_Click(object sender, EventArgs e) => new frmCheckP().ShowDialog();
+        private void btnListFrosh_Click(object sender, EventArgs e) => new frmListFroosh().ShowDialog();
+        private void btnFrosh_Click(object sender, EventArgs e) => new frmFroosh().ShowDialog();
+        private void btnListKharid_Click(object sender, EventArgs e) => new frmListKharid().ShowDialog();
 
-        private void btnListGroup_Click(object sender, EventArgs e)
-        {
-            new frmListGroup().ShowDialog();
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnCompany_Click(object sender, EventArgs e)
-        {
-            new frmCompany().ShowDialog();
-        }
-
-        private void btnGoods_Click(object sender, EventArgs e)
-        {
-            new frmGoods().ShowDialog();
-        }
-
-        private void btnListGoods_Click(object sender, EventArgs e)
-        {
-            new frmListGoods().ShowDialog();
-        }
-
-        private void btnshortage_Click(object sender, EventArgs e)
-        {
-            new frmShortage().ShowDialog();
-        }
-
-        private void ribbonBar4_ItemClick(object sender, EventArgs e)
-        {
-
-        }
-
-
-
-        private void ribbonBar12_ItemClick(object sender, EventArgs e)
-        {
-
-        }
-
+        /// <summary>
+        /// دسترسی فقط برای ادمین - فرم اطلاعات بانکی
+        /// </summary>
         private void buttonItem1_Click(object sender, EventArgs e)
         {
             if (UserSession.Role != "Admin")
@@ -124,100 +103,15 @@ namespace KalaPezeshki
                 MessageBox.Show("شما دسترسی لازم برای این عملیات را ندارید");
                 return;
             }
+
             new frmBank().ShowDialog();
         }
 
-        private void buttonItem4_Click(object sender, EventArgs e)
-        {
-            new frmListBank().ShowDialog();
+        private void buttonItem4_Click(object sender, EventArgs e) => new frmListBank().ShowDialog();
 
-        }
-
-        private void ribbonBar10_ItemClick(object sender, EventArgs e)
-        {
-
-        }
-
-        private void buttonItem5_Click(object sender, EventArgs e)
-        {
-            new frmSandoogh().ShowDialog();
-        }
-
-        private void buttonItem6_Click(object sender, EventArgs e)
-        {
-            new frmListSandoogh().ShowDialog();
-        }
-
-        private void buttonItem7_Click(object sender, EventArgs e)
-        {
-            new frmCheckD().ShowDialog();
-        }
-
-        private void ribbonTabItem5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ribbonPanel4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ribbonBar20_ItemClick(object sender, EventArgs e)
-        {
-            new frmKharid().ShowDialog();
-        }
-
-        private void btnListKharid_Click(object sender, EventArgs e)
-        {
-            new frmListKharid().ShowDialog();
-        }
-
-        private void btnListCheckD_Click(object sender, EventArgs e)
-        {
-            new frmListCheckD().ShowDialog();
-        }
-
-        private void buttonItem12_Click(object sender, EventArgs e)
-        {
-            new frmCheckP().ShowDialog();
-        }
-
-        private void btnCheckP_Click(object sender, EventArgs e)
-        {
-            new frmCheckP().ShowDialog();
-        }
-
-        private void btnListFrosh_Click(object sender, EventArgs e)
-        {
-            new frmListFroosh().ShowDialog();
-        }
-
-        private void btnFrosh_Click(object sender, EventArgs e)
-        {
-            new frmFroosh().ShowDialog();
-        }
-
-        private void ribbonTabItem1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnUser_ItemClick(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ribbonControl1_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        /// <summary>
+        /// نمایش فرم پرسنل (فقط برای مدیران)
+        /// </summary>
         private void btnPersenel_Click(object sender, EventArgs e)
         {
             if (UserSession.Role != "Admin")
@@ -225,57 +119,69 @@ namespace KalaPezeshki
                 MessageBox.Show("شما دسترسی لازم برای این عملیات را ندارید");
                 return;
             }
+
             new frmPersenel().ShowDialog();
         }
 
-        private void ribbonBar8_ItemClick(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ribbonTabItem6_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        /// <summary>
+        /// انجام پشتیبان‌گیری از پایگاه‌داده
+        /// </summary>
         private void btnBackup_Click(object sender, EventArgs e)
         {
-            SaveFileDialog SaveBackUp = new SaveFileDialog();
-            string filename = string.Empty;
-            SaveBackUp.OverwritePrompt = true;
-            SaveBackUp.Filter = "SQL Backup Files (*.bak)|*.bak|All Files (*.*)|*.*";
-            SaveBackUp.DefaultExt = "Bak";
-            SaveBackUp.FilterIndex = 1;
-            SaveBackUp.FileName = DateTime.Now.ToString("dd-MM-yyyy_HH-mm-ss");
-            SaveBackUp.Title = "Backup SQL File";
-            if (SaveBackUp.ShowDialog() == DialogResult.OK)
+            using (SaveFileDialog saveBackUp = new SaveFileDialog())
             {
-                filename = SaveBackUp.FileName;
-                frmHelper.Backup(filename);
+                saveBackUp.OverwritePrompt = true;
+                saveBackUp.Filter = "SQL Backup Files (*.bak)|*.bak|All Files (*.*)|*.*";
+                saveBackUp.DefaultExt = "bak";
+                saveBackUp.FileName = DateTime.Now.ToString("dd-MM-yyyy_HH-mm-ss");
+                saveBackUp.Title = "Backup SQL File";
+
+                if (saveBackUp.ShowDialog() == DialogResult.OK)
+                {
+                    frmHelper.Backup(saveBackUp.FileName);
+                }
             }
         }
 
+        /// <summary>
+        /// بازیابی پشتیبان پایگاه‌داده
+        /// </summary>
         private void btnRestore_Click(object sender, EventArgs e)
         {
-            string filename = string.Empty;
-            OpenFileDialog openBackup = new OpenFileDialog();
-            openBackup.Filter = "SQL Backup Files (*.bak)|*.bak|All Files (*.*)|*.*";
-            openBackup.FilterIndex = 1;
-            openBackup.Title = "Select SQL Backup File";
-
-            if (openBackup.ShowDialog() == DialogResult.OK)
+            using (OpenFileDialog openBackup = new OpenFileDialog())
             {
-                filename = openBackup.FileName;
-                try
+                openBackup.Filter = "SQL Backup Files (*.bak)|*.bak|All Files (*.*)|*.*";
+                openBackup.FilterIndex = 1;
+                openBackup.Title = "Select SQL Backup File";
+
+                if (openBackup.ShowDialog() == DialogResult.OK)
                 {
-                    frmHelper.Restore(filename);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("خطا در بازیابی: " + ex.Message);
+                    try
+                    {
+                        frmHelper.Restore(openBackup.FileName);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("خطا در بازیابی: " + ex.Message);
+                    }
                 }
             }
-
         }
+
+        // توابع رویدادی بی‌استفاده فعلاً
+        private void groupPanel1_Click(object sender, EventArgs e) { }
+        private void pictureBox1_Click(object sender, EventArgs e) { }
+        private void ribbonBar4_ItemClick(object sender, EventArgs e) { }
+        private void ribbonBar12_ItemClick(object sender, EventArgs e) { }
+        private void ribbonBar10_ItemClick(object sender, EventArgs e) { }
+        private void ribbonTabItem5_Click(object sender, EventArgs e) { }
+        private void ribbonPanel4_Click(object sender, EventArgs e) { }
+        private void ribbonTabItem1_Click(object sender, EventArgs e) { }
+        private void btnUser_ItemClick(object sender, EventArgs e) { }
+        private void label3_Click(object sender, EventArgs e) { }
+        private void ribbonControl1_Click(object sender, EventArgs e) { }
+        private void ribbonBar8_ItemClick(object sender, EventArgs e) { }
+        private void ribbonTabItem6_Click(object sender, EventArgs e) { }
+        private void ribbonBar20_ItemClick(object sender, EventArgs e) => new frmKharid().ShowDialog();
     }
 }

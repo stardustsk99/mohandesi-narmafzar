@@ -1,170 +1,164 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml.Linq;
 
 namespace KalaPezeshki
 {
-    public partial class frmBank: Form
+    public partial class frmBank : Form
     {
-        private void ClearFormFields(Control parent)
-        {
-            foreach (Control c in parent.Controls)
-            {
-                if (c is TextBox)
-                    ((TextBox)c).Clear();
+        //  تعریف اتصال به دیتابیس SQL Server
+        SqlConnection con = new SqlConnection("Data source=HAMY\\SQLEXPRESS;initial catalog=KalaPezeshki;integrated security=true");
+        SqlCommand cmd = new SqlCommand();
 
-                // اگر کنترل داخل کنترل دیگری باشد (مثلاً پنل یا گروه‌باکس)
-                if (c.HasChildren)
-                    ClearFormFields(c);
-            }
-        }
-
+        //  سازنده فرم
         public frmBank()
         {
             InitializeComponent();
         }
-        SqlConnection con = new SqlConnection("Data source=HAMY\\SQLEXPRESS;initial catalog=KalaPezeshki;integrated security=true");
-        SqlCommand cmd = new SqlCommand();
+
+        //  متد کمکی برای پاک‌سازی فیلدهای متنی فرم (به‌صورت بازگشتی)
+
+        //  ذخیره اطلاعات جدید در جدول Bank
         private void btnSave_Click(object sender, EventArgs e)
         {
             try
             {
                 cmd.Parameters.Clear();
                 cmd.Connection = con;
-                cmd.CommandText = "insert into Bank(NameAcct,Bank,AcctNum,Balance,Tozih)values (@a,@b,@c,@d,@e)";
+                cmd.CommandText = "INSERT INTO Bank(NameAcct, Bank, AcctNum, Balance, Tozih) VALUES (@a, @b, @c, @d, @e)";
                 cmd.Parameters.AddWithValue("@a", txtNameAcct.Text);
                 cmd.Parameters.AddWithValue("@b", txtBankName.Text);
                 cmd.Parameters.AddWithValue("@c", txtAcctNum.Text);
                 cmd.Parameters.AddWithValue("@d", txtBalance.Text);
                 cmd.Parameters.AddWithValue("@e", txtTozih.Text);
+
                 con.Open();
                 cmd.ExecuteNonQuery();
                 con.Close();
-                MessageBox.Show("حساب اضافه شد");
-                //-------------------------------
-                txtCode.Clear();
-                txtNameAcct.Clear();
-                txtBankName.Clear();
-                txtAcctNum.Clear();
-                txtBalance.Clear();
-                txtTozih.Clear();
 
+                MessageBox.Show("✅ حساب با موفقیت اضافه شد");
+
+                // پاک‌سازی فیلدها پس از ذخیره
+                frmHelper.ClearFormFields(this);
             }
             catch (Exception)
             {
-                MessageBox.Show("مشکلی پیش آمده است");
+                MessageBox.Show("⚠ مشکلی در هنگام ذخیره اطلاعات رخ داده است");
             }
         }
 
+        //  حذف حساب بر اساس شناسه وارد شده
         private void btnDelete_Click(object sender, EventArgs e)
         {
             try
             {
                 cmd.Parameters.Clear();
                 cmd.Connection = con;
-                cmd.CommandText = "Delete from Bank where id=@N";
+                cmd.CommandText = "DELETE FROM Bank WHERE id=@N";
                 cmd.Parameters.AddWithValue("@N", txtCode.Text);
+
                 con.Open();
                 cmd.ExecuteNonQuery();
                 con.Close();
-                MessageBox.Show("حساب حذف شد");
-                //-------------------------------
-                txtCode.Clear();
-                txtNameAcct.Clear();
-                txtBankName.Clear();
-                txtAcctNum.Clear();
-                txtBalance.Clear();
-                txtTozih.Clear();
 
+                MessageBox.Show("🗑 حساب با موفقیت حذف شد");
+
+                // پاک‌سازی فرم پس از حذف
+                frmHelper.ClearFormFields(this);
             }
             catch (Exception)
             {
-                MessageBox.Show("مشکلی پیش آمده است");
+                MessageBox.Show("⚠ مشکلی در هنگام حذف اطلاعات رخ داده است");
             }
         }
 
+        //  ویرایش اطلاعات حساب موجود بر اساس شناسه
         private void btnEdite_Click(object sender, EventArgs e)
         {
             try
             {
                 cmd.Parameters.Clear();
                 cmd.Connection = con;
-                cmd.CommandText = "UPDATE Bank SET NameAcct=@a, Bank=@b, AcctNum=@c, Balance=@d,Tozih=@e WHERE id=" +txtCode.Text;
+                cmd.CommandText =
+                    "UPDATE Bank SET NameAcct=@a, Bank=@b, AcctNum=@c, Balance=@d, Tozih=@e WHERE id=" + txtCode.Text;
+
                 cmd.Parameters.AddWithValue("@a", txtNameAcct.Text);
                 cmd.Parameters.AddWithValue("@b", txtBankName.Text);
                 cmd.Parameters.AddWithValue("@c", txtAcctNum.Text);
                 cmd.Parameters.AddWithValue("@d", txtBalance.Text);
-                cmd.Parameters.AddWithValue("@e", txtTozih.Text); // کلید برای شناسایی رکورد
+                cmd.Parameters.AddWithValue("@e", txtTozih.Text);
 
                 con.Open();
                 cmd.ExecuteNonQuery();
                 con.Close();
 
-                MessageBox.Show("حساب ویرایش شد");
+                MessageBox.Show("✏ حساب با موفقیت ویرایش شد");
 
-                //-------------------------------
-                txtCode.Clear();
-                txtNameAcct.Clear();
-                txtBankName.Clear();
-                txtAcctNum.Clear();
-                txtBalance.Clear();
-                txtTozih.Clear();
+                frmHelper.ClearFormFields(this);
             }
             catch (Exception)
             {
-                MessageBox.Show("مشکلی پیش آمده است");
+                MessageBox.Show("⚠ مشکلی در هنگام ویرایش اطلاعات رخ داده است");
             }
-
         }
 
+        //  جستجو و نمایش اطلاعات حساب بر اساس کد وارد شده
         private void btnS_Click(object sender, EventArgs e)
         {
-            SqlDataReader dr;
-            cmd.Parameters.Clear();
-            cmd.Connection = con;
-            cmd.CommandText = "select * from Bank where id=@N";
-            cmd.Parameters.AddWithValue("@N", txtCode.Text);
-            con.Open();
-            dr = cmd.ExecuteReader();
-            if (dr.Read())
+            try
             {
-                txtCode.Text = dr["id"].ToString();
-                txtNameAcct.Text = dr["NameAcct"].ToString();
-                txtBankName.Text = dr["Bank"].ToString();
-                txtAcctNum.Text = dr["AcctNum"].ToString();
-                txtBalance.Text = dr["Balance"].ToString();
-                txtTozih.Text = dr["Tozih"].ToString();
+                SqlDataReader dr;
+
+                cmd.Parameters.Clear();
+                cmd.Connection = con;
+                cmd.CommandText = "SELECT * FROM Bank WHERE id=@N";
+                cmd.Parameters.AddWithValue("@N", txtCode.Text);
+
+                con.Open();
+                dr = cmd.ExecuteReader();
+
+                if (dr.Read())
+                {
+                    // نمایش اطلاعات حساب در فیلدهای فرم
+                    txtCode.Text = dr["id"].ToString();
+                    txtNameAcct.Text = dr["NameAcct"].ToString();
+                    txtBankName.Text = dr["Bank"].ToString();
+                    txtAcctNum.Text = dr["AcctNum"].ToString();
+                    txtBalance.Text = dr["Balance"].ToString();
+                    txtTozih.Text = dr["Tozih"].ToString();
+                }
+                else
+                {
+                    txtCode.Clear();
+                    txtCode.Focus();
+                    MessageBox.Show("❌ اطلاعاتی برای کد وارد شده یافت نشد");
+                }
+
+                con.Close();
             }
-            else
+            catch (Exception)
             {
-                txtCode.Clear();
-                txtCode.Focus();
-                MessageBox.Show("برای کد وارد شده اطلاعاتی وجود ندارد");
+                MessageBox.Show("⚠ مشکلی در هنگام جستجوی اطلاعات رخ داده است");
             }
-            con.Close();
         }
 
+        //  نمایش لیست کامل حساب‌ها در فرم جداگانه
         private void btnList_Click(object sender, EventArgs e)
         {
             new frmListBank().ShowDialog();
         }
 
-        private void frmBank_Load(object sender, EventArgs e)
-        {
-
-        }
-
+        //  پاک‌سازی تمام فیلدهای فرم
         private void btnClear_Click(object sender, EventArgs e)
         {
-            ClearFormFields(this);
+            frmHelper.ClearFormFields(this);
+        }
+
+        //  رویداد بارگذاری فرم (در حال حاضر بدون عملیات خاص)
+        private void frmBank_Load(object sender, EventArgs e)
+        {
+            // در صورت نیاز به بارگذاری اولیه اطلاعات، اینجا قرار می‌گیرد
         }
     }
 }

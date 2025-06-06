@@ -10,44 +10,38 @@ using System.Data.SqlClient;
 
 namespace KalaPezeshki
 {
-
-
     public partial class frmCheckD : Form
     {
-        // متد پاک‌سازی فیلدها
-        private void ClearFormFields(Control parent)
-        {
-            foreach (Control c in parent.Controls)
-            {
-                if (c is TextBox)
-                    ((TextBox)c).Clear();
+        // اتصال به پایگاه‌داده
+        SqlConnection con = new SqlConnection("Data source=HAMY\\SQLEXPRESS;initial catalog=KalaPezeshki;integrated security=true");
+        SqlCommand cmd = new SqlCommand();
 
-                // اگر کنترل داخل کنترل دیگری باشه (مثلاً GroupBox یا Panel)
-                if (c.HasChildren)
-                    ClearFormFields(c);
-            }
-        }
         public frmCheckD()
         {
             InitializeComponent();
         }
-        SqlConnection con = new SqlConnection("Data source=HAMY\\SQLEXPRESS;initial catalog=KalaPezeshki;integrated security=true");
-        SqlCommand cmd = new SqlCommand();
+
+        // رویداد بارگذاری فرم
         private void frmChckD_Load(object sender, EventArgs e)
         {
-
+            // مقداردهی تاریخ امروز به صورت شمسی برای فیلدها
             System.Globalization.PersianCalendar p = new System.Globalization.PersianCalendar();
-            mskSarResid.Text = p.GetYear(DateTime.Now).ToString() + p.GetMonth(DateTime.Now).ToString("0#") + p.GetDayOfMonth(DateTime.Now).ToString("0#");
-            mskTarikh.Text = p.GetYear(DateTime.Now).ToString() + p.GetMonth(DateTime.Now).ToString("0#") + p.GetDayOfMonth(DateTime.Now).ToString("0#");
+            mskSarResid.Text = p.GetYear(DateTime.Now).ToString() +
+                               p.GetMonth(DateTime.Now).ToString("0#") +
+                               p.GetDayOfMonth(DateTime.Now).ToString("0#");
+
+            mskTarikh.Text = mskSarResid.Text;
         }
 
+        // دکمه ذخیره چک دریافتی
         private void btnSave_Click(object sender, EventArgs e)
         {
             try
             {
                 cmd.Parameters.Clear();
                 cmd.Connection = con;
-                cmd.CommandText = "insert into CheckD(ids,AcctNum,NameAcct,NameM,Balance,Tarikh,SarResid,Vaziyat,Tozih)values(@a,@b,@c,@d,@e,@f,@g,@h,@i)";
+                cmd.CommandText = @"INSERT INTO CheckD (ids, AcctNum, NameAcct, NameM, Balance, Tarikh, SarResid, Vaziyat, Tozih)
+                                    VALUES (@a, @b, @c, @d, @e, @f, @g, @h, @i)";
                 cmd.Parameters.AddWithValue("@a", txtCode.Text);
                 cmd.Parameters.AddWithValue("@b", txtShH.Text);
                 cmd.Parameters.AddWithValue("@c", txtNameH.Text);
@@ -57,138 +51,174 @@ namespace KalaPezeshki
                 cmd.Parameters.AddWithValue("@g", mskSarResid.Text);
                 cmd.Parameters.AddWithValue("@h", cmbVaziyat.Text);
                 cmd.Parameters.AddWithValue("@i", txtTozih.Text);
+
                 con.Open();
                 cmd.ExecuteNonQuery();
                 con.Close();
+
                 MessageBox.Show("چک دریافتی ثبت شد");
-                //*****************
-                txtCode.Text = "";
-                txtShH.Text = "";
-                txtNameH.Text = "";
-                txtNameM.Text = "";
-                txtMablagh.Text = "";
-                txtTozih.Text = "";
+                frmHelper.ClearFormFields(this);
             }
-            catch (Exception)
+            catch
             {
                 MessageBox.Show("مشکلی پیش آمده است");
             }
         }
 
+        // دکمه حذف چک دریافتی
         private void btnDelete_Click(object sender, EventArgs e)
         {
             try
             {
                 cmd.Parameters.Clear();
                 cmd.Connection = con;
-                cmd.CommandText = "Delete from CheckD where ids=" + txtCode.Text;
+                cmd.CommandText = "DELETE FROM CheckD WHERE ids=" + txtCode.Text;
+
                 con.Open();
                 cmd.ExecuteNonQuery();
                 con.Close();
+
                 MessageBox.Show("چک دریافتی حذف شد");
+                frmHelper.ClearFormFields(this);
             }
-            catch (Exception)
+            catch
             {
                 MessageBox.Show("مشکلی پیش آمده است");
             }
         }
 
+        // دکمه ویرایش چک دریافتی
         private void btnEdit_Click(object sender, EventArgs e)
         {
-
             try
             {
                 cmd.Parameters.Clear();
                 cmd.Connection = con;
-                cmd.CommandText = "Update CheckD set ids='" + txtCode.Text + "',AcctNum='" + txtShH.Text + "',NameAcct='" + txtNameH.Text + "',NameM='" + txtNameM.Text + "',Balance='" + txtMablagh.Text + "',Tarikh='" + mskTarikh.Text + "',SarResid='" + mskSarResid.Text + "',Vaziyat='" + cmbVaziyat.Text + "',Tozih='" + txtTozih.Text + "' where ids=" + txtCode.Text;
+                cmd.CommandText = @"UPDATE CheckD SET
+                                    ids = @a,
+                                    AcctNum = @b,
+                                    NameAcct = @c,
+                                    NameM = @d,
+                                    Balance = @e,
+                                    Tarikh = @f,
+                                    SarResid = @g,
+                                    Vaziyat = @h,
+                                    Tozih = @i
+                                    WHERE ids = @a";
+
+                cmd.Parameters.AddWithValue("@a", txtCode.Text);
+                cmd.Parameters.AddWithValue("@b", txtShH.Text);
+                cmd.Parameters.AddWithValue("@c", txtNameH.Text);
+                cmd.Parameters.AddWithValue("@d", txtNameM.Text);
+                cmd.Parameters.AddWithValue("@e", txtMablagh.Text);
+                cmd.Parameters.AddWithValue("@f", mskTarikh.Text);
+                cmd.Parameters.AddWithValue("@g", mskSarResid.Text);
+                cmd.Parameters.AddWithValue("@h", cmbVaziyat.Text);
+                cmd.Parameters.AddWithValue("@i", txtTozih.Text);
+
                 con.Open();
                 cmd.ExecuteNonQuery();
                 con.Close();
+
                 MessageBox.Show("چک دریافتی ویرایش شد");
-                //*****************
-                txtCode.Text = "";
-                txtShH.Text = "";
-                txtNameH.Text = "";
-                txtNameM.Text = "";
-                txtMablagh.Text = "";
-                txtTozih.Text = "";
+                frmHelper.ClearFormFields(this);
             }
-            catch (Exception)
+            catch
             {
                 MessageBox.Show("مشکلی پیش آمده است");
             }
         }
+
+        // دکمه جستجوی چک بر اساس شناسه
         private void btnS_Click(object sender, EventArgs e)
         {
-            SqlDataReader dr;
-            cmd.Parameters.Clear();
-            cmd.Connection = con;
-            cmd.CommandText = "select * from CheckD where IdS=@N";
-            cmd.Parameters.AddWithValue("@N", txtCode.Text);
-            con.Open();
-            dr = cmd.ExecuteReader();
-            if (dr.Read())
+            try
             {
-                txtCode.Text = dr["idS"].ToString();
-                txtShH.Text = dr["NameAcct"].ToString();
-                txtNameH.Text = dr["NameAcct"].ToString();
-                txtNameM.Text = dr["NameM"].ToString();
-                txtMablagh.Text = dr["Balance"].ToString();
-                mskTarikh.Text = dr["Tarikh"].ToString();
-                mskSarResid.Text = dr["SarResid"].ToString();
-                cmbVaziyat.Text = dr["Vaziyat"].ToString();
-                txtTozih.Text = dr["Tozih"].ToString();
+                SqlDataReader dr;
+                cmd.Parameters.Clear();
+                cmd.Connection = con;
+                cmd.CommandText = "SELECT * FROM CheckD WHERE ids=@N";
+                cmd.Parameters.AddWithValue("@N", txtCode.Text);
+
+                con.Open();
+                dr = cmd.ExecuteReader();
+
+                if (dr.Read())
+                {
+                    txtCode.Text = dr["ids"].ToString();
+                    txtShH.Text = dr["AcctNum"].ToString();
+                    txtNameH.Text = dr["NameAcct"].ToString();
+                    txtNameM.Text = dr["NameM"].ToString();
+                    txtMablagh.Text = dr["Balance"].ToString();
+                    mskTarikh.Text = dr["Tarikh"].ToString();
+                    mskSarResid.Text = dr["SarResid"].ToString();
+                    cmbVaziyat.Text = dr["Vaziyat"].ToString();
+                    txtTozih.Text = dr["Tozih"].ToString();
+                }
+                else
+                {
+                    txtCode.Clear();
+                    txtCode.Focus();
+                    MessageBox.Show("برای کد وارد شده اطلاعاتی یافت نشد");
+                }
+
+                con.Close();
             }
-            else
+            catch
             {
-                txtCode.Text = "";
-                txtCode.Focus();
-                MessageBox.Show("برای کد وارد شده اطلاعاتی یافت نشد");
+                MessageBox.Show("مشکلی پیش آمده است");
             }
-            con.Close();
         }
 
+        // دکمه جستجوی حساب بانکی با شماره حساب
         private void buttonX1_Click(object sender, EventArgs e)
         {
-            SqlDataReader dr;
-            cmd.Parameters.Clear();
-            cmd.Connection = con;
-            cmd.CommandText = "select * from Bank where AcctNum=@N";
-            cmd.Parameters.AddWithValue("@N", txtShH.Text);
-            con.Open();
-            dr = cmd.ExecuteReader();
-            if (dr.Read())
+            try
             {
-                txtNameH.Text = dr["NameAcct"].ToString();
-                txtShH.Text = dr["AcctNum"].ToString();
+                SqlDataReader dr;
+                cmd.Parameters.Clear();
+                cmd.Connection = con;
+                cmd.CommandText = "SELECT * FROM Bank WHERE AcctNum=@N";
+                cmd.Parameters.AddWithValue("@N", txtShH.Text);
+
+                con.Open();
+                dr = cmd.ExecuteReader();
+
+                if (dr.Read())
+                {
+                    txtNameH.Text = dr["NameAcct"].ToString();
+                    txtShH.Text = dr["AcctNum"].ToString();
+                }
+                else
+                {
+                    txtShH.Clear();
+                    txtShH.Focus();
+                    MessageBox.Show("برای شماره حساب وارد شده اطلاعاتی یافت نشد");
+                }
+
+                con.Close();
             }
-            else
+            catch
             {
-                txtShH.Text = "";
-                txtShH.Focus();
-                MessageBox.Show("برای کد وارد شده اطلاعاتی یافت نشد");
+                MessageBox.Show("مشکلی پیش آمده است");
             }
-            con.Close();
         }
 
+        // دکمه نمایش لیست چک‌ها
         private void btnList_Click(object sender, EventArgs e)
         {
             new frmListCheckD().ShowDialog();
         }
 
-        private void mskTarikh_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-
-        }
-
-        private void txtNameH_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        // دکمه پاک کردن فرم
         private void btnClear_Click(object sender, EventArgs e)
         {
-            ClearFormFields(this);
+            frmHelper.ClearFormFields(this);
         }
+
+        // رویدادهای استفاده‌نشده (می‌توان حذف کرد اگر نیاز ندارید)
+        private void mskTarikh_MaskInputRejected(object sender, MaskInputRejectedEventArgs e) { }
+
+        private void txtNameH_TextChanged(object sender, EventArgs e) { }
     }
-    }
+}

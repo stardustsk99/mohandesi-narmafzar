@@ -11,13 +11,14 @@ namespace KalaPezeshki
 {
     class frmHelper
     {
-        SqlConnection con = new SqlConnection("Data source=HAMY\\SQLEXPRESS;initial catalog=KalaPezeshki;integrated security=true");
-        SqlCommand cmd = new SqlCommand();
+        // کلاس داخلی برای نگهداری اطلاعات نشست کاربر
         public static class UserSession
         {
             public static string Username { get; set; }
             public static string Role { get; set; }
         }
+
+        // تبدیل اعداد انگلیسی به فارسی
         public static string ToPersianNumbers(string input)
         {
             string[] persianDigits = { "۰", "۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "۹" };
@@ -27,8 +28,8 @@ namespace KalaPezeshki
             }
             return input;
         }
-        
 
+        // تبدیل تمام متن‌ها در کنترل‌ها به اعداد فارسی (بازگشتی)
         public static void ConvertNumbersToPersian(Control parent)
         {
             foreach (Control c in parent.Controls)
@@ -44,52 +45,8 @@ namespace KalaPezeshki
                 }
             }
         }
-        public static void Backup(string filename)
-        {
-            SqlConnection con = null;
-            try
-            {
-                string Backup = @"Backup DataBase [KalaPezeshki] To Disk='" + filename + "'";
-                SqlCommand cmd = null;
-                con = new SqlConnection("Data Source=HAMY\\SQLEXPRESS;Initial Catalog=KalaPezeshki;Integrated Security=True");
-                con.Open();
-                cmd = new SqlCommand(Backup, con);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("پشتيبان گيري انجام شد");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error : " + ex.Message);
-            }
-            finally
-            {
-                con.Close();
-            }
-        }
 
-
-        public static void Restore(string filename)
-        {
-            SqlConnection con = null;
-            try
-            {
-                string Restore = @"ALTER DATABASE [KalaPezeshki] SET SINGLE_USER with ROLLBACK IMMEDIATE " + " USE master " + " RESTORE DATABASE [KalaPezeshki] FROM DISK= N'" + filename + "'WITH RECOVERY, REPLACE";
-                SqlCommand cmd = null;
-                con = new SqlConnection("Data Source=HAMY\\SQLEXPRESS;Initial Catalog=KalaPezeshki;Integrated Security=True");
-                con.Open();
-                cmd = new SqlCommand(Restore, con);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("بازيابي اطلاعات انجام شد");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error : ", ex.Message);
-            }
-            finally
-            {
-                con.Close();
-            }
-        }
+        // گرفتن ساعت جاری به فرمت فارسی
         public static string GetPersianDateTime()
         {
             DateTime now = DateTime.Now;
@@ -103,7 +60,63 @@ namespace KalaPezeshki
 
             return ToPersianNumbers(full);
         }
-        // متد پاک‌سازی فیلدها
+
+        // متد پشتیبان‌گیری از دیتابیس
+        public static void Backup(string filename)
+        {
+            SqlConnection con = null;
+            try
+            {
+                string Backup = @"BACKUP DATABASE [KalaPezeshki] TO DISK='" + filename + "'";
+                con = new SqlConnection("Data Source=HAMY\\SQLEXPRESS;Initial Catalog=KalaPezeshki;Integrated Security=True");
+
+                con.Open();
+                SqlCommand cmd = new SqlCommand(Backup, con);
+                cmd.ExecuteNonQuery();
+
+                MessageBox.Show("پشتيبان گيري انجام شد");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error : " + ex.Message);
+            }
+            finally
+            {
+                if (con != null && con.State == System.Data.ConnectionState.Open)
+                    con.Close();
+            }
+        }
+
+        // متد بازیابی دیتابیس از فایل پشتیبان
+        public static void Restore(string filename)
+        {
+            SqlConnection con = null;
+            try
+            {
+                string Restore = @"ALTER DATABASE [KalaPezeshki] SET SINGLE_USER WITH ROLLBACK IMMEDIATE; " +
+                                 "USE master; " +
+                                 "RESTORE DATABASE [KalaPezeshki] FROM DISK= N'" + filename + "' WITH RECOVERY, REPLACE";
+
+                con = new SqlConnection("Data Source=HAMY\\SQLEXPRESS;Initial Catalog=KalaPezeshki;Integrated Security=True");
+
+                con.Open();
+                SqlCommand cmd = new SqlCommand(Restore, con);
+                cmd.ExecuteNonQuery();
+
+                MessageBox.Show("بازيابي اطلاعات انجام شد");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error : " + ex.Message); 
+            }
+            finally
+            {
+                if (con != null && con.State == System.Data.ConnectionState.Open)
+                    con.Close();
+            }
+        }
+
+        // متد پاک‌سازی تمام فیلدهای متنی در فرم
         public static void ClearFormFields(Control parent)
         {
             foreach (Control c in parent.Controls)
@@ -112,7 +125,7 @@ namespace KalaPezeshki
                     ((TextBox)c).Clear();
 
                 if (c.HasChildren)
-                    ClearFormFields(c); // بازگشتی برای کنترل‌های تو در تو
+                    ClearFormFields(c); // اجرای بازگشتی برای کنترل‌های تو در تو
             }
         }
     }
