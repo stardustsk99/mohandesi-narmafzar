@@ -264,13 +264,13 @@ namespace KalaPezeshki
             {
                 txtPass.PasswordChar = '\0'; // نمایش رمز عبور
                 txtPassRep.PasswordChar= '\0';
-                ChkPassword.Text = "مخفی کردن پسورد";
+               
             }
             else
             {
                 txtPass.PasswordChar = '*'; // مخفی کردن رمز عبور
                 txtPassRep.PasswordChar = '*';
-                ChkPassword.Text = "نمایش پسورد";
+        
             }
         }
 

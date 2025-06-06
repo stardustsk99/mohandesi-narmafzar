@@ -85,12 +85,10 @@ namespace KalaPezeshki
             if (ChkPassword.Checked)
             {
                 txtPass.PasswordChar = '\0';
-                ChkPassword.Text = "مخفی کردن پسورد";
             }
             else
             {
                 txtPass.PasswordChar = '*';
-                ChkPassword.Text = "نمایش پسورد";
             }
         }
     }

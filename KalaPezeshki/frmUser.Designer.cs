@@ -219,11 +219,11 @@
             // ChkPassword
             // 
             this.ChkPassword.AutoSize = true;
-            this.ChkPassword.Location = new System.Drawing.Point(130, 233);
+            this.ChkPassword.Location = new System.Drawing.Point(148, 235);
             this.ChkPassword.Name = "ChkPassword";
-            this.ChkPassword.Size = new System.Drawing.Size(154, 22);
+            this.ChkPassword.Size = new System.Drawing.Size(136, 22);
             this.ChkPassword.TabIndex = 5;
-            this.ChkPassword.Text = "نمایش کلمه ی عبور";
+            this.ChkPassword.Text = "نمایش کلمه عبور";
             this.ChkPassword.UseVisualStyleBackColor = true;
             this.ChkPassword.CheckedChanged += new System.EventHandler(this.ChkPassword_CheckedChanged);
             // 
@@ -375,8 +375,10 @@
             this.ClientSize = new System.Drawing.Size(976, 422);
             this.Controls.Add(this.groupPanel1);
             this.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.MaximizeBox = false;
             this.Name = "frmUser";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "تعریف کاربران سیستم";
             this.Load += new System.EventHandler(this.frmUser_Load);
             this.groupPanel1.ResumeLayout(false);

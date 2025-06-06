@@ -137,12 +137,12 @@
             // ChkPassword
             // 
             this.ChkPassword.AutoSize = true;
-            this.ChkPassword.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.ChkPassword.Location = new System.Drawing.Point(443, 179);
+            this.ChkPassword.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.ChkPassword.Location = new System.Drawing.Point(480, 189);
             this.ChkPassword.Name = "ChkPassword";
-            this.ChkPassword.Size = new System.Drawing.Size(173, 25);
+            this.ChkPassword.Size = new System.Drawing.Size(136, 22);
             this.ChkPassword.TabIndex = 5;
-            this.ChkPassword.Text = "نمایش کلمه ی عبور";
+            this.ChkPassword.Text = "نمایش کلمه عبور";
             this.ChkPassword.UseVisualStyleBackColor = true;
             this.ChkPassword.CheckedChanged += new System.EventHandler(this.ChkPassword_CheckedChanged_1);
             // 

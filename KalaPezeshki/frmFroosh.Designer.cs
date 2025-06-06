@@ -947,6 +947,7 @@
             this.MaximizeBox = false;
             this.Name = "frmFroosh";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "فاکتور فروش کالا";
             this.Load += new System.EventHandler(this.frmFroosh_Load);
             this.groupPanel1.ResumeLayout(false);
