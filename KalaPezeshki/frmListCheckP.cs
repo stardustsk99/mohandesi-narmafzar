@@ -48,7 +48,7 @@ namespace KalaPezeshki
         }
         private void frmListCheckP_Load(object sender, EventArgs e)
         {
-
+            Display();
             System.Globalization.PersianCalendar p = new System.Globalization.PersianCalendar();
             mskSarResid1.Text = p.GetYear(DateTime.Now).ToString() + p.GetMonth(DateTime.Now).ToString("0#") + p.GetDayOfMonth(DateTime.Now).ToString("0#");
             mskSarResid2.Text = p.GetYear(DateTime.Now).ToString() + p.GetMonth(DateTime.Now).ToString("0#") + p.GetDayOfMonth(DateTime.Now).ToString("0#");
@@ -57,7 +57,7 @@ namespace KalaPezeshki
 
         private void mskSarResid1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
-
+          
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -124,5 +124,24 @@ namespace KalaPezeshki
                 
             }
 
+        private void dgvCheckP_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
+
+        private void mskSarResid2_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void mskSarResid2_TextChanged_1(object sender, EventArgs e)
+        {
+            Display();
+        }
+
+        private void mskSarResid1_TextChanged(object sender, EventArgs e)
+        {
+            Display();
+        }
+    }
     }

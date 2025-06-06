@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmListCheckP));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.groupPanel4 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.btnVosol = new DevComponents.DotNetBar.ButtonX();
@@ -220,14 +220,14 @@
             // 
             this.dgvCheckP.BackgroundColor = System.Drawing.Color.White;
             this.dgvCheckP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvCheckP.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCheckP.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvCheckP.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvCheckP.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dgvCheckP.Location = new System.Drawing.Point(0, 0);
@@ -235,6 +235,7 @@
             this.dgvCheckP.RowHeadersWidth = 51;
             this.dgvCheckP.Size = new System.Drawing.Size(882, 260);
             this.dgvCheckP.TabIndex = 1;
+            this.dgvCheckP.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCheckP_CellContentClick);
             // 
             // groupPanel2
             // 
@@ -294,6 +295,8 @@
             this.mskSarResid2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.mskSarResid2.TabIndex = 10;
             this.mskSarResid2.Text = "";
+            this.mskSarResid2.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mskSarResid2_MaskInputRejected);
+            this.mskSarResid2.TextChanged += new System.EventHandler(this.mskSarResid2_TextChanged_1);
             // 
             // label1
             // 
@@ -320,6 +323,7 @@
             this.mskSarResid1.TabIndex = 10;
             this.mskSarResid1.Text = "";
             this.mskSarResid1.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mskSarResid1_MaskInputRejected);
+            this.mskSarResid1.TextChanged += new System.EventHandler(this.mskSarResid1_TextChanged);
             // 
             // label7
             // 

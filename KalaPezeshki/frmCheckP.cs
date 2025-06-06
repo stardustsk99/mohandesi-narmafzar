@@ -185,7 +185,7 @@ namespace KalaPezeshki
         // نمایش لیست جدید از فرم چک پرداختی
         private void btnList_Click(object sender, EventArgs e)
         {
-            new frmCheckP().ShowDialog();
+            new frmListCheckP().ShowDialog();
         }
 
         // پاکسازی فیلدها

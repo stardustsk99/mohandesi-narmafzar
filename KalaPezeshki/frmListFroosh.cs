@@ -49,7 +49,20 @@ namespace KalaPezeshki
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
+            try
+            {
+                StiReport Report = new StiReport();
+                Report.Load("Report/rptListFroosh.mrt");
+                Report.Compile();
+                Report["Tarikh1"] = mskTarikh1.Text;
+                Report["Tarikh2"] = mskTarikh2.Text;
+                Report.ShowWithRibbonGUI();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("مشکلی پیش آمده است:\n" + ex.Message);
 
+            }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)

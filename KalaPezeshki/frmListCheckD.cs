@@ -102,25 +102,33 @@ namespace KalaPezeshki
 
         private void btnVosol_Click(object sender, EventArgs e)
         {
-            string str;
-            int str1;
-            con.Open();
-            SqlCommand sqlcmd = new SqlCommand("select Balance from Bank where AcctNum='" + Convert.ToInt32(dgvCheckD.SelectedCells[1].Value) + "'", con);
-            str = Convert.ToString((int)sqlcmd.ExecuteScalar());//مبلغ حساب
-            str1 = Convert.ToInt32(dgvCheckD.SelectedCells[4].Value);//مبلغ چک
-            int sum = Int32.Parse(str) + str1;//مبلغ نهایی حساب
-            //**********************************ویرایش موجودی حساب
-            string UpdateBalance = "Update Bank set Balance='" + sum + "' where AcctNum='" + Convert.ToInt32(dgvCheckD.SelectedCells[1].Value) + "'";
-            SqlCommand com = new SqlCommand(UpdateBalance, con);
-            com.ExecuteNonQuery();
-            //**********************************ویرایش وضعیت چک
-            string UpdateVaziyat = "Update CheckD set Vaziyat='" + "وصول شده" + "' where ids='" + Convert.ToInt32(dgvCheckD.SelectedCells[0].Value) + "'";
-            SqlCommand cmd = new SqlCommand(UpdateVaziyat, con);
-            cmd.ExecuteNonQuery();
+            try
+            {
+                string str;
+                int str1;
+                con.Open();
+                SqlCommand sqlcmd = new SqlCommand("select Balance from Bank where AcctNum='" + Convert.ToInt32(dgvCheckD.SelectedCells[1].Value) + "'", con);
+                str = Convert.ToString((int)sqlcmd.ExecuteScalar());//مبلغ حساب
+                str1 = Convert.ToInt32(dgvCheckD.SelectedCells[4].Value);//مبلغ چک
+                int sum = Int32.Parse(str) + str1;//مبلغ نهایی حساب
+                                                  //**********************************ویرایش موجودی حساب
+                string UpdateBalance = "Update Bank set Balance='" + sum + "' where AcctNum='" + Convert.ToInt32(dgvCheckD.SelectedCells[1].Value) + "'";
+                SqlCommand com = new SqlCommand(UpdateBalance, con);
+                com.ExecuteNonQuery();
+                //**********************************ویرایش وضعیت چک
+                string UpdateVaziyat = "Update CheckD set Vaziyat=N'وصول شده' where ids='" + Convert.ToInt32(dgvCheckD.SelectedCells[0].Value) + "'";
+                SqlCommand cmd = new SqlCommand(UpdateVaziyat, con);
+                cmd.ExecuteNonQuery();
 
-            MessageBox.Show("وصول چک انجام شد و مبلغ به حساب واریز شد");
-            con.Close();
-            Display();
+                MessageBox.Show("وصول چک انجام شد و مبلغ به حساب واریز شد");
+                con.Close();
+                Display();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("مشکلی پیش آمده است");
+
+            }
 
         }
 

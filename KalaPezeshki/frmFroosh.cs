@@ -137,29 +137,79 @@ namespace KalaPezeshki
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            int JameGood = 0;
-            int JameGood2 = 0;
-            int jameKol = 0;
-            JameGood = Convert.ToInt32(dgvFactor.CurrentRow.Cells[4].Value);
-            JameGood2 = Convert.ToInt32(txtJameGood.Text) - JameGood;
-            txtJameGood.Text = JameGood2.ToString();
-            jameKol = Convert.ToInt32(txtJameKol.Text) - JameGood;
-            txtJameKol.Text = jameKol.ToString();
-            dgvFactor.Rows.RemoveAt(dgvFactor.CurrentRow.Index);
+            try
+            {
+                if (dgvFactor.CurrentRow == null)
+                {
+                    MessageBox.Show("هیچ ردیفی انتخاب نشده است.");
+                    return;
+                }
+
+                // بررسی تعداد ستون‌ها
+                if (dgvFactor.CurrentRow.Cells.Count <= 4)
+                {
+                    MessageBox.Show("ستون مورد نظر وجود ندارد.");
+                    return;
+                }
+
+                // مقدار عددی ستون 4 را با ایمنی استخراج کنید
+                if (!int.TryParse(dgvFactor.CurrentRow.Cells[4].Value?.ToString(), out int JameGood))
+                {
+                    MessageBox.Show("مقدار ستون مورد نظر قابل تبدیل به عدد نیست.");
+                    return;
+                }
+
+                // مقدارهای موجود در TextBox ها را هم بررسی کنید
+                if (!int.TryParse(txtJameGood.Text, out int currentJameGood))
+                {
+                    MessageBox.Show("مقدار جمع کالاها در txtJameGood معتبر نیست.");
+                    return;
+                }
+
+                if (!int.TryParse(txtJameKol.Text, out int currentJameKol))
+                {
+                    MessageBox.Show("مقدار جمع کل در txtJameKol معتبر نیست.");
+                    return;
+                }
+
+                int JameGood2 = currentJameGood - JameGood;
+                int jameKol = currentJameKol - JameGood;
+
+                // در صورت منفی شدن، می‌توانید هشدار بدهید یا مقدار را صفر قرار دهید
+                if (JameGood2 < 0) JameGood2 = 0;
+                if (jameKol < 0) jameKol = 0;
+
+                txtJameGood.Text = JameGood2.ToString();
+                txtJameKol.Text = jameKol.ToString();
+
+                dgvFactor.Rows.RemoveAt(dgvFactor.CurrentRow.Index);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("مشکلی پیش آمده است: " + ex.Message);
+            }
         }
 
         private void btnCheckP_Click(object sender, EventArgs e)
         {
-             frmCheckD frm = new frmCheckD();
-            frm.txtTozih.Text = "  دریافت مبلغ فاکتور فروش به صورت چک به شماره فاکتور" + txtIdFactor.Text;
-            frm.txtNameM.Text = txtNameM.Text;
-            frm.txtMablagh.Text = txtJameKol.Text;
-            frm.ShowDialog();
+            try
+            {
+                frmCheckD frm = new frmCheckD();
+                frm.txtTozih.Text = "  دریافت مبلغ فاکتور فروش به صورت چک به شماره فاکتور" + txtIdFactor.Text;
+                frm.txtNameM.Text = txtNameM.Text;
+                frm.txtMablagh.Text = txtJameKol.Text;
+                frm.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("مشکلی پیش آمده است: " + ex.Message);
+
+            }
+
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-
             try
             {
                 if (txtIdFactor.Text == "")
@@ -168,7 +218,7 @@ namespace KalaPezeshki
                     txtIdFactor.Focus();
                     return;
                 }
-                //******************
+
                 con.Close();
                 SqlDataReader dr;
                 cmd.Parameters.Clear();
@@ -184,16 +234,19 @@ namespace KalaPezeshki
                     MessageBox.Show("این کد فاکتور قبلا ثبت شده است");
                     con.Close();
                     return;
-                    
                 }
-                con.Close();//*****
-                //*********************
+                con.Close();
+
+                // ✅ شروع ثبت اطلاعات کالاهای فاکتور
                 for (int i = 0; i < dgvFactor.Rows.Count; i++)
                 {
+                    // ✅ جلوگیری از اجرای ردیف خالی (آخرین ردیف معمولاً خالی است)
+                    if (dgvFactor.Rows[i].IsNewRow) continue;
+
                     con.Close();
                     cmd.Parameters.Clear();
                     cmd.Connection = con;
-                    cmd.CommandText = "insert into Froosh (CodeFactor,Tarikh,NameM,Tel,Address,id,NameGOOD,Number,SP,TotalSP,TotalSGood,Khadamat,Takhfif,JameKol,Tozih)values(@a,@b,@c,@d,@e,@f,@g,@h,@i,@j,@k,@l,@m,@n,@o)";
+                    cmd.CommandText = "insert into Froosh (CodeFactor,Tarikh,NameM,Tel,Address,id,NameGood,Number,SP,TotalSP,TotalSGood,Khadamat,Takhfif,JameKol,Tozih)values(@a,@b,@c,@d,@e,@f,@g,@h,@i,@j,@k,@l,@m,@n,@o)";
                     cmd.Parameters.AddWithValue("@a", txtIdFactor.Text);
                     cmd.Parameters.AddWithValue("@b", mskTarikh.Text);
                     cmd.Parameters.AddWithValue("@c", txtNameM.Text);
@@ -204,6 +257,8 @@ namespace KalaPezeshki
                     cmd.Parameters.AddWithValue("@g", dgvFactor.Rows[i].Cells[1].Value);
                     cmd.Parameters.AddWithValue("@h", Convert.ToInt32(dgvFactor.Rows[i].Cells[2].Value));
                     cmd.Parameters.AddWithValue("@i", Convert.ToInt32(dgvFactor.Rows[i].Cells[3].Value));
+
+                    // ❗ بررسی کن ستون TotalSP واقعاً در جدول Froosh وجود دارد
                     cmd.Parameters.AddWithValue("@j", Convert.ToInt32(dgvFactor.Rows[i].Cells[4].Value));
 
                     cmd.Parameters.AddWithValue("@k", txtJameGood.Text);
@@ -214,28 +269,29 @@ namespace KalaPezeshki
 
                     con.Open();
                     cmd.ExecuteNonQuery();
-                    //************************کاهش موجودی کالاها
-                    string str;
-                    int str1;
-                    SqlCommand sqlcmd = new SqlCommand("select Nunber from Good where id='" + Convert.ToInt32(dgvFactor.SelectedCells[0].Value) + "'", con);
-                    str = Convert.ToString((int)sqlcmd.ExecuteScalar());//موجودی کالا
-                    str1 = Convert.ToInt32(dgvFactor.Rows[i].Cells[2].Value);//تعداد فروش
-                    int sum = Int32.Parse(str) - str1;//تعداد نهایی کالا
-                    //******************************ویرایش موجودی کالا
-                    string UpdateNumber = "Update Good set Number='" + sum + "' where id='" + Convert.ToInt32(dgvFactor.SelectedCells[0].Value) + "'";
-                    SqlCommand com = new SqlCommand(UpdateNumber, con);
+
+                    // 👇 کاهش موجودی کالا
+                    int goodId = Convert.ToInt32(dgvFactor.Rows[i].Cells[0].Value);
+                    SqlCommand sqlcmd = new SqlCommand("select Number from Goods where id='" + goodId + "'", con);
+                    int mojoodi = Convert.ToInt32(sqlcmd.ExecuteScalar());
+                    int tedadForosh = Convert.ToInt32(dgvFactor.Rows[i].Cells[2].Value);
+                    int finalCount = mojoodi - tedadForosh;
+
+                    SqlCommand com = new SqlCommand("Update Goods set Number='" + finalCount + "' where id='" + goodId + "'", con);
                     com.ExecuteNonQuery();
                     con.Close();
                 }
-                con.Close();
+
+                // ✅ فقط اگر بدون خطا انجام شد
+                MessageBox.Show("ثبت با موفقیت انجام شد");
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                {
-                    MessageBox.Show("ثبت با موفقیت انجام شد");
-                }
+                // نمایش دقیق خطا
+                MessageBox.Show("خطا در ثبت اطلاعات: " + ex.Message);
             }
         }
+
         private void btnNagd_Click(object sender, EventArgs e)
         {
 
@@ -280,9 +336,6 @@ namespace KalaPezeshki
                 Report.Load("Report/rptFroosh.mrt");
                 Report.Compile();
                 Report["CodeFactor"] = Convert.ToInt32(txtIdFactor.Text);
-                Report["strNameKP"] = NameKP;
-                Report["strTel"] = Tel;
-                Report["strAddress"] = Address; 
                 Report.ShowWithRibbonGUI();
             }
             catch (Exception)

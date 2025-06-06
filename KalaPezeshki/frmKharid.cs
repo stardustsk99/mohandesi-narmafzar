@@ -126,7 +126,7 @@ namespace KalaPezeshki
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-
+            btnSave.Enabled = false;
             try
             {
                 if (txtIdFactor.Text == "")
@@ -135,68 +135,85 @@ namespace KalaPezeshki
                     txtIdFactor.Focus();
                     return;
                 }
-                //******************
-                SqlDataReader dr;
-                cmd.Parameters.Clear();
-                cmd.Connection = con;
-                cmd.CommandText = "select CodeFactor from Kharid where CodeFactor=@N";
-                cmd.Parameters.AddWithValue("@N", txtIdFactor.Text);
-                con.Open();
-                dr = cmd.ExecuteReader();
-                if (dr.Read())
+
+                using (SqlConnection con = new SqlConnection("Data source=HAMY\\SQLEXPRESS;initial catalog=KalaPezeshki;integrated security=true"))
                 {
-                    txtIdFactor.Text = "";
-                    txtIdFactor.Focus();
-                    MessageBox.Show("این کد فاکتور قبلا ثبت شده است");
-                    return;
-                  // con.Close();
-                }
-                con.Close();//*****
-                //*********************
-                for (int i = 0; i < dgvFactor.Rows.Count; i++)
-                {
-                    con.Close();
-                    cmd.Parameters.Clear();
-                    cmd.Connection = con;
-                    cmd.CommandText = "insert into Kharid (CodeFactor,Tarikh,NameM,Tel,Address,id,NameGood,Number,CP,TotalCP,TotalPGood,Khadamat,Takhfif,JameKol,Tozih)values(@a,@b,@c,@d,@e,@f,@g,@h,@i,@j,@k,@l,@m,@n,@o)";
-                    cmd.Parameters.AddWithValue("@a", txtIdFactor.Text);
-                    cmd.Parameters.AddWithValue("@b", mskTarikh.Text);
-                    cmd.Parameters.AddWithValue("@c", txtNameM.Text);
-                    cmd.Parameters.AddWithValue("@d", txtTel.Text);
-                    cmd.Parameters.AddWithValue("@e", txtAddress.Text);
-
-                    cmd.Parameters.AddWithValue("@f", Convert.ToInt32(dgvFactor.Rows[i].Cells[0].Value));
-                    cmd.Parameters.AddWithValue("@g", dgvFactor.Rows[i].Cells[1].Value);
-                    cmd.Parameters.AddWithValue("@h", Convert.ToInt32(dgvFactor.Rows[i].Cells[2].Value));
-                    cmd.Parameters.AddWithValue("@i", Convert.ToInt32(dgvFactor.Rows[i].Cells[3].Value));
-                    cmd.Parameters.AddWithValue("@j", Convert.ToInt32(dgvFactor.Rows[i].Cells[4].Value));
-
-                    cmd.Parameters.AddWithValue("@k", txtJameGood.Text);
-                    cmd.Parameters.AddWithValue("@l", txtKhadamat.Text);
-                    cmd.Parameters.AddWithValue("@m", txtTakhfif.Text);
-                    cmd.Parameters.AddWithValue("@n", txtJameKol.Text);
-                    cmd.Parameters.AddWithValue("@o", txtTozih.Text);
-
                     con.Open();
-                    cmd.ExecuteNonQuery();
-                    //************************افزایش موجودی کالاها
-                    string str;
-                    int str1;
-                    SqlCommand sqlcmd = new SqlCommand("select Nunber from Good where id='" + Convert.ToInt32(dgvFactor.SelectedCells[0].Value) + "'", con);
-                    str = Convert.ToString((int)sqlcmd.ExecuteScalar());//موجودی کالا
-                    str1 = Convert.ToInt32(dgvFactor.Rows[i].Cells[2].Value);//تعداد خرید
-                    int sum = Int32.Parse(str) + str1;//تعداد نهایی کالا
-                    //******************************ویرایش موجودی کالا
-                    string UpdateNumber = "Update Good set Number='" + sum + "' where id='" + Convert.ToInt32(dgvFactor.SelectedCells[0].Value) + "'";
-                    SqlCommand com = new SqlCommand(UpdateNumber, con);
-                    com.ExecuteNonQuery();
-                    con.Close();
+
+                    using (SqlCommand cmd = new SqlCommand("select CodeFactor from Kharid where CodeFactor=@N", con))
+                    {
+                        cmd.Parameters.AddWithValue("@N", txtIdFactor.Text);
+                        using (SqlDataReader dr = cmd.ExecuteReader())
+                        {
+                            if (dr.Read())
+                            {
+                                txtIdFactor.Text = "";
+                                txtIdFactor.Focus();
+                                MessageBox.Show("این کد فاکتور قبلا ثبت شده است");
+                                return;
+                            }
+                        }
+                    }
+
+                    for (int i = 0; i < dgvFactor.Rows.Count; i++)
+                    {
+                        if (dgvFactor.Rows[i].IsNewRow) continue; // رد کردن ردیف خالی
+
+                        using (SqlCommand cmd = new SqlCommand("insert into Kharid (CodeFactor, Tarikh, NameM, Tel, Address, id, NameGoods, Number, CP, TotalCP, TotalPGood, Khadamat, Takhfif, JameKol, Tozih) " +
+                                                              "values(@a,@b,@c,@d,@e,@f,@g,@h,@i,@j,@k,@l,@m,@n,@o)", con))
+                        {
+                            cmd.Parameters.AddWithValue("@a", txtIdFactor.Text);
+                            cmd.Parameters.AddWithValue("@b", mskTarikh.Text);
+                            cmd.Parameters.AddWithValue("@c", txtNameM.Text);
+                            cmd.Parameters.AddWithValue("@d", txtTel.Text);
+                            cmd.Parameters.AddWithValue("@e", txtAddress.Text);
+
+                            cmd.Parameters.AddWithValue("@f", Convert.ToInt32(dgvFactor.Rows[i].Cells[0].Value));
+                            cmd.Parameters.AddWithValue("@g", dgvFactor.Rows[i].Cells[1].Value);
+                            cmd.Parameters.AddWithValue("@h", Convert.ToInt32(dgvFactor.Rows[i].Cells[2].Value));
+                            cmd.Parameters.AddWithValue("@i", Convert.ToInt32(dgvFactor.Rows[i].Cells[3].Value));
+                            cmd.Parameters.AddWithValue("@j", Convert.ToInt32(dgvFactor.Rows[i].Cells[4].Value));
+
+                            int jameGood = string.IsNullOrWhiteSpace(txtJameGood.Text) ? 0 : Convert.ToInt32(txtJameGood.Text);
+                            int khadamat = string.IsNullOrWhiteSpace(txtKhadamat.Text) ? 0 : Convert.ToInt32(txtKhadamat.Text);
+                            int takhfif = string.IsNullOrWhiteSpace(txtTakhfif.Text) ? 0 : Convert.ToInt32(txtTakhfif.Text);
+                            int jameKol = string.IsNullOrWhiteSpace(txtJameKol.Text) ? 0 : Convert.ToInt32(txtJameKol.Text);
+
+                            cmd.Parameters.AddWithValue("@k", jameGood);
+                            cmd.Parameters.AddWithValue("@l", khadamat);
+                            cmd.Parameters.AddWithValue("@m", takhfif);
+                            cmd.Parameters.AddWithValue("@n", jameKol);
+                            cmd.Parameters.AddWithValue("@o", txtTozih.Text);
+
+                            cmd.ExecuteNonQuery();
+                        }
+
+                        using (SqlCommand sqlcmd = new SqlCommand("select Number from Goods where id=@iddd", con))
+                        {
+                            sqlcmd.Parameters.AddWithValue("@iddd", Convert.ToInt32(dgvFactor.Rows[i].Cells[0].Value));
+                            int currentNumber = Convert.ToInt32(sqlcmd.ExecuteScalar());
+
+                            int purchasedNumber = Convert.ToInt32(dgvFactor.Rows[i].Cells[2].Value);
+                            int newNumber = currentNumber + purchasedNumber;
+
+                            using (SqlCommand com = new SqlCommand("Update Goods set Number=@nn where id=@idd", con))
+                            {
+                                com.Parameters.AddWithValue("@nn", newNumber);
+                                com.Parameters.AddWithValue("@idd", Convert.ToInt32(dgvFactor.Rows[i].Cells[0].Value));
+                                com.ExecuteNonQuery();
+                            }
+                        }
+                    }
                 }
-                con.Close();
-            }
-            catch (Exception)
-            {
                 MessageBox.Show("ثبت با موفقیت انجام شد");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("مشکلی پیش آمده است:\n" + ex.Message);
+            }
+            finally
+            {
+                btnSave.Enabled = true;
             }
         }
 

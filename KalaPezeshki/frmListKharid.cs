@@ -50,12 +50,21 @@ namespace KalaPezeshki
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            StiReport Report = new StiReport();
-            Report.Load("Report/rptListKharid.mrt");
-            Report.Compile();
-            Report["Tarikh1"] = mskTarikh1.Text;
-            Report["Tarikh2"] = mskTarikh2.Text;
-            Report.ShowWithRibbonGUI();
+            try
+            {
+                StiReport Report = new StiReport();
+                Report.Load("Report/rptListKharid.mrt");
+                Report.Compile();
+                Report["Tarikh1"] = mskTarikh1.Text;
+                Report["Tarikh2"] = mskTarikh2.Text;
+                Report.ShowWithRibbonGUI();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("مشکلی پیش آمده است:\n" + ex.Message);
+
+            }
+
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -100,6 +109,11 @@ namespace KalaPezeshki
         }
 
         private void mskTarikh_Textchange2(object sender, MaskInputRejectedEventArgs e)
+        {
+            Display();
+        }
+
+        private void mskTarikh2_TextChanged(object sender, EventArgs e)
         {
             Display();
         }

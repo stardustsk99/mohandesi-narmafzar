@@ -87,7 +87,7 @@ namespace KalaPezeshki
         private void buttonItem6_Click(object sender, EventArgs e) => new frmListSandoogh().ShowDialog();
         private void buttonItem7_Click(object sender, EventArgs e) => new frmCheckD().ShowDialog();
         private void btnListCheckD_Click(object sender, EventArgs e) => new frmListCheckD().ShowDialog();
-        private void buttonItem12_Click(object sender, EventArgs e) => new frmCheckP().ShowDialog();
+        private void buttonItem12_Click(object sender, EventArgs e) => new frmListCheckP().ShowDialog();
         private void btnCheckP_Click(object sender, EventArgs e) => new frmCheckP().ShowDialog();
         private void btnListFrosh_Click(object sender, EventArgs e) => new frmListFroosh().ShowDialog();
         private void btnFrosh_Click(object sender, EventArgs e) => new frmFroosh().ShowDialog();
