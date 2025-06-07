@@ -160,5 +160,20 @@ namespace KalaPezeshki
         {
             // در صورت نیاز به بارگذاری اولیه اطلاعات، اینجا قرار می‌گیرد
         }
+
+        private void txtBankName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtAcctNum_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtBalance_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -42,9 +42,9 @@
             this.mskEXP1 = new DevComponents.DotNetBar.Controls.MaskedTextBoxAdv();
             this.label5 = new System.Windows.Forms.Label();
             this.groupPanel2 = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
-            this.txtName = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtGroup = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtName = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
             this.groupPanel1.SuspendLayout();
             this.groupPanel5.SuspendLayout();
             this.groupPanel4.SuspendLayout();
@@ -372,6 +372,38 @@
             this.groupPanel2.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.groupPanel2.TabIndex = 1;
             // 
+            // txtGroup
+            // 
+            // 
+            // 
+            // 
+            this.txtGroup.Border.Class = "TextBoxBorder";
+            this.txtGroup.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtGroup.Location = new System.Drawing.Point(28, 8);
+            this.txtGroup.MaxLength = 30;
+            this.txtGroup.Name = "txtGroup";
+            this.txtGroup.PreventEnterBeep = true;
+            this.txtGroup.Size = new System.Drawing.Size(293, 26);
+            this.txtGroup.TabIndex = 15;
+            this.txtGroup.WatermarkText = "نام گروه کالا";
+            this.txtGroup.TextChanged += new System.EventHandler(this.txtGroup_TextChanged_1);
+            // 
+            // txtName
+            // 
+            // 
+            // 
+            // 
+            this.txtName.Border.Class = "TextBoxBorder";
+            this.txtName.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtName.Location = new System.Drawing.Point(948, 8);
+            this.txtName.MaxLength = 30;
+            this.txtName.Name = "txtName";
+            this.txtName.PreventEnterBeep = true;
+            this.txtName.Size = new System.Drawing.Size(293, 26);
+            this.txtName.TabIndex = 14;
+            this.txtName.WatermarkText = "نام کالا";
+            this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged_1);
+            // 
             // buttonX1
             // 
             this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -383,36 +415,6 @@
             this.buttonX1.TabIndex = 13;
             this.buttonX1.Text = "+";
             this.buttonX1.Click += new System.EventHandler(this.buttonX1_Click);
-            // 
-            // txtName
-            // 
-            // 
-            // 
-            // 
-            this.txtName.Border.Class = "TextBoxBorder";
-            this.txtName.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtName.Location = new System.Drawing.Point(948, 8);
-            this.txtName.Name = "txtName";
-            this.txtName.PreventEnterBeep = true;
-            this.txtName.Size = new System.Drawing.Size(293, 26);
-            this.txtName.TabIndex = 14;
-            this.txtName.WatermarkText = "نام کالا";
-            this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged_1);
-            // 
-            // txtGroup
-            // 
-            // 
-            // 
-            // 
-            this.txtGroup.Border.Class = "TextBoxBorder";
-            this.txtGroup.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtGroup.Location = new System.Drawing.Point(28, 8);
-            this.txtGroup.Name = "txtGroup";
-            this.txtGroup.PreventEnterBeep = true;
-            this.txtGroup.Size = new System.Drawing.Size(293, 26);
-            this.txtGroup.TabIndex = 15;
-            this.txtGroup.WatermarkText = "نام گروه کالا";
-            this.txtGroup.TextChanged += new System.EventHandler(this.txtGroup_TextChanged_1);
             // 
             // frmListGoods
             // 

@@ -145,5 +145,10 @@ namespace KalaPezeshki
         {
 
         }
+
+        private void txtTel_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

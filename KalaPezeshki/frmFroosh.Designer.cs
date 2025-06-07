@@ -190,6 +190,7 @@
             this.txtShH.Border.Class = "TextBoxBorder";
             this.txtShH.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtShH.Location = new System.Drawing.Point(15, 16);
+            this.txtShH.MaxLength = 30;
             this.txtShH.Name = "txtShH";
             this.txtShH.PreventEnterBeep = true;
             this.txtShH.Size = new System.Drawing.Size(189, 26);
@@ -322,7 +323,7 @@
             // 
             // 
             this.groupPanel2.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.groupPanel2.TabIndex = 1;
+            this.groupPanel2.TabIndex = 0;
             this.groupPanel2.Click += new System.EventHandler(this.groupPanel2_Click);
             // 
             // btnClear
@@ -336,7 +337,7 @@
             this.btnClear.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 8, 8, 2);
             this.btnClear.Size = new System.Drawing.Size(109, 33);
             this.btnClear.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnClear.TabIndex = 38;
+            this.btnClear.TabIndex = 13;
             this.btnClear.Text = "پاک کردن\t";
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
@@ -442,10 +443,11 @@
             this.txtJameGood.Border.Class = "TextBoxBorder";
             this.txtJameGood.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtJameGood.Location = new System.Drawing.Point(13, 3);
+            this.txtJameGood.MaxLength = 30;
             this.txtJameGood.Name = "txtJameGood";
             this.txtJameGood.PreventEnterBeep = true;
             this.txtJameGood.Size = new System.Drawing.Size(139, 26);
-            this.txtJameGood.TabIndex = 0;
+            this.txtJameGood.TabIndex = 2;
             // 
             // btnSum
             // 
@@ -506,10 +508,11 @@
             this.txtKhadamat.Border.Class = "TextBoxBorder";
             this.txtKhadamat.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtKhadamat.Location = new System.Drawing.Point(13, 35);
+            this.txtKhadamat.MaxLength = 30;
             this.txtKhadamat.Name = "txtKhadamat";
             this.txtKhadamat.PreventEnterBeep = true;
             this.txtKhadamat.Size = new System.Drawing.Size(139, 26);
-            this.txtKhadamat.TabIndex = 1;
+            this.txtKhadamat.TabIndex = 0;
             // 
             // txtTakhfif
             // 
@@ -519,10 +522,11 @@
             this.txtTakhfif.Border.Class = "TextBoxBorder";
             this.txtTakhfif.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtTakhfif.Location = new System.Drawing.Point(13, 67);
+            this.txtTakhfif.MaxLength = 30;
             this.txtTakhfif.Name = "txtTakhfif";
             this.txtTakhfif.PreventEnterBeep = true;
             this.txtTakhfif.Size = new System.Drawing.Size(139, 26);
-            this.txtTakhfif.TabIndex = 2;
+            this.txtTakhfif.TabIndex = 1;
             // 
             // txtJameKol
             // 
@@ -532,6 +536,7 @@
             this.txtJameKol.Border.Class = "TextBoxBorder";
             this.txtJameKol.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtJameKol.Location = new System.Drawing.Point(13, 99);
+            this.txtJameKol.MaxLength = 30;
             this.txtJameKol.Name = "txtJameKol";
             this.txtJameKol.PreventEnterBeep = true;
             this.txtJameKol.Size = new System.Drawing.Size(139, 26);
@@ -549,6 +554,7 @@
             this.txtAddress.PreventEnterBeep = true;
             this.txtAddress.Size = new System.Drawing.Size(309, 26);
             this.txtAddress.TabIndex = 4;
+            this.txtAddress.TextChanged += new System.EventHandler(this.txtAddress_TextChanged);
             // 
             // btnPrint
             // 
@@ -560,7 +566,7 @@
             this.btnPrint.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 8, 8, 2);
             this.btnPrint.Size = new System.Drawing.Size(161, 47);
             this.btnPrint.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnPrint.TabIndex = 13;
+            this.btnPrint.TabIndex = 12;
             this.btnPrint.Text = "چاپ فاکتور خرید";
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
@@ -574,7 +580,7 @@
             this.btnDelete.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 8, 8, 2);
             this.btnDelete.Size = new System.Drawing.Size(224, 47);
             this.btnDelete.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnDelete.TabIndex = 12;
+            this.btnDelete.TabIndex = 11;
             this.btnDelete.Text = "حذف محصول از فاکتور";
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
@@ -588,7 +594,7 @@
             this.btnAdd.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 8, 8, 2);
             this.btnAdd.Size = new System.Drawing.Size(207, 47);
             this.btnAdd.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnAdd.TabIndex = 11;
+            this.btnAdd.TabIndex = 10;
             this.btnAdd.Text = "افزودن محصول به فاکتور";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
@@ -749,10 +755,12 @@
             this.txtNumber.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtNumber.ButtonFreeText.Shortcut = DevComponents.DotNetBar.eShortcut.F2;
             this.txtNumber.Location = new System.Drawing.Point(272, 98);
+            this.txtNumber.MaxValue = 1000;
+            this.txtNumber.MinValue = 0;
             this.txtNumber.Name = "txtNumber";
             this.txtNumber.ShowUpDown = true;
             this.txtNumber.Size = new System.Drawing.Size(80, 26);
-            this.txtNumber.TabIndex = 8;
+            this.txtNumber.TabIndex = 7;
             // 
             // txtTozih
             // 
@@ -767,7 +775,7 @@
             this.txtTozih.PreventEnterBeep = true;
             this.txtTozih.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtTozih.Size = new System.Drawing.Size(829, 41);
-            this.txtTozih.TabIndex = 10;
+            this.txtTozih.TabIndex = 9;
             // 
             // txtSP
             // 
@@ -777,10 +785,11 @@
             this.txtSP.Border.Class = "TextBoxBorder";
             this.txtSP.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtSP.Location = new System.Drawing.Point(19, 97);
+            this.txtSP.MaxLength = 30;
             this.txtSP.Name = "txtSP";
             this.txtSP.PreventEnterBeep = true;
             this.txtSP.Size = new System.Drawing.Size(139, 26);
-            this.txtSP.TabIndex = 9;
+            this.txtSP.TabIndex = 8;
             // 
             // txtName
             // 
@@ -790,10 +799,11 @@
             this.txtName.Border.Class = "TextBoxBorder";
             this.txtName.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtName.Location = new System.Drawing.Point(418, 98);
+            this.txtName.MaxLength = 30;
             this.txtName.Name = "txtName";
             this.txtName.PreventEnterBeep = true;
             this.txtName.Size = new System.Drawing.Size(218, 26);
-            this.txtName.TabIndex = 7;
+            this.txtName.TabIndex = 6;
             // 
             // txtCode
             // 
@@ -803,6 +813,7 @@
             this.txtCode.Border.Class = "TextBoxBorder";
             this.txtCode.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtCode.Location = new System.Drawing.Point(749, 98);
+            this.txtCode.MaxLength = 30;
             this.txtCode.Name = "txtCode";
             this.txtCode.PreventEnterBeep = true;
             this.txtCode.Size = new System.Drawing.Size(100, 26);
@@ -897,10 +908,12 @@
             this.txtTel.Border.Class = "TextBoxBorder";
             this.txtTel.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtTel.Location = new System.Drawing.Point(382, 53);
+            this.txtTel.MaxLength = 11;
             this.txtTel.Name = "txtTel";
             this.txtTel.PreventEnterBeep = true;
             this.txtTel.Size = new System.Drawing.Size(143, 26);
             this.txtTel.TabIndex = 3;
+            this.txtTel.TextChanged += new System.EventHandler(this.txtTel_TextChanged);
             // 
             // txtNameM
             // 
@@ -910,6 +923,7 @@
             this.txtNameM.Border.Class = "TextBoxBorder";
             this.txtNameM.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtNameM.Location = new System.Drawing.Point(640, 53);
+            this.txtNameM.MaxLength = 30;
             this.txtNameM.Name = "txtNameM";
             this.txtNameM.PreventEnterBeep = true;
             this.txtNameM.Size = new System.Drawing.Size(189, 26);
@@ -923,6 +937,7 @@
             this.txtIdFactor.Border.Class = "TextBoxBorder";
             this.txtIdFactor.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtIdFactor.Location = new System.Drawing.Point(719, 8);
+            this.txtIdFactor.MaxLength = 30;
             this.txtIdFactor.Name = "txtIdFactor";
             this.txtIdFactor.PreventEnterBeep = true;
             this.txtIdFactor.Size = new System.Drawing.Size(100, 26);

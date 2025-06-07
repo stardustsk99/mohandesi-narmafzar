@@ -138,7 +138,7 @@
             this.btnDelete.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 8, 8, 2);
             this.btnDelete.Size = new System.Drawing.Size(109, 47);
             this.btnDelete.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnDelete.TabIndex = 1;
+            this.btnDelete.TabIndex = 0;
             this.btnDelete.Text = "حذف";
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
@@ -241,7 +241,7 @@
             // 
             // 
             this.groupPanel2.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.groupPanel2.TabIndex = 1;
+            this.groupPanel2.TabIndex = 0;
             // 
             // txtShH
             // 
@@ -251,10 +251,11 @@
             this.txtShH.Border.Class = "TextBoxBorder";
             this.txtShH.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtShH.Location = new System.Drawing.Point(5, 8);
+            this.txtShH.MaxLength = 30;
             this.txtShH.Name = "txtShH";
             this.txtShH.PreventEnterBeep = true;
             this.txtShH.Size = new System.Drawing.Size(225, 26);
-            this.txtShH.TabIndex = 5;
+            this.txtShH.TabIndex = 1;
             this.txtShH.WatermarkText = "شماره صندوق را وارد کنید";
             this.txtShH.TextChanged += new System.EventHandler(this.txtShH_TextChanged);
             // 
@@ -266,10 +267,11 @@
             this.txtName.Border.Class = "TextBoxBorder";
             this.txtName.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtName.Location = new System.Drawing.Point(554, 8);
+            this.txtName.MaxLength = 30;
             this.txtName.Name = "txtName";
             this.txtName.PreventEnterBeep = true;
             this.txtName.Size = new System.Drawing.Size(225, 26);
-            this.txtName.TabIndex = 4;
+            this.txtName.TabIndex = 0;
             this.txtName.WatermarkText = "نام صندوق را وارد کنید";
             this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 

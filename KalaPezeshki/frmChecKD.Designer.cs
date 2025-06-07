@@ -36,6 +36,7 @@
             this.btnDelete = new DevComponents.DotNetBar.ButtonX();
             this.btnSave = new DevComponents.DotNetBar.ButtonX();
             this.groupPanel2 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.btnClear = new DevComponents.DotNetBar.ButtonX();
             this.cmbVaziyat = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.comboItem1 = new DevComponents.Editors.ComboItem();
             this.comboItem2 = new DevComponents.Editors.ComboItem();
@@ -59,7 +60,6 @@
             this.txtNameH = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtShH = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtCode = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.btnClear = new DevComponents.DotNetBar.ButtonX();
             this.groupPanel1.SuspendLayout();
             this.groupPanel4.SuspendLayout();
             this.groupPanel2.SuspendLayout();
@@ -266,6 +266,21 @@
             this.groupPanel2.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.groupPanel2.TabIndex = 2;
             // 
+            // btnClear
+            // 
+            this.btnClear.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnClear.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnClear.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.btnClear.Image = ((System.Drawing.Image)(resources.GetObject("btnClear.Image")));
+            this.btnClear.Location = new System.Drawing.Point(62, 16);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 8, 8, 2);
+            this.btnClear.Size = new System.Drawing.Size(109, 33);
+            this.btnClear.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnClear.TabIndex = 11;
+            this.btnClear.Text = "پاک کردن\t";
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
             // cmbVaziyat
             // 
             this.cmbVaziyat.DisplayMember = "Text";
@@ -455,6 +470,7 @@
             this.txtMablagh.Border.Class = "TextBoxBorder";
             this.txtMablagh.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtMablagh.Location = new System.Drawing.Point(313, 144);
+            this.txtMablagh.MaxLength = 30;
             this.txtMablagh.Name = "txtMablagh";
             this.txtMablagh.PreventEnterBeep = true;
             this.txtMablagh.Size = new System.Drawing.Size(139, 26);
@@ -468,6 +484,7 @@
             this.txtNameM.Border.Class = "TextBoxBorder";
             this.txtNameM.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtNameM.Location = new System.Drawing.Point(254, 112);
+            this.txtNameM.MaxLength = 30;
             this.txtNameM.Name = "txtNameM";
             this.txtNameM.PreventEnterBeep = true;
             this.txtNameM.Size = new System.Drawing.Size(198, 26);
@@ -481,6 +498,7 @@
             this.txtNameH.Border.Class = "TextBoxBorder";
             this.txtNameH.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtNameH.Location = new System.Drawing.Point(254, 80);
+            this.txtNameH.MaxLength = 30;
             this.txtNameH.Name = "txtNameH";
             this.txtNameH.PreventEnterBeep = true;
             this.txtNameH.Size = new System.Drawing.Size(198, 26);
@@ -495,6 +513,7 @@
             this.txtShH.Border.Class = "TextBoxBorder";
             this.txtShH.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtShH.Location = new System.Drawing.Point(286, 48);
+            this.txtShH.MaxLength = 30;
             this.txtShH.Name = "txtShH";
             this.txtShH.PreventEnterBeep = true;
             this.txtShH.Size = new System.Drawing.Size(166, 26);
@@ -508,25 +527,11 @@
             this.txtCode.Border.Class = "TextBoxBorder";
             this.txtCode.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtCode.Location = new System.Drawing.Point(286, 16);
+            this.txtCode.MaxLength = 30;
             this.txtCode.Name = "txtCode";
             this.txtCode.PreventEnterBeep = true;
             this.txtCode.Size = new System.Drawing.Size(166, 26);
             this.txtCode.TabIndex = 0;
-            // 
-            // btnClear
-            // 
-            this.btnClear.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnClear.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnClear.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.btnClear.Image = ((System.Drawing.Image)(resources.GetObject("btnClear.Image")));
-            this.btnClear.Location = new System.Drawing.Point(62, 16);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 8, 8, 2);
-            this.btnClear.Size = new System.Drawing.Size(109, 33);
-            this.btnClear.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnClear.TabIndex = 11;
-            this.btnClear.Text = "پاک کردن\t";
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // frmCheckD
             // 

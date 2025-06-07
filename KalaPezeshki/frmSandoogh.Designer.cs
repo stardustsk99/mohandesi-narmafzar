@@ -291,10 +291,12 @@
             this.txtMablagh.Border.Class = "TextBoxBorder";
             this.txtMablagh.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtMablagh.Location = new System.Drawing.Point(247, 70);
+            this.txtMablagh.MaxLength = 30;
             this.txtMablagh.Name = "txtMablagh";
             this.txtMablagh.PreventEnterBeep = true;
             this.txtMablagh.Size = new System.Drawing.Size(148, 26);
             this.txtMablagh.TabIndex = 4;
+            this.txtMablagh.TextChanged += new System.EventHandler(this.txtMablagh_TextChanged);
             // 
             // txtName
             // 
@@ -304,6 +306,7 @@
             this.txtName.Border.Class = "TextBoxBorder";
             this.txtName.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtName.Location = new System.Drawing.Point(170, 38);
+            this.txtName.MaxLength = 30;
             this.txtName.Name = "txtName";
             this.txtName.PreventEnterBeep = true;
             this.txtName.Size = new System.Drawing.Size(225, 26);

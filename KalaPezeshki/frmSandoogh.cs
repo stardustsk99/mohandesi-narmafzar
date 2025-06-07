@@ -119,5 +119,10 @@ namespace KalaPezeshki
         {
             frmHelper.ClearFormFields(this);
         }
+
+        private void txtMablagh_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

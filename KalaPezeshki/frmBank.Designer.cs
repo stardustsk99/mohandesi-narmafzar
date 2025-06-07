@@ -88,16 +88,20 @@
             // txtBalance
             // 
             this.txtBalance.Location = new System.Drawing.Point(286, 139);
+            this.txtBalance.MaxLength = 50;
             this.txtBalance.Name = "txtBalance";
             this.txtBalance.Size = new System.Drawing.Size(179, 26);
             this.txtBalance.TabIndex = 5;
+            this.txtBalance.TextChanged += new System.EventHandler(this.txtBalance_TextChanged);
             // 
             // txtAcctNum
             // 
             this.txtAcctNum.Location = new System.Drawing.Point(178, 107);
+            this.txtAcctNum.MaxLength = 20;
             this.txtAcctNum.Name = "txtAcctNum";
             this.txtAcctNum.Size = new System.Drawing.Size(287, 26);
             this.txtAcctNum.TabIndex = 4;
+            this.txtAcctNum.TextChanged += new System.EventHandler(this.txtAcctNum_TextChanged);
             // 
             // labe4
             // 
@@ -111,9 +115,11 @@
             // txtBankName
             // 
             this.txtBankName.Location = new System.Drawing.Point(178, 75);
+            this.txtBankName.MaxLength = 30;
             this.txtBankName.Name = "txtBankName";
             this.txtBankName.Size = new System.Drawing.Size(287, 26);
             this.txtBankName.TabIndex = 3;
+            this.txtBankName.TextChanged += new System.EventHandler(this.txtBankName_TextChanged);
             // 
             // label4
             // 
@@ -127,6 +133,7 @@
             // txtNameAcct
             // 
             this.txtNameAcct.Location = new System.Drawing.Point(178, 43);
+            this.txtNameAcct.MaxLength = 30;
             this.txtNameAcct.Name = "txtNameAcct";
             this.txtNameAcct.Size = new System.Drawing.Size(287, 26);
             this.txtNameAcct.TabIndex = 2;

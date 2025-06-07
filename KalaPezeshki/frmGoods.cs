@@ -198,5 +198,25 @@ namespace KalaPezeshki
         {
             frmHelper.ClearFormFields(this);
         }
+
+        private void txtName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCompany_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCP_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtSP_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -270,6 +270,7 @@
             // txtSaheb
             // 
             this.txtSaheb.Location = new System.Drawing.Point(181, 126);
+            this.txtSaheb.MaxLength = 30;
             this.txtSaheb.Name = "txtSaheb";
             this.txtSaheb.Size = new System.Drawing.Size(294, 26);
             this.txtSaheb.TabIndex = 4;
@@ -277,6 +278,7 @@
             // txtTel
             // 
             this.txtTel.Location = new System.Drawing.Point(181, 91);
+            this.txtTel.MaxLength = 11;
             this.txtTel.Name = "txtTel";
             this.txtTel.Size = new System.Drawing.Size(294, 26);
             this.txtTel.TabIndex = 3;
@@ -285,6 +287,7 @@
             // txtName
             // 
             this.txtName.Location = new System.Drawing.Point(181, 52);
+            this.txtName.MaxLength = 30;
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(294, 26);
             this.txtName.TabIndex = 2;

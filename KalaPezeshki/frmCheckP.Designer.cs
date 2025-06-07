@@ -470,6 +470,7 @@
             this.txtMablagh.Border.Class = "TextBoxBorder";
             this.txtMablagh.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtMablagh.Location = new System.Drawing.Point(328, 139);
+            this.txtMablagh.MaxLength = 30;
             this.txtMablagh.Name = "txtMablagh";
             this.txtMablagh.PreventEnterBeep = true;
             this.txtMablagh.Size = new System.Drawing.Size(139, 26);
@@ -483,6 +484,7 @@
             this.txtNameM.Border.Class = "TextBoxBorder";
             this.txtNameM.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtNameM.Location = new System.Drawing.Point(269, 107);
+            this.txtNameM.MaxLength = 30;
             this.txtNameM.Name = "txtNameM";
             this.txtNameM.PreventEnterBeep = true;
             this.txtNameM.Size = new System.Drawing.Size(198, 26);
@@ -496,6 +498,7 @@
             this.txtNameH.Border.Class = "TextBoxBorder";
             this.txtNameH.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtNameH.Location = new System.Drawing.Point(269, 75);
+            this.txtNameH.MaxLength = 30;
             this.txtNameH.Name = "txtNameH";
             this.txtNameH.PreventEnterBeep = true;
             this.txtNameH.Size = new System.Drawing.Size(198, 26);
@@ -509,6 +512,7 @@
             this.txtShH.Border.Class = "TextBoxBorder";
             this.txtShH.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtShH.Location = new System.Drawing.Point(301, 43);
+            this.txtShH.MaxLength = 30;
             this.txtShH.Name = "txtShH";
             this.txtShH.PreventEnterBeep = true;
             this.txtShH.Size = new System.Drawing.Size(166, 26);
@@ -522,6 +526,7 @@
             this.txtCode.Border.Class = "TextBoxBorder";
             this.txtCode.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtCode.Location = new System.Drawing.Point(301, 11);
+            this.txtCode.MaxLength = 30;
             this.txtCode.Name = "txtCode";
             this.txtCode.PreventEnterBeep = true;
             this.txtCode.Size = new System.Drawing.Size(166, 26);

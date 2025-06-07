@@ -29,21 +29,21 @@
         private void InitializeComponent()
         {
             this.groupPanel2 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.txtNumber2 = new DevComponents.Editors.IntegerInput();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtNumber1 = new DevComponents.Editors.IntegerInput();
+            this.label7 = new System.Windows.Forms.Label();
+            this.buttonX2 = new DevComponents.DotNetBar.ButtonX();
+            this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
             this.dgvGoods = new System.Windows.Forms.DataGridView();
             this.groupPanel4 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
-            this.txtNumber1 = new DevComponents.Editors.IntegerInput();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtNumber2 = new DevComponents.Editors.IntegerInput();
-            this.buttonX2 = new DevComponents.DotNetBar.ButtonX();
             this.groupPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNumber2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNumber1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGoods)).BeginInit();
             this.groupPanel4.SuspendLayout();
             this.groupPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNumber1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNumber2)).BeginInit();
             this.SuspendLayout();
             // 
             // groupPanel2
@@ -90,6 +90,80 @@
             // 
             this.groupPanel2.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.groupPanel2.TabIndex = 1;
+            // 
+            // txtNumber2
+            // 
+            // 
+            // 
+            // 
+            this.txtNumber2.BackgroundStyle.Class = "DateTimeInputBackground";
+            this.txtNumber2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtNumber2.ButtonFreeText.Shortcut = DevComponents.DotNetBar.eShortcut.F2;
+            this.txtNumber2.Location = new System.Drawing.Point(904, 8);
+            this.txtNumber2.MaxValue = 1000;
+            this.txtNumber2.MinValue = 0;
+            this.txtNumber2.Name = "txtNumber2";
+            this.txtNumber2.ShowUpDown = true;
+            this.txtNumber2.Size = new System.Drawing.Size(98, 26);
+            this.txtNumber2.TabIndex = 15;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(1009, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(51, 18);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "تا تعداد";
+            // 
+            // txtNumber1
+            // 
+            // 
+            // 
+            // 
+            this.txtNumber1.BackgroundStyle.Class = "DateTimeInputBackground";
+            this.txtNumber1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtNumber1.ButtonFreeText.Shortcut = DevComponents.DotNetBar.eShortcut.F2;
+            this.txtNumber1.Location = new System.Drawing.Point(1091, 8);
+            this.txtNumber1.MaxValue = 1000;
+            this.txtNumber1.MinValue = 0;
+            this.txtNumber1.Name = "txtNumber1";
+            this.txtNumber1.ShowUpDown = true;
+            this.txtNumber1.Size = new System.Drawing.Size(98, 26);
+            this.txtNumber1.TabIndex = 15;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(1196, 12);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(52, 18);
+            this.label7.TabIndex = 14;
+            this.label7.Text = "از تعداد";
+            // 
+            // buttonX2
+            // 
+            this.buttonX2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonX2.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonX2.Location = new System.Drawing.Point(800, 8);
+            this.buttonX2.Name = "buttonX2";
+            this.buttonX2.Size = new System.Drawing.Size(84, 26);
+            this.buttonX2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.buttonX2.TabIndex = 13;
+            this.buttonX2.Text = "نمایش ";
+            this.buttonX2.Click += new System.EventHandler(this.buttonX2_Click);
+            // 
+            // buttonX1
+            // 
+            this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonX1.Location = new System.Drawing.Point(24, 8);
+            this.buttonX1.Name = "buttonX1";
+            this.buttonX1.Size = new System.Drawing.Size(232, 26);
+            this.buttonX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.buttonX1.TabIndex = 13;
+            this.buttonX1.Text = "نمایش لیست کالاهای تمام شده";
+            this.buttonX1.Click += new System.EventHandler(this.buttonX1_Click);
             // 
             // dgvGoods
             // 
@@ -187,76 +261,6 @@
             this.groupPanel1.TabIndex = 1;
             this.groupPanel1.Click += new System.EventHandler(this.groupPanel1_Click);
             // 
-            // buttonX1
-            // 
-            this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX1.Location = new System.Drawing.Point(24, 8);
-            this.buttonX1.Name = "buttonX1";
-            this.buttonX1.Size = new System.Drawing.Size(232, 26);
-            this.buttonX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.buttonX1.TabIndex = 13;
-            this.buttonX1.Text = "نمایش لیست کالاهای تمام شده";
-            this.buttonX1.Click += new System.EventHandler(this.buttonX1_Click);
-            // 
-            // txtNumber1
-            // 
-            // 
-            // 
-            // 
-            this.txtNumber1.BackgroundStyle.Class = "DateTimeInputBackground";
-            this.txtNumber1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtNumber1.ButtonFreeText.Shortcut = DevComponents.DotNetBar.eShortcut.F2;
-            this.txtNumber1.Location = new System.Drawing.Point(1091, 8);
-            this.txtNumber1.Name = "txtNumber1";
-            this.txtNumber1.ShowUpDown = true;
-            this.txtNumber1.Size = new System.Drawing.Size(98, 26);
-            this.txtNumber1.TabIndex = 15;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(1196, 12);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(52, 18);
-            this.label7.TabIndex = 14;
-            this.label7.Text = "از تعداد";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(1009, 12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 18);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "تا تعداد";
-            // 
-            // txtNumber2
-            // 
-            // 
-            // 
-            // 
-            this.txtNumber2.BackgroundStyle.Class = "DateTimeInputBackground";
-            this.txtNumber2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtNumber2.ButtonFreeText.Shortcut = DevComponents.DotNetBar.eShortcut.F2;
-            this.txtNumber2.Location = new System.Drawing.Point(904, 8);
-            this.txtNumber2.Name = "txtNumber2";
-            this.txtNumber2.ShowUpDown = true;
-            this.txtNumber2.Size = new System.Drawing.Size(98, 26);
-            this.txtNumber2.TabIndex = 15;
-            // 
-            // buttonX2
-            // 
-            this.buttonX2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX2.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX2.Location = new System.Drawing.Point(800, 8);
-            this.buttonX2.Name = "buttonX2";
-            this.buttonX2.Size = new System.Drawing.Size(84, 26);
-            this.buttonX2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.buttonX2.TabIndex = 13;
-            this.buttonX2.Text = "نمایش ";
-            this.buttonX2.Click += new System.EventHandler(this.buttonX2_Click);
-            // 
             // frmShortage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -272,11 +276,11 @@
             this.Load += new System.EventHandler(this.frmShortage_Load);
             this.groupPanel2.ResumeLayout(false);
             this.groupPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNumber2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNumber1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGoods)).EndInit();
             this.groupPanel4.ResumeLayout(false);
             this.groupPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.txtNumber1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNumber2)).EndInit();
             this.ResumeLayout(false);
 
         }

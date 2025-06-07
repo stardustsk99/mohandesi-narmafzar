@@ -91,5 +91,10 @@ namespace KalaPezeshki
                 txtPass.PasswordChar = '*';
             }
         }
+
+        private void txtUName_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
