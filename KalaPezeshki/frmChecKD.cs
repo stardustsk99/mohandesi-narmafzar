@@ -12,19 +12,26 @@ namespace KalaPezeshki
 {
     public partial class frmCheckD : Form
     {
-        // اتصال به پایگاه‌داده
+        // ---------------------------------------------------------------------
+        // تعریف اتصال به پایگاه‌داده SQL Server
+        // ---------------------------------------------------------------------
         SqlConnection con = new SqlConnection("Data source=HAMY\\SQLEXPRESS;initial catalog=KalaPezeshki;integrated security=true");
         SqlCommand cmd = new SqlCommand();
 
+        // ---------------------------------------------------------------------
+        // سازنده‌ی فرم
+        // ---------------------------------------------------------------------
         public frmCheckD()
         {
             InitializeComponent();
         }
 
+        // ---------------------------------------------------------------------
         // رویداد بارگذاری فرم
+        // ---------------------------------------------------------------------
         private void frmChckD_Load(object sender, EventArgs e)
         {
-            // مقداردهی تاریخ امروز به صورت شمسی برای فیلدها
+            // مقداردهی تاریخ امروز به صورت شمسی برای فیلدهای تاریخ
             System.Globalization.PersianCalendar p = new System.Globalization.PersianCalendar();
             mskSarResid.Text = p.GetYear(DateTime.Now).ToString() +
                                p.GetMonth(DateTime.Now).ToString("0#") +
@@ -33,15 +40,20 @@ namespace KalaPezeshki
             mskTarikh.Text = mskSarResid.Text;
         }
 
+        // ---------------------------------------------------------------------
         // دکمه ذخیره چک دریافتی
+        // ---------------------------------------------------------------------
         private void btnSave_Click(object sender, EventArgs e)
         {
             try
             {
+                // آماده‌سازی فرمان SQL
                 cmd.Parameters.Clear();
                 cmd.Connection = con;
                 cmd.CommandText = @"INSERT INTO CheckD (ids, AcctNum, NameAcct, NameM, Balance, Tarikh, SarResid, Vaziyat, Tozih)
                                     VALUES (@a, @b, @c, @d, @e, @f, @g, @h, @i)";
+
+                // تنظیم پارامترها با مقادیر واردشده در فرم
                 cmd.Parameters.AddWithValue("@a", txtCode.Text);
                 cmd.Parameters.AddWithValue("@b", txtShH.Text);
                 cmd.Parameters.AddWithValue("@c", txtNameH.Text);
@@ -52,46 +64,61 @@ namespace KalaPezeshki
                 cmd.Parameters.AddWithValue("@h", cmbVaziyat.Text);
                 cmd.Parameters.AddWithValue("@i", txtTozih.Text);
 
+                // اجرای دستور درج (Insert)
                 con.Open();
                 cmd.ExecuteNonQuery();
                 con.Close();
 
+                // نمایش پیام موفقیت
                 MessageBox.Show("چک دریافتی ثبت شد");
+
+                // پاک‌سازی فیلدهای فرم پس از ذخیره
                 frmHelper.ClearFormFields(this);
             }
             catch
             {
+                // نمایش پیام خطا در صورت بروز مشکل
                 MessageBox.Show("مشکلی پیش آمده است");
             }
         }
 
+        // ---------------------------------------------------------------------
         // دکمه حذف چک دریافتی
+        // ---------------------------------------------------------------------
         private void btnDelete_Click(object sender, EventArgs e)
         {
             try
             {
+                // آماده‌سازی فرمان SQL
                 cmd.Parameters.Clear();
                 cmd.Connection = con;
                 cmd.CommandText = "DELETE FROM CheckD WHERE ids=" + txtCode.Text;
 
+                // اجرای دستور حذف (Delete)
                 con.Open();
                 cmd.ExecuteNonQuery();
                 con.Close();
 
+                // نمایش پیام موفقیت
                 MessageBox.Show("چک دریافتی حذف شد");
+                // پاک‌سازی فیلدهای فرم پس از حذف
                 frmHelper.ClearFormFields(this);
             }
             catch
             {
+                // نمایش پیام خطا در صورت بروز مشکل
                 MessageBox.Show("مشکلی پیش آمده است");
             }
         }
 
+        // ---------------------------------------------------------------------
         // دکمه ویرایش چک دریافتی
+        // ---------------------------------------------------------------------
         private void btnEdit_Click(object sender, EventArgs e)
         {
             try
             {
+                // آماده‌سازی فرمان SQL
                 cmd.Parameters.Clear();
                 cmd.Connection = con;
                 cmd.CommandText = @"UPDATE CheckD SET
@@ -106,6 +133,7 @@ namespace KalaPezeshki
                                     Tozih = @i
                                     WHERE ids = @a";
 
+                // تنظیم پارامترها با مقادیر واردشده در فرم
                 cmd.Parameters.AddWithValue("@a", txtCode.Text);
                 cmd.Parameters.AddWithValue("@b", txtShH.Text);
                 cmd.Parameters.AddWithValue("@c", txtNameH.Text);
@@ -116,35 +144,46 @@ namespace KalaPezeshki
                 cmd.Parameters.AddWithValue("@h", cmbVaziyat.Text);
                 cmd.Parameters.AddWithValue("@i", txtTozih.Text);
 
+                // اجرای دستور به‌روزرسانی (Update)
                 con.Open();
                 cmd.ExecuteNonQuery();
                 con.Close();
 
+                // نمایش پیام موفقیت
                 MessageBox.Show("چک دریافتی ویرایش شد");
+
+                // پاک‌سازی فیلدهای فرم پس از ویرایش
                 frmHelper.ClearFormFields(this);
             }
             catch
             {
+                // نمایش پیام خطا در صورت بروز مشکل
                 MessageBox.Show("مشکلی پیش آمده است");
             }
         }
 
+        // ---------------------------------------------------------------------
         // دکمه جستجوی چک بر اساس شناسه
+        // ---------------------------------------------------------------------
         private void btnS_Click(object sender, EventArgs e)
         {
             try
             {
                 SqlDataReader dr;
+
+                // آماده‌سازی فرمان SQL
                 cmd.Parameters.Clear();
                 cmd.Connection = con;
                 cmd.CommandText = "SELECT * FROM CheckD WHERE ids=@N";
                 cmd.Parameters.AddWithValue("@N", txtCode.Text);
 
+                // اجرای فرمان و دریافت نتایج
                 con.Open();
                 dr = cmd.ExecuteReader();
 
                 if (dr.Read())
                 {
+                    // نمایش اطلاعات چک در فیلدهای فرم
                     txtCode.Text = dr["ids"].ToString();
                     txtShH.Text = dr["AcctNum"].ToString();
                     txtNameH.Text = dr["NameAcct"].ToString();
@@ -157,6 +196,7 @@ namespace KalaPezeshki
                 }
                 else
                 {
+                    // در صورت عدم یافتن اطلاعات برای شناسه وارد شده
                     txtCode.Clear();
                     txtCode.Focus();
                     MessageBox.Show("برای کد وارد شده اطلاعاتی یافت نشد");
@@ -166,31 +206,39 @@ namespace KalaPezeshki
             }
             catch
             {
+                // نمایش پیام خطا در صورت بروز مشکل
                 MessageBox.Show("مشکلی پیش آمده است");
             }
         }
 
+        // ---------------------------------------------------------------------
         // دکمه جستجوی حساب بانکی با شماره حساب
+        // ---------------------------------------------------------------------
         private void buttonX1_Click(object sender, EventArgs e)
         {
             try
             {
                 SqlDataReader dr;
+
+                // آماده‌سازی فرمان SQL
                 cmd.Parameters.Clear();
                 cmd.Connection = con;
                 cmd.CommandText = "SELECT * FROM Bank WHERE AcctNum=@N";
                 cmd.Parameters.AddWithValue("@N", txtShH.Text);
 
+                // اجرای فرمان و دریافت نتایج
                 con.Open();
                 dr = cmd.ExecuteReader();
 
                 if (dr.Read())
                 {
+                    // نمایش اطلاعات حساب بانکی در فیلدهای فرم
                     txtNameH.Text = dr["NameAcct"].ToString();
                     txtShH.Text = dr["AcctNum"].ToString();
                 }
                 else
                 {
+                    // در صورت عدم یافتن اطلاعات برای شماره حساب وارد شده
                     txtShH.Clear();
                     txtShH.Focus();
                     MessageBox.Show("برای شماره حساب وارد شده اطلاعاتی یافت نشد");
@@ -198,27 +246,35 @@ namespace KalaPezeshki
 
                 con.Close();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                MessageBox.Show("مشکلی پیش آمده است\n"+ ex.Message);
+                // نمایش پیام خطا در صورت بروز مشکل
+                MessageBox.Show("مشکلی پیش آمده است\n" + ex.Message);
             }
         }
 
+        // ---------------------------------------------------------------------
         // دکمه نمایش لیست چک‌ها
+        // ---------------------------------------------------------------------
         private void btnList_Click(object sender, EventArgs e)
         {
             new frmListCheckD().ShowDialog();
         }
 
+        // ---------------------------------------------------------------------
         // دکمه پاک کردن فرم
+        // ---------------------------------------------------------------------
         private void btnClear_Click(object sender, EventArgs e)
         {
             frmHelper.ClearFormFields(this);
         }
 
+        // ---------------------------------------------------------------------
         // رویدادهای استفاده‌نشده (می‌توان حذف کرد اگر نیاز ندارید)
+        // ---------------------------------------------------------------------
         private void mskTarikh_MaskInputRejected(object sender, MaskInputRejectedEventArgs e) { }
 
         private void txtNameH_TextChanged(object sender, EventArgs e) { }
-    }
-}
+
+    } // پایان کلاس frmCheckD
+} // پایان فضای نام KalaPezeshki
