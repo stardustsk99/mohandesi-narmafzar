@@ -61,28 +61,35 @@ namespace KalaPezeshki
 
         private void btnS_Click(object sender, EventArgs e)
         {
-            SqlDataReader dr;
-            cmd.Parameters.Clear();
-            cmd.Connection = con;
-            cmd.CommandText = "Select * from Grooh where id=@N";
-            cmd.Parameters.AddWithValue("@N", txtCode.Text);
-            con.Open();
-            dr = cmd.ExecuteReader();
-
-            if (dr.Read())
+            try
             {
-                // مقداردهی به کنترل‌ها از داده‌های بازیابی‌شده
-                txtName.Text = dr["NameG"].ToString();
-            }
-            else
-            {
-                // اگر رکوردی یافت نشد
-                txtCode.Text = "";
-                txtCode.Focus();
-                MessageBox.Show("برای کد وارد شده اطلاعاتی پیدا نشد");
-            }
+                SqlDataReader dr;
+                cmd.Parameters.Clear();
+                cmd.Connection = con;
+                cmd.CommandText = "Select * from Grooh where id=@N";
+                cmd.Parameters.AddWithValue("@N", txtCode.Text);
+                con.Open();
+                dr = cmd.ExecuteReader();
 
-            con.Close();
+                if (dr.Read())
+                {
+                    // مقداردهی به کنترل‌ها از داده‌های بازیابی‌شده
+                    txtName.Text = dr["NameG"].ToString();
+                }
+                else
+                {
+                    // اگر رکوردی یافت نشد
+                    txtCode.Text = "";
+                    txtCode.Focus();
+                    MessageBox.Show("برای کد وارد شده اطلاعاتی پیدا نشد");
+                }
+
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(" مشکلی پیش آمده است\n" + ex.Message);
+            }
         }
     
 

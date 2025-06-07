@@ -169,7 +169,7 @@ namespace KalaPezeshki
         }
 
         // توابع رویدادی بی‌استفاده فعلاً
-        private void groupPanel1_Click(object sender, EventArgs e) { }
+        private void groupPanel1_Click(object sender, EventArgs e) {}
         private void pictureBox1_Click(object sender, EventArgs e) { }
         private void ribbonBar4_ItemClick(object sender, EventArgs e) { }
         private void ribbonBar12_ItemClick(object sender, EventArgs e) { }

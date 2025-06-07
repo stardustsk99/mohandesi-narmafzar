@@ -75,28 +75,42 @@ namespace KalaPezeshki
 
         private void txtName_TextChanged_1(object sender, EventArgs e)
         {
-            DataSet ds = new DataSet(); // مجموعه داده‌ها برای ذخیره نتیجه
-            SqlDataAdapter adp = new SqlDataAdapter(); // آداپتور برای پر کردن DataSet
-            adp.SelectCommand = new SqlCommand();
-            adp.SelectCommand.Connection = con;
-            adp.SelectCommand.CommandText = "Select * from Persenel where Name like '%'+ @S +'%'";// بازیابی همه کاربران
-            adp.SelectCommand.Parameters.AddWithValue("@S", txtName.Text + "%");
-            adp.Fill(ds, "Persenel"); // پر کردن دیتاست با داده‌ها
-            dgvCompany.DataSource = ds;
-            dgvCompany.DataMember = "Persenel";
+            try
+            {
+                DataSet ds = new DataSet(); // مجموعه داده‌ها برای ذخیره نتیجه
+                SqlDataAdapter adp = new SqlDataAdapter(); // آداپتور برای پر کردن DataSet
+                adp.SelectCommand = new SqlCommand();
+                adp.SelectCommand.Connection = con;
+                adp.SelectCommand.CommandText = "Select * from Persenel where Name like '%'+ @S +'%'";// بازیابی همه کاربران
+                adp.SelectCommand.Parameters.AddWithValue("@S", txtName.Text + "%");
+                adp.Fill(ds, "Persenel"); // پر کردن دیتاست با داده‌ها
+                dgvCompany.DataSource = ds;
+                dgvCompany.DataMember = "Persenel";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(" مشکلی پیش آمده است\n" + ex.Message);
+            }
         }
 
         private void txtRool_TextChanged(object sender, EventArgs e)
         {
-            DataSet ds = new DataSet(); // مجموعه داده‌ها برای ذخیره نتیجه
-            SqlDataAdapter adp = new SqlDataAdapter(); // آداپتور برای پر کردن DataSet
-            adp.SelectCommand = new SqlCommand();
-            adp.SelectCommand.Connection = con;
-            adp.SelectCommand.CommandText = "Select * from Persenel where Rool like '%'+ @S +'%'";// بازیابی همه کاربران
-            adp.SelectCommand.Parameters.AddWithValue("@S", txtRool.Text + "%");
-            adp.Fill(ds, "Persenel"); // پر کردن دیتاست با داده‌ها
-            dgvCompany.DataSource = ds;
-            dgvCompany.DataMember = "Persenel";
+            try
+            {
+                DataSet ds = new DataSet(); // مجموعه داده‌ها برای ذخیره نتیجه
+                SqlDataAdapter adp = new SqlDataAdapter(); // آداپتور برای پر کردن DataSet
+                adp.SelectCommand = new SqlCommand();
+                adp.SelectCommand.Connection = con;
+                adp.SelectCommand.CommandText = "Select * from Persenel where Rool like '%'+ @S +'%'";// بازیابی همه کاربران
+                adp.SelectCommand.Parameters.AddWithValue("@S", txtRool.Text + "%");
+                adp.Fill(ds, "Persenel"); // پر کردن دیتاست با داده‌ها
+                dgvCompany.DataSource = ds;
+                dgvCompany.DataMember = "Persenel";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(" مشکلی پیش آمده است\n" + ex.Message);
+            }
         }
     }
 }

@@ -27,16 +27,23 @@ namespace KalaPezeshki
 
         private void frmGoods_Load(object sender, EventArgs e)
         {
-            SqlDataAdapter da = new SqlDataAdapter("select NameG from Grooh ",con);
-            da.Fill(dt);
-            bs.DataSource = dt;
-            cmbGroup.DataSource = bs;
-            cmbGroup.DisplayMember = "NameG";
-            System.Globalization.PersianCalendar persianCalendar = new System.Globalization.PersianCalendar();
-            mskFMG.Text = persianCalendar.GetYear(DateTime.Now).ToString() +  persianCalendar.GetMonth(DateTime.Now).ToString("0#")  + persianCalendar.GetDayOfMonth(DateTime.Now).ToString("0#");
-            mskEXP.Text = persianCalendar.GetYear(DateTime.Now).ToString() + persianCalendar.GetMonth(DateTime.Now).ToString("0#") + persianCalendar.GetDayOfMonth(DateTime.Now).ToString("0#");
+            try
+            {
+                SqlDataAdapter da = new SqlDataAdapter("select NameG from Grooh ", con);
+                da.Fill(dt);
+                bs.DataSource = dt;
+                cmbGroup.DataSource = bs;
+                cmbGroup.DisplayMember = "NameG";
+                System.Globalization.PersianCalendar persianCalendar = new System.Globalization.PersianCalendar();
+                mskFMG.Text = persianCalendar.GetYear(DateTime.Now).ToString() + persianCalendar.GetMonth(DateTime.Now).ToString("0#") + persianCalendar.GetDayOfMonth(DateTime.Now).ToString("0#");
+                mskEXP.Text = persianCalendar.GetYear(DateTime.Now).ToString() + persianCalendar.GetMonth(DateTime.Now).ToString("0#") + persianCalendar.GetDayOfMonth(DateTime.Now).ToString("0#");
 
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(" مشکلی پیش آمده است\n"+ ex.Message);
+            }
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -154,33 +161,40 @@ namespace KalaPezeshki
 
         private void btnS_Click(object sender, EventArgs e)
         {
-            SqlDataReader dr;
-            cmd.Parameters.Clear();
-            cmd.Connection = con;
-            cmd.CommandText = "select * from Goods where id=@N";
-            cmd.Parameters.AddWithValue("@N", txtCode.Text);
-            con.Open();
-            dr = cmd.ExecuteReader();
-            if (dr.Read())
+            try
             {
-                txtCode.Text = dr["id"].ToString();
-                cmbGroup.Text = dr["NameG"].ToString();
-                txtName.Text = dr["NameGoods"].ToString();
-                txtCompany.Text = dr["Company"].ToString();
-                mskFMG.Text = dr["FMG"].ToString();
-                mskEXP.Text = dr["EXP"].ToString();
-                txtNumber.Text = dr["Number"].ToString();
-                txtCP.Text = dr["CP"].ToString();
-                txtSP.Text = dr["SP"].ToString();
-                txtTozih.Text = dr["Tozih"].ToString();
+                SqlDataReader dr;
+                cmd.Parameters.Clear();
+                cmd.Connection = con;
+                cmd.CommandText = "select * from Goods where id=@N";
+                cmd.Parameters.AddWithValue("@N", txtCode.Text);
+                con.Open();
+                dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    txtCode.Text = dr["id"].ToString();
+                    cmbGroup.Text = dr["NameG"].ToString();
+                    txtName.Text = dr["NameGoods"].ToString();
+                    txtCompany.Text = dr["Company"].ToString();
+                    mskFMG.Text = dr["FMG"].ToString();
+                    mskEXP.Text = dr["EXP"].ToString();
+                    txtNumber.Text = dr["Number"].ToString();
+                    txtCP.Text = dr["CP"].ToString();
+                    txtSP.Text = dr["SP"].ToString();
+                    txtTozih.Text = dr["Tozih"].ToString();
+                }
+                else
+                {
+                    txtCode.Clear();
+                    txtCode.Focus();
+                    MessageBox.Show("برای کد وارد شده اطلاعاتی وجود ندارد");
+                }
+                con.Close();
             }
-            else
+            catch (Exception ex)
             {
-                txtCode.Clear();
-                txtCode.Focus();
-                MessageBox.Show("برای کد وارد شده اطلاعاتی وجود ندارد");
+                MessageBox.Show(" مشکلی پیش آمده است\n" + ex.Message);
             }
-            con.Close();
 
         }
 

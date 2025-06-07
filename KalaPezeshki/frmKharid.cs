@@ -33,57 +33,71 @@ namespace KalaPezeshki
 
         private void btnS_Click(object sender, EventArgs e)
         {
-            SqlDataReader dr;
-            cmd.Parameters.Clear();
-            cmd.Connection = con;
-            cmd.CommandText = "select * from Goods where id=@N";
-            cmd.Parameters.AddWithValue("@N", txtCode.Text);
-            con.Open();
-            dr = cmd.ExecuteReader();
-            if (dr.Read())
+            try
             {
-                txtCode.Text = dr["id"].ToString();
-                txtName.Text = dr["NameGoods"].ToString();
-                txtNumber.Text = dr["Number"].ToString();
-                txtCP.Text = dr["CP"].ToString();
+                SqlDataReader dr;
+                cmd.Parameters.Clear();
+                cmd.Connection = con;
+                cmd.CommandText = "select * from Goods where id=@N";
+                cmd.Parameters.AddWithValue("@N", txtCode.Text);
+                con.Open();
+                dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    txtCode.Text = dr["id"].ToString();
+                    txtName.Text = dr["NameGoods"].ToString();
+                    txtNumber.Text = dr["Number"].ToString();
+                    txtCP.Text = dr["CP"].ToString();
 
 
+                }
+                else
+                {
+                    txtCode.Clear();
+                    txtCode.Focus();
+                    MessageBox.Show("برای کد وارد شده اطلاعاتی وجود ندارد");
+                }
+                con.Close();
             }
-            else
+            catch (Exception ex)
             {
-                txtCode.Clear();
-                txtCode.Focus();
-                MessageBox.Show("برای کد وارد شده اطلاعاتی وجود ندارد");
+                MessageBox.Show(" مشکلی پیش آمده است\n" + ex.Message);
             }
-            con.Close();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (txtKhadamat.Text == "" || txtTakhfif.Text == "")
+            try
             {
-                MessageBox.Show("لطفا هزینه خدمات یا تخفیف را وارد کنید");
-                return;
+                if (txtKhadamat.Text == "" || txtTakhfif.Text == "")
+                {
+                    MessageBox.Show("لطفا هزینه خدمات یا تخفیف را وارد کنید");
+                    return;
+                }
+                dgvFactor.Rows.Add(txtCode.Text, txtName.Text, txtNumber.Text, txtCP.Text);
+                txtCode.Text = "";
+                txtName.Text = "";
+                txtNumber.Text = "";
+                txtCP.Text = "";
+                //***********************
+                int JameGood = 0;
+                int JameKol = 0;
+                int TotalCP = 0;
+                for (int i = 0; i < dgvFactor.Rows.Count; i++)
+                {
+                    JameGood = JameGood + (Convert.ToInt32(dgvFactor.Rows[i].Cells[2].Value) * Convert.ToInt32(dgvFactor.Rows[i].Cells[3].Value));
+                    txtJameGood.Text = JameGood.ToString();
+
+                    TotalCP = Convert.ToInt32(dgvFactor.Rows[i].Cells[2].Value) * Convert.ToInt32(dgvFactor.Rows[i].Cells[3].Value);
+                    dgvFactor.Rows[i].Cells[4].Value = TotalCP;
+
+                    JameKol = (JameGood + Convert.ToInt32(txtKhadamat.Text)) - Convert.ToInt32(txtTakhfif.Text);
+                    txtJameKol.Text = JameKol.ToString();
+                }
             }
-            dgvFactor.Rows.Add(txtCode.Text, txtName.Text, txtNumber.Text, txtCP.Text);
-            txtCode.Text = "";
-            txtName.Text = "";
-            txtNumber.Text = "";
-            txtCP.Text = "";
-            //***********************
-            int JameGood = 0;
-            int JameKol = 0;
-            int TotalCP = 0;
-            for (int i = 0; i < dgvFactor.Rows.Count; i++)
+            catch (Exception ex)
             {
-                JameGood = JameGood + (Convert.ToInt32(dgvFactor.Rows[i].Cells[2].Value) * Convert.ToInt32(dgvFactor.Rows[i].Cells[3].Value));
-                txtJameGood.Text = JameGood.ToString();
-
-                TotalCP = Convert.ToInt32(dgvFactor.Rows[i].Cells[2].Value) * Convert.ToInt32(dgvFactor.Rows[i].Cells[3].Value);
-                dgvFactor.Rows[i].Cells[4].Value = TotalCP;
-
-                JameKol = (JameGood + Convert.ToInt32(txtKhadamat.Text)) - Convert.ToInt32(txtTakhfif.Text);
-                txtJameKol.Text = JameKol.ToString();
+                MessageBox.Show(" مشکلی پیش آمده است\n" + ex.Message);
             }
         }
 
@@ -94,33 +108,54 @@ namespace KalaPezeshki
 
         private void btnSum_Click(object sender, EventArgs e)
         {
-            int JameKol = 0;
-            JameKol = (Convert.ToInt32(txtJameGood.Text) + Convert.ToInt32(txtKhadamat.Text)) - Convert.ToInt32(txtTakhfif.Text);
-            txtJameKol.Text = JameKol.ToString();
+            try
+            {
+                int JameKol = 0;
+                JameKol = (Convert.ToInt32(txtJameGood.Text) + Convert.ToInt32(txtKhadamat.Text)) - Convert.ToInt32(txtTakhfif.Text);
+                txtJameKol.Text = JameKol.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(" مشکلی پیش آمده است\n" + ex.Message);
+            }
 
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
 
-            int JameGood = 0;
-            int JameGood2 = 0;
-            int jameKol = 0;
-            JameGood = Convert.ToInt32(dgvFactor.CurrentRow.Cells[4].Value);
-            JameGood2 = Convert.ToInt32(txtJameGood.Text) - JameGood;
-            txtJameGood.Text = JameGood2.ToString();
-            jameKol = Convert.ToInt32(txtJameKol.Text) - JameGood;
-            txtJameKol.Text = jameKol.ToString();
-            dgvFactor.Rows.RemoveAt(dgvFactor.CurrentRow.Index);
+            try
+            {
+                int JameGood = 0;
+                int JameGood2 = 0;
+                int jameKol = 0;
+                JameGood = Convert.ToInt32(dgvFactor.CurrentRow.Cells[4].Value);
+                JameGood2 = Convert.ToInt32(txtJameGood.Text) - JameGood;
+                txtJameGood.Text = JameGood2.ToString();
+                jameKol = Convert.ToInt32(txtJameKol.Text) - JameGood;
+                txtJameKol.Text = jameKol.ToString();
+                dgvFactor.Rows.RemoveAt(dgvFactor.CurrentRow.Index);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(" مشکلی پیش آمده است\n" + ex.Message);
+            }
         }
 
         private void btnCheckP_Click(object sender, EventArgs e)
         {
-            frmCheckP frm = new frmCheckP();
-            frm.txtTozih.Text = "پرداخت مبلغ فاکتور خرید به صورت چک به شماره فاکتور" + txtIdFactor.Text;
-            frm.txtNameM.Text = txtNameM.Text;
-            frm.txtMablagh.Text = txtJameKol.Text;
-            frm.ShowDialog();
+            try
+            {
+                frmCheckP frm = new frmCheckP();
+                frm.txtTozih.Text = "پرداخت مبلغ فاکتور خرید به صورت چک به شماره فاکتور" + txtIdFactor.Text;
+                frm.txtNameM.Text = txtNameM.Text;
+                frm.txtMablagh.Text = txtJameKol.Text;
+                frm.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(" مشکلی پیش آمده است\n" + ex.Message);
+            }
 
         }
 
@@ -240,26 +275,33 @@ namespace KalaPezeshki
 
         private void btnNagd_Click(object sender, EventArgs e)
         {
-             con.Close();
-            if (txtShH.Text == "")
+            try
             {
-                MessageBox.Show("لطفا شماره حساب را وارد کنید");
-                return;
-            }
-            string str;
-            int str1;
-            con.Open();
-            SqlCommand sqlcmd = new SqlCommand("select Balance from Bank where AcctNum='" + txtShH.Text + "'", con);
-            str = Convert.ToString((int)sqlcmd.ExecuteScalar());//مبلغ حساب
-            str1 = Convert.ToInt32(txtJameKol.Text);//مبلغ فاکتور
-            int sum = Int32.Parse(str) - str1;//مبلغ نهایی حساب
-            //**********************************ویرایش موجودی حساب
-            string UpdateBalance = "Update bank set Balance='" + sum + "' where AcctNum='" + txtShH.Text + "'";
-            SqlCommand com = new SqlCommand(UpdateBalance, con);
-            com.ExecuteNonQuery();
+                con.Close();
+                if (txtShH.Text == "")
+                {
+                    MessageBox.Show("لطفا شماره حساب را وارد کنید");
+                    return;
+                }
+                string str;
+                int str1;
+                con.Open();
+                SqlCommand sqlcmd = new SqlCommand("select Balance from Bank where AcctNum='" + txtShH.Text + "'", con);
+                str = Convert.ToString((int)sqlcmd.ExecuteScalar());//مبلغ حساب
+                str1 = Convert.ToInt32(txtJameKol.Text);//مبلغ فاکتور
+                int sum = Int32.Parse(str) - str1;//مبلغ نهایی حساب
+                                                  //**********************************ویرایش موجودی حساب
+                string UpdateBalance = "Update bank set Balance='" + sum + "' where AcctNum='" + txtShH.Text + "'";
+                SqlCommand com = new SqlCommand(UpdateBalance, con);
+                com.ExecuteNonQuery();
 
-            MessageBox.Show(" مبلغ از حساب پرداخت و کسر شد");
-            con.Close();
+                MessageBox.Show(" مبلغ از حساب پرداخت و کسر شد");
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(" مشکلی پیش آمده است\n" + ex.Message);
+            }
         }
 
         private void btnList_Click(object sender, EventArgs e)

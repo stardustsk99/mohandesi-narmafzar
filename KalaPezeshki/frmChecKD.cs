@@ -198,9 +198,9 @@ namespace KalaPezeshki
 
                 con.Close();
             }
-            catch
+            catch(Exception ex)
             {
-                MessageBox.Show("مشکلی پیش آمده است");
+                MessageBox.Show("مشکلی پیش آمده است\n"+ ex.Message);
             }
         }
 

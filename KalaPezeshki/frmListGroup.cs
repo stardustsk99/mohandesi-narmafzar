@@ -68,10 +68,17 @@ namespace KalaPezeshki
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            StiReport Report = new StiReport();
-            Report.Load("Report/rptGroup.mrt");
-            Report.Compile();
-            Report.ShowWithRibbonGUI(); 
+            try
+            {
+                StiReport Report = new StiReport();
+                Report.Load("Report/rptGroup.mrt");
+                Report.Compile();
+                Report.ShowWithRibbonGUI();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(" مشکلی پیش آمده است\n" + ex.Message);
+            }
         }
 
         private void dgvGroup_CellContentClick(object sender, DataGridViewCellEventArgs e)

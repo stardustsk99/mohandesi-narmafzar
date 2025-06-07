@@ -87,27 +87,34 @@ namespace KalaPezeshki
 
         private void btnS_Click(object sender, EventArgs e)
         {
-            SqlDataReader dr;
-            cmd.Parameters.Clear();
-            cmd.Connection = con;
-            cmd.CommandText = "select * from Sandoogh where IdS=@N";
-            cmd.Parameters.AddWithValue("@N", txtCode.Text);
-            con.Open();
-            dr = cmd.ExecuteReader();
-            if (dr.Read())
+            try
             {
-                txtCode.Text = dr["idS"].ToString();
-                txtName.Text = dr["NameS"].ToString();
-                txtMablagh.Text = dr["Mablagh"].ToString();
-                txtTozih.Text = dr["Tozih"].ToString();
+                SqlDataReader dr;
+                cmd.Parameters.Clear();
+                cmd.Connection = con;
+                cmd.CommandText = "select * from Sandoogh where IdS=@N";
+                cmd.Parameters.AddWithValue("@N", txtCode.Text);
+                con.Open();
+                dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    txtCode.Text = dr["idS"].ToString();
+                    txtName.Text = dr["NameS"].ToString();
+                    txtMablagh.Text = dr["Mablagh"].ToString();
+                    txtTozih.Text = dr["Tozih"].ToString();
+                }
+                else
+                {
+                    txtCode.Text = "";
+                    txtCode.Focus();
+                    MessageBox.Show("برای کد وارد شده اطلاعاتی یافت نشد");
+                }
+                con.Close();
             }
-            else
+            catch (Exception ex)
             {
-                txtCode.Text = "";
-                txtCode.Focus();
-                MessageBox.Show("برای کد وارد شده اطلاعاتی یافت نشد");
+                MessageBox.Show(" مشکلی پیش آمده است\n" + ex.Message);
             }
-            con.Close();
         }
 
         private void frmSandoogh_Load(object sender, EventArgs e)

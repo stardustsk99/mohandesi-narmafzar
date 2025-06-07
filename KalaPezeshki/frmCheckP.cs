@@ -122,64 +122,80 @@ namespace KalaPezeshki
         // جستجوی چک پرداختی بر اساس کد
         private void btnS_Click(object sender, EventArgs e)
         {
-            SqlDataReader dr;
-
-            cmd.Parameters.Clear();
-            cmd.Connection = con;
-            cmd.CommandText = "SELECT * FROM CheckP WHERE IdS=@N";
-            cmd.Parameters.AddWithValue("@N", txtCode.Text);
-
-            con.Open();
-            dr = cmd.ExecuteReader();
-
-            if (dr.Read())
+            try
             {
-                txtCode.Text = dr["idS"].ToString();
-                txtShH.Text = dr["NameAcct"].ToString();
-                txtNameH.Text = dr["NameAcct"].ToString();
-                txtNameM.Text = dr["NameM"].ToString();
-                txtMablagh.Text = dr["Balance"].ToString();
-                mskTarikh.Text = dr["Tarikh"].ToString();
-                mskSarResid.Text = dr["SarResid"].ToString();
-                cmbVaziyat.Text = dr["Vaziyat"].ToString();
-                txtTozih.Text = dr["Tozih"].ToString();
-            }
-            else
-            {
-                txtCode.Text = "";
-                txtCode.Focus();
-                MessageBox.Show("برای کد وارد شده اطلاعاتی یافت نشد");
-            }
+                SqlDataReader dr;
 
-            con.Close();
+                cmd.Parameters.Clear();
+                cmd.Connection = con;
+                cmd.CommandText = "SELECT * FROM CheckP WHERE IdS=@N";
+                cmd.Parameters.AddWithValue("@N", txtCode.Text);
+
+                con.Open();
+                dr = cmd.ExecuteReader();
+
+                if (dr.Read())
+                {
+                    txtCode.Text = dr["idS"].ToString();
+                    txtShH.Text = dr["NameAcct"].ToString();
+                    txtNameH.Text = dr["NameAcct"].ToString();
+                    txtNameM.Text = dr["NameM"].ToString();
+                    txtMablagh.Text = dr["Balance"].ToString();
+                    mskTarikh.Text = dr["Tarikh"].ToString();
+                    mskSarResid.Text = dr["SarResid"].ToString();
+                    cmbVaziyat.Text = dr["Vaziyat"].ToString();
+                    txtTozih.Text = dr["Tozih"].ToString();
+                }
+                else
+                {
+                    txtCode.Text = "";
+                    txtCode.Focus();
+                    MessageBox.Show("برای کد وارد شده اطلاعاتی یافت نشد");
+                }
+
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("مشکلی پیش آمده است\n"+ ex.Message);
+
+            }
         }
 
         // جستجوی نام حساب بر اساس شماره حساب
         private void buttonX1_Click(object sender, EventArgs e)
         {
-            SqlDataReader dr;
-
-            cmd.Parameters.Clear();
-            cmd.Connection = con;
-            cmd.CommandText = "SELECT * FROM Bank WHERE AcctNum=@N";
-            cmd.Parameters.AddWithValue("@N", txtShH.Text);
-
-            con.Open();
-            dr = cmd.ExecuteReader();
-
-            if (dr.Read())
+            try
             {
-                txtNameH.Text = dr["NameAcct"].ToString();
-                txtShH.Text = dr["AcctNum"].ToString();
-            }
-            else
-            {
-                txtShH.Text = "";
-                txtShH.Focus();
-                MessageBox.Show("برای کد وارد شده اطلاعاتی یافت نشد");
-            }
+                SqlDataReader dr;
 
-            con.Close();
+                cmd.Parameters.Clear();
+                cmd.Connection = con;
+                cmd.CommandText = "SELECT * FROM Bank WHERE AcctNum=@N";
+                cmd.Parameters.AddWithValue("@N", txtShH.Text);
+
+                con.Open();
+                dr = cmd.ExecuteReader();
+
+                if (dr.Read())
+                {
+                    txtNameH.Text = dr["NameAcct"].ToString();
+                    txtShH.Text = dr["AcctNum"].ToString();
+                }
+                else
+                {
+                    txtShH.Text = "";
+                    txtShH.Focus();
+                    MessageBox.Show("برای کد وارد شده اطلاعاتی یافت نشد");
+                }
+
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("مشکلی پیش آمده است\n" + ex.Message);
+
+            }
         }
 
         // نمایش لیست جدید از فرم چک پرداختی

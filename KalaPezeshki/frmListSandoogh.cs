@@ -46,28 +46,42 @@ namespace KalaPezeshki
         }
         private void txtName_TextChanged(object sender, EventArgs e)
         {
-            DataSet ds = new DataSet();
-            SqlDataAdapter adp = new SqlDataAdapter();
-            adp.SelectCommand = new SqlCommand();
-            adp.SelectCommand.Connection = con;
-            adp.SelectCommand.CommandText = "Select * from Sandoogh where NameS like '%' + @S + '%'";
-            adp.SelectCommand.Parameters.AddWithValue("@S", txtName.Text + "%");
-            adp.Fill(ds, "Sandoogh");
-            dgvSandoogh.DataSource = ds;
-            dgvSandoogh.DataMember = "Sandoogh";
+            try
+            {
+                DataSet ds = new DataSet();
+                SqlDataAdapter adp = new SqlDataAdapter();
+                adp.SelectCommand = new SqlCommand();
+                adp.SelectCommand.Connection = con;
+                adp.SelectCommand.CommandText = "Select * from Sandoogh where NameS like '%' + @S + '%'";
+                adp.SelectCommand.Parameters.AddWithValue("@S", txtName.Text + "%");
+                adp.Fill(ds, "Sandoogh");
+                dgvSandoogh.DataSource = ds;
+                dgvSandoogh.DataMember = "Sandoogh";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(" مشکلی پیش آمده است\n" + ex.Message);
+            }
         }
 
         private void txtShH_TextChanged(object sender, EventArgs e)
         {
-            DataSet ds = new DataSet();
-            SqlDataAdapter adp = new SqlDataAdapter();
-            adp.SelectCommand = new SqlCommand();
-            adp.SelectCommand.Connection = con;
-            adp.SelectCommand.CommandText = "Select * from Sandoogh where Ids like '%' + @S + '%'";
-            adp.SelectCommand.Parameters.AddWithValue("@S", txtShH.Text + "%");
-            adp.Fill(ds, "Sandoogh");
-            dgvSandoogh.DataSource = ds;
-            dgvSandoogh.DataMember = "Sandoogh";
+            try
+            {
+                DataSet ds = new DataSet();
+                SqlDataAdapter adp = new SqlDataAdapter();
+                adp.SelectCommand = new SqlCommand();
+                adp.SelectCommand.Connection = con;
+                adp.SelectCommand.CommandText = "Select * from Sandoogh where Ids like '%' + @S + '%'";
+                adp.SelectCommand.Parameters.AddWithValue("@S", txtShH.Text + "%");
+                adp.Fill(ds, "Sandoogh");
+                dgvSandoogh.DataSource = ds;
+                dgvSandoogh.DataMember = "Sandoogh";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(" مشکلی پیش آمده است\n" + ex.Message);
+            }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)

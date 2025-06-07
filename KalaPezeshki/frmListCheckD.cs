@@ -92,12 +92,19 @@ namespace KalaPezeshki
         private void btnPrint_Click(object sender, EventArgs e)
         {
 
-            StiReport Report = new StiReport();
-            Report.Load("Report/rptCheckD.mrt");
-            Report.Compile();
-            Report["SarResid1"] = mskSarResid1.Text;
-            Report["SarResid2"] = mskSarResid2.Text;
-            Report.ShowWithRibbonGUI();
+            try
+            {
+                StiReport Report = new StiReport();
+                Report.Load("Report/rptCheckD.mrt");
+                Report.Compile();
+                Report["SarResid1"] = mskSarResid1.Text;
+                Report["SarResid2"] = mskSarResid2.Text;
+                Report.ShowWithRibbonGUI();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(" مشکلی پیش آمده است\n" + ex.Message);
+            }
         }
 
         private void btnVosol_Click(object sender, EventArgs e)

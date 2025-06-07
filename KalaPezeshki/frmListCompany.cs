@@ -100,15 +100,22 @@ namespace KalaPezeshki
 
         private void txtName_TextChanged(object sender, EventArgs e)
         {
-            DataSet ds = new DataSet(); // مجموعه داده‌ها برای ذخیره نتیجه
-            SqlDataAdapter adp = new SqlDataAdapter(); // آداپتور برای پر کردن DataSet
-            adp.SelectCommand = new SqlCommand();
-            adp.SelectCommand.Connection = con;
-            adp.SelectCommand.CommandText = "Select * from Company where NameC like '%'+ @S +'%'";// بازیابی همه کاربران
-            adp.SelectCommand.Parameters.AddWithValue("@S", txtName.Text + "%");
-            adp.Fill(ds, "Company"); // پر کردن دیتاست با داده‌ها
-            dgvCompany.DataSource = ds;
-            dgvCompany.DataMember = "Company";
+            try
+            {
+                DataSet ds = new DataSet(); // مجموعه داده‌ها برای ذخیره نتیجه
+                SqlDataAdapter adp = new SqlDataAdapter(); // آداپتور برای پر کردن DataSet
+                adp.SelectCommand = new SqlCommand();
+                adp.SelectCommand.Connection = con;
+                adp.SelectCommand.CommandText = "Select * from Company where NameC like '%'+ @S +'%'";// بازیابی همه کاربران
+                adp.SelectCommand.Parameters.AddWithValue("@S", txtName.Text + "%");
+                adp.Fill(ds, "Company"); // پر کردن دیتاست با داده‌ها
+                dgvCompany.DataSource = ds;
+                dgvCompany.DataMember = "Company";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(" مشکلی پیش آمده است\n" + ex.Message);
+            }
         }
     }
 }

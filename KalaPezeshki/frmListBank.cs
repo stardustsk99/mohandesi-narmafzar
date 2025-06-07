@@ -23,25 +23,32 @@ namespace KalaPezeshki
 
         void Display()
         {
-            DataSet ds = new DataSet(); // مجموعه داده‌ها برای ذخیره نتیجه
-            SqlDataAdapter adp = new SqlDataAdapter(); // آداپتور برای پر کردن DataSet
-            adp.SelectCommand = new SqlCommand();
-            adp.SelectCommand.Connection = con;
-            adp.SelectCommand.CommandText = "Select * from Bank"; // بازیابی همه کاربران
-            adp.Fill(ds, "Bank"); // پر کردن دیتاست با داده‌ها
-            dgvCompany.DataSource = ds;
-            dgvCompany.DataMember = "Bank";
+            try
+            {
+                DataSet ds = new DataSet(); // مجموعه داده‌ها برای ذخیره نتیجه
+                SqlDataAdapter adp = new SqlDataAdapter(); // آداپتور برای پر کردن DataSet
+                adp.SelectCommand = new SqlCommand();
+                adp.SelectCommand.Connection = con;
+                adp.SelectCommand.CommandText = "Select * from Bank"; // بازیابی همه کاربران
+                adp.Fill(ds, "Bank"); // پر کردن دیتاست با داده‌ها
+                dgvCompany.DataSource = ds;
+                dgvCompany.DataMember = "Bank";
 
-            // تنظیم عنوان ستون‌های جدول نمایش داده شده
-            dgvCompany.Columns[0].HeaderText = "کد";
-            dgvCompany.Columns[1].HeaderText = "نام ";
-            dgvCompany.Columns[2].HeaderText = "نام بانک";
-            dgvCompany.Columns[3].HeaderText = "شماره حساب";
-            dgvCompany.Columns[4].HeaderText = " موجودی";
-            dgvCompany.Columns[5].HeaderText = "توضیحات";
-            dgvCompany.Columns[5].Width = 150;
-            dgvCompany.Columns[1].Width = 150;
-            dgvCompany.Columns[3].Width = 150;
+                // تنظیم عنوان ستون‌های جدول نمایش داده شده
+                dgvCompany.Columns[0].HeaderText = "کد";
+                dgvCompany.Columns[1].HeaderText = "نام ";
+                dgvCompany.Columns[2].HeaderText = "نام بانک";
+                dgvCompany.Columns[3].HeaderText = "شماره حساب";
+                dgvCompany.Columns[4].HeaderText = " موجودی";
+                dgvCompany.Columns[5].HeaderText = "توضیحات";
+                dgvCompany.Columns[5].Width = 150;
+                dgvCompany.Columns[1].Width = 150;
+                dgvCompany.Columns[3].Width = 150;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(" مشکلی پیش آمده است\n" + ex.Message);
+            }
         }
         private void frmListBank_Load(object sender, EventArgs e)
         {
@@ -76,29 +83,43 @@ namespace KalaPezeshki
 
         private void txtName_TextChanged_1(object sender, EventArgs e)
         {
-            DataSet ds = new DataSet(); // مجموعه داده‌ها برای ذخیره نتیجه
-            SqlDataAdapter adp = new SqlDataAdapter(); // آداپتور برای پر کردن DataSet
-            adp.SelectCommand = new SqlCommand();
-            adp.SelectCommand.Connection = con;
-            adp.SelectCommand.CommandText = "Select * from Bank where Bank like '%'+ @S +'%'";// بازیابی همه کاربران
-            adp.SelectCommand.Parameters.AddWithValue("@S", txtName.Text + "%");
-            adp.Fill(ds, "Bank"); // پر کردن دیتاست با داده‌ها
-            dgvCompany.DataSource = ds;
-            dgvCompany.DataMember = "Bank";
+            try
+            {
+                DataSet ds = new DataSet(); // مجموعه داده‌ها برای ذخیره نتیجه
+                SqlDataAdapter adp = new SqlDataAdapter(); // آداپتور برای پر کردن DataSet
+                adp.SelectCommand = new SqlCommand();
+                adp.SelectCommand.Connection = con;
+                adp.SelectCommand.CommandText = "Select * from Bank where Bank like '%'+ @S +'%'";// بازیابی همه کاربران
+                adp.SelectCommand.Parameters.AddWithValue("@S", txtName.Text + "%");
+                adp.Fill(ds, "Bank"); // پر کردن دیتاست با داده‌ها
+                dgvCompany.DataSource = ds;
+                dgvCompany.DataMember = "Bank";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(" مشکلی پیش آمده است\n" + ex.Message);
+            }
         }
 
 
         private void txtAcctNum_TextChanged(object sender, EventArgs e)
         {
-            DataSet ds = new DataSet(); // مجموعه داده‌ها برای ذخیره نتیجه
-            SqlDataAdapter adp = new SqlDataAdapter(); // آداپتور برای پر کردن DataSet
-            adp.SelectCommand = new SqlCommand();
-            adp.SelectCommand.Connection = con;
-            adp.SelectCommand.CommandText = "Select * from Bank where AcctNum like '%'+ @S +'%'";// بازیابی همه کاربران
-            adp.SelectCommand.Parameters.AddWithValue("@S", txtAcctNum.Text + "%");
-            adp.Fill(ds, "Bank"); // پر کردن دیتاست با داده‌ها
-            dgvCompany.DataSource = ds;
-            dgvCompany.DataMember = "Bank";
+            try
+            {
+                DataSet ds = new DataSet(); // مجموعه داده‌ها برای ذخیره نتیجه
+                SqlDataAdapter adp = new SqlDataAdapter(); // آداپتور برای پر کردن DataSet
+                adp.SelectCommand = new SqlCommand();
+                adp.SelectCommand.Connection = con;
+                adp.SelectCommand.CommandText = "Select * from Bank where AcctNum like '%'+ @S +'%'";// بازیابی همه کاربران
+                adp.SelectCommand.Parameters.AddWithValue("@S", txtAcctNum.Text + "%");
+                adp.Fill(ds, "Bank"); // پر کردن دیتاست با داده‌ها
+                dgvCompany.DataSource = ds;
+                dgvCompany.DataMember = "Bank";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(" مشکلی پیش آمده است\n" + ex.Message);
+            }
         }
     }
 }

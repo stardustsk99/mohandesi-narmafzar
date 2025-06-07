@@ -101,28 +101,36 @@ namespace KalaPezeshki
 
         private void btnS_Click(object sender, EventArgs e)
         {
-            SqlDataReader dr;
-            cmd.Parameters.Clear();
-            cmd.Connection = con;
-            cmd.CommandText = "select * from Company where id=@N";
-            cmd.Parameters.AddWithValue("@N", txtCode.Text);
-            con.Open();
-            dr = cmd.ExecuteReader();
-            if (dr.Read())
+            try
             {
-                txtCode.Text = dr["id"].ToString();
-                txtName.Text = dr["NameC"].ToString();
-                txtTel.Text = dr["Tel"].ToString();
-                txtAddress.Text = dr["Address"].ToString();
-                txtTozih.Text = dr["Tozih"].ToString();
+                SqlDataReader dr;
+                cmd.Parameters.Clear();
+                cmd.Connection = con;
+                cmd.CommandText = "select * from Company where id=@N";
+                cmd.Parameters.AddWithValue("@N", txtCode.Text);
+                con.Open();
+                dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    txtCode.Text = dr["id"].ToString();
+                    txtName.Text = dr["NameC"].ToString();
+                    txtTel.Text = dr["Tel"].ToString();
+                    txtAddress.Text = dr["Address"].ToString();
+                    txtTozih.Text = dr["Tozih"].ToString();
+                }
+                else
+                {
+                    txtCode.Clear();
+                    txtCode.Focus();
+                    MessageBox.Show("برای کد وارد شده اطلاعاتی وجود ندارد");
+                }
+                con.Close();
             }
-            else
+            catch (Exception ex)
             {
-                txtCode.Clear();
-                txtCode.Focus();
-                MessageBox.Show("برای کد وارد شده اطلاعاتی وجود ندارد");
+                MessageBox.Show("مشکلی پیش آمده است\n" + ex.Message);
+
             }
-            con.Close();
 
         }
 

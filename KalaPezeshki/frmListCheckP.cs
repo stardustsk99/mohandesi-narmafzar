@@ -48,7 +48,7 @@ namespace KalaPezeshki
         }
         private void frmListCheckP_Load(object sender, EventArgs e)
         {
-            Display();
+           
             System.Globalization.PersianCalendar p = new System.Globalization.PersianCalendar();
             mskSarResid1.Text = p.GetYear(DateTime.Now).ToString() + p.GetMonth(DateTime.Now).ToString("0#") + p.GetDayOfMonth(DateTime.Now).ToString("0#");
             mskSarResid2.Text = p.GetYear(DateTime.Now).ToString() + p.GetMonth(DateTime.Now).ToString("0#") + p.GetDayOfMonth(DateTime.Now).ToString("0#");
@@ -85,44 +85,58 @@ namespace KalaPezeshki
         private void btnPrint_Click(object sender, EventArgs e)
         {
 
-            StiReport Report = new StiReport();
-            Report.Load("Report/rptCheckP.mrt");
-            Report.Compile();
-            Report["SarResid1"] = mskSarResid1.Text;
-            Report["SarResid2"] = mskSarResid2.Text;
-            Report.ShowWithRibbonGUI();
+            try
+            {
+                StiReport Report = new StiReport();
+                Report.Load("Report/rptCheckP.mrt");
+                Report.Compile();
+                Report["SarResid1"] = mskSarResid1.Text;
+                Report["SarResid2"] = mskSarResid2.Text;
+                Report.ShowWithRibbonGUI();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(" مشکلی پیش آمده است\n" + ex.Message);
+            }
         }
 
         private void btnVosol_Click(object sender, EventArgs e)
         {
-            string str;
-            int str1;
-            con.Open();
-            SqlCommand sqlcmd = new SqlCommand("select Balance from Bank where AcctNum='" + Convert.ToInt32(dgvCheckP.SelectedCells[1].Value) + "'", con);
-            str = Convert.ToString((int)sqlcmd.ExecuteScalar());//مبلغ حساب
-            str1 = Convert.ToInt32(dgvCheckP.SelectedCells[4].Value);//مبلغ چک
-            if (str1 > Convert.ToInt32(str))
+            try
             {
-                MessageBox.Show("موجودی حساب کمتر از مبلغ چک است.موجودی کافی نمی باشد");
-            }
-            else
-            {
-                int sum = Int32.Parse(str) - str1;//مبلغ نهایی حساب
-                                                  //**********************************ویرایش موجودی حساب
-                string UpdateBalance = "Update Bank set Balance='" + sum + "' where AcctNum='" + Convert.ToInt32(dgvCheckP.SelectedCells[1].Value) + "'";
-                SqlCommand com = new SqlCommand(UpdateBalance, con);
-                com.ExecuteNonQuery();
-                //**********************************ویرایش وضعیت چک
-                string UpdateVaziyat = "Update CheckP set Vaziyat='" + "وصول شده" + "' where ids='" + Convert.ToInt32(dgvCheckP.SelectedCells[0].Value) + "'";
-                SqlCommand cmd = new SqlCommand(UpdateVaziyat, con);
-                cmd.ExecuteNonQuery();
+                string str;
+                int str1;
+                con.Open();
+                SqlCommand sqlcmd = new SqlCommand("select Balance from Bank where AcctNum='" + Convert.ToInt32(dgvCheckP.SelectedCells[1].Value) + "'", con);
+                str = Convert.ToString((int)sqlcmd.ExecuteScalar());//مبلغ حساب
+                str1 = Convert.ToInt32(dgvCheckP.SelectedCells[4].Value);//مبلغ چک
+                if (str1 > Convert.ToInt32(str))
+                {
+                    MessageBox.Show("موجودی حساب کمتر از مبلغ چک است.موجودی کافی نمی باشد");
+                }
+                else
+                {
+                    int sum = Int32.Parse(str) - str1;//مبلغ نهایی حساب
+                                                      //**********************************ویرایش موجودی حساب
+                    string UpdateBalance = "Update Bank set Balance='" + sum + "' where AcctNum='" + Convert.ToInt32(dgvCheckP.SelectedCells[1].Value) + "'";
+                    SqlCommand com = new SqlCommand(UpdateBalance, con);
+                    com.ExecuteNonQuery();
+                    //**********************************ویرایش وضعیت چک
+                    string UpdateVaziyat = "Update CheckP set Vaziyat='" + "وصول شده" + "' where ids='" + Convert.ToInt32(dgvCheckP.SelectedCells[0].Value) + "'";
+                    SqlCommand cmd = new SqlCommand(UpdateVaziyat, con);
+                    cmd.ExecuteNonQuery();
 
-                MessageBox.Show("وصول چک انجام شد و مبلغ از حساب کسر شد");
-                con.Close();
-                Display();
+                    MessageBox.Show("وصول چک انجام شد و مبلغ از حساب کسر شد");
+                    con.Close();
+                    Display();
+                }
+
             }
-                
+            catch (Exception ex)
+            {
+                MessageBox.Show(" مشکلی پیش آمده است\n" + ex.Message);
             }
+        }
 
         private void dgvCheckP_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
