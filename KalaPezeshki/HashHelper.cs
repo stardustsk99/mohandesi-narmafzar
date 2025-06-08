@@ -1,26 +1,36 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace KalaPezeshki
-{ }
-
- public static class HashHelper
 {
-    public static string ComputeSha256Hash(string rawData)
+    // ---------------------------------------------------------------------
+    // کلاس کمکی HashHelper برای محاسبه هش SHA-256
+    // ---------------------------------------------------------------------
+    public static class HashHelper
     {
-        using (SHA256 sha256Hash = SHA256.Create())
+        // ---------------------------------------------------------------------
+        // متد محاسبه‌ی هش SHA-256 از یک رشته ورودی
+        // ---------------------------------------------------------------------
+        public static string ComputeSha256Hash(string rawData)
         {
-            byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(rawData));
-            StringBuilder builder = new StringBuilder();
-            for (int i = 0; i < bytes.Length; i++)
+            // ایجاد یک شیء از الگوریتم SHA256
+            using (SHA256 sha256Hash = SHA256.Create())
             {
-                builder.Append(bytes[i].ToString("x2"));
+                // محاسبه هش به صورت آرایه بایت
+                byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(rawData));
+
+                // تبدیل آرایه بایت به رشته‌ی هگزادسیمال (Hexadecimal String)
+                StringBuilder builder = new StringBuilder();
+
+                for (int i = 0; i < bytes.Length; i++)
+                {
+                    builder.Append(bytes[i].ToString("x2"));
+                }
+
+                // بازگشت رشته‌ی هش محاسبه‌شده
+                return builder.ToString();
             }
-            return builder.ToString();
         }
     }
 }

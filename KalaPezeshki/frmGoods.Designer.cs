@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGoods));
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.groupPanel4 = new DevComponents.DotNetBar.Controls.GroupPanel();
@@ -58,6 +59,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.groupPanel1.SuspendLayout();
             this.groupPanel4.SuspendLayout();
             this.groupPanel2.SuspendLayout();
@@ -494,6 +496,12 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "کد کالا";
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
             // frmGoods
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -547,5 +555,6 @@
         private DevComponents.DotNetBar.Controls.MaskedTextBoxAdv mskFMG;
         private DevComponents.DotNetBar.ButtonX btnS;
         private DevComponents.DotNetBar.ButtonX btnClear;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }
